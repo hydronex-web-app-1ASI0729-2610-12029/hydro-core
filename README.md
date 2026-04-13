@@ -182,16 +182,231 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 ## 1.3. Segmentos objetivo.
     
 # Capítulo II: Requirements Elicitation & Analysis
-    
+
 ## 2.1. Competidores.
-    
+
+A continuación, se presentan las principales soluciones existentes en el mercado que guardan relación con la problemática que TankIQ busca resolver. Si bien no existe en el mercado peruano una plataforma orientada exactamente al mismo segmento, se han identificado competidores indirectos que abordan parcialmente el problema del monitoreo de agua o la gestión de edificios residenciales.
+
+**Hidrosid:**
+Es una empresa peruana que comercializa equipos de automatización para cisternas y tanques elevados, incluyendo sensores de nivel y tableros de control eléctrico. Sus soluciones están orientadas principalmente a instalaciones industriales y edificios comerciales de gran escala. Si bien resuelve el problema del monitoreo de nivel de agua, lo hace mediante hardware especializado que requiere instalación por técnicos calificados, sin ofrecer una plataforma web de visualización de datos, historial de consumo ni reportes para juntas de propietarios. Su costo y complejidad lo hacen inaccesible para el segmento de edificios residenciales pequeños y medianos.
+
+**Siemens Building Technologies:**
+Es una división de Siemens especializada en sistemas de automatización y gestión de edificios (BMS - Building Management Systems). Ofrece soluciones integrales para el monitoreo de agua, energía, climatización y seguridad en edificios. Sus plataformas permiten visualizar en tiempo real el consumo de recursos y generar reportes detallados. Sin embargo, están diseñadas para grandes edificios corporativos, hoteles y centros comerciales, con costos de implementación que superan ampliamente el presupuesto de un edificio residencial de Lima. No existe una versión accesible ni adaptada al contexto socioeconómico de los edificios de los conos o zonas intermedias de Lima.
+
+**AquaCloud (internacional):**
+Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orientada a empresas de distribución de agua y municipios. Permite a los operadores visualizar en tiempo real el nivel de múltiples tanques, recibir alertas y optimizar rutas de reabastecimiento. Si bien su tecnología es similar a la que TankIQ propone, su modelo de negocio está orientado a operadores industriales y municipios, no a administradores de edificios residenciales. No está disponible en el mercado peruano ni cuenta con interfaz en español adaptada al contexto local.
+
+
 ### 2.1.1. Análisis competitivo.
-    
+
+<table>
+<tr>
+    <th colspan="6" valign="top">Competitive Analysis Landscape</th>
+</tr>
+<tr>
+    <td colspan="1" rowspan="2" valign="top">¿Por qué llevar a cabo este análisis?</td>
+    <td colspan="5" valign="top">¿Cómo identificar a nuestros principales competidores?</td>
+</tr>
+<tr>
+    <td colspan="5" valign="top">Con este análisis usando el FODA, es decir, las fortalezas, oportunidades, debilidades y amenazas de nuestros competidores, se evalúa su participación en el mercado y qué estrategias se pueden desarrollar para que TankIQ surja como referente en la gestión inteligente de cisternas residenciales en Lima. Para identificar a los principales competidores, se estudió el mercado de soluciones de monitoreo de agua y gestión de edificios, tanto a nivel nacional como internacional, concluyendo que los principales competidores indirectos son:</td>
+</tr>
+<tr>
+    <td colspan="2" valign="top">Nombre y logo</td>
+    <td colspan="1" valign="top">TankIQ</td>
+    <td colspan="1" valign="top">Hidrosid</td>
+    <td colspan="1" valign="top">Siemens Building Technologies</td>
+    <td colspan="1" valign="top">AquaCloud</td>
+</tr>
+<tr>
+    <td colspan="1" rowspan="2" valign="top">PERFIL</td>
+    <td colspan="1" valign="top">Overview</td>
+    <td colspan="1" valign="top">Plataforma web con sensor IoT ultrasónico que monitorea en tiempo real el nivel de cisternas en edificios residenciales de Lima, proyecta días de agua disponibles y genera reportes de gasto para juntas de propietarios.</td>
+    <td colspan="1" valign="top">Empresa peruana que comercializa equipos eléctricos y sensores de nivel para cisternas y tanques. Orientada a instalaciones industriales y comerciales de gran escala, sin plataforma web de visualización de datos.</td>
+    <td colspan="1" valign="top">División de Siemens que ofrece sistemas integrales de gestión de edificios (BMS), incluyendo monitoreo de agua, energía y climatización. Orientada a grandes edificios corporativos y centros comerciales.</td>
+    <td colspan="1" valign="top">Plataforma SaaS internacional de monitoreo remoto de tanques de agua orientada a empresas distribuidoras de agua y municipios. No disponible en el mercado peruano.</td>
+</tr>
+<tr>
+    <td colspan="1" valign="top">Ventaja competitiva ¿Qué valor ofrece a los clientes?</td>
+    <td colspan="1" valign="top">Es la única solución accesible, en español y diseñada específicamente para edificios residenciales pequeños y medianos de Lima. Combina monitoreo IoT en tiempo real con proyección de consumo y transparencia financiera hacia la junta de propietarios, a un costo mensual accesible por suscripción.</td>
+    <td colspan="1" valign="top">Solución hardware local con respaldo técnico en Perú. Resuelve el problema del control automático de llenado de cisterna, pero sin visibilidad remota ni reportes de consumo o gasto.</td>
+    <td colspan="1" valign="top">Solución integral y robusta para edificios de gran escala. Permite monitorear múltiples recursos simultáneamente con alta precisión y confiabilidad.</td>
+    <td colspan="1" valign="top">Plataforma escalable para el monitoreo de múltiples tanques en simultáneo. Útil para operadores con grandes redes de distribución de agua.</td>
+</tr>
+<tr>
+    <td colspan="1" rowspan="2" valign="top">Perfil de marketing</td>
+    <td colspan="1" valign="top">Mercado objetivo</td>
+    <td colspan="1" valign="top">Administradores de edificios residenciales de 6 a 40 departamentos en distritos de Lima con suministro irregular de SEDAPAL. Propietarios e inquilinos de dichos edificios.</td>
+    <td colspan="1" valign="top">Empresas constructoras, industrias y edificios comerciales que requieren automatización de cisternas y tanques a gran escala.</td>
+    <td colspan="1" valign="top">Grandes edificios corporativos, hoteles, hospitales y centros comerciales que requieren gestión integral de recursos.</td>
+    <td colspan="1" valign="top">Empresas municipales de agua, distribuidoras y operadores industriales con redes de tanques distribuidos geográficamente.</td>
+</tr>
+<tr>
+    <td colspan="1" valign="top">Estrategias de marketing</td>
+    <td colspan="1" valign="top">Difusión en grupos de WhatsApp de juntas de propietarios, recomendación entre administradores de edificios y publicidad en redes sociales orientada a distritos con mayor déficit hídrico en Lima.</td>
+    <td colspan="1" valign="top">Venta directa a través de distribuidores técnicos y contratistas de instalaciones eléctricas.</td>
+    <td colspan="1" valign="top">Fuerza de ventas B2B, licitaciones corporativas y alianzas con empresas constructoras de edificios comerciales.</td>
+    <td colspan="1" valign="top">Marketing digital B2B orientado a municipios y empresas de utilities, con demostraciones técnicas y pilotos gratuitos.</td>
+</tr>
+<tr>
+    <td colspan="1" valign="top">Perfil del producto</td>
+    <td colspan="1" valign="top">Productos & Servicios</td>
+    <td colspan="1" valign="top">Sensor IoT ultrasónico instalado en la cisterna + plataforma web con dashboard en tiempo real, alertas automáticas, proyección de consumo y reportes de gasto para la junta de propietarios.</td>
+    <td colspan="1" valign="top">Tableros de control eléctrico, sensores de nivel flotantes y equipos de automatización para llenado automático de cisternas y tanques.</td>
+    <td colspan="1" valign="top">Sistemas BMS integrales que incluyen monitoreo de agua, energía, climatización, accesos y seguridad para edificios de gran escala.</td>
+    <td colspan="1" valign="top">Plataforma SaaS de monitoreo remoto de tanques con alertas, reportes y optimización de rutas de reabastecimiento para operadores industriales.</td>
+</tr>
+<tr>
+    <td colspan="1" valign="top"></td>
+    <td colspan="1" valign="top">Precios y Costos</td>
+    <td colspan="1" valign="top">Costos: desarrollo de software y hardware del sensor. Precios: suscripción mensual accesible por edificio (plan básico y plan premium).</td>
+    <td colspan="1" valign="top">Costos: fabricación e instalación de hardware especializado. Precios: venta de equipos con costos de instalación técnica adicionales.</td>
+    <td colspan="1" valign="top">Costos: desarrollo, implementación y mantenimiento de sistemas BMS. Precios: proyectos a medida con inversión inicial elevada.</td>
+    <td colspan="1" valign="top">Costos: infraestructura cloud y desarrollo de plataforma SaaS. Precios: suscripción B2B con tarifas según número de tanques monitoreados.</td>
+</tr>
+<tr>
+    <td colspan="1" valign="top"></td>
+    <td colspan="1" valign="top">Canales de distribución (Web y/o Móvil)</td>
+    <td colspan="1" valign="top">Web</td>
+    <td colspan="1" valign="top">Presencial / Distribuidores técnicos</td>
+    <td colspan="1" valign="top">Web y presencial</td>
+    <td colspan="1" valign="top">Web</td>
+</tr>
+<tr>
+    <td colspan="1" rowspan="4" valign="top">Análisis FODA</td>
+    <td colspan="1" valign="top">Fortalezas</td>
+    <td colspan="1" valign="top">
+        Única solución diseñada para el contexto residencial de Lima.<br>
+        Precio accesible mediante suscripción mensual.<br>
+        Interfaz simple sin necesidad de formación técnica.<br>
+        Módulo de transparencia financiera para juntas de propietarios.
+    </td>
+    <td colspan="1" valign="top">
+        Presencia local en el mercado peruano.<br>
+        Experiencia técnica en instalaciones de cisternas.<br>
+        Solución hardware probada y confiable.
+    </td>
+    <td colspan="1" valign="top">
+        Marca reconocida a nivel mundial.<br>
+        Solución integral que cubre múltiples recursos del edificio.<br>
+        Alta confiabilidad y soporte técnico especializado.
+    </td>
+    <td colspan="1" valign="top">
+        Plataforma escalable para múltiples tanques.<br>
+        Tecnología cloud robusta.<br>
+        Experiencia en el sector utilities a nivel internacional.
+    </td>
+</tr>
+<tr>
+    <td colspan="1" valign="top">Oportunidades</td>
+    <td colspan="1" valign="top">
+        Gran mercado desatendido en Lima (miles de edificios sin monitoreo digital).<br>
+        Creciente déficit hídrico que aumenta la urgencia del problema.<br>
+        Posibilidad de expandirse a otras ciudades del Perú con déficit hídrico.
+    </td>
+    <td colspan="1" valign="top">
+        Posibilidad de digitalizar su oferta añadiendo conectividad IoT a sus equipos.<br>
+        Creciente demanda de automatización en el sector construcción.
+    </td>
+    <td colspan="1" valign="top">
+        Crecimiento del mercado de edificios inteligentes en Latinoamérica.<br>
+        Posibilidad de desarrollar versiones más accesibles para el segmento residencial.
+    </td>
+    <td colspan="1" valign="top">
+        Expansión a mercados emergentes con problemas de gestión hídrica.<br>
+        Alianzas con municipios y empresas de agua en Latinoamérica.
+    </td>
+</tr>
+<tr>
+    <td colspan="1" valign="top">Debilidades</td>
+    <td colspan="1" valign="top">
+        Startup sin historial ni reputación en el mercado.<br>
+        Dependencia de la correcta instalación del sensor por parte del administrador.<br>
+        Recursos limitados para escalar rápidamente.
+    </td>
+    <td colspan="1" valign="top">
+        Sin plataforma digital de visualización remota de datos.<br>
+        No ofrece historial de consumo ni reportes de gasto.<br>
+        Costo de instalación elevado para edificios residenciales pequeños.
+    </td>
+    <td colspan="1" valign="top">
+        Costo de implementación muy elevado, inaccesible para el segmento residencial.<br>
+        Requiere técnicos especializados para instalación y mantenimiento.<br>
+        Solución sobredimensionada para edificios de menos de 40 departamentos.
+    </td>
+    <td colspan="1" valign="top">
+        No disponible en el mercado peruano.<br>
+        Sin versión en español adaptada al contexto local.<br>
+        Modelo orientado a grandes operadores, no a administradores residenciales.
+    </td>
+</tr>
+<tr>
+    <td colspan="1" valign="top">Amenazas</td>
+    <td colspan="1" valign="top">
+        Riesgo de que competidores existentes desarrollen una versión accesible para el segmento residencial.<br>
+        Resistencia al cambio tecnológico por parte de administradores tradicionales.<br>
+        Riesgo de ciberataques o fallas en la conectividad del sensor.
+    </td>
+    <td colspan="1" valign="top">
+        Aparición de startups IoT que digitalicen el monitoreo de cisternas a bajo costo.<br>
+        Cambios regulatorios en el sector de automatización eléctrica.
+    </td>
+    <td colspan="1" valign="top">
+        Competencia de startups más ágiles y económicas en el segmento residencial.<br>
+        Cambios en las prioridades de inversión de grandes corporaciones.
+    </td>
+    <td colspan="1" valign="top">
+        Regulaciones de privacidad de datos que afecten el modelo SaaS.<br>
+        Competencia de soluciones locales más económicas en mercados emergentes.
+    </td>
+</tr>
+</table>
+
+
 ### 2.1.2. Estrategias y tácticas frente a competidores.
-    
+
+- Nos enfocaremos en el nicho específico de edificios residenciales de Lima con suministro irregular de agua, un segmento completamente desatendido por los competidores actuales, lo que nos permite ofrecer una solución a medida sin enfrentar competencia directa en el corto plazo.
+- Mantendremos un precio de suscripción mensual accesible que esté claramente por debajo del costo de una recarga innecesaria de camión cisterna, haciendo que el valor económico del producto sea evidente e inmediato para el administrador.
+- Ofreceremos una experiencia de instalación y uso sin necesidad de conocimientos técnicos, diferenciándonos de soluciones como Hidrosid o Siemens que requieren técnicos especializados y procesos de instalación complejos.
+- Desarrollaremos el módulo de transparencia financiera para juntas de propietarios como diferenciador exclusivo, ya que ningún competidor actual ofrece esta funcionalidad orientada al contexto de los edificios residenciales peruanos.
+- Implementaremos una estrategia de crecimiento basada en la recomendación entre administradores de edificios y la difusión en grupos de WhatsApp de juntas vecinales, aprovechando las redes de comunicación que este segmento ya utiliza activamente.
+
+
 ## 2.2. Entrevistas.
-    
+
 ### 2.2.1. Diseño de entrevistas.
+
+**Preguntas para administradores de edificios residenciales**
+
+- ¿Cuál es su nombre y edad?
+- ¿Hace cuánto tiempo administra este edificio? ¿Es usted vecino del mismo edificio o fue contratado externamente?
+- ¿Cuántos departamentos tiene el edificio que administra?
+- ¿Con qué frecuencia SEDAPAL corta o reduce el suministro de agua en su zona?
+- ¿Cómo sabe actualmente cuánta agua queda en la cisterna? ¿Qué método utiliza para medirlo?
+- ¿Con qué frecuencia solicita el servicio de camión cisterna al mes? ¿Cuánto paga aproximadamente por cada recarga?
+- ¿Ha tenido episodios en los que el edificio se quedó sin agua antes de que usted pudiera llamar al camión cisterna? ¿Qué pasó?
+- ¿Ha llamado alguna vez al camión cisterna y al llegar había agua suficiente todavía? ¿Cómo se sintió al respecto?
+- ¿Cómo registra actualmente los gastos en agua del edificio? ¿Lleva algún tipo de historial o registro?
+- ¿Ha tenido conflictos con los propietarios o inquilinos por temas relacionados al suministro de agua? ¿Cómo los resolvió?
+- ¿La junta de propietarios le pide rendir cuentas sobre el gasto en agua? ¿Cómo lo hace actualmente?
+- ¿Estaría dispuesto a instalar un sensor en la cisterna si eso le permitiera saber en todo momento cuánta agua queda y recibir alertas automáticas?
+- ¿Pagaría una suscripción mensual por un servicio así? ¿Cuánto consideraría un precio justo?
+
+---
+
+**Preguntas para propietarios e inquilinos de edificios residenciales**
+
+- ¿Cuál es su nombre y edad?
+- ¿En qué distrito vive? ¿Hace cuánto tiempo reside en ese edificio?
+- ¿Con qué frecuencia su edificio se queda sin agua?
+- ¿Cómo se entera de que no habrá agua en el edificio? ¿Le avisan con anticipación?
+- ¿Qué hace cuando el edificio se queda sin agua? ¿Cómo le afecta en su día a día?
+- ¿Sabe cuánto paga el edificio mensualmente por las recargas de camión cisterna?
+- ¿El administrador de su edificio le informa sobre los gastos en agua en las juntas de propietarios?
+- ¿Confía en que el administrador gestiona bien el presupuesto destinado al agua? ¿Por qué?
+- ¿Ha tenido conflictos con el administrador o con otros vecinos por temas relacionados al suministro de agua?
+- ¿Le gustaría tener acceso a una aplicación donde pueda ver en tiempo real cuánta agua queda en la cisterna de su edificio y cuánto se gasta mensualmente en recargas?
+- ¿Qué tan importante es para usted tener transparencia sobre los gastos comunes de su edificio?
+
     
 ### 2.2.2. Registro de entrevistas.
     
