@@ -160,7 +160,7 @@ Nos encargamos de brindar una solución tecnológica accesible para la gestión 
     <img src="logo_startup.png" alt="logo" style="margin-bottom: 5px;" width="500"/>
 </div>
 
-- **Nombre:** TankIQ
+- **Nombre:** HydroTeam
 - **Rubro:** Desarrollo de software / IoT
 - **Visión:** Convertirnos en la plataforma de referencia para la gestión inteligente de recursos hídricos en edificios residenciales de Lima Metropolitana.
 - **Misión:** Brindar a los administradores y propietarios de edificios una herramienta accesible y confiable que les permita tomar decisiones informadas sobre la gestión del agua, reduciendo costos innecesarios y garantizando el suministro continuo.
