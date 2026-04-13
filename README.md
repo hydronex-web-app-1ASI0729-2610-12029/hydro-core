@@ -378,7 +378,10 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 
 **Preguntas para administradores de edificios residenciales**
 
-- ¿Cuál es su nombre y edad?
+- ¿Cuál es su nombre, edad y ocupación principal?
+- ¿Qué aplicaciones o marcas usa para organizar su trabajo o vida personal?
+- ¿A través de qué canales prefiere comunicarse con los vecinos (Email, grupos de WhatsApp, avisos físicos)?
+- ¿Qué dispositivos usa más en su día a día (iPhone, Android, Laptop)?
 - ¿Hace cuánto tiempo administra este edificio? ¿Es usted vecino del mismo edificio o fue contratado externamente?
 - ¿Cuántos departamentos tiene el edificio que administra?
 - ¿Con qué frecuencia SEDAPAL corta o reduce el suministro de agua en su zona?
@@ -396,8 +399,10 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 
 **Preguntas para propietarios e inquilinos de edificios residenciales**
 
-- ¿Cuál es su nombre y edad?
+- ¿Cuál es su nombre, edad y ocupación principal?
 - ¿En qué distrito vive? ¿Hace cuánto tiempo reside en ese edificio?
+- ¿Cuáles son sus marcas favoritas de tecnología o servicios que usa a diario?
+- ¿Qué redes sociales o canales digitales usa más para interactuar con su comunidad o servicios?
 - ¿Con qué frecuencia su edificio se queda sin agua?
 - ¿Cómo se entera de que no habrá agua en el edificio? ¿Le avisan con anticipación?
 - ¿Qué hace cuando el edificio se queda sin agua? ¿Cómo le afecta en su día a día?
