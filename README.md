@@ -10,8 +10,8 @@
 ### Docente: Hugo Allan Mori Paiva
 ### Informe de Trabajo Final
 
-###  G2
-###  Hydronex
+###  HydroTeam
+###  TankIQ
 
 
 <div align = "center">
