@@ -156,10 +156,6 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 Nos encargamos de brindar una solución tecnológica accesible para la gestión inteligente del suministro de agua en edificios residenciales que dependen de cisternas ante el servicio irregular de SEDAPAL. Nuestro objetivo es eliminar el desabastecimiento imprevisto y el gasto innecesario en recargas de agua, dos problemas que afectan cotidianamente a miles de edificios en Lima Metropolitana.
 
-<div align=center>
-    <img src="logo_startup.png" alt="logo" style="margin-bottom: 5px;" width="500"/>
-</div>
-
 - **Nombre:** HydroTeam
 - **Rubro:** Desarrollo de software / IoT
 - **Visión:** Convertirnos en la plataforma de referencia para la gestión inteligente de recursos hídricos en edificios residenciales de Lima Metropolitana.
