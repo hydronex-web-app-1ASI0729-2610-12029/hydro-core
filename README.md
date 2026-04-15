@@ -277,8 +277,7 @@ Se utiliza para indicar estado normal u óptimo del nivel de la cisterna, confir
 <div align="center">
     <img src="assets/colors/43A047color.png" alt="Verde Estado #43A047" width="600"/>
 </div>
- 
----
+
 
 **Tipografía**
 
@@ -298,13 +297,12 @@ A continuación se muestra la aplicación de los distintos pesos tipográficos:
     <img src="assets/typography/typographypeso.png" alt="Pesos tipográficos Inter" width="600"/>
 </div>
  
----
+
 
 **Espaciado**
 
 El sistema de espaciado de TankIQ está basado en múltiplos de 8px, siguiendo las convenciones de Material Design. Esto garantiza consistencia visual y facilita la implementación por parte del equipo de desarrollo. Los valores definidos van desde 4px para separaciones mínimas entre elementos muy cercanos, hasta 48px para la separación entre secciones principales del Landing Page. El espaciado estándar de padding interno en tarjetas y secciones es de 16px.
  
----
 
 **Tono de comunicación**
 
@@ -314,7 +312,6 @@ Las cuatro dimensiones del tono de TankIQ son las siguientes. Primero, **cercano
 
 Por ejemplo, cuando la cisterna llega a un nivel crítico, TankIQ no muestra "ERROR CRÍTICO: Nivel de agua insuficiente detectado", sino "Tu cisterna está al 15%. Es momento de pedir una recarga." Cuando el usuario abre el dashboard, en lugar de "Sistema de monitoreo IoT inicializado correctamente", TankIQ muestra "Todo en orden. Aquí está el estado de tu cisterna hoy."
  
----
 
 ### 4.1.2. Web Style Guidelines
 
@@ -343,7 +340,6 @@ Dado que el estado de la cisterna es el elemento central de la experiencia de us
 
 Se utiliza el sistema de grilla de 12 columnas de Angular Material. El contenido principal no supera los 1200px de ancho en pantallas grandes, centrado horizontalmente. El navbar tiene una altura fija de 64px en desktop y 56px en mobile. Los márgenes laterales del contenido son de 16px en mobile y 24px en tablet y desktop.
 
----
 
 ## 4.2. Information Architecture
 
@@ -357,7 +353,6 @@ Para la **Web Application**, el contenido se organiza de forma **jerárquica**, 
 
 El contenido de la Web Application se categoriza **por audiencia**, dado que los administradores y los propietarios tienen accesos diferenciados. El administrador accede al panel completo de monitoreo y gestión, mientras que los propietarios acceden a una vista simplificada de solo lectura con el historial de consumo y gastos.
  
----
 
 ### 4.2.2. Labeling Systems
 
@@ -369,7 +364,7 @@ En las **tarjetas de estado** se usan etiquetas directas como "Nivel actual", "D
 
 En el **Landing Page**, las secciones se etiquetan por beneficio y no por funcionalidad: "¿Cómo funciona?", "¿Cuánto puedes ahorrar?", "Para administradores" y "Para propietarios", reflejando el tono cercano y orientado al usuario definido en los style guidelines.
  
----
+
 
 ### 4.2.3. SEO Tags and Meta Tags
 
@@ -399,7 +394,7 @@ A continuación se definen los SEO Tags y Meta Tags para las principales página
 - **Meta Robots:**: noindex, nofollow
 - **Meta Author:**: HydroTeam
 
----
+
 
 ### 4.2.4. Searching Systems
 
@@ -411,7 +406,7 @@ El administrador puede filtrar el **historial de recargas** por rango de fechas 
 
 Los resultados de búsqueda se presentan en orden cronológico inverso por defecto (más reciente primero), dado que el usuario generalmente busca información reciente. Cuando una búsqueda no arroja resultados, la plataforma muestra un mensaje contextual que explica el motivo en lenguaje simple, por ejemplo: "No hay recargas registradas en este período. Puedes registrar una nueva recarga desde el botón de arriba."
  
----
+
 
 ### 4.2.5. Navigation Systems
 
@@ -453,7 +448,7 @@ El diseño de nuestros wireframes sigue la organización secuencial definida en 
 
 <div align="center"><img src="assets/wireframes/landingpagefooter.png" alt="Wireframe Landing Page Footer " width="700"/></div>
 
----
+
 ### 4.3.2. Landing Page Mock-up
 
 En esta sección se presenta el diseño de alta fidelidad del Landing Page de TankIQ con el Design System completo aplicado: paleta de colores institucional con celeste principal `#29ABE2`, tipografía Inter en sus variantes de peso, espaciado en múltiplos de 8px y componentes de Angular Material con el tema personalizado de HydroTeam. La experiencia visual es consistente con la Web Application, de modo que el usuario que llegue a la aplicación desde el Landing Page reconozca de inmediato la misma identidad visual.
@@ -535,15 +530,11 @@ Los Wireflow Diagrams muestran la secuencia de pantallas que recorre el usuario 
 
 <div align="center"><img src="assets/wireflows/wfmonitoreonivel.png" alt="Wireflow UG1 Monitorear nivel TankIQ" width="700"/></div>
 
----
-
 ***User Goal 2:*** Como administrador del edificio, quiero recibir alertas cuando el nivel de la cisterna sea crítico, para evitar quedarme sin agua y actuar antes de que ocurra un desabastecimiento.
 
 *Descripción:* Cuando el sensor detecta que el nivel bajó del umbral crítico configurado, aparece un badge de notificación en el ícono de campana del navbar. El administrador hace clic en el badge desde cualquier pantalla y es dirigido a la Pantalla 04 (Alertas), donde ve la alerta crítica destacada en rojo con su descripción y botón "Resolver".
 
 <div align="center"><img src="assets/wireflows/wfalertacritica.png" alt="Wireflow UG2 Alerta crítica TankIQ" width="700"/></div>
-
----
 
 ***User Goal 3:*** Como administrador del edificio, quiero visualizar una estimación de los días restantes de agua, para anticipar cuándo será necesario solicitar una recarga.
 
@@ -551,15 +542,11 @@ Los Wireflow Diagrams muestran la secuencia de pantallas que recorre el usuario 
 
 <div align="center"><img src="assets/wireflows/wfdiasrestantes.png" alt="Wireflow UG3 Días restantes TankIQ" width="700"/></div>
 
----
-
 ***User Goal 4:*** Como administrador del edificio, quiero contar con información clara sobre consumo y nivel actual, para decidir el momento adecuado para solicitar una recarga y evitar gastos innecesarios.
 
 *Descripción:* El administrador consulta el Dashboard (Pantalla 03) para ver el nivel actual y los días estimados. Luego navega al Historial (Pantalla 07) para revisar el consumo de las últimas semanas y comparar con meses anteriores. Con esa información decide si solicitar o posponer la recarga.
 
 <div align="center"><img src="assets/wireflows/wfdiasrestantes.png" alt="Wireflow UG4 Decidir cuándo pedir cisterna TankIQ" width="700"/></div>
-
----
 
 ***User Goal 5:*** Como administrador del edificio, quiero registrar cada recarga de agua realizada, para mantener un historial actualizado del consumo y abastecimiento.
 
@@ -567,15 +554,11 @@ Los Wireflow Diagrams muestran la secuencia de pantallas que recorre el usuario 
 
 <div align="center"><img src="assets/wireflows/wfdiasrestantes.png" alt="Wireflow UG5 Registrar recarga TankIQ" width="700"/></div>
 
----
-
 ***User Goal 6:*** Como administrador del edificio, quiero definir el porcentaje de nivel en el que se generan alertas, para adaptar las notificaciones a las necesidades específicas del edificio.
 
 *Descripción:* El administrador navega a la Pantalla 08 (Configuración) desde el sidebar. En la sección "Alertas" ajusta los sliders de "Alerta nivel bajo" y "Alerta nivel crítico" a los porcentajes deseados y presiona "Guardar cambios". Las alertas de la Pantalla 04 se dispararán a partir de ese momento con los nuevos umbrales.
 
 <div align="center"><img src="assets/wireflows/wfconfiguraralertas.png" alt="Wireflow UG6 Configurar umbrales TankIQ" width="700"/></div>
-
----
 
 **Segmento: Propietario / Inquilino**
 
@@ -585,23 +568,17 @@ Los Wireflow Diagrams muestran la secuencia de pantallas que recorre el usuario 
 
 <div align="center"><img src="assets/wireflows/wfverestadopropietario.png" alt="Wireflow UG7 Ver estado agua propietario TankIQ" width="700"/></div>
 
----
-
 ***User Goal 8:*** Como propietario o inquilino, quiero visualizar el consumo histórico de agua del edificio, para entender cómo se está utilizando el recurso a lo largo del tiempo.
 
 *Descripción:* Desde la Pantalla 09 (Vista propietario), el propietario observa el gráfico de consumo de las últimas 4 semanas. Puede cambiar el período del gráfico seleccionando entre semanas o meses para ver la evolución histórica del consumo.
 
 <div align="center"><img src="assets/wireflows/wfverestadopropietario.png" alt="Wireflow UG8 Consumo histórico propietario TankIQ" width="700"/></div>
 
----
-
 ***User Goal 9:*** Como propietario o inquilino, quiero revisar los gastos asociados a las recargas de agua, para comprender en qué se está invirtiendo el dinero del mantenimiento.
 
 *Descripción:* En la Pantalla 09 (Vista propietario), el propietario consulta la tarjeta de "Gastos del mes" con el desglose de recargas, proveedor y costo de cada una. Esta información le permite verificar que los cobros en la cuota de mantenimiento son coherentes con el uso real registrado.
 
 <div align="center"><img src="assets/wireflows/wfgastosagua.png" alt="Wireflow UG9 Ver gastos agua TankIQ" width="700"/></div>
-
----
 
 ***User Goal 10:*** Como propietario o inquilino, quiero recibir notificaciones sobre eventos relevantes del suministro de agua, para estar informado ante posibles problemas o cortes.
 
@@ -655,15 +632,11 @@ Los Wireflow Diagrams muestran la secuencia de pantallas que recorre el usuario 
 
 <div align="center"><img src="assets/wireflows/wfmkmonitoreonivel.png" alt="Wireflow UG1 Monitorear nivel TankIQ" width="700"/></div>
 
----
-
 ***User Goal 2:*** Como administrador del edificio, quiero recibir alertas cuando el nivel de la cisterna sea crítico, para evitar quedarme sin agua y actuar antes de que ocurra un desabastecimiento.
 
 *Descripción:* Cuando el sensor detecta que el nivel bajó del umbral crítico configurado, aparece un badge de notificación en el ícono de campana del navbar. El administrador hace clic en el badge desde cualquier pantalla y es dirigido a la Pantalla 04 (Alertas), donde ve la alerta crítica destacada en rojo con su descripción y botón "Resolver".
 
 <div align="center"><img src="assets/wireflows/wfmkalertacritica.png" alt="Wireflow UG2 Alerta crítica TankIQ" width="700"/></div>
-
----
 
 ***User Goal 3:*** Como administrador del edificio, quiero visualizar una estimación de los días restantes de agua, para anticipar cuándo será necesario solicitar una recarga.
 
@@ -671,15 +644,11 @@ Los Wireflow Diagrams muestran la secuencia de pantallas que recorre el usuario 
 
 <div align="center"><img src="assets/wireflows/wfmkdiasrestantes.png" alt="Wireflow UG3 Días restantes TankIQ" width="700"/></div>
 
----
-
 ***User Goal 4:*** Como administrador del edificio, quiero contar con información clara sobre consumo y nivel actual, para decidir el momento adecuado para solicitar una recarga y evitar gastos innecesarios.
 
 *Descripción:* El administrador consulta el Dashboard (Pantalla 03) para ver el nivel actual y los días estimados. Luego navega al Historial (Pantalla 07) para revisar el consumo de las últimas semanas y comparar con meses anteriores. Con esa información decide si solicitar o posponer la recarga.
 
 <div align="center"><img src="assets/wireflows/wfmkdiasrestantes.png" alt="Wireflow UG4 Decidir cuándo pedir cisterna TankIQ" width="700"/></div>
-
----
 
 ***User Goal 5:*** Como administrador del edificio, quiero registrar cada recarga de agua realizada, para mantener un historial actualizado del consumo y abastecimiento.
 
@@ -687,15 +656,11 @@ Los Wireflow Diagrams muestran la secuencia de pantallas que recorre el usuario 
 
 <div align="center"><img src="assets/wireflows/wfmkdiasrestantes.png" alt="Wireflow UG5 Registrar recarga TankIQ" width="700"/></div>
 
----
-
 ***User Goal 6:*** Como administrador del edificio, quiero definir el porcentaje de nivel en el que se generan alertas, para adaptar las notificaciones a las necesidades específicas del edificio.
 
 *Descripción:* El administrador navega a la Pantalla 08 (Configuración) desde el sidebar. En la sección "Alertas" ajusta los sliders de "Alerta nivel bajo" y "Alerta nivel crítico" a los porcentajes deseados y presiona "Guardar cambios". Las alertas de la Pantalla 04 se dispararán a partir de ese momento con los nuevos umbrales.
 
 <div align="center"><img src="assets/wireflows/wfmkconfiguraralertas.png" alt="Wireflow UG6 Configurar umbrales TankIQ" width="700"/></div>
-
----
 
 **Segmento: Propietario / Inquilino**
 
@@ -705,23 +670,17 @@ Los Wireflow Diagrams muestran la secuencia de pantallas que recorre el usuario 
 
 <div align="center"><img src="assets/wireflows/wfmkverestadopropietario.png" alt="Wireflow UG7 Ver estado agua propietario TankIQ" width="700"/></div>
 
----
-
 ***User Goal 8:*** Como propietario o inquilino, quiero visualizar el consumo histórico de agua del edificio, para entender cómo se está utilizando el recurso a lo largo del tiempo.
 
 *Descripción:* Desde la Pantalla 09 (Vista propietario), el propietario observa el gráfico de consumo de las últimas 4 semanas. Puede cambiar el período del gráfico seleccionando entre semanas o meses para ver la evolución histórica del consumo.
 
 <div align="center"><img src="assets/wireflows/wfmkverestadopropietario.png" alt="Wireflow UG8 Consumo histórico propietario TankIQ" width="700"/></div>
 
----
-
 ***User Goal 9:*** Como propietario o inquilino, quiero revisar los gastos asociados a las recargas de agua, para comprender en qué se está invirtiendo el dinero del mantenimiento.
 
 *Descripción:* En la Pantalla 09 (Vista propietario), el propietario consulta la tarjeta de "Gastos del mes" con el desglose de recargas, proveedor y costo de cada una. Esta información le permite verificar que los cobros en la cuota de mantenimiento son coherentes con el uso real registrado.
 
 <div align="center"><img src="assets/wireflows/wfmkgastosagua.png" alt="Wireflow UG9 Ver gastos agua TankIQ" width="700"/></div>
-
----
 
 ***User Goal 10:*** Como propietario o inquilino, quiero recibir notificaciones sobre eventos relevantes del suministro de agua, para estar informado ante posibles problemas o cortes.
 
