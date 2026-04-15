@@ -254,7 +254,7 @@ Color base para texto principal, encabezados y el fondo del navbar. Aporta serie
 Se utiliza para texto secundario, subtítulos y etiquetas. Mantiene la jerarquía visual sin competir con el texto principal.
 
 <div align="center">
-    <img src="assets/colors/5A5A5Acolor" alt="Gris Medio #5A5A5A" width="600"/>
+    <img src="assets/colors/5A5A5Acolor.png" alt="Gris Medio #5A5A5A" width="600"/>
 </div>
 
 **Gris Claro: `#F4F4F4`**
