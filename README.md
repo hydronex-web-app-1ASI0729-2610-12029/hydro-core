@@ -320,15 +320,6 @@ Por ejemplo, cuando la cisterna llega a un nivel crítico, TankIQ no muestra "ER
 
 En esta sección se definen los estándares visuales y de interacción para las interfaces web responsivas de TankIQ, aplicables tanto al Landing Page como a la Web Application.
 
-**Responsive Design**
-
-TankIQ adopta un enfoque **Mobile First**, diseñando primero para dispositivos móviles y escalando progresivamente hacia pantallas más grandes. Esta decisión responde a que el segmento principal de usuarios — administradores de edificios — consultará la plataforma frecuentemente desde su teléfono móvil, muchas veces en movimiento o en condiciones de uso rápido. Los breakpoints adoptados siguen el estándar de Angular Material: 600px para smartphones grandes, 960px para tablets, 1280px para laptops y desktops, y 1920px para monitores grandes.
-
-A continuación se muestra la propuesta de diseño responsivo aplicada a las principales vistas de TankIQ:
-
-<div align="center">
-    <img src="assets/web-style/responsive-design.png" alt="Diseño responsivo TankIQ" width="600"/>
-</div>
 
 **Componentes de UI**
 
@@ -386,27 +377,27 @@ A continuación se definen los SEO Tags y Meta Tags para las principales página
 
 **Landing Page**
 
-- **Title:** `TankIQ — Monitoreo inteligente de cisternas para edificios en Lima`
-- **Meta Description:** `TankIQ te avisa cuándo tu cisterna está por agotarse. Sensor IoT + plataforma web para administradores de edificios en Lima. Evita el desabastecimiento y reduce gastos innecesarios.`
-- **Meta Keywords:** `monitoreo cisterna, sensor cisterna Lima, gestión agua edificios, alerta cisterna, administrador edificio Lima, SEDAPAL suministro irregular`
-- **Meta Author:** `HydroTeam`
-- **Meta Robots:** `index, follow`
-- **Open Graph Title:** `TankIQ — Nunca más te quedes sin agua`
-- **Open Graph Description:** `Plataforma IoT para monitorear el nivel de tu cisterna en tiempo real. Para administradores de edificios en Lima.`
+- **Title:** : TankIQ — Monitoreo inteligente de cisternas para edificios en Lima
+- **Meta Description:** TankIQ te avisa cuándo tu cisterna está por agotarse. Sensor IoT + plataforma web para administradores de edificios en Lima. Evita el desabastecimiento y reduce gastos innecesarios.
+- **Meta Keywords:**: monitoreo cisterna, sensor cisterna Lima, gestión agua edificios, alerta cisterna, administrador edificio Lima, SEDAPAL suministro irregular
+- **Meta Author:**: HydroTeam
+- **Meta Robots:**: index, follow
+- **Open Graph Title:**: TankIQ: Nunca más te quedes sin agua
+- **Open Graph Description:**: Plataforma IoT para monitorear el nivel de tu cisterna en tiempo real. Para administradores de edificios en Lima.
 
 **Web Application — Dashboard**
 
-- **Title:** `Dashboard · TankIQ`
-- **Meta Description:** `Monitorea el nivel de tu cisterna en tiempo real, recibe alertas automáticas y gestiona el historial de consumo de tu edificio.`
-- **Meta Robots:** `noindex, nofollow`
-- **Meta Author:** `HydroTeam`
+- **Title:**: Dashboard - TankIQ
+- **Meta Description:**: Monitorea el nivel de tu cisterna en tiempo real, recibe alertas automáticas y gestiona el historial de consumo de tu edificio
+- **Meta Robots:** `noindex, nofollow
+- **Meta Author:** `HydroTeam
 
 **Web Application — Reportes**
 
-- **Title:** `Reportes de consumo · TankIQ`
-- **Meta Description:** `Accede al historial de gastos en agua de tu edificio y genera reportes para tu junta de propietarios.`
-- **Meta Robots:** `noindex, nofollow`
-- **Meta Author:** `HydroTeam`
+- **Title:**: Reportes de consumo - TankIQ
+- **Meta Description:**: Accede al historial de gastos en agua de tu edificio y genera reportes para tu junta de propietarios.`
+- **Meta Robots:**: noindex, nofollow
+- **Meta Author:**: HydroTeam
 
 ---
 
