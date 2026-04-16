@@ -479,7 +479,7 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 </ul>
 
 
-<h3>Segmento 2: Propietarios e inquilinos</h3>
+<h3>Segmento 2: Residentes</h3>
 
 <ul>
   <li>
