@@ -545,9 +545,11 @@ Un user persona es una representación de un tipo de usuario con característica
 A continuación, se presentan las User Personas de nuestro proyecto:
 
 #####  Segmento 1: Administrador de edificio
+
 ![User Persona - Administrador](./assets/User-administrador_image.jpg)
 
 #####  Segmento 2: Residente
+
 ![User Persona - Residente](./assets/User-residente_image.jpg)
 
     
