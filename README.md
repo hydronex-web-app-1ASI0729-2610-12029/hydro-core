@@ -22,7 +22,7 @@
 |U202310436 |Espinar Martínez Gabriel Ferran|
 |U202410772 |Razuri Alvarez Matias Francesco| 
 |U202411282 |Montalvan Palomino Bruno Rodolfo| 
-|U202414840 |Oroscco Ttamiña Juan Carlos| 
+|U202414840 |Orosco Ttamiña Juan Carlos| 
 |U202318951 |Guevara Serrano Diego Ismael| 
 
 </div>
