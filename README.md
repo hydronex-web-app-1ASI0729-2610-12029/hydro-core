@@ -692,18 +692,64 @@ Los Wireflow Diagrams muestran la secuencia de pantallas que recorre el usuario 
 ## 4.5. Web Applications Prototyping.
    
 ## 4.6. Domain-Driven Software Architecture.
-    
+
+Para modelar la arquitectura de TankIQ se aplicó Domain-Driven Design, partiendo de los resultados del Big Picture Event Storming para identificar Bounded Contexts, aggregates, eventos y comandos. A partir de ese modelo se derivaron los diagramas de arquitectura utilizando el C4 Model.
+
 ### 4.6.1. Design-Level EventStorming.
+
+El equipo realizó una sesión de Design-Level Event Storming de aproximadamente 90 minutos para refinar el modelo de dominio. Se identificaron Domain Events (naranja), Commands (azul), Aggregates (amarillo), Policies (lila), Read Models (verde) y External Systems (rosa). Los flujos modelados fueron: monitoreo de cisterna, gestión de recargas, activación de suscripción y generación de reportes. A partir de esta sesión se identificaron seis Bounded Contexts: Monitoring Context (núcleo, aggregate raíz Tank), Refill Management Context, Reporting Context, Subscription & Billing Context, Identity & Access Management Context y Notification Context.
+
+<div align="center">
+  <img src="assets/architecture/design-level-event-storming.png" alt="Design-Level Event Storming — TankIQ" width="700"/>
+</div>
     
 ### 4.6.2. Software Architecture Context Diagram.
+
+El Context Diagram muestra a TankIQ como sistema central rodeado por sus actores y sistemas externos, correspondiendo al nivel 1 del C4 Model. Los actores son el Administrador de Edificio y el Propietario / Inquilino. Los sistemas externos son el Sensor IoT Ultrasónico (simula lecturas vía HTTP en el contexto académico) y el Servicio de Correo SendGrid / SMTP (envío de alertas automáticas ante niveles críticos).
+
+<div align="center">
+  <img src="assets/architecture/c4-context-diagram.png" alt="C4 Model — Context Diagram TankIQ" width="700"/>
+</div>
     
 ### 4.6.3. Software Architecture Container Diagrams.
+
+El Container Diagram corresponde al nivel 2 del C4 Model y muestra los contenedores de TankIQ con sus tecnologías y comunicaciones. Los contenedores son: Landing Page (HTML/CSS/JS estático), Web Application (Angular SPA, comunica con la API vía HTTPS/JSON), RESTful API (Spring Boot, implementa todos los Bounded Contexts), Base de Datos, IoT Simulator (envía lecturas HTTP al API) y SendGrid / SMTP (sistema externo para notificaciones por correo).
+
+<div align="center">
+  <img src="assets/architecture/c4-container-diagram.png" alt="C4 Model — Container Diagram TankIQ" width="700"/>
+</div>
     
 ### 4.6.4. Software Architecture Components Diagrams.
+
+Los Component Diagrams corresponden al nivel 3 del C4 Model y descomponen los dos contenedores con lógica interna compleja. Los demás contenedores (Landing Page, IoT Simulator y base de datos) no presentan componentes que ameriten este nivel de detalle.
+
+**Componentes del RESTful API (Spring Boot)**
+
+El API se organiza en seis componentes por Bounded Context: IAM Component (AuthController, UserService, JwtTokenProvider), Monitoring Component (TankController, TankService, AlertThresholdEvaluator), Refill Management Component** (RefillController, RefillService), Reporting Component (ReportController, ReportService), Subscription Component (SubscriptionController, SubscriptionService) y Notification Component (NotificationService, EmailGateway). Todos persisten datos en MySQL vía JPA/Hibernate.
+
+<div align="center">
+  <img src="assets/architecture/c4-component-diagram-backend.png" alt="C4 Model — Component Diagram RESTful API TankIQ" width="700"/>
+</div>
+
+**Componentes de la Web Application (Angular)**
+
+La Web Application se organiza en cinco módulos lazy-loaded: Auth Module (LoginComponent, AuthService, AuthGuard), Dashboard Module (TankStatusCardComponent, DaysProjectionComponent, AlertBannerComponent), Refill Module** (RefillListComponent, RefillFormComponent), Reports Module** (ReportGeneratorComponent) y Settings Module (AlertThresholdComponent). El Shared Module provee componentes transversales: NavbarComponent, SidebarComponent, interceptor HTTP para JWT y servicio i18n.
+
+<div align="center">
+  <img src="assets/architecture/c4-component-diagram-frontend.png" alt="C4 Model — Component Diagram Web Application TankIQ" width="700"/>
+</div>
     
 ## 4.7. Software Object-Oriented Design.
-    
+
+El diseño orientado a objetos de TankIQ se deriva directamente de los Bounded Contexts identificados en el proceso de DDD. Los diagramas de clases presentados a continuación describen las entidades, interfaces, enumeraciones y relaciones de cada contexto del dominio, con el nivel de detalle necesario para guiar la implementación en Spring Boot.
+
 ### 4.7.1. Class Diagrams.
+
+El Class Diagram de TankIQ está organizado por Bounded Context e incluye clases, interfaces, enumeraciones, atributos y métodos con scope (+, -, #), y relaciones con nombre, dirección y multiplicidad. El IAM Context modela User con herencia hacia Administrator y Resident, todos implementando IAuthenticable. El Building Monitoring Context relaciona Building, Cistern (implementa ITankMonitor), Sensor y WaterLevelReading. El Water Management Context gestiona Refill y WaterConsumption. El Alerting Context define Alert y EmailNotification (implementa INotifiable). El Subscription Context agrupa Plan, Subscription y Report.
+
+<div align="center">
+  <img src="assets/class-diagrams/tankiq-class-diagram.png" alt="Class Diagram — TankIQ" width="800"/>
+</div>
     
 ## 4.8. Database Design.
     
