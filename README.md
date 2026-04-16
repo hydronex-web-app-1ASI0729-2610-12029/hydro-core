@@ -540,11 +540,15 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
     
 ### 2.3.1. User Personas.
 
+Un user persona es una representación de un tipo de usuario con características y necesidades similares. Sirve para entender mejor qué problemas tiene y cómo interactúa con un producto o servicio. Se basa en información real de entrevistas, pero se resume de forma sencilla para apoyar el diseño.
+
+A continuación, se presentan las User Personas de nuestro proyecto:
+
 #####  Segmento 1: Administrador de edificio
-![User Persona](./assets/User-administrador.pdf)
+![User Persona - Administrador](./assets/User-administrador_image.jpg)
 
 #####  Segmento 2: Residente
-![User Persona](https://github.com/hydronex-web-app-1ASI0729-2610-12029/hydro-core/blob/feature/chapter-2/assets/User-residente.pdf)
+![User Persona - Residente](./assets/User-residente_image.jpg)
 
     
 ### 2.3.2. User Task Matrix.
