@@ -416,6 +416,27 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
     
 ### 2.2.2. Registro de entrevistas.
 
+##### Segmento objetivo #1 Administradores de edificio residencial
+
+#### Entrevista 1:
+
+![Interview-Henry-Salcedo.png](./assets/Interview-Henry-Salcedo.png)
+
+- **Nombres y apellidos:** Henry Paul Salinas Vásquez  
+- **Edad:** 43  
+- **Distrito:** Comas 
+
+
+- **Inicio:** 0:00  
+- **Duración:** 7:19  
+- **URL:** 
+- **Resumen:** Henry Paul Salinas Vásquez, de 43 años, se desempeña como administrador de un edificio residencial de aproximadamente 24 departamentos, donde fue contratado para gestionar las operaciones y servicios del inmueble. Actualmente utiliza herramientas como Excel, correo electrónico y WhatsApp para organizar información, comunicarse con los vecinos y llevar el control de gastos, incluyendo el consumo de agua. La supervisión del nivel de agua en la cisterna se realiza mediante revisión física, lo que impide contar con información en tiempo real. Esto genera una gestión reactiva, especialmente durante los fines de semana, cuando suelen presentarse cortes o baja presión, obligándolo a solicitar camiones cisterna de manera urgente. Esta situación ha ocasionado episodios de desabastecimiento y conflictos con algunos vecinos, además de dificultar la toma de decisiones al no contar con datos precisos. Para rendir cuentas, realiza un cálculo mensual del consumo de agua, aunque reconoce que el proceso podría ser más eficiente. Henry considera que una solución que permita monitorear el nivel de agua en tiempo real y enviar alertas automáticas le ayudaría a ahorrar tiempo y mejorar la gestión, y estaría dispuesto a pagar entre 20 y 30 soles mensuales por una herramienta de este tipo.
+
+---
+
+
+
+
 <h3>Segmento 1: Administradores de edificios</h3>
 
 <ul>
