@@ -415,6 +415,70 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 
     
 ### 2.2.2. Registro de entrevistas.
+
+<h3>Segmento 1: Administradores de edificios</h3>
+
+<ul>
+  <li>
+    <strong>Rol principal:</strong><br>
+    100% gestiona el edificio, coordina el abastecimiento de agua y controla gastos.
+  </li>
+
+  <li>
+    <strong>Contexto:</strong><br>
+    Edificios de 6 a 40 departamentos en zonas con suministro irregular de agua.
+  </li>
+
+  <li>
+    <strong>Herramientas actuales:</strong>
+    <ul>
+      <li>100% usa métodos manuales</li>
+      <li>66% usa cuadernos o Excel</li>
+      <li>100% usa WhatsApp</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Problemas comunes:</strong>
+    <ul>
+      <li>100%: no saben con exactitud cuánta agua queda en la cisterna</li>
+      <li>66%: dificultad para llevar control de consumo y gastos</li>
+      <li>66%: falta de información en tiempo real</li>
+      <li>33%: compras innecesarias de agua</li>
+      <li>33%: riesgo de quedarse sin agua por mala estimación</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Frecuencia de revisión:</strong><br>
+    33% semanal · 33% reactiva · 33% sin frecuencia fija
+  </li>
+
+  <li>
+    <strong>Datos deseados automáticamente:</strong><br>
+    100% quiere ver nivel de agua, consumo, días restantes e historial.
+  </li>
+
+  <li>
+    <strong>Transparencia:</strong>
+    <ul>
+      <li>100% debe rendir cuentas</li>
+      <li>66% considera que su método actual no es claro</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Adopción de app:</strong><br>
+    100% dispuesto si es simple, económica y fácil de usar.
+  </li>
+
+  <li>
+    <strong>Presupuesto estimado:</strong><br>
+    S/ 20 – S/ 100 mensual por edificio
+  </li>
+</ul>
+
+
     
 ### 2.2.3. Análisis de entrevistas.
     
