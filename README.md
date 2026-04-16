@@ -541,7 +541,7 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 ### 2.3.1. User Personas.
 
 #####  Segmento 1: Administrador de edificio
-![User Persona](https://github.com/hydronex-web-app-1ASI0729-2610-12029/hydro-core/blob/feature/chapter-2/assets/User-administrador.pdf)
+![User Persona](./assets/User-administrador.pdf)
 
 #####  Segmento 2: Residente
 ![User Persona](https://github.com/hydronex-web-app-1ASI0729-2610-12029/hydro-core/blob/feature/chapter-2/assets/User-residente.pdf)
