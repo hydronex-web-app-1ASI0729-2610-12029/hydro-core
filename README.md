@@ -479,6 +479,60 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 </ul>
 
 
+<h3>Segmento 2: Propietarios e inquilinos</h3>
+
+<ul>
+  <li>
+    <strong>Perfil:</strong><br>
+    Residentes de edificios con problemas frecuentes de abastecimiento de agua.
+  </li>
+
+  <li>
+    <strong>Acceso a información:</strong>
+    <ul>
+      <li>100% depende del administrador</li>
+      <li>100% usa WhatsApp para comunicarse</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Problemas comunes:</strong>
+    <ul>
+      <li>100%: falta de aviso previo cuando no hay agua</li>
+      <li>66%: no saben cuánta agua queda realmente</li>
+      <li>66%: desconocimiento de los gastos en agua</li>
+      <li>33%: desconfianza hacia la administración</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Impacto:</strong><br>
+    Afecta actividades diarias como bañarse, cocinar y limpiar.
+  </li>
+
+  <li>
+    <strong>Transparencia:</strong>
+    <ul>
+      <li>100% considera importante conocer los gastos</li>
+      <li>66% no confía totalmente en la gestión</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Preferencias de la app:</strong><br>
+    Interfaz simple, clara y fácil de entender.
+  </li>
+
+  <li>
+    <strong>Alertas:</strong><br>
+    100% considera útil recibir notificaciones en tiempo real.
+  </li>
+
+  <li>
+    <strong>Interés en app:</strong><br>
+    100% quiere ver nivel de agua, gastos y recibir avisos.
+  </li>
+</ul>
     
 ### 2.2.3. Análisis de entrevistas.
     
