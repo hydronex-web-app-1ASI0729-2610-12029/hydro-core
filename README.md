@@ -539,6 +539,13 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 ## 2.3. Needfinding.
     
 ### 2.3.1. User Personas.
+
+#####  Segmento 1: Administrador de edificio
+![User Persona](C:\Users\juano\Projects\College\HydronexApp\hydro-core\assets\User-administrador.pdf)
+
+#####  Segmento 2: Residente
+![User Persona](C:\Users\juano\Projects\College\HydronexApp\hydro-core\assets\User-residente.pdf)
+
     
 ### 2.3.2. User Task Matrix.
 
