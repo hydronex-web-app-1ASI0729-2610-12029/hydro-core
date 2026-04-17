@@ -728,7 +728,7 @@ Los Component Diagrams corresponden al nivel 3 del C4 Model y descomponen los do
 El API se organiza en seis componentes por Bounded Context: IAM Component (AuthController, UserService, JwtTokenProvider), Monitoring Component (TankController, TankService, AlertThresholdEvaluator), Refill Management Component** (RefillController, RefillService), Reporting Component (ReportController, ReportService), Subscription Component (SubscriptionController, SubscriptionService) y Notification Component (NotificationService, EmailGateway). Todos persisten datos en MySQL vía JPA/Hibernate.
 
 <div align="center">
-  <img src="assets/architecture/c4-component-diagram-backend.png" alt="C4 Model — Component Diagram RESTful API TankIQ" width="700"/>
+  <img src="assets/architecture/c4-component-backend.png" alt="C4 Model — Component Diagram RESTful API TankIQ" width="700"/>
 </div>
 
 **Componentes de la Web Application (Angular)**
@@ -736,7 +736,7 @@ El API se organiza en seis componentes por Bounded Context: IAM Component (AuthC
 La Web Application se organiza en cinco módulos lazy-loaded: Auth Module (LoginComponent, AuthService, AuthGuard), Dashboard Module (TankStatusCardComponent, DaysProjectionComponent, AlertBannerComponent), Refill Module** (RefillListComponent, RefillFormComponent), Reports Module** (ReportGeneratorComponent) y Settings Module (AlertThresholdComponent). El Shared Module provee componentes transversales: NavbarComponent, SidebarComponent, interceptor HTTP para JWT y servicio i18n.
 
 <div align="center">
-  <img src="assets/architecture/c4-component-diagram-frontend.png" alt="C4 Model — Component Diagram Web Application TankIQ" width="700"/>
+  <img src="assets/architecture/c4-component-frontend.png" alt="C4 Model — Component Diagram Web Application TankIQ" width="700"/>
 </div>
     
 ## 4.7. Software Object-Oriented Design.
