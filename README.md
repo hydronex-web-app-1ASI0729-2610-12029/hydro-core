@@ -434,6 +434,22 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 
 ---
 
+##### Segmento objetivo #2 Propietarios e inquilinos de edificios residenciales
+
+#### Entrevista 2:
+
+![Entrevista_Inquilino_2.png](./assets/Entrevista_Inquilino_2.png)
+
+- **Nombres y apellidos:** Matías Mamani  
+- **Edad:** 23  
+- **Distrito:** San Juan de Lurigancho 
+
+
+- **Inicio:** 0:00  
+- **Duración:** 9:51  
+- **URL:** https://youtu.be/s_uc-kXXUTQ
+- **Resumen:** Matías Mamani, de 23 años, trabaja en un call center con horarios extendidos, lo que hace que pase poco tiempo en su hogar y valore especialmente la comodidad y el buen funcionamiento de los servicios básicos. Reside desde hace casi 4 años en un edificio en San Juan de Lurigancho, donde ha experimentado constantes problemas relacionados con el suministro de agua. El edificio presenta cortes de agua con una frecuencia aproximada de 3 a 4 veces al mes, muchas veces sin previo aviso, lo que genera desorganización en su rutina diaria, afectando actividades esenciales como aseo personal y puntualidad laboral. La comunicación sobre estos cortes se realiza principalmente a través de WhatsApp, aunque de forma tardía o insuficiente. Además, Matías señala una falta de transparencia por parte del administrador respecto a los gastos asociados al consumo de agua y recargas de camiones cisterna, lo que ha generado desconfianza generalizada entre los vecinos. Esta situación ha derivado en constantes reclamos y conflictos con la administración, sin soluciones concretas. Actualmente, no cuenta con información clara ni en tiempo real sobre el nivel de agua disponible ni sobre los gastos del edificio, lo que dificulta la planificación y la toma de decisiones. Ante este contexto, considera que una aplicación que permita monitorear el nivel de agua en la cisterna y visualizar los gastos mensuales sería de gran utilidad, ya que ayudaría a mejorar la organización entre vecinos y reducir la incertidumbre. Asimismo, resalta que la transparencia en los gastos comunes es un aspecto esencial para evitar conflictos y fomentar una convivencia más armoniosa dentro del edificio.
+
 
 
 
