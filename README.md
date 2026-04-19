@@ -467,6 +467,15 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 - **Resumen:** Tagwa, una estudiante de la UPC de 20 años que reside en Magdalena del Mar desde hace cuatro años, vive en un entorno donde los cortes de agua son poco comunes, ocurriendo aproximadamente solo dos veces al año y siendo comunicados con antelación vía WhatsApp. A pesar de esta previsibilidad, la falta de suministro afecta significativamente su rutina, especialmente en la preparación de alimentos y la higiene personal, lo que se suma a un desconocimiento sobre los costos específicos de las recargas de cisternas. Aunque no ha tenido conflictos con la administración, mantiene una actitud de cautela sobre la gestión del presupuesto y valora profundamente la honestidad en los gastos comunes, por lo que considera que una aplicación de monitoreo en tiempo real sería una solución innovadora y necesaria para garantizar la transparencia, optimizar el consumo y fortalecer la confianza entre los propietarios de su edificio.
 
 
+#### Entrevista 4:
+
+![Captura.png](./assets/Captura.png)
+
+- **Nombres y apellidos:** Giancarlo Aparicio
+- **Edad:** 24
+- **Distrito:** Comas
+- **URL:** [Entrevista](https://www.youtube.com/watch?v=X00zt8gJRis)
+- **Resumen:** Giancarlos Jesús Aparicio, un ingeniero eléctrico de 23 años que administra un edificio de 15 departamentos en Comas, describe una gestión crítica del agua marcada por la falta de medición individual, ya que el edificio solo cuenta con un medidor general de Sedapal. Esta carencia lo obliga a realizar repartos de costos poco equitativos basados únicamente en el número de personas, lo que genera conflictos constantes con residentes que, a pesar de estar fuera de casa todo el día, terminan pagando lo mismo que familias con mayor consumo. Además, relata que la falta de monitoreo técnico provocó que el tanque de reserva se agotara en solo dos horas durante los cortes de suministro en verano, evidenciando una vulnerabilidad operativa que lo lleva a validar con entusiasmo la implementación de un sistema de sensores con alertas automáticas. Giancarlos considera que una suscripción mensual no mayor a 100 soles sería un precio justo y aceptable para la junta de propietarios, ya que permitiría transparentar los gastos, economizar y, sobre todo, eliminar las tensiones vecinales derivadas de una distribución de costos subjetiva.
 
 <h3>Segmento 1: Administradores de edificios</h3>
 
