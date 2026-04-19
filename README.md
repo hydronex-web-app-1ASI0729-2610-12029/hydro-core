@@ -614,6 +614,23 @@ A continuación, se presentan las User Personas de nuestro proyecto:
 ## 2.4. Big Picture EventStorming.
     
 ## 2.5. Ubiquitous Language.
+
+El **Lenguaje Ubicuo** se refiere a un vocabulario común y compartido que emplean tanto los miembros del equipo de desarrollo como los stakeholders y usuarios finales. Su propósito es garantizar una comunicación clara y coherente sobre los conceptos, términos y procesos del dominio de gestión hídrica en el que se desarrolla **TankIQ**.
+
+### Glosario de Términos
+
+| **Término (Inglés / Español)** | **Definición** |
+|--------------------------------|----------------|
+| **Cistern Monitoring (Monitoreo de Cisterna)** | Supervisión continua de los depósitos de agua (subterráneos o elevados) mediante sensores de nivel. |
+| **Water Level Threshold (Umbral de Nivel)** | Valores críticos configurados (mínimo/máximo) que disparan acciones o notificaciones en el sistema. |
+| **Real-time Telemetry (Telemetría en Tiempo Real)** | Transmisión constante de datos desde el hardware IoT hacia la plataforma sobre el estado del recurso. |
+| **Consumption Analytics (Analítica de Consumo)** | Procesamiento de datos históricos para identificar patrones de uso y detectar posibles fugas o anomalías. |
+| **Sensor Calibration (Calibración de Sensor)** | Ajuste técnico de los dispositivos (ultrasónicos/presión) para asegurar una lectura precisa según la geometría del tanque. |
+| **Critical Level Alert (Alerta de Nivel Crítico)** | Notificación automática enviada cuando el volumen de agua está por debajo de la reserva operativa de seguridad. |
+| **Flow Rate Measurement (Medición de Caudal)** | Cálculo de la velocidad con la que el agua entra o sale del sistema para determinar la eficiencia de llenado. |
+| **IoT Node Status (Estado de Nodo IoT)** | Indicador de salud del hardware (conectividad, batería, señal) encargado de la lectura en campo. |
+| **Automated Supply Log (Registro de Suministro)** | Historial digital que documenta cuándo y cuánto agua ha ingresado al sistema (ej. descarga de camiones cisterna). |
+| **Predictive Maintenance (Mantenimiento Predictivo)** | Estimación de fallos en sensores o bombas basada en el comportamiento inusual de los datos recopilados. |
     
 # Capítulo III: Requirements Specification
   
