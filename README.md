@@ -469,7 +469,7 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 
 #### Entrevista 4:
 
-![Captura.png](./assets/Captura.png)
+![Captura.png](./assets/Captura.PNG)
 
 - **Nombres y apellidos:** Giancarlo Aparicio
 - **Edad:** 24
