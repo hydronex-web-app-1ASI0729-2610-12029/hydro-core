@@ -432,11 +432,24 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 - **URL:** 
 - **Resumen:** Henry Paul Salinas Vásquez, de 43 años, se desempeña como administrador de un edificio residencial de aproximadamente 24 departamentos, donde fue contratado para gestionar las operaciones y servicios del inmueble. Actualmente utiliza herramientas como Excel, correo electrónico y WhatsApp para organizar información, comunicarse con los vecinos y llevar el control de gastos, incluyendo el consumo de agua. La supervisión del nivel de agua en la cisterna se realiza mediante revisión física, lo que impide contar con información en tiempo real. Esto genera una gestión reactiva, especialmente durante los fines de semana, cuando suelen presentarse cortes o baja presión, obligándolo a solicitar camiones cisterna de manera urgente. Esta situación ha ocasionado episodios de desabastecimiento y conflictos con algunos vecinos, además de dificultar la toma de decisiones al no contar con datos precisos. Para rendir cuentas, realiza un cálculo mensual del consumo de agua, aunque reconoce que el proceso podría ser más eficiente. Henry considera que una solución que permita monitorear el nivel de agua en tiempo real y enviar alertas automáticas le ayudaría a ahorrar tiempo y mejorar la gestión, y estaría dispuesto a pagar entre 20 y 30 soles mensuales por una herramienta de este tipo.
 
+#### Entrevista 2:
+
+![Captura.png](./assets/Captura.PNG)
+
+- **Nombres y apellidos:** Giancarlo Aparicio
+- **Edad:** 24
+- **Distrito:** Comas
+- **Inicio:** 0:00  
+- **Duración:** 9:23  
+- **URL:** [Entrevista](https://www.youtube.com/watch?v=X00zt8gJRis)
+- **Resumen:** Giancarlos Jesús Aparicio, un ingeniero eléctrico de 23 años que administra un edificio de 15 departamentos en Comas, describe una gestión crítica del agua marcada por la falta de medición individual, ya que el edificio solo cuenta con un medidor general de Sedapal. Esta carencia lo obliga a realizar repartos de costos poco equitativos basados únicamente en el número de personas, lo que genera conflictos constantes con residentes que, a pesar de estar fuera de casa todo el día, terminan pagando lo mismo que familias con mayor consumo. Además, relata que la falta de monitoreo técnico provocó que el tanque de reserva se agotara en solo dos horas durante los cortes de suministro en verano, evidenciando una vulnerabilidad operativa que lo lleva a validar con entusiasmo la implementación de un sistema de sensores con alertas automáticas. Giancarlos considera que una suscripción mensual no mayor a 100 soles sería un precio justo y aceptable para la junta de propietarios, ya que permitiría transparentar los gastos, economizar y, sobre todo, eliminar las tensiones vecinales derivadas de una distribución de costos subjetiva.
+
+
 ---
 
 ##### Segmento objetivo #2 Propietarios e inquilinos de edificios residenciales
 
-#### Entrevista 2:
+#### Entrevista 1:
 
 ![Entrevista_Inquilino_2.png](./assets/Entrevista_Inquilino_2.png)
 
@@ -452,7 +465,7 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 
 
 
-#### Entrevista 3:
+#### Entrevista 2:
 
 ![entrevista2.png](./assets/entrevista2.png) 
 
@@ -466,16 +479,6 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 - **URL:** [entrevista](https://upcedupe-my.sharepoint.com/personal/u202310436_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202310436%5Fupc%5Fedu%5Fpe%2FDocuments%2Fapp%20web%2FVideo%20Project%203%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ebaf336ea%2Df84e%2D4cdf%2Dbaeb%2Da4dbbec7026a)
 - **Resumen:** Tagwa, una estudiante de la UPC de 20 años que reside en Magdalena del Mar desde hace cuatro años, vive en un entorno donde los cortes de agua son poco comunes, ocurriendo aproximadamente solo dos veces al año y siendo comunicados con antelación vía WhatsApp. A pesar de esta previsibilidad, la falta de suministro afecta significativamente su rutina, especialmente en la preparación de alimentos y la higiene personal, lo que se suma a un desconocimiento sobre los costos específicos de las recargas de cisternas. Aunque no ha tenido conflictos con la administración, mantiene una actitud de cautela sobre la gestión del presupuesto y valora profundamente la honestidad en los gastos comunes, por lo que considera que una aplicación de monitoreo en tiempo real sería una solución innovadora y necesaria para garantizar la transparencia, optimizar el consumo y fortalecer la confianza entre los propietarios de su edificio.
 
-
-#### Entrevista 4:
-
-![Captura.png](./assets/Captura.PNG)
-
-- **Nombres y apellidos:** Giancarlo Aparicio
-- **Edad:** 24
-- **Distrito:** Comas
-- **URL:** [Entrevista](https://www.youtube.com/watch?v=X00zt8gJRis)
-- **Resumen:** Giancarlos Jesús Aparicio, un ingeniero eléctrico de 23 años que administra un edificio de 15 departamentos en Comas, describe una gestión crítica del agua marcada por la falta de medición individual, ya que el edificio solo cuenta con un medidor general de Sedapal. Esta carencia lo obliga a realizar repartos de costos poco equitativos basados únicamente en el número de personas, lo que genera conflictos constantes con residentes que, a pesar de estar fuera de casa todo el día, terminan pagando lo mismo que familias con mayor consumo. Además, relata que la falta de monitoreo técnico provocó que el tanque de reserva se agotara en solo dos horas durante los cortes de suministro en verano, evidenciando una vulnerabilidad operativa que lo lleva a validar con entusiasmo la implementación de un sistema de sensores con alertas automáticas. Giancarlos considera que una suscripción mensual no mayor a 100 soles sería un precio justo y aceptable para la junta de propietarios, ya que permitiría transparentar los gastos, economizar y, sobre todo, eliminar las tensiones vecinales derivadas de una distribución de costos subjetiva.
 
 <h3>Segmento 1: Administradores de edificios</h3>
 
