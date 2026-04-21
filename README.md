@@ -22,7 +22,7 @@
 |U202310436 |Espinar Martínez Gabriel Ferran|
 |U202410772 |Razuri Alvarez Matias Francesco| 
 |U202411282 |Montalvan Palomino Bruno Rodolfo| 
-|U202414840 |Oroscco Ttamiña Juan Carlos| 
+|U202414840 |Orosco Ttamiña Juan Carlos| 
 |U202318951 |Guevara Serrano Diego Ismael| 
 
 </div>
@@ -277,8 +277,8 @@ En esta sección se presentan los requisitos funcionales del sistema TankIQ defi
 </tr>
 
 <tr>
-<td><b>Programador responsable:</b></td>
-<td colspan="3">Por definir</td>
+<td><b>Responsable:</b></td>
+<td colspan="3">Pendiente</td>
 </tr>
 
 <tr>
@@ -332,8 +332,8 @@ Entonces el sistema solicita completar la información
 </tr>
 
 <tr>
-<td><b>Programador responsable:</b></td>
-<td colspan="3">Por definir</td>
+<td><b>Responsable:</b></td>
+<td colspan="3">Pendiente</td>
 </tr>
 
 <tr>
@@ -361,6 +361,61 @@ Entonces el sistema muestra mensajes de validación<br><br>
 Dado que el formulario tiene campos vacíos<br>
 Cuando intenta enviar el registro<br>
 Entonces el sistema solicita completar la información
+
+</td>
+</tr>
+</table>
+
+### HU03 - Visualizar dashboard
+
+<table>
+<tr>
+<td><b>Número:</b></td>
+<td>HU03</td>
+<td><b>Usuario:</b></td>
+<td>Administrador</td>
+</tr>
+
+<tr>
+<td><b>Nombre HU:</b></td>
+<td colspan="3">Visualizar dashboard</td>
+</tr>
+
+<tr>
+<td><b>Prioridad en el negocio:</b></td>
+<td colspan="3">Alta</td>
+</tr>
+
+<tr>
+<td><b>Responsable:</b></td>
+<td colspan="3">Pendiente</td>
+</tr>
+
+<tr>
+<td><b>Descripción:</b></td>
+<td colspan="3">
+Como administrador, quiero visualizar el dashboard para conocer el estado de la cisterna
+</td>
+</tr>
+
+<tr>
+<td><b>Criterios de aceptación:</b></td>
+<td colspan="3">
+
+<b>Escenario 1: Visualización de datos</b><br>
+Dado que el administrador ha iniciado sesión<br>
+Cuando accede al dashboard<br>
+Entonces el sistema muestra indicadores de nivel, días estimados y estado<br><br>
+
+<b>Escenario 2: Datos disponibles</b><br>
+Dado que existen registros en el sistema<br>
+Cuando accede al dashboard<br>
+Entonces se muestran gráficos y métricas actualizadas<br><br>
+
+<b>Escenario 3: Sin datos</b><br>
+Dado que no existen datos suficientes<br>
+Cuando accede al dashboard<br>
+Entonces el sistema muestra un mensaje informativo
 
 </td>
 </tr>
