@@ -255,6 +255,116 @@ En esta sección se presentan los requisitos funcionales del sistema TankIQ defi
 | US17 | Ver gastos de agua | Como propietario, deseo ver gastos para entender costos de mantenimiento | Dado datos disponibles cuando consulta entonces muestra gastos | EP08 |
 | US18 | Recibir notificaciones | Como usuario, deseo recibir notificaciones para estar informado de eventos importantes | Dado evento relevante cuando ocurre entonces notifica | EP09 |
 | US19 | Ver notificaciones | Como usuario, deseo visualizar notificaciones para revisar eventos | Dado notificaciones cuando accede entonces se listan | EP09 |
+
+### HU01 - Iniciar sesión
+
+<table>
+<tr>
+<td><b>Número:</b></td>
+<td>HU01</td>
+<td><b>Usuario:</b></td>
+<td>Usuario</td>
+</tr>
+
+<tr>
+<td><b>Nombre HU:</b></td>
+<td colspan="3">Iniciar sesión</td>
+</tr>
+
+<tr>
+<td><b>Prioridad en el negocio:</b></td>
+<td colspan="3">Alta</td>
+</tr>
+
+<tr>
+<td><b>Programador responsable:</b></td>
+<td colspan="3">Por definir</td>
+</tr>
+
+<tr>
+<td><b>Descripción:</b></td>
+<td colspan="3">
+Como usuario, quiero iniciar sesión para acceder a la plataforma
+</td>
+</tr>
+
+<tr>
+<td><b>Criterios de aceptación:</b></td>
+<td colspan="3">
+
+<b>Escenario 1: Inicio de sesión exitoso</b><br>
+Dado que el usuario cuenta con credenciales válidas<br>
+Cuando ingresa su correo y contraseña correctamente<br>
+Entonces el sistema le permite acceder al dashboard<br><br>
+
+<b>Escenario 2: Credenciales incorrectas</b><br>
+Dado que el usuario ingresa datos incorrectos<br>
+Cuando intenta iniciar sesión<br>
+Entonces el sistema muestra un mensaje de error<br><br>
+
+<b>Escenario 3: Campos vacíos</b><br>
+Dado que el usuario no completa los campos obligatorios<br>
+Cuando intenta iniciar sesión<br>
+Entonces el sistema solicita completar la información
+
+</td>
+</tr>
+</table>
+
+### HU02 - Registrar administrador
+
+<table>
+<tr>
+<td><b>Número:</b></td>
+<td>HU02</td>
+<td><b>Usuario:</b></td>
+<td>Administrador</td>
+</tr>
+
+<tr>
+<td><b>Nombre HU:</b></td>
+<td colspan="3">Registrar administrador</td>
+</tr>
+
+<tr>
+<td><b>Prioridad en el negocio:</b></td>
+<td colspan="3">Alta</td>
+</tr>
+
+<tr>
+<td><b>Programador responsable:</b></td>
+<td colspan="3">Por definir</td>
+</tr>
+
+<tr>
+<td><b>Descripción:</b></td>
+<td colspan="3">
+Como administrador, quiero registrarme en la plataforma para gestionar el sistema
+</td>
+</tr>
+
+<tr>
+<td><b>Criterios de aceptación:</b></td>
+<td colspan="3">
+
+<b>Escenario 1: Registro exitoso</b><br>
+Dado que el administrador ingresa datos válidos<br>
+Cuando completa el formulario de registro<br>
+Entonces el sistema crea la cuenta correctamente<br><br>
+
+<b>Escenario 2: Datos inválidos</b><br>
+Dado que el administrador ingresa datos incorrectos<br>
+Cuando intenta registrarse<br>
+Entonces el sistema muestra mensajes de validación<br><br>
+
+<b>Escenario 3: Campos incompletos</b><br>
+Dado que el formulario tiene campos vacíos<br>
+Cuando intenta enviar el registro<br>
+Entonces el sistema solicita completar la información
+
+</td>
+</tr>
+</table>
    
 ## 3.2. Impact Mapping.
     
