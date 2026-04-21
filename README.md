@@ -231,6 +231,30 @@ En esta sección se presentan los requisitos funcionales del sistema TankIQ defi
 | EP07 | Configuración del sistema | Permite configurar parámetros del sistema como umbrales de alertas y datos del edificio |
 | EP08 | Visualización para propietarios | Permite a propietarios e inquilinos acceder a información relevante del estado de la cisterna en modo solo lectura |
 | EP09 | Notificaciones | Permite enviar y visualizar notificaciones sobre eventos relevantes del suministro de agua |
+
+#### User Stories
+
+| ID | Título | Descripción | Criterios de aceptación | Épica |
+|----|--------|------------|--------------------------|----------|
+| US01 | Iniciar sesión | Como usuario, deseo iniciar sesión para acceder a la plataforma | Dado credenciales válidas cuando inicia sesión entonces accede al sistema | EP01 |
+| US02 | Registrar administrador | Como administrador, deseo registrarme para gestionar el sistema | Dado datos válidos cuando se registra entonces el sistema crea la cuenta | EP01 |
+| US03 | Visualizar dashboard | Como administrador, deseo ver el dashboard para conocer el estado de la cisterna | Dado sesión iniciada cuando accede entonces visualiza indicadores | EP02 |
+| US04 | Ver nivel de agua | Como administrador, deseo visualizar el nivel de agua en tiempo real para tomar decisiones | Dado datos disponibles cuando accede entonces muestra nivel actualizado | EP02 |
+| US05 | Ver días estimados | Como administrador, deseo ver días restantes de agua para anticipar recargas | Dado datos históricos cuando consulta entonces muestra estimación | EP02 |
+| US06 | Recibir alerta crítica | Como administrador, deseo recibir alertas cuando el nivel sea crítico para actuar a tiempo | Dado nivel bajo cuando evalúa entonces genera alerta | EP03 |
+| US07 | Ver alertas | Como administrador, deseo visualizar alertas para gestionar riesgos | Dado alertas existentes cuando accede entonces se listan | EP03 |
+| US08 | Registrar recarga | Como administrador, deseo registrar recargas para actualizar el nivel de la cisterna | Dado datos válidos cuando registra entonces actualiza nivel | EP04 |
+| US09 | Ver historial | Como administrador, deseo ver el historial de consumo para análisis | Dado registros cuando consulta entonces muestra historial | EP05 |
+| US10 | Analizar consumo | Como administrador, deseo analizar consumo para tomar decisiones eficientes | Dado datos cuando consulta entonces muestra gráficos | EP05 |
+| US11 | Generar reportes | Como administrador, deseo generar reportes para la junta de propietarios | Dado datos cuando solicita entonces genera reporte | EP06 |
+| US12 | Descargar reportes | Como administrador, deseo descargar reportes para compartir información | Dado reporte generado cuando descarga entonces obtiene archivo | EP06 |
+| US13 | Configurar alertas | Como administrador, deseo configurar umbrales para personalizar alertas | Dado valores definidos cuando guarda entonces actualiza configuración | EP07 |
+| US14 | Gestionar datos del edificio | Como administrador, deseo configurar datos del edificio para mantener información actualizada | Dado datos válidos cuando guarda entonces actualiza sistema | EP07 |
+| US15 | Ver estado de cisterna | Como propietario, deseo ver el estado de la cisterna para conocer disponibilidad de agua | Dado acceso válido cuando consulta entonces muestra estado | EP08 |
+| US16 | Ver consumo histórico | Como propietario, deseo visualizar consumo para entender uso del recurso | Dado datos disponibles cuando consulta entonces muestra historial | EP08 |
+| US17 | Ver gastos de agua | Como propietario, deseo ver gastos para entender costos de mantenimiento | Dado datos disponibles cuando consulta entonces muestra gastos | EP08 |
+| US18 | Recibir notificaciones | Como usuario, deseo recibir notificaciones para estar informado de eventos importantes | Dado evento relevante cuando ocurre entonces notifica | EP09 |
+| US19 | Ver notificaciones | Como usuario, deseo visualizar notificaciones para revisar eventos | Dado notificaciones cuando accede entonces se listan | EP09 |
    
 ## 3.2. Impact Mapping.
     
