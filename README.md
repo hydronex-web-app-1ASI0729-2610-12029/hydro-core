@@ -424,6 +424,155 @@ Entonces el sistema muestra un mensaje informativo
 ## 3.2. Impact Mapping.
     
 ## 3.3. Product Backlog.
+
+Product Backlog para el sistema TankIQ orientado a la gestión inteligente del suministro de agua en edificios.
+
+<table>
+    <thead>
+        <tr>
+            <th># Orden</th>
+            <th>User Story ID</th>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Story Points (1/2/3/5/8)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>US01</td>
+            <td>Iniciar sesión</td>
+            <td>Como usuario, quiero iniciar sesión para acceder a la plataforma.</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>US02</td>
+            <td>Registrar administrador</td>
+            <td>Como administrador, quiero registrarme para gestionar el sistema.</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>US04</td>
+            <td>Ver nivel de agua</td>
+            <td>Como administrador, quiero visualizar el nivel de agua en tiempo real para tomar decisiones.</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>US05</td>
+            <td>Ver días estimados</td>
+            <td>Como administrador, quiero ver los días estimados de agua para anticipar recargas.</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>US03</td>
+            <td>Visualizar dashboard</td>
+            <td>Como administrador, quiero ver el dashboard para conocer el estado de la cisterna.</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>US06</td>
+            <td>Recibir alerta crítica</td>
+            <td>Como administrador, quiero recibir alertas para evitar desabastecimiento.</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>US07</td>
+            <td>Visualizar alertas</td>
+            <td>Como administrador, quiero visualizar alertas para gestionar riesgos.</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>US18</td>
+            <td>Recibir notificaciones</td>
+            <td>Como usuario, quiero recibir notificaciones para estar informado de eventos importantes.</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>US19</td>
+            <td>Visualizar notificaciones</td>
+            <td>Como usuario, quiero ver las notificaciones para revisar eventos.</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>US08</td>
+            <td>Registrar recarga</td>
+            <td>Como administrador, quiero registrar recargas de agua para actualizar el nivel de la cisterna.</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>US09</td>
+            <td>Ver historial</td>
+            <td>Como administrador, quiero ver el historial de consumo y recargas para análisis.</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>US10</td>
+            <td>Analizar consumo</td>
+            <td>Como administrador, quiero analizar el consumo mediante gráficos para tomar decisiones.</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>US11</td>
+            <td>Generar reportes</td>
+            <td>Como administrador, quiero generar reportes para la junta de propietarios.</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>US12</td>
+            <td>Descargar reportes</td>
+            <td>Como administrador, quiero descargar reportes para compartirlos.</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>US13</td>
+            <td>Configurar alertas</td>
+            <td>Como administrador, quiero configurar los umbrales de alerta para personalizar el sistema.</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>US14</td>
+            <td>Gestionar datos del edificio</td>
+            <td>Como administrador, quiero gestionar los datos del edificio para mantener información actualizada.</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>US15</td>
+            <td>Ver estado de cisterna</td>
+            <td>Como propietario, quiero visualizar el estado de la cisterna para conocer disponibilidad de agua.</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>US16</td>
+            <td>Ver consumo histórico</td>
+            <td>Como propietario, quiero visualizar el consumo histórico para entender el uso del recurso.</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>US17</td>
+            <td>Ver gastos de agua</td>
+            <td>Como propietario, quiero visualizar los gastos para entender los costos de mantenimiento.</td>
+            <td>3</td>
+        </tr>
+    </tbody>
+</table>
     
 # Capítulo IV: Product Design
    
