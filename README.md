@@ -215,6 +215,22 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 # Capítulo III: Requirements Specification
   
 ## 3.1. User Stories.
+
+En esta sección se presentan los requisitos funcionales del sistema TankIQ definidos mediante User Stories y agrupados en Epics a partir del análisis realizado en el Capítulo II.
+
+#### Epics
+
+| Epic ID | Título | Descripción |
+|--------|--------|------------|
+| EP01 | Autenticación y gestión de usuarios | Permite a los usuarios registrarse, iniciar sesión y acceder al sistema según su rol (administrador o propietario) |
+| EP02 | Monitoreo de cisterna | Permite visualizar el nivel actual de agua, indicadores de estado y métricas en tiempo real desde el dashboard |
+| EP03 | Gestión de alertas | Permite generar, visualizar y gestionar alertas relacionadas al nivel de la cisterna y eventos críticos |
+| EP04 | Gestión de recargas | Permite registrar recargas de agua para mantener actualizado el nivel de la cisterna y el historial |
+| EP05 | Historial y consumo | Permite visualizar el historial de consumo de agua y analizar el comportamiento a lo largo del tiempo |
+| EP06 | Reportes | Permite generar y consultar reportes de consumo y gastos para la toma de decisiones y presentación a la junta |
+| EP07 | Configuración del sistema | Permite configurar parámetros del sistema como umbrales de alertas y datos del edificio |
+| EP08 | Visualización para propietarios | Permite a propietarios e inquilinos acceder a información relevante del estado de la cisterna en modo solo lectura |
+| EP09 | Notificaciones | Permite enviar y visualizar notificaciones sobre eventos relevantes del suministro de agua |
    
 ## 3.2. Impact Mapping.
     
