@@ -690,6 +690,8 @@ Los Wireflow Diagrams muestran la secuencia de pantallas que recorre el usuario 
 
     
 ## 4.5. Web Applications Prototyping.
+
+<div align="center"><img src="assets/prototype/waproto.png" alt="Prototipo Web Application TankIQ" width="700"/></div>
    
 ## 4.6. Domain-Driven Software Architecture.
 
