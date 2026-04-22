@@ -281,22 +281,10 @@ Se utiliza para indicar estado normal u óptimo del nivel de la cisterna, confir
 
 **Tipografía**
 
-TankIQ utiliza **Inter** como tipografía principal para todos los productos digitales. Inter es una fuente sans-serif moderna diseñada específicamente para interfaces digitales, con excelente legibilidad en pantallas de distintos tamaños y en contextos de uso con poca luz, característica relevante dado que muchos administradores de edificios consultarán la plataforma desde sus teléfonos en condiciones variadas.
+Utilizamos **Inter** como tipografía principal para todos los productos digitales. Inter es una fuente sans-serif moderna diseñada específicamente para interfaces digitales, con excelente legibilidad en pantallas de distintos tamaños y en contextos de uso con poca luz, característica relevante dado que muchos administradores de edificios consultarán la plataforma desde sus teléfonos en condiciones variadas.
 
-A continuación se muestra la escala tipográfica aplicada en TankIQ:
-
-<div align="center">
-    <img src="assets/typography/typographyescala.png" alt="Escala tipográfica Inter" width="600"/>
-</div>
 
 Los títulos principales (H1) se presentan en Inter Bold a 32px, los títulos secundarios (H2) en Inter SemiBold a 24px y los títulos terciarios (H3) en Inter SemiBold a 20px. El cuerpo de texto utiliza Inter Regular a 14px, mientras que las etiquetas y textos de apoyo utilizan Inter Regular a 12px. Los botones utilizan Inter Medium a 14px para mantener legibilidad y diferenciación respecto al texto corrido.
-
-A continuación se muestra la aplicación de los distintos pesos tipográficos:
-
-<div align="center">
-    <img src="assets/typography/typographypeso.png" alt="Pesos tipográficos Inter" width="600"/>
-</div>
- 
 
 
 **Espaciado**
@@ -420,6 +408,8 @@ En la **Web Application**, la navegación principal se implementa mediante un **
 
 El diseño de nuestros wireframes sigue la organización secuencial definida en la sección 4.2.1 y el enfoque Mobile First establecido en 4.1.2.  Las secciones de nuestra Landing Page en orden son: navbar fijo con logotipo y CTA de sesión, Hero con titular principal y dos CTAs diferenciados por segmento (administrador y propietario), sección de problemas en tres columnas, sección "¿Cómo funciona?" con tres pasos numerados, beneficios diferenciados por segmento en dos columnas, sección de ahorro estimado con datos reales del mercado limeño, planes de suscripción y footer.
 
+**Desktop:**
+
 **Sección Hero:** Encabezado principal con navbar fijo, titular de beneficio central, dos call-to-action diferenciados por segmento y vista previa del dashboard de TankIQ.
 <div align="center"><img src="assets/wireframes/landingpagenavbar.png" alt="Wireframe Landing Page Navbar" width="700"/></div>
 <div align="center"><img src="assets/wireframes/landingpagehero.png" alt="Wireframe Landing Page Hero" width="700"/></div>
@@ -448,13 +438,43 @@ El diseño de nuestros wireframes sigue la organización secuencial definida en 
 
 <div align="center"><img src="assets/wireframes/landingpagefooter.png" alt="Wireframe Landing Page Footer " width="700"/></div>
 
+**Mobile:**
+
+**Sección Hero:** 
+<div align="center"><img src="assets/wireframes/landingmobilepagehero.png" alt="Wireframe Landing Page Mobile Hero" width="700"/></div>
+
+**Sección Problema:** 
+
+<div align="center"><img src="assets/wireframes/landingmobilepageproblema.png" alt="Wireframe Landing Page Mobile Problema" width="700"/></div>
+
+**Sección ¿Cómo funciona?:** 
+
+<div align="center"><img src="assets/wireframes/landingmobilepagefunciona.png" alt="Wireframe Landing Page Mobile Cómo funciona" width="700"/></div>
+
+**Sección Beneficios por segmento:** 
+
+<div align="center"><img src="assets/wireframes/landingmobilepagebeneficios.png" alt="Wireframe Landing Page Mobile Beneficios" width="700"/></div>
+
+**Sección ¿Cuánto puedes ahorrar?:** 
+
+<div align="center"><img src="assets/wireframes/landingmobilepageahorro.png" alt="Wireframe Landing Page Mobile Ahorro" width="700"/></div>
+
+**Sección Planes:** 
+
+<div align="center"><img src="assets/wireframes/landingmobilepageplanes.png" alt="Wireframe Landing Page Mobile Planes" width="700"/></div>
+
+**Footer:** 
+
+<div align="center"><img src="assets/wireframes/landingmobilepagefooter.png" alt="Wireframe Landing Page Mobile Footer " width="700"/></div>
+
 
 ### 4.3.2. Landing Page Mock-up
 
 En esta sección se presenta el diseño de alta fidelidad del Landing Page de TankIQ con el Design System completo aplicado: paleta de colores institucional con celeste principal `#29ABE2`, tipografía Inter en sus variantes de peso, espaciado en múltiplos de 8px y componentes de Angular Material con el tema personalizado de HydroTeam. La experiencia visual es consistente con la Web Application, de modo que el usuario que llegue a la aplicación desde el Landing Page reconozca de inmediato la misma identidad visual.
 
-**Sección Hero:** Titular principal en Inter Bold 700, subtítulo en Gris Medio `#5A5A5A`, botón primario celeste para administradores y botón secundario con borde celeste para propietarios. Fondo con degradado hacia `#e8f6fc` y preview funcional del dashboard.
+**Desktop:**
 
+**Sección Hero:** Titular principal en Inter Bold 700, subtítulo en Gris Medio `#5A5A5A`, botón primario celeste para administradores y botón secundario con borde celeste para propietarios. Fondo con degradado hacia `#e8f6fc` y preview funcional del dashboard.
 
 <div align="center"><img src="assets/mockups/landingmkhero.png" alt="Mock-up Landing Page Hero" width="700"/></div>
 
@@ -481,6 +501,36 @@ En esta sección se presenta el diseño de alta fidelidad del Landing Page de Ta
 **Footer:** Fondo Gris Oscuro `#2D2D2D`, texto en `rgba(255,255,255,.5)`, logo con variante blanca, íconos de redes sociales con borde sutil y enlaces en hover celeste.
 
 <div align="center"><img src="assets/mockups/landingmkfooter.png" alt="Mock-up Landing Page Footer" width="700"/></div>
+
+**Mobile:**
+
+**Sección Hero:** 
+
+<div align="center"><img src="assets/mockups/landingmkmobilehero.png" alt="Mock-up Mobile Landing Page Hero" width="700"/></div>
+
+**Sección Problema:** 
+
+<div align="center"><img src="assets/mockups/landingmkmobileproblema.png" alt="Mock-up Mobile Landing Page Problema" width="700"/></div>
+
+**Sección ¿Cómo funciona?:** 
+
+<div align="center"><img src="assets/mockups/landingmkmobilefunciona.png" alt="Mock-up Mobile Landing Page Cómo funciona" width="700"/></div>
+
+**Sección Beneficios por segmento:** 
+
+<div align="center"><img src="assets/mockups/landingmkmobilebeneficios.png" alt="Mock-up Mobile Landing Page Beneficios" width="700"/></div>
+
+**Sección ¿Cuánto puedes ahorrar?:** 
+
+<div align="center"><img src="assets/mockups/landingmkmobileahorro.png" alt="Mock-up Mobile Landing Page Ahorro" width="700"/></div>
+
+**Sección Planes:** 
+
+<div align="center"><img src="assets/mockups/landingmkmobileplanes.png" alt="Mock-up Mobile Landing Page Planes" width="700"/></div>
+
+**Footer:** 
+
+<div align="center"><img src="assets/mockups/landingmkmobilefooter.png" alt="Mock-up Mobile Landing Page Footer" width="700"/></div>
 
 
 ## 4.4. Web Applications UX/UI Design
