@@ -478,7 +478,8 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 - **Duración:** 3:18 
 - **URL:** [entrevista](https://upcedupe-my.sharepoint.com/personal/u202310436_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202310436%5Fupc%5Fedu%5Fpe%2FDocuments%2Fapp%20web%2FVideo%20Project%203%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ebaf336ea%2Df84e%2D4cdf%2Dbaeb%2Da4dbbec7026a)
 - **Resumen:** Tagwa, una estudiante de la UPC de 20 años que reside en Magdalena del Mar desde hace cuatro años, vive en un entorno donde los cortes de agua son poco comunes, ocurriendo aproximadamente solo dos veces al año y siendo comunicados con antelación vía WhatsApp. A pesar de esta previsibilidad, la falta de suministro afecta significativamente su rutina, especialmente en la preparación de alimentos y la higiene personal, lo que se suma a un desconocimiento sobre los costos específicos de las recargas de cisternas. Aunque no ha tenido conflictos con la administración, mantiene una actitud de cautela sobre la gestión del presupuesto y valora profundamente la honestidad en los gastos comunes, por lo que considera que una aplicación de monitoreo en tiempo real sería una solución innovadora y necesaria para garantizar la transparencia, optimizar el consumo y fortalecer la confianza entre los propietarios de su edificio.
-
+    
+### 2.2.3. Análisis de entrevistas.
 
 <h3>Segmento 1: Administradores de edificios</h3>
 
@@ -597,8 +598,6 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
     100% quiere ver nivel de agua, gastos y recibir avisos.
   </li>
 </ul>
-    
-### 2.2.3. Análisis de entrevistas.
     
 ## 2.3. Needfinding.
     
