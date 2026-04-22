@@ -478,6 +478,22 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 - **Duración:** 3:18 
 - **URL:** [entrevista](https://upcedupe-my.sharepoint.com/personal/u202310436_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202310436%5Fupc%5Fedu%5Fpe%2FDocuments%2Fapp%20web%2FVideo%20Project%203%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ebaf336ea%2Df84e%2D4cdf%2Dbaeb%2Da4dbbec7026a)
 - **Resumen:** Tagwa, una estudiante de la UPC de 20 años que reside en Magdalena del Mar desde hace cuatro años, vive en un entorno donde los cortes de agua son poco comunes, ocurriendo aproximadamente solo dos veces al año y siendo comunicados con antelación vía WhatsApp. A pesar de esta previsibilidad, la falta de suministro afecta significativamente su rutina, especialmente en la preparación de alimentos y la higiene personal, lo que se suma a un desconocimiento sobre los costos específicos de las recargas de cisternas. Aunque no ha tenido conflictos con la administración, mantiene una actitud de cautela sobre la gestión del presupuesto y valora profundamente la honestidad en los gastos comunes, por lo que considera que una aplicación de monitoreo en tiempo real sería una solución innovadora y necesaria para garantizar la transparencia, optimizar el consumo y fortalecer la confianza entre los propietarios de su edificio.
+
+
+
+#### Entrevista 3:
+
+![entrevista3.png](./assets/entrevista3.png) 
+
+- **Nombres y apellidos:** Manolo Tapia
+- **Edad:** 23  
+- **Distrito:** San Juan de Lurigancho
+
+
+- **Inicio:** 0:00  
+- **Duración:** 7:22 
+- **URL:** [entrevista](https://youtu.be/dVSnzXYoaSE)
+- **Resumen:** Manolo, es un joven de 23 años que trabaja en Plaza Vea y vive en San Juan de Lurigancho desde hace aproximadamente un año, enfrenta frecuentes cortes de agua en su edificio, los cuales ocurren entre dos y tres veces al mes y suelen ser comunicados tarde, generalmente cuando el problema ya ocurrió. Esta situación afecta su rutina diaria, dificultando actividades básicas como bañarse o cocinar, especialmente después del trabajo. Además, no cuenta con información clara sobre los gastos de recargas de agua, lo que genera desconfianza hacia la administración y conflictos entre vecinos. Por ello, considera muy importante la transparencia en los gastos comunes y ve con buenos ojos una aplicación que le permita conocer en tiempo real el nivel de agua y los costos asociados, para anticiparse a problemas y tener mayor claridad sobre el uso del dinero.
     
 ### 2.2.3. Análisis de entrevistas.
 
