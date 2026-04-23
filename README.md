@@ -281,17 +281,14 @@ Se utiliza para indicar estado normal u óptimo del nivel de la cisterna, confir
 
 **Tipografía**
 
-Utilizamos **Inter** como tipografía principal para todos los productos digitales. Inter es una fuente sans-serif moderna diseñada específicamente para interfaces digitales, con excelente legibilidad en pantallas de distintos tamaños y en contextos de uso con poca luz, característica relevante dado que muchos administradores de edificios consultarán la plataforma desde sus teléfonos en condiciones variadas.
-
+Utilizamos **Inter** como tipografía principal para todos los productos digitales. Inter es una fuente sans serif moderna diseñada específicamente para interfaces digitales, con excelente legibilidad en pantallas de distintos tamaños y en contextos de uso con poca luz, característica relevante dado que muchos administradores de edificios consultarán la plataforma desde sus teléfonos en condiciones variadas.
 
 Los títulos principales (H1) se presentan en Inter Bold a 32px, los títulos secundarios (H2) en Inter SemiBold a 24px y los títulos terciarios (H3) en Inter SemiBold a 20px. El cuerpo de texto utiliza Inter Regular a 14px, mientras que las etiquetas y textos de apoyo utilizan Inter Regular a 12px. Los botones utilizan Inter Medium a 14px para mantener legibilidad y diferenciación respecto al texto corrido.
-
 
 **Espaciado**
 
 El sistema de espaciado de TankIQ está basado en múltiplos de 8px, siguiendo las convenciones de Material Design. Esto garantiza consistencia visual y facilita la implementación por parte del equipo de desarrollo. Los valores definidos van desde 4px para separaciones mínimas entre elementos muy cercanos, hasta 48px para la separación entre secciones principales del Landing Page. El espaciado estándar de padding interno en tarjetas y secciones es de 16px.
  
-
 **Tono de comunicación**
 
 TankIQ adopta un tono **cercano y simple**, orientado a usuarios que no necesariamente tienen formación técnica. El lenguaje se dirige directamente al usuario de forma empática, usando términos del día a día del administrador de edificios en lugar de jerga tecnológica. Aunque el tono es cercano, se mantiene un registro profesional que transmite confianza y seriedad.
@@ -303,26 +300,16 @@ Por ejemplo, cuando la cisterna llega a un nivel crítico, TankIQ no muestra "ER
 
 ### 4.1.2. Web Style Guidelines
 
-En esta sección se definen los estándares visuales y de interacción para las interfaces web responsivas de TankIQ, aplicables tanto al Landing Page como a la Web Application.
-
-
 **Componentes de UI**
 
-TankIQ utiliza **Angular Material** como biblioteca de componentes de interfaz, adaptando su tema visual a la paleta de colores y tipografía definidas. Los botones primarios tienen fondo celeste (`#29ABE2`), texto blanco y border-radius de 8px. Los botones secundarios tienen borde celeste y fondo transparente. Las tarjetas utilizan fondo blanco con sombra suave y border-radius de 12px. Los campos de formulario siguen el estilo outlined de Angular Material con color de foco celeste. La iconografía proviene de la biblioteca **Material Icons** de Google en tamaño estándar de 24px.
+TankIQ utiliza **Angular Material** como biblioteca de componentes de interfaz, adaptando su tema visual a la paleta de colores y tipografía definidas. Los botones primarios tienen fondo celeste (`#29ABE2`), texto blanco y border radius de 8px. Los botones secundarios tienen borde celeste y fondo transparente. Las tarjetas utilizan fondo blanco con sombra suave y border radius de 12px. Los campos de formulario siguen el estilo outlined de Angular Material con color de foco celeste. La iconografía proviene de la biblioteca **Material Icons** de Google en tamaño estándar de 24px.
 
-A continuación se muestra la guía de componentes definida para TankIQ:
 
-<div align="center">
-    <img src="assets/web-style/components-guide.png" alt="Guía de componentes TankIQ" width="600"/>
-</div>
 
 **Indicadores de estado de cisterna**
 
 Dado que el estado de la cisterna es el elemento central de la experiencia de usuario, se define un sistema de indicadores visuales específico basado en el nivel de agua. Cuando el nivel se encuentra entre 60% y 100% se muestra en verde (`#43A047`) indicando nivel óptimo. Entre 30% y 59% se muestra en celeste (`#29ABE2`) indicando nivel normal. Entre 15% y 29% se muestra en naranja (`#FB8C00`) indicando nivel bajo. Por debajo del 15% se muestra en rojo (`#E53935`) indicando nivel crítico y disparando una alerta automática al administrador.
 
-<div align="center">
-    <img src="assets/web-style/status-indicators.png" alt="Indicadores de estado de cisterna" width="600"/>
-</div>
 
 **Layout y grilla**
 
@@ -335,7 +322,7 @@ Se utiliza el sistema de grilla de 12 columnas de Angular Material. El contenido
 
 La arquitectura de información de TankIQ organiza el contenido en función de los dos segmentos objetivo y sus necesidades específicas, diferenciando claramente entre la experiencia del administrador del edificio y la del propietario o inquilino.
 
-Para el **Landing Page**, el contenido se organiza de forma **secuencial**, guiando al visitante a través de un recorrido lógico que va desde la identificación del problema hasta la llamada a la acción. La secuencia es: presentación del problema (el dolor del desabastecimiento), propuesta de solución (TankIQ y el sensor IoT), beneficios concretos por segmento, demostración del producto y finalmente los planes de suscripción con los call-to-action diferenciados por segmento.
+Para el **Landing Page**, el contenido se organiza de forma **secuencial**, guiando al visitante a través de un recorrido lógico que va desde la identificación del problema hasta la llamada a la acción. La secuencia es: presentación del problema (el dolor del desabastecimiento), propuesta de solución (TankIQ y el sensor IoT), beneficios concretos por segmento, demostración del producto y finalmente los planes de suscripción con los call to action diferenciados por segmento.
 
 Para la **Web Application**, el contenido se organiza de forma **jerárquica**, con el dashboard principal como punto de entrada que concentra la información más crítica (nivel actual de la cisterna, proyección de días disponibles y alertas activas), desde el cual el usuario puede navegar hacia secciones de mayor detalle como el historial de consumo, el registro de recargas y los reportes para la junta de propietarios. Esta jerarquía responde directamente a la frecuencia de uso: el administrador consulta el nivel de la cisterna varias veces por semana, pero accede al historial de gastos principalmente al preparar la rendición de cuentas mensual.
 
@@ -356,11 +343,9 @@ En el **Landing Page**, las secciones se etiquetan por beneficio y no por funcio
 
 ### 4.2.3. SEO Tags and Meta Tags
 
-A continuación se definen los SEO Tags y Meta Tags para las principales páginas de TankIQ:
-
 **Landing Page**
 
-- **Title:** : TankIQ — Monitoreo inteligente de cisternas para edificios en Lima
+- **Title:** : TankIQ: Tu monitoreo inteligente de cisternas para edificios en Lima
 - **Meta Description:** TankIQ te avisa cuándo tu cisterna está por agotarse. Sensor IoT + plataforma web para administradores de edificios en Lima. Evita el desabastecimiento y reduce gastos innecesarios.
 - **Meta Keywords:**: monitoreo cisterna, sensor cisterna Lima, gestión agua edificios, alerta cisterna, administrador edificio Lima, SEDAPAL suministro irregular
 - **Meta Author:**: HydroTeam
@@ -368,19 +353,19 @@ A continuación se definen los SEO Tags y Meta Tags para las principales página
 - **Open Graph Title:**: TankIQ: Nunca más te quedes sin agua
 - **Open Graph Description:**: Plataforma IoT para monitorear el nivel de tu cisterna en tiempo real. Para administradores de edificios en Lima.
 
-**Web Application — Dashboard**
+**Web Application: Dashboard**
 
-- **Title:**: Dashboard - TankIQ
-- **Meta Description:**: Monitorea el nivel de tu cisterna en tiempo real, recibe alertas automáticas y gestiona el historial de consumo de tu edificio
-- **Meta Robots:** `noindex, nofollow
-- **Meta Author:** `HydroTeam
+- **Title:**: Dashboard: TankIQ
+- **Meta Description:** Monitorea el nivel de tu cisterna en tiempo real, recibe alertas automáticas y gestiona el historial de consumo de tu edificio
+- **Meta Robots:** noindex, nofollow
+- **Meta Author:** HydroTeam
 
-**Web Application — Reportes**
+**Web Application: Reportes**
 
-- **Title:**: Reportes de consumo - TankIQ
-- **Meta Description:**: Accede al historial de gastos en agua de tu edificio y genera reportes para tu junta de propietarios.`
-- **Meta Robots:**: noindex, nofollow
-- **Meta Author:**: HydroTeam
+- **Title:** Reportes de consumo 
+- **Meta Description:** Accede al historial de gastos en agua de tu edificio y genera reportes para tu junta de propietarios.
+- **Meta Robots:** noindex, nofollow
+- **Meta Author:** HydroTeam
 
 
 
@@ -400,7 +385,7 @@ Los resultados de búsqueda se presentan en orden cronológico inverso por defec
 
 El sistema de navegación de TankIQ está diseñado para minimizar la cantidad de pasos necesarios para que el administrador llegue a la información más crítica, reconociendo que muchas consultas se realizan de forma rápida desde el teléfono móvil.
 
-En el **Landing Page**, la navegación es lineal con un **navbar fijo** en la parte superior que contiene anclas a las secciones principales de la página. En mobile, el navbar colapsa en un menú hamburguesa. Los call-to-action de cada segmento en el Landing Page redirigen directamente a la vista correspondiente en la Web Application: el CTA del administrador lleva al formulario de registro de edificio, y el CTA del propietario lleva a la vista de acceso con código de edificio.
+En el **Landing Page**, la navegación es lineal con un **navbar fijo** en la parte superior que contiene anclas a las secciones principales de la página. En mobile, el navbar colapsa en un menú hamburguesa. Los call to action de cada segmento en el Landing Page redirigen directamente a la vista correspondiente en la Web Application: el CTA del administrador lleva al formulario de registro de edificio, y el CTA del propietario lleva a la vista de acceso con código de edificio.
 
 En la **Web Application**, la navegación principal se implementa mediante un **sidebar** en desktop y una **bottom navigation bar** en mobile, ambos con las cuatro secciones principales: Inicio, Historial, Reportes y Configuración. Esta decisión responde al patrón de uso móvil donde el pulgar alcanza fácilmente la barra inferior. Se utiliza **navegación por breadcrumbs** en las vistas de detalle para que el usuario siempre sepa en qué parte de la jerarquía se encuentra y pueda regresar sin usar el botón atrás del navegador.
 
@@ -410,7 +395,7 @@ El diseño de nuestros wireframes sigue la organización secuencial definida en 
 
 **Desktop:**
 
-**Sección Hero:** Encabezado principal con navbar fijo, titular de beneficio central, dos call-to-action diferenciados por segmento y vista previa del dashboard de TankIQ.
+**Sección Hero:** Encabezado principal con navbar fijo, titular de beneficio central, dos call to action diferenciados por segmento y vista previa del dashboard de TankIQ.
 <div align="center"><img src="assets/wireframes/landingpagenavbar.png" alt="Wireframe Landing Page Navbar" width="700"/></div>
 <div align="center"><img src="assets/wireframes/landingpagehero.png" alt="Wireframe Landing Page Hero" width="700"/></div>
 
@@ -422,11 +407,11 @@ El diseño de nuestros wireframes sigue la organización secuencial definida en 
 
 <div align="center"><img src="assets/wireframes/landingpagefunciona.png" alt="Wireframe Landing Page Cómo funciona" width="700"/></div>
 
-**Sección Beneficios por segmento:** Dos columnas diferenciadas, una para administradores de edificios y otra para propietarios e inquilinos, cada una con su respectivo call-to-action.
+**Sección Beneficios por segmento:** Dos columnas diferenciadas, una para administradores de edificios y otra para propietarios e inquilinos, cada una con su respectivo call to action.
 
 <div align="center"><img src="assets/wireframes/landingpagebeneficios.png" alt="Wireframe Landing Page Beneficios" width="700"/></div>
 
-**Sección ¿Cuánto puedes ahorrar?:** Bloque con tres métricas clave basadas en datos reales del mercado limeño y un call-to-action de conversión central.
+**Sección ¿Cuánto puedes ahorrar?:** Bloque con tres métricas clave basadas en datos reales del mercado limeño y un call to action de conversión central.
 
 <div align="center"><img src="assets/wireframes/landingpageahorro.png" alt="Wireframe Landing Page Ahorro" width="700"/></div>
 
@@ -640,7 +625,7 @@ Los Wireflow Diagrams muestran la secuencia de pantallas que recorre el usuario 
 
 ### 4.4.3. Web Applications Mock-ups
 
-Los mock-ups aplican el Design System completo de TankIQ sobre la estructura definida en los wireframes. El sidebar usa el Gris Oscuro `#2D2D2D` con ítem activo resaltado en celeste `#29ABE2` y borde derecho de 3px. Las tarjetas de estado llevan borde izquierdo de color según el indicador de estado. Los botones primarios tienen fondo celeste con border-radius de 8px. Los indicadores circulares SVG cambian de color según el nivel: verde `#43A047` (óptimo), celeste `#29ABE2` (normal), naranja `#FB8C00` (bajo), rojo `#E53935` (crítico).
+Los mock-ups aplican el Design System completo de TankIQ sobre la estructura definida en los wireframes. El sidebar usa el Gris Oscuro `#2D2D2D` con ítem activo resaltado en celeste `#29ABE2` y borde derecho de 3px. Las tarjetas de estado llevan borde izquierdo de color según el indicador de estado. Los botones primarios tienen fondo celeste con border radius de 8px. Los indicadores circulares SVG cambian de color según el nivel: verde `#43A047` (óptimo), celeste `#29ABE2` (normal), naranja `#FB8C00` (bajo), rojo `#E53935` (crítico).
 
 
 **Pantalla 01: Inicio de sesión**
