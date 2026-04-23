@@ -432,11 +432,24 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 - **URL:** 
 - **Resumen:** Henry Paul Salinas Vásquez, de 43 años, se desempeña como administrador de un edificio residencial de aproximadamente 24 departamentos, donde fue contratado para gestionar las operaciones y servicios del inmueble. Actualmente utiliza herramientas como Excel, correo electrónico y WhatsApp para organizar información, comunicarse con los vecinos y llevar el control de gastos, incluyendo el consumo de agua. La supervisión del nivel de agua en la cisterna se realiza mediante revisión física, lo que impide contar con información en tiempo real. Esto genera una gestión reactiva, especialmente durante los fines de semana, cuando suelen presentarse cortes o baja presión, obligándolo a solicitar camiones cisterna de manera urgente. Esta situación ha ocasionado episodios de desabastecimiento y conflictos con algunos vecinos, además de dificultar la toma de decisiones al no contar con datos precisos. Para rendir cuentas, realiza un cálculo mensual del consumo de agua, aunque reconoce que el proceso podría ser más eficiente. Henry considera que una solución que permita monitorear el nivel de agua en tiempo real y enviar alertas automáticas le ayudaría a ahorrar tiempo y mejorar la gestión, y estaría dispuesto a pagar entre 20 y 30 soles mensuales por una herramienta de este tipo.
 
+#### Entrevista 2:
+
+![Captura.png](./assets/Captura.PNG)
+
+- **Nombres y apellidos:** Giancarlo Aparicio
+- **Edad:** 24
+- **Distrito:** Comas
+- **Inicio:** 0:00  
+- **Duración:** 9:23  
+- **URL:** [Entrevista](https://www.youtube.com/watch?v=X00zt8gJRis)
+- **Resumen:** Giancarlos Jesús Aparicio, un ingeniero eléctrico de 23 años que administra un edificio de 15 departamentos en Comas, describe una gestión crítica del agua marcada por la falta de medición individual, ya que el edificio solo cuenta con un medidor general de Sedapal. Esta carencia lo obliga a realizar repartos de costos poco equitativos basados únicamente en el número de personas, lo que genera conflictos constantes con residentes que, a pesar de estar fuera de casa todo el día, terminan pagando lo mismo que familias con mayor consumo. Además, relata que la falta de monitoreo técnico provocó que el tanque de reserva se agotara en solo dos horas durante los cortes de suministro en verano, evidenciando una vulnerabilidad operativa que lo lleva a validar con entusiasmo la implementación de un sistema de sensores con alertas automáticas. Giancarlos considera que una suscripción mensual no mayor a 100 soles sería un precio justo y aceptable para la junta de propietarios, ya que permitiría transparentar los gastos, economizar y, sobre todo, eliminar las tensiones vecinales derivadas de una distribución de costos subjetiva.
+
+
 ---
 
 ##### Segmento objetivo #2 Propietarios e inquilinos de edificios residenciales
 
-#### Entrevista 2:
+#### Entrevista 1:
 
 ![Entrevista_Inquilino_2.png](./assets/Entrevista_Inquilino_2.png)
 
@@ -452,7 +465,7 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 
 
 
-#### Entrevista 3:
+#### Entrevista 2:
 
 ![entrevista2.png](./assets/entrevista2.png) 
 
@@ -467,15 +480,22 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
 - **Resumen:** Tagwa, una estudiante de la UPC de 20 años que reside en Magdalena del Mar desde hace cuatro años, vive en un entorno donde los cortes de agua son poco comunes, ocurriendo aproximadamente solo dos veces al año y siendo comunicados con antelación vía WhatsApp. A pesar de esta previsibilidad, la falta de suministro afecta significativamente su rutina, especialmente en la preparación de alimentos y la higiene personal, lo que se suma a un desconocimiento sobre los costos específicos de las recargas de cisternas. Aunque no ha tenido conflictos con la administración, mantiene una actitud de cautela sobre la gestión del presupuesto y valora profundamente la honestidad en los gastos comunes, por lo que considera que una aplicación de monitoreo en tiempo real sería una solución innovadora y necesaria para garantizar la transparencia, optimizar el consumo y fortalecer la confianza entre los propietarios de su edificio.
 
 
-#### Entrevista 4:
 
-![Captura.png](./assets/Captura.PNG)
+#### Entrevista 3:
 
-- **Nombres y apellidos:** Giancarlo Aparicio
-- **Edad:** 24
-- **Distrito:** Comas
-- **URL:** [Entrevista](https://www.youtube.com/watch?v=X00zt8gJRis)
-- **Resumen:** Giancarlos Jesús Aparicio, un ingeniero eléctrico de 23 años que administra un edificio de 15 departamentos en Comas, describe una gestión crítica del agua marcada por la falta de medición individual, ya que el edificio solo cuenta con un medidor general de Sedapal. Esta carencia lo obliga a realizar repartos de costos poco equitativos basados únicamente en el número de personas, lo que genera conflictos constantes con residentes que, a pesar de estar fuera de casa todo el día, terminan pagando lo mismo que familias con mayor consumo. Además, relata que la falta de monitoreo técnico provocó que el tanque de reserva se agotara en solo dos horas durante los cortes de suministro en verano, evidenciando una vulnerabilidad operativa que lo lleva a validar con entusiasmo la implementación de un sistema de sensores con alertas automáticas. Giancarlos considera que una suscripción mensual no mayor a 100 soles sería un precio justo y aceptable para la junta de propietarios, ya que permitiría transparentar los gastos, economizar y, sobre todo, eliminar las tensiones vecinales derivadas de una distribución de costos subjetiva.
+![entrevista3.png](./assets/entrevista3.png) 
+
+- **Nombres y apellidos:** Manolo Tapia
+- **Edad:** 23  
+- **Distrito:** San Juan de Lurigancho
+
+
+- **Inicio:** 0:00  
+- **Duración:** 7:22 
+- **URL:** [entrevista](https://youtu.be/dVSnzXYoaSE)
+- **Resumen:** Manolo, es un joven de 23 años que trabaja en Plaza Vea y vive en San Juan de Lurigancho desde hace aproximadamente un año, enfrenta frecuentes cortes de agua en su edificio, los cuales ocurren entre dos y tres veces al mes y suelen ser comunicados tarde, generalmente cuando el problema ya ocurrió. Esta situación afecta su rutina diaria, dificultando actividades básicas como bañarse o cocinar, especialmente después del trabajo. Además, no cuenta con información clara sobre los gastos de recargas de agua, lo que genera desconfianza hacia la administración y conflictos entre vecinos. Por ello, considera muy importante la transparencia en los gastos comunes y ve con buenos ojos una aplicación que le permita conocer en tiempo real el nivel de agua y los costos asociados, para anticiparse a problemas y tener mayor claridad sobre el uso del dinero.
+    
+### 2.2.3. Análisis de entrevistas.
 
 <h3>Segmento 1: Administradores de edificios</h3>
 
@@ -594,8 +614,6 @@ Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orien
     100% quiere ver nivel de agua, gastos y recibir avisos.
   </li>
 </ul>
-    
-### 2.2.3. Análisis de entrevistas.
     
 ## 2.3. Needfinding.
     
