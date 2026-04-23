@@ -616,6 +616,21 @@ A continuación, se presentan las User Personas de nuestro proyecto:
     
 ### 2.3.2. User Task Matrix.
 
+A continuación se presenta el User Task Matrix, elaborado a partir del análisis de las entrevistas realizadas a los dos segmentos clave del proyecto TankIQ. Este artefacto permite identificar las actividades principales que realiza cada tipo de usuario, la frecuencia con que las ejecutan y la importancia que les otorgan. Los resultados sirven para priorizar las funcionalidades de la solución, asegurando que responda a las necesidades reales de ambos perfiles.
+
+| N° | Tarea (Task) | Administrador de Edificio | | Propietario / Inquilino | |
+| :---: | :--- | :---: | :---: | :---: | :---: |
+| | | **Frequency** | **Importance** | **Frequency** | **Importance** |
+| 1 | Verificar el nivel de agua disponible en la cisterna | Daily | High | Monthly | Medium |
+| 2 | Revisar el historial de consumo de agua del edificio | Weekly | High | Monthly | Medium |
+| 3 | Coordinar o solicitar recargas de camión cisterna | Sometimes | High | Never | Low |
+| 4 | Registrar y controlar los gastos relacionados al agua | Monthly | High | Never | Low |
+| 5 | Rendir cuentas ante la junta de propietarios sobre el gasto en agua | Monthly | High | Never | Low |
+| 6 | Recibir alertas o notificaciones sobre nivel crítico de agua | Always | High | Always | High |
+| 7 | Consultar la proyección de días de agua disponibles | Weekly | High | Sometimes | Medium |
+| 8 | Comunicar a los vecinos sobre cortes o problemas de agua | Sometimes | High | Never | Low |
+| 9 | Consultar el gasto mensual en agua del edificio | Monthly | High | Monthly | High |
+| 10 | Planificar rutinas considerando la disponibilidad de agua | Daily | High | Daily | High |
 ### 2.3.3. User Journey Mapping.
 
 ### 2.3.4. Empathy Mapping.
