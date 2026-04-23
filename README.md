@@ -749,7 +749,7 @@ Para modelar la arquitectura de TankIQ se aplicó Domain-Driven Design, partiend
 
 ### 4.6.1. Design-Level EventStorming.
 
-El equipo realizó una sesión de Design-Level Event Storming de aproximadamente 90 minutos para refinar el modelo de dominio. Se identificaron Domain Events (naranja), Commands (azul), Aggregates (amarillo), Policies (lila), Read Models (verde) y External Systems (rosa). Los flujos modelados fueron: monitoreo de cisterna, gestión de recargas, activación de suscripción y generación de reportes. A partir de esta sesión se identificaron seis Bounded Contexts: Monitoring Context (núcleo, aggregate raíz Tank), Refill Management Context, Reporting Context, Subscription & Billing Context, Identity & Access Management Context y Notification Context.
+El equipo realizó una sesión de Design-Level Event Storming de 90 minutos para refinar el modelo de dominio de TankIQ. Se identificaron Domain Events, Commands, Aggregates, Policies, Read Models, External Systems y Actors. Se modelaron seis flujos: monitoreo de cisterna con proyección de días, gestión de recargas con cálculo de costo mensual, generación de reportes con exportación PDF, envío de alertas vía SendGrid, activación de suscripción y vinculación de sensor, y registro y autenticación de usuarios. Como resultado, se definieron seis Bounded Contexts: Monitoring Context Tank, Refill Management Context Refill, Reporting Context Report, Notification Context SendGrid/SMTP, Subscription & Billing Context Subscription e Identity & Access Management Context User.
 
 <div align="center">
   <img src="assets/architecture/design-level-event-storming.png" alt="Design-Level Event Storming — TankIQ" width="700"/>
