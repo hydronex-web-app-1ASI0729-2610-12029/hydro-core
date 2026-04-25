@@ -90,26 +90,70 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 ### 5.1.1. Software Development Environment Configuration.
 
-En esta sección se describen todas las herramientas utilizadas por el equipo HydroTeam para el desarrollo, diseño, documentación y despliegue de la solución TankIQ, incluyendo la categoría a la que pertenece cada una, su propósito dentro del proyecto y el enlace de acceso o descarga.
+En este punto detallaremos todas las herramientas de software usadas para el desarrollo
+del proyecto TankIQ:
 
-| Producto | Propósito en el proyecto | Categoría | Ruta de descarga / acceso | Descripción |
-|---|---|---|---|---|
-| **IntelliJ IDEA Ultimate** | IDE principal para el desarrollo del backend en Spring Boot (Java). Ofrece soporte nativo para JPA, Spring y herramientas de depuración integradas. | Software Development | https://www.jetbrains.com/idea/ | IDE de JetBrains especializado en Java y Kotlin, con integración nativa para Spring Boot, JPA y herramientas de refactorización avanzada. |
-| **Visual Studio Code** | Editor de código utilizado para el desarrollo del frontend en Angular (TypeScript). Integra extensiones de Angular Language Service, ESLint y Prettier. | Software Development | https://code.visualstudio.com/ | Editor de código ligero y extensible de Microsoft, ampliamente usado para desarrollo web con soporte para TypeScript, Angular y control de versiones integrado. |
-| **Angular CLI** | Framework frontend principal del proyecto. Permite generar componentes, servicios y módulos con estructura modular y tipado estático mediante TypeScript. | Software Development | https://angular.io/cli | Herramienta de línea de comandos oficial de Angular para crear, generar y gestionar proyectos Angular con buenas prácticas incorporadas. |
-| **Spring Boot** | Framework backend basado en Java que implementa la API REST de TankIQ. Gestiona los seis Bounded Contexts del dominio mediante JPA/Hibernate y MySQL. | Software Development | https://spring.io/projects/spring-boot | Framework de Java que simplifica la creación de aplicaciones backend production-ready con configuración mínima y soporte para REST, JPA y seguridad. |
-| **MySQL Workbench** | Herramienta visual para diseñar, gestionar y consultar la base de datos relacional del sistema. Permite ejecutar scripts SQL y administrar el esquema de TankIQ. | Software Development | https://dev.mysql.com/downloads/workbench/ | Aplicación visual para diseñar esquemas, ejecutar consultas SQL, gestionar usuarios y administrar servidores MySQL de manera integrada. |
-| **Figma** | Plataforma de diseño colaborativo utilizada para crear wireframes, mockups y el prototipo interactivo de la Web Application y la Landing Page de TankIQ. | Product UX/UI Design | https://www.figma.com/ | Herramienta de diseño vectorial basada en la nube que permite la colaboración en tiempo real para prototipos, wireframes y sistemas de diseño. |
-| **Structurizr** | Utilizado para modelar la arquitectura de software de TankIQ bajo el C4 Model (Context, Container, Component), generando diagramas a partir de código DSL. | Product UX/UI Design | https://structurizr.com/ | Aplicación especializada en la creación de modelos de arquitectura de software con base en el modelo C4, ideal para documentar y comunicar sistemas complejos. |
-| **Lucidchart** | Utilizado para elaborar diagramas de clases, EventStorming y diagramas de flujo de usuario durante las etapas de análisis y diseño del sistema. | Product UX/UI Design | https://www.lucidchart.com/ | Herramienta de diagramación en línea que permite crear diagramas UML, flujos de procesos y arquitecturas de sistemas de forma colaborativa. |
-| **Swagger UI / OpenAPI** | Herramienta para documentar y probar los endpoints de la API REST de TankIQ de forma interactiva. Se integra con Spring Boot mediante SpringDoc. | API Documentation | https://swagger.io/tools/swagger-ui/ | Interfaz que genera documentación dinámica de APIs REST, permitiendo visualizar rutas, parámetros y probar los endpoints directamente desde el navegador. |
-| **Git CLI** | Sistema de control de versiones distribuido utilizado localmente por todos los integrantes para gestionar ramas, commits y sincronización con el repositorio remoto. | Version Control | https://git-scm.com/ | Sistema de control de versiones distribuido que permite gestionar cambios, trabajar con ramas y sincronizar código con repositorios remotos como GitHub. |
-| **GitHub** | Plataforma remota de hospedaje de repositorios. Centraliza el código fuente de TankIQ y gestiona Pull Requests, Issues y flujos de revisión de código. | Collaboration & Version Control | https://github.com/ | Plataforma de desarrollo colaborativo para alojar, revisar y gestionar proyectos de software con integración a herramientas de CI/CD. |
-| **Vercel** | Plataforma de despliegue utilizada para publicar la Landing Page estática de TankIQ con integración directa al repositorio de GitHub y HTTPS automático. | Deployment | https://vercel.com/ | Plataforma de despliegue en la nube optimizada para frontends estáticos y aplicaciones web, con despliegue automático desde GitHub. |
-| **Railway** | Plataforma de despliegue en la nube utilizada para publicar el backend Spring Boot y la base de datos MySQL de TankIQ en entorno de producción. | Deployment | https://railway.app/ | Plataforma PaaS que permite desplegar aplicaciones backend y bases de datos con configuración simplificada y variables de entorno gestionadas desde el dashboard. |
-| **UXPressia** | Utilizada para elaborar User Personas, User Journey Maps y Empathy Maps durante el proceso de Needfinding del proyecto. | Product UX/UI Design | https://uxpressia.com/ | Plataforma orientada a la elaboración de journey maps y perfiles de usuario que permite representar y analizar visualmente la experiencia dentro del sistema. |
-| **Trello** | Herramienta de gestión ágil utilizada para organizar el Product Backlog y el Sprint Backlog del equipo, con columnas por estado de avance de las tareas. | Project Management | https://trello.com/ | Herramienta de tableros Kanban que facilita la organización visual de tareas, el seguimiento del progreso y la colaboración del equipo en sprints ágiles. |
+**Gestión del proyecto**
 
+- **WhatsApp**: [LINK WhatsApp](https://www.whatsapp.com/)  
+  Usamos WhatsApp como nuestro principal canal para comunicarnos, la coordinación de
+  tareas, los tiempos de entrega, las nuevas ideas y brindar soporte a otros miembros
+  que tengan dificultades.
+
+- **Google Meet**: [LINK Google Meet](https://meet.google.com/)  
+  Utilizado para las reuniones virtuales de planificación de sprints y coordinación
+  general del equipo.
+
+- **Jira**: [LINK Jira](https://www.atlassian.com/es/software/jira)  
+  Usamos Jira para seguir y evaluar el progreso y flujo de las actividades del proyecto
+  entre todos los miembros durante todo el proceso del trabajo.
+
+**Diseño UX/UI del Producto**
+
+- **Figma**: [LINK Figma](https://www.figma.com/es-es/)  
+  Plataforma para crear nuestros diseños, principalmente los wireframes, mockups y
+  prototipo interactivo de la Landing Page.
+
+- **UXPressia**: [LINK UXPressia](https://uxpressia.com/)  
+  Se utilizó esta herramienta para la creación del Impact Mapping, Empathy Mapping y
+  el User Journey Mapping.
+
+- **Lucidchart**: [LINK Lucidchart](https://www.lucidchart.com/)  
+  Utilizada para la elaboración de diagramas de clases, EventStorming y la arquitectura
+  de software bajo el C4 Model.
+
+**Software Development**
+
+- **Visual Studio Code**: [LINK Visual Studio Code](https://code.visualstudio.com/)  
+  Entorno de desarrollo utilizado para crear la Landing Page con HTML5, CSS3 y
+  JavaScript.
+
+- **IntelliJ IDEA**: [LINK IntelliJ IDEA](https://www.jetbrains.com/idea/)  
+  IDE principal para el desarrollo del backend en Spring Boot (Java).
+
+- **HTML**: [Más información sobre HTML](https://developer.mozilla.org/es/docs/Web/HTML)  
+  Lenguaje de marcado estándar utilizado para estructurar el contenido de la Landing
+  Page, compatible con todos los navegadores modernos.
+
+- **CSS**: [Más información sobre CSS](https://developer.mozilla.org/es/docs/Web/CSS)  
+  Lenguaje de hojas de estilo que define la apariencia visual de la Landing Page,
+  permitiendo controlar diseño, colores y tipografías.
+
+- **JavaScript**: [Más información sobre JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)  
+  Lenguaje de programación que añade interactividad y lógica a la Landing Page,
+  incluyendo el sistema de idiomas y las animaciones de scroll.
+
+**Despliegue del software**
+
+- **Git**: [LINK Git](https://git-scm.com/)  
+  Sistema de control de versiones distribuido que permite gestionar cambios en el
+  código, colaborar en equipo y mantener un historial completo del proyecto.
+
+**Documentación del proyecto**
+
+- **GitHub**: [LINK GitHub](https://github.com/)  
+  Plataforma para alojar repositorios, colaborar y revisar contribuciones del equipo
+  mediante Pull Requests y el flujo Git Flow.
 
 ### 5.1.2. Source Code Management.
 
