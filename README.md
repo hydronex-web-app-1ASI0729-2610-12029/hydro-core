@@ -499,7 +499,7 @@ Nos encargamos de brindar una solución tecnológica accesible para la gestión 
     </tr>
     <tr align="center">
         <td rowspan="3">
-            <img src="foto_integrante5.png" alt="Integrante 5" style="margin-bottom: 5px;" width="800"/>
+            <img src="foto_integrante5.jpg" alt="Integrante 5" style="margin-bottom: 5px;" width="800"/>
         </td>
         <td align="left">
             <b>Nombre y Apellido:</b>
