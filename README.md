@@ -118,15 +118,9 @@ del proyecto TankIQ:
   Se utilizó esta herramienta para la creación del Impact Mapping, Empathy Mapping y
   el User Journey Mapping.
 
-- **Lucidchart**: [LINK Lucidchart](https://www.lucidchart.com/)  
-  Utilizada para la elaboración de diagramas de clases, EventStorming y la arquitectura
-  de software bajo el C4 Model.
-
 **Software Development**
 
-- **Visual Studio Code**: [LINK Visual Studio Code](https://code.visualstudio.com/)  
-  Entorno de desarrollo utilizado para crear la Landing Page con HTML5, CSS3 y
-  JavaScript.
+
 
 - **IntelliJ IDEA**: [LINK IntelliJ IDEA](https://www.jetbrains.com/idea/)  
   IDE principal para el desarrollo del backend en Spring Boot (Java).
