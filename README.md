@@ -35,10 +35,92 @@
 
 # **Registro de Versiones del Informe**
 
-| Versión | Fecha | Autor | Descripción de modificación |
-|-----------|-----------|-----------|-----------|
-|-----------|-----------|-----------|-----------|
-|-----------|-----------|-----------|-----------|
+# **Report Version Log**
+
+<table style="width: 100%; border-collapse: collapse;">
+  <!-- ROW 0 -->
+  <tr>
+    <th style="text-align: center;">Versión</th>
+    <th style="text-align: center;">Fecha</th>
+    <th style="text-align: center;">Autor</th>
+    <th style="text-align: center;">Descripción de modificación</th>
+  </tr>
+
+  <!-- ROW 1 -->
+  <tr>
+    <td style="text-align: center;">
+      1.0.0
+    </td>
+    <td style="text-align: center;">
+      24/04/2026
+    </td>
+    <td style="text-align: center;">
+      Completar...
+    </td>
+    <td style="text-align: justify;">
+     Completar...
+    </td>
+  </tr>
+  <!-- ROW 2 -->
+  <tr>
+    <td style="text-align: center;">
+      1.0.1
+    </td>
+    <td style="text-align: center;">
+      24/04/2026
+    </td>
+    <td style="text-align: center;">
+      Completar...
+    </td>
+    <td style="text-align: justify;">
+     Completar...
+    </td>
+  </tr>
+  <!-- ROW 3 -->
+  <tr>
+    <td style="text-align: center;">
+      1.0.2
+    </td>
+    <td style="text-align: center;">
+      24/04/2026
+    </td>
+    <td style="text-align: center;">
+      Completar...
+    </td>
+    <td style="text-align: justify;">
+      Completar...
+    </td>
+ <!-- ROW 4 -->
+<tr>
+  <td style="text-align: center;">
+    1.0.3
+  </td>
+  <td style="text-align: center;">
+    24/04/2026
+  </td>
+  <td style="text-align: center;">
+    Completar...
+  </td>
+  <td style="text-align: justify;">
+    Completar...
+  </td>
+</tr>
+  <!-- ROW 5 -->
+  <tr>
+    <td style="text-align: center;">
+      1.0.4
+    </td>
+    <td style="text-align: center;">
+      24/04/2026
+    </td>
+    <td style="text-align: center;">
+      Orosco Ttamiña, Juan Carlos
+    </td>
+    <td style="text-align: justify;">
+      Se completó la etapa de especificación de requisitos. En esta fase se definieron historias de usuario para representar las principales funcionalidades según las necesidades de los usuarios. También se hizo un impact mapping para relacionar los objetivos del negocio con los usuarios y las funcionalidades del sistema. Finalmente, se organizó y priorizó el Product Backlog, estimándolo con la escala de Fibonacci para apoyar el desarrollo.
+    </td>
+  </tr>
+</table>
 
 
 # **Project Report Collaboration Insights**
@@ -49,15 +131,170 @@
 
 # ABET – EAC - Student Outcome 5
 
-**Criterio:** La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.
+<p style="text-align: justify;">
+  Criterio: La capacidad de trabajar de manera efectiva en un equipo cuyos integrantes aportan liderazgo, crean un ambiente colaborativo e inclusivo, establecen objetivos, planifican tareas y logran cumplirlos.
+</p>
 
-En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC – Student Outcome 5.
-
-| Criterio específico | Acciones realizadas | Conclusiones |
-| :--- | :--- | :--- |
-| **Trabaja en equipo para proporcionar liderazgo en forma conjunta** | | |
-| **Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.** | | |
-
+<table style="width: 100%; border-collapse: collapse;">
+  <!-- ROW 0 -->
+  <tr>
+    <th style="text-align: center;">Criterio específico</th>
+    <th style="text-align: center;">Acciones realizadas</th>
+    <th style="text-align: center;">Conclusiones</th>
+  </tr>
+  
+  <!-- ROW 1 -->
+  <tr>
+    <td style="text-align: justify; vertical-align: top;">
+      <b>
+        Trabaja en equipo para proporcionar liderazgo en forma conjunta
+      </b>
+    </td>
+    <td style="text-align: justify;">
+      <b>
+        Espinar Martínez Gabriel Ferran
+      </b>
+      <br><br>
+      <b><i>
+        AV1
+      </i></b>
+      <br>
+        Completar...
+      <br><br>
+        ------------------------------------
+      <br><br>
+      <b>
+        Guevara Serrano Diego Ismael
+      </b>
+      <br><br>
+      <b><i>
+        AV1
+      </i></b>
+      <br>
+        Completar...
+      <br><br>
+        ------------------------------------
+      <br><br>
+        <b>
+          Montalvan Palomino Bruno Rodolfo
+        </b>
+      <br><br>
+      <b><i>
+        AV1
+      </i></b>
+      <br>
+        Completar...
+      <br><br>
+        ------------------------------------
+      <br><br>
+      <b>
+        Orosco Ttamiña Juan Carlos
+      </b>
+      <br><br>
+      <b><i>
+        AV1
+      </i></b>
+      <br>
+         Participé activamente en las reuniones del equipo y en la toma de decisiones, cumpliendo con mis responsabilidades dentro de los plazos establecidos. También colaboré en la definición de las épicas y las historias de usuario (US) a partir de la información obtenida en las entrevistas, mostrando compromiso tanto con el proyecto como con el equipo.
+      <br><br>
+        ------------------------------------
+      <br><br>
+      <b>
+        Razuri Alvarez Matias Francesco
+      </b>
+      <br><br>
+      <b><i>
+        AV1
+      </i></b>
+      <br>
+        Completar...
+      <br><br>
+    </td>
+    <td style="text-align: justify; vertical-align: top;">
+      <b><i>
+        AV1
+      </i></b>
+      <br>
+        Durante el AV1, el equipo trabajó con liderazgo compartido, repartiendo las tareas según las fortalezas de cada integrante y coordinando el trabajo en las partes técnica, de diseño y planificación del proyecto SafeLab. Este trabajo se vio en la gestión del repositorio, la organización de tareas, la arquitectura, el diseño UI/UX y la definición de requisitos con épicas e historias de usuario. Cada integrante aportó desde su rol y mantuvo la comunicación con el equipo, lo que permitió avanzar de manera ordenada y cumplir con los objetivos del primer entregable.
+    </td>
+  </tr>
+  
+  <!-- ROW 2 -->
+  <tr>
+    <td style="text-align: justify; vertical-align: top;">
+      <b>
+        Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.
+      </b>
+    </td>
+    <td style="text-align: justify;">
+      <b>
+        Espinar Martínez Gabriel Ferran
+      </b>
+      <br><br>
+      <b><i>
+        AV1
+      </i></b>
+      <br>
+        Completar...
+      <br><br>
+        ------------------------------------
+      <br><br>
+      <b>
+        Guevara Serrano Diego Ismael
+      </b>
+      <br><br>
+      <b><i>
+        AV1
+      </i></b>
+      <br>
+        Completar...
+      <br><br>
+        ------------------------------------
+      <br><br>
+        <b>
+          Montalvan Palomino Bruno Rodolfo
+        </b>
+      <br><br>
+      <b><i>
+        AV1
+      </i></b>
+      <br>
+        Completar...
+      <br><br>
+        ------------------------------------
+      <br><br>
+      <b>
+        Orosco Ttamiña Juan Carlos
+      </b>
+      <br><br>
+      <b><i>
+        AV1
+      </i></b>
+      <br>
+         Durante esta fase, mantuvimos un ambiente de trabajo colaborativo, usando WhatsApp y Discord para coordinarnos y GitHub para trabajar en paralelo. Desde el inicio definimos objetivos, organizamos las tareas y trabajamos en equipo para cumplirlos. Además, mi apoyo en la elaboración del informe ayudó a que el proceso fuera más ordenado y a mantener al equipo alineado.
+      <br><br>
+        ------------------------------------
+      <br><br>
+      <b>
+        Razuri Alvarez Matias Francesco
+      </b>
+      <br><br>
+      <b><i>
+        AV1
+      </i></b>
+      <br>
+        Completar...
+      <br><br>
+    </td>
+    <td style="text-align: justify; vertical-align: top;">
+      <b><i>
+        AV1
+      </i></b>
+      <br>
+        Durante el AV1, el equipo trabajó de manera colaborativa, manteniendo una comunicación constante y compartiendo ideas y retroalimentación de forma continua. Se utilizaron herramientas como GitHub, Trello, WhatsApp y Discord para coordinar las actividades. Asimismo, se establecieron objetivos y etapas claras para el diseño, la arquitectura, la documentación y la investigación, asignando responsabilidades según las habilidades de cada integrante. Gracias a esta organización y al trabajo en equipo, fue posible integrar adecuadamente todos los entregables y cumplir con los objetivos planteados para el primer avance del proyecto.
+    </td>
+  </tr>
+</table>
 
 
 ## Contenido
