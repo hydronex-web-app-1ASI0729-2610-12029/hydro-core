@@ -651,6 +651,25 @@ A continuación se presenta el User Task Matrix, elaborado a partir del análisi
 | 10 | Planificar rutinas considerando la disponibilidad de agua | Daily | High | Daily | High |
 ### 2.3.3. User Journey Mapping.
 
+User Journey Mapping Segmento 1: Alberto Flores (Administrador de edificio residencial)
+
+
+| | **Etapa 1:** Detecta posible falta de agua | **Etapa 2:** Baja a revisar la cisterna | **Etapa 3:** Llama al camión cisterna | **Etapa 4:** Gestiona quejas de vecinos | **Etapa 5:** Rinde cuentas a la junta |
+|---|---|---|---|---|---|
+| **Acciones** | Recibe mensajes en WhatsApp o una queja directa sobre baja presión de agua | Baja al sótano y golpea la pared de la cisterna para estimar el nivel por el sonido | Llama al proveedor de camión cisterna y espera horas para confirmar disponibilidad | Responde mensajes en WhatsApp, pide paciencia e informa cuándo llegará el camión | Busca anotaciones en cuaderno o Excel y calcula el gasto manualmente para la reunión |
+| **Sentimientos** | Preocupado | Inseguro | Bajo presión | Agobiado | Inseguro |
+| **Dolores** | No hay sistema de alerta. Se entera cuando ya es demasiado tarde. | La revisión manual es imprecisa. No puede cuantificar el nivel real. | Sin historial de consumo, no sabe si el camión es realmente necesario en ese momento. | No tiene datos concretos para responder con información objetiva a los vecinos. | Los registros manuales son incompletos y generan desconfianza en la junta. |
+| **Oportunidades** | Enviar alertas automáticas cuando el nivel baje del umbral definido | Mostrar el nivel exacto en tiempo real desde el dashboard sin bajar a la cisterna | Proyectar los días de agua disponibles para anticipar la recarga con tiempo | Dar acceso a los vecinos a una vista del nivel actual para reducir quejas | Generar reportes automáticos de consumo y gasto mensual listos para la junta |
+
+
+User Journey Mapping Segmento 2: Maritza Castro (Residente de departamento)
+
+| | **Etapa 1:** Inicia su día cotidiano | **Etapa 2:** Descubre que no hay agua | **Etapa 3:** Busca información del problema | **Etapa 4:** Improvisa y gestiona el día | **Etapa 5:** Reclama y cuestiona los gastos |
+|---|---|---|---|---|---|
+| **Acciones** | Se levanta e intenta usar el grifo para bañarse o preparar el desayuno | Abre el grifo y no hay presión. Revisa el grupo de WhatsApp sin encontrar aviso previo | Escribe al grupo preguntando qué pasó. Espera respuesta del administrador | Usa agua embotellada. Sale antes de lo habitual. Pide a alguien que le avise cuando vuelva el agua | Pregunta en la junta cuánto se gasta en recargas y cuestiona la gestión del presupuesto |
+| **Sentimientos** | Tranquila | Frustrada | Ansiosa | Resignada | Desconfiada |
+| **Dolores** | No tiene forma de saber si habrá agua antes de que el problema ocurra. | El grupo de WhatsApp avisa tarde o no avisa. No hay comunicación proactiva. | Depende completamente del administrador. No tiene acceso directo a ningún dato. | No puede planificar su rutina. Solo reacciona cuando el problema ya ocurrió. | No hay registros claros de gastos. Los conflictos en la junta no se resuelven con datos. |
+| **Oportunidades** | Mostrar el nivel de la cisterna en tiempo real accesible para todos los residentes | Enviar notificaciones anticipadas cuando el nivel baje a un nivel de advertencia | Ofrecer una vista de solo lectura del estado del edificio sin depender del administrador | Proyectar cuándo se normalizará el suministro para que el residente pueda organizarse | Publicar el historial de gastos en agua para que la junta pueda auditarlo con datos reales |
 
 ### 2.3.4. Empathy Mapping.
 
