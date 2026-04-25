@@ -792,6 +792,137 @@ El Class Diagram de TankIQ está organizado por Bounded Context e incluye clases
   <img src="assets/class-diagrams/tankiq-class-diagram.png" alt="Class Diagram — TankIQ" width="800"/>
 </div>
 
+#### Diccionario de Clases
+
+<table>
+<thead>
+  <tr>
+    <th>N</th><th>Entidad</th><th>Atributo</th><th>Definición</th>
+    <th>Tipo de Dato</th><th>Rango</th><th>Unidad</th>
+    <th>Valores Restringidos</th>
+  </tr>
+</thead>
+<tbody>
+
+  <tr><td rowspan="5">1</td><td rowspan="5">User</td>
+    <td>userId</td><td>Identificador único del usuario en el sistema</td>
+    <td>UserId (UUID)</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>name</td><td>Nombre completo del usuario</td>
+    <td>String</td><td>—</td><td>—</td><td>Sin caracteres especiales</td></tr>
+  <tr><td>email</td><td>Correo electrónico usado para autenticación</td>
+    <td>String</td><td>—</td><td>—</td><td>Formato válido, único en el sistema</td></tr>
+  <tr><td>password</td><td>Contraseña de acceso a la cuenta</td>
+    <td>String</td><td>—</td><td>—</td><td>Mínimo 8 caracteres</td></tr>
+  <tr><td>role</td><td>Rol del usuario dentro de la plataforma</td>
+    <td>UserRole</td><td>—</td><td>—</td><td>ADMINISTRATOR, RESIDENT</td></tr>
+
+  <tr><td rowspan="1">2</td><td rowspan="1">Administrator</td>
+    <td>phoneNumber</td><td>Número de teléfono de contacto del administrador</td>
+    <td>String</td><td>—</td><td>—</td><td>Formato numérico, no nulo</td></tr>
+
+  <tr><td rowspan="1">3</td><td rowspan="1">Resident</td>
+    <td>apartmentNumber</td><td>Número de departamento del residente en el edificio</td>
+    <td>String</td><td>—</td><td>—</td><td>Alfanumérico, no nulo</td></tr>
+
+  <tr><td rowspan="4">4</td><td rowspan="4">Building</td>
+    <td>buildingId</td><td>Identificador único del edificio</td>
+    <td>BuildingId (UUID)</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>name</td><td>Nombre o alias del edificio residencial</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo</td></tr>
+  <tr><td>address</td><td>Dirección física completa del edificio</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo</td></tr>
+  <tr><td>district</td><td>Distrito de Lima donde se ubica el edificio</td>
+    <td>String</td><td>—</td><td>—</td><td>Distritos válidos de Lima</td></tr>
+
+  <tr><td rowspan="4">5</td><td rowspan="4">Cistern</td>
+    <td>id</td><td>Identificador único de la cisterna</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>capacityLiters</td><td>Capacidad máxima de almacenamiento de la cisterna</td>
+    <td>Double</td><td>500 – 50000</td><td>Litros</td><td>Valores negativos no permitidos</td></tr>
+  <tr><td>currentLevel</td><td>Nivel actual de agua en la cisterna expresado en porcentaje</td>
+    <td>Double</td><td>0 – 100</td><td>%</td><td>Fuera del rango 0–100</td></tr>
+  <tr><td>alertThreshold</td><td>Umbral mínimo configurado por el administrador para disparar alertas</td>
+    <td>Double</td><td>0 – 100</td><td>%</td><td>Fuera del rango 0–100</td></tr>
+
+  <tr><td rowspan="3">6</td><td rowspan="3">Sensor</td>
+    <td>sensorId</td><td>Identificador único del sensor ultrasónico IoT</td>
+    <td>SensorId (UUID)</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>type</td><td>Tipo de sensor instalado en la cisterna</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo</td></tr>
+  <tr><td>status</td><td>Estado de conexión actual del sensor</td>
+    <td>SensorStatus</td><td>—</td><td>—</td><td>ONLINE, OFFLINE</td></tr>
+
+  <tr><td rowspan="3">7</td><td rowspan="3">WaterLevelReading</td>
+    <td>id</td><td>Identificador único de la lectura registrada</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>levelPercent</td><td>Porcentaje de nivel de agua medido por el sensor</td>
+    <td>Double</td><td>0 – 100</td><td>%</td><td>Fuera del rango 0–100</td></tr>
+  <tr><td>recordedAt</td><td>Fecha y hora exacta en que se registró la lectura</td>
+    <td>DateTime</td><td>—</td><td>—</td><td>No puede ser fecha futura</td></tr>
+
+  <tr><td rowspan="4">8</td><td rowspan="4">Refill</td>
+    <td>id</td><td>Identificador único del registro de recarga</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>date</td><td>Fecha y hora en que se realizó la recarga de agua</td>
+    <td>DateTime</td><td>—</td><td>—</td><td>No puede ser fecha futura</td></tr>
+  <tr><td>liters</td><td>Volumen de agua cargado en la cisterna</td>
+    <td>Double</td><td>100 – 50000</td><td>Litros</td><td>Valores negativos no permitidos</td></tr>
+  <tr><td>costSoles</td><td>Costo pagado por la recarga en soles peruanos</td>
+    <td>Double</td><td>80 – 500</td><td>S/.</td><td>Valores negativos no permitidos</td></tr>
+
+  <tr><td rowspan="2">9</td><td rowspan="2">WaterConsumption</td>
+    <td>id</td><td>Identificador único del registro de consumo</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>averageDailyUse</td><td>Promedio de litros consumidos por día en el período calculado</td>
+    <td>Double</td><td>0 – 10000</td><td>Litros/día</td><td>Valores negativos no permitidos</td></tr>
+
+  <tr><td rowspan="5">10</td><td rowspan="5">Alert</td>
+    <td>id</td><td>Identificador único de la alerta generada</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>type</td><td>Nivel de criticidad de la alerta según el umbral alcanzado</td>
+    <td>AlertType</td><td>—</td><td>—</td><td>LOW, CRITICAL</td></tr>
+  <tr><td>message</td><td>Mensaje descriptivo de la alerta enviado al usuario</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo</td></tr>
+  <tr><td>timestamp</td><td>Fecha y hora en que se generó la alerta</td>
+    <td>DateTime</td><td>—</td><td>—</td><td>No puede ser fecha futura</td></tr>
+  <tr><td>isResolved</td><td>Indica si la alerta fue atendida y resuelta por el administrador</td>
+    <td>boolean</td><td>—</td><td>—</td><td>true / false</td></tr>
+
+  <tr><td rowspan="4">11</td><td rowspan="4">Plan</td>
+    <td>id</td><td>Identificador único del plan de suscripción</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+<tr><td>name</td><td>Nombre comercial del plan</td>
+    <td>String</td><td>—</td><td>—</td><td>BASIC, PREMIUM</td></tr>
+<tr><td>priceSoles</td><td>Precio mensual del plan expresado en soles peruanos</td>
+    <td>Double</td><td>0 – 999</td><td>S/.</td><td>Valores negativos no permitidos</td></tr>
+<tr><td>features</td><td>Descripción de las funcionalidades incluidas en el plan</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo</td></tr>
+
+  <tr><td rowspan="4">12</td><td rowspan="4">Subscription</td>
+    <td>id</td><td>Identificador único de la suscripción</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>startDate</td><td>Fecha de inicio de la suscripción activa</td>
+    <td>Date</td><td>—</td><td>—</td><td>No nulo</td></tr>
+  <tr><td>endDate</td><td>Fecha de vencimiento de la suscripción</td>
+    <td>Date</td><td>—</td><td>—</td><td>Debe ser posterior a startDate</td></tr>
+  <tr><td>status</td><td>Estado actual de la suscripción del edificio</td>
+    <td>SubscriptionStatus</td><td>—</td><td>—</td><td>ACTIVE, INACTIVE, CANCELLED</td></tr>
+
+  <tr><td rowspan="5">13</td><td rowspan="5">Report</td>
+    <td>id</td><td>Identificador único del reporte generado</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>generatedAt</td><td>Fecha y hora en que se generó el reporte</td>
+    <td>DateTime</td><td>—</td><td>—</td><td>No puede ser fecha futura</td></tr>
+  <tr><td>periodMonth</td><td>Mes del período cubierto por el reporte</td>
+    <td>Integer</td><td>1 – 12</td><td>—</td><td>Fuera del rango 1–12</td></tr>
+  <tr><td>periodYear</td><td>Año del período cubierto por el reporte</td>
+    <td>Integer</td><td>2024 – 2099</td><td>—</td><td>Años anteriores al inicio del sistema</td></tr>
+  <tr><td>totalCostSoles</td><td>Suma total del costo de recargas en el período del reporte</td>
+    <td>Double</td><td>0 – 99999</td><td>S/.</td><td>Valores negativos no permitidos</td></tr>
+
+</tbody>
+</table>
+
     
 ## 4.8. Database Design.
 
@@ -800,11 +931,13 @@ En el diseño de base de datos de TankIQ, cada Bounded Context identificado en e
     
 ### 4.8.1. Database Diagrams.
 
-El diagrama muestra las tablas del sistema agrupadas por Bounded Context. El IAM Context contiene la tabla users con discriminación de rol ADMIN o RESIDENT, y la tabla intermedia building_users que implementa la relación muchos a muchos entre usuarios y edificios. El Building Monitoring Context incluye las tablas buildings, cisterns, sensors y water_level_readings, representando la jerarquía física del sistema IoT. Un edificio posee una única cisterna, la cual está asociada a un sensor, y este genera múltiples lecturas de nivel de agua a lo largo del tiempo. El Water Management Context agrupa las tablas refills y water_consumption, ambas relacionadas con buildings, permitiendo registrar recargas de agua y métricas de consumo por periodos. El Alerting Context contiene la tabla alerts, la cual está asociada a cisterns como origen de la alerta y de forma opcional a users como destinatario de la notificación, permitiendo gestionar eventos como niveles bajos o críticos de agua. El Subscription Context incluye las tablas plans, subscriptions y reports. La tabla subscriptions relaciona cada edificio con un plan contratado, mientras que reports almacena reportes generados por usuarios sobre el consumo y costos del sistema.
+El diagrama muestra las tablas del sistema agrupadas por Bounded Context junto con sus relaciones estructurales. El IAM Context contiene la tabla users con discriminación de rol ADMIN o RESIDENT, y la tabla intermedia building_users que implementa la relación muchos a muchos entre usuarios y edificios mediante las relaciones users a buildings de tipo uno a muchos y su descomposición a través de building_users. El Building Monitoring Context incluye las tablas buildings, cisterns, sensors y water_level_readings, representando la jerarquía física del sistema IoT. Un edificio se relaciona de forma uno a uno con una cisterna, la cual a su vez se relaciona uno a uno con un sensor, y este genera múltiples lecturas de nivel de agua mediante una relación uno a muchos. El Water Management Context agrupa las tablas refills y water_consumption, ambas relacionadas con buildings mediante relaciones uno a muchos, permitiendo registrar recargas de agua y métricas de consumo por periodos. El Alerting Context contiene la tabla alerts, la cual se relaciona con cisterns y users mediante relaciones uno a muchos, permitiendo gestionar eventos como niveles bajos o críticos de agua y su notificación a los usuarios. El Subscription Context incluye las tablas plans, subscriptions y reports. La tabla subscriptions se relaciona con buildings mediante una relación uno a uno y con plans mediante una relación uno a muchos, mientras que reports se relaciona con buildings mediante una relación uno a muchos, permitiendo almacenar reportes generados sobre consumo y costos.
 
 <div align="center">
   <img src="assets/database/tankiq-database-diagram.png" alt="Database Diagram — TankIQ" width="800"/>
 </div>
+
+En el diagrama de base de datos, las llaves amarillas representan las claves primarias, las cuales identifican de forma única cada registro dentro de su respectiva tabla. Las llaves rojas representan las claves foráneas, que establecen las relaciones entre tablas y garantizan la integridad referencial del sistema.
     
 # Capítulo V: Product Implementation, Validation & Deployment
     
