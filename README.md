@@ -235,62 +235,61 @@ En esta sección se presentan los requisitos funcionales del sistema TankIQ defi
 
 #### User Stories
 
-| ID | Título | Descripción | Criterios de aceptación | Épica |
-|----|--------|------------|--------------------------|----------|
-| US01 | Ver nivel de agua | Como administrador, deseo visualizar el nivel de agua en tiempo real para tomar decisiones | Dado datos disponibles cuando accede entonces muestra nivel actualizado | EP02 |
-| US02 | Ver estado de cisterna | Como administrador, deseo conocer el estado de la cisterna para evitar desabastecimiento | Dado datos cuando consulta entonces muestra estado | EP02 |
-| US03 | Ver días estimados | Como administrador, deseo conocer los días de agua disponibles para anticipar recargas | Dado datos históricos cuando consulta entonces muestra estimación | EP02 |
-| US04 | Visualizar dashboard | Como administrador, deseo ver indicadores clave para gestionar el suministro de agua | Dado sesión iniciada cuando accede entonces visualiza indicadores | EP02 |
-| US05 | Recibir alerta crítica | Como administrador, deseo recibir alertas cuando el nivel sea crítico para actuar a tiempo | Dado nivel bajo cuando evalúa entonces genera alerta | EP03 |
-| US06 | Ver alertas | Como administrador, deseo visualizar alertas para gestionar riesgos | Dado alertas cuando accede entonces se listan | EP03 |
-| US07 | Recibir notificaciones | Como usuario, deseo recibir notificaciones para estar informado sobre el estado del agua | Dado evento relevante cuando ocurre entonces notifica | EP03 |
-| US08 | Ver notificaciones | Como usuario, deseo revisar notificaciones para conocer eventos recientes | Dado notificaciones cuando accede entonces se listan | EP03 |
-
-| US09 | Registrar recarga | Como administrador, deseo registrar recargas para mantener actualizado el nivel de agua | Dado datos válidos cuando registra entonces actualiza nivel | EP04 |
-| US10 | Ver historial de recargas | Como administrador, deseo visualizar recargas para llevar control del abastecimiento | Dado registros cuando consulta entonces muestra lista | EP04 |
-| US11 | Editar recarga | Como administrador, deseo modificar recargas para corregir errores | Dado registro cuando edita entonces actualiza datos | EP04 |
-| US12 | Eliminar recarga | Como administrador, deseo eliminar recargas para mantener información correcta | Dado registro cuando elimina entonces remueve dato | EP04 |
-
-| US13 | Ver historial de consumo | Como administrador, deseo visualizar el consumo de agua para análisis | Dado registros cuando consulta entonces muestra historial | EP05 |
-| US14 | Analizar consumo | Como administrador, deseo analizar consumo para mejorar la gestión del recurso | Dado datos cuando consulta entonces muestra gráficos | EP05 |
-| US15 | Ver consumo mensual | Como administrador, deseo visualizar consumo mensual para evaluar gasto | Dado datos cuando consulta entonces muestra resumen | EP05 |
-| US16 | Ver consumo diario | Como administrador, deseo visualizar consumo diario para control detallado | Dado datos cuando consulta entonces muestra consumo | EP05 |
-| US17 | Filtrar historial de consumo | Como administrador, deseo filtrar consumo para análisis específico | Dado filtros cuando aplica entonces muestra resultados | EP05 |
-| US18 | Ver tendencias de consumo | Como administrador, deseo visualizar tendencias para mejorar planificación | Dado datos cuando consulta entonces muestra tendencia | EP05 |
-| US19 | Comparar consumo entre periodos | Como administrador, deseo comparar consumo para tomar mejores decisiones | Dado periodos cuando consulta entonces muestra comparación | EP05 |
-
-| US20 | Generar reportes | Como administrador, deseo generar reportes para informar a la junta de propietarios | Dado datos cuando solicita entonces genera reporte | EP06 |
-| US21 | Descargar reportes | Como administrador, deseo descargar reportes para compartirlos | Dado reporte generado cuando descarga entonces obtiene archivo | EP06 |
-| US22 | Ver reportes históricos | Como administrador, deseo revisar reportes anteriores para análisis | Dado reportes cuando consulta entonces muestra historial | EP06 |
-| US23 | Compartir reportes | Como administrador, deseo compartir reportes para informar a propietarios | Dado reporte cuando comparte entonces envía información | EP06 |
-| US24 | Filtrar reportes | Como administrador, deseo filtrar reportes para consultas específicas | Dado filtros cuando aplica entonces muestra resultados | EP06 |
-| US25 | Registrar gasto de recarga | Como administrador, deseo registrar el costo de cada recarga para control financiero | Dado datos cuando registra entonces guarda gasto | EP06 |
-| US26 | Consultar gasto mensual | Como administrador, deseo ver el gasto mensual de agua para evaluar presupuesto | Dado datos cuando consulta entonces muestra total mensual | EP06 |
-
-| US27 | Ver gastos de agua | Como propietario, deseo visualizar los gastos para entender el uso del dinero | Dado datos cuando consulta entonces muestra gastos | EP08 |
-| US28 | Ver estado de cisterna (propietario) | Como propietario, deseo conocer el estado del agua para planificar actividades | Dado acceso cuando consulta entonces muestra estado | EP08 |
-| US29 | Ver consumo histórico (propietario) | Como propietario, deseo visualizar consumo para entender el uso del recurso | Dado datos cuando consulta entonces muestra historial | EP08 |
-| US30 | Ver alertas (propietario) | Como propietario, deseo ver alertas para anticiparme a problemas | Dado alertas cuando consulta entonces muestra lista | EP08 |
-| US31 | Ver reportes (propietario) | Como propietario, deseo revisar reportes para transparencia | Dado reportes cuando consulta entonces muestra datos | EP08 |
-
-| US32 | Configurar umbrales de alerta | Como administrador, deseo definir límites de alerta para adaptarlos al edificio | Dado valores cuando guarda entonces actualiza configuración | EP07 |
-| US33 | Configurar datos del edificio | Como administrador, deseo registrar datos del edificio para gestión adecuada | Dado datos válidos cuando guarda entonces actualiza sistema | EP07 |
-
-| US34 | Iniciar sesión | Como usuario, deseo iniciar sesión para acceder a la plataforma | Dado credenciales válidas cuando inicia sesión entonces accede al sistema | EP01 |
-| US35 | Registrar administrador | Como administrador, deseo registrarme para gestionar el sistema | Dado datos válidos cuando se registra entonces crea cuenta | EP01 |
-| US36 | Cerrar sesión | Como usuario, deseo cerrar sesión para proteger su cuenta | Dado sesión activa cuando cierra sesión entonces finaliza acceso | EP01 |
-| US37 | Recuperar contraseña | Como usuario, deseo recuperar contraseña para volver a acceder | Dado correo cuando solicita entonces recibe instrucciones | EP01 |
-
-| US38 | Visualizar información clara | Como usuario, deseo ver información clara para entender el estado del sistema | Dado datos cuando accede entonces presenta información comprensible | EP02 |
-| US39 | Acceder desde dispositivo móvil | Como usuario, deseo acceder desde mi celular para consultar información en cualquier momento | Dado dispositivo cuando accede entonces muestra interfaz adaptada | EP02 |
-
-| US40 | Recibir alerta de consumo alto | Como administrador, deseo recibir alertas de consumo elevado para detectar anomalías | Dado consumo alto cuando evalúa entonces genera alerta | EP03 |
-| US41 | Recibir alerta de consumo inusual | Como administrador, deseo detectar comportamientos anómalos en el consumo | Dado patrón anormal cuando evalúa entonces alerta | EP03 |
-
-| US42 | Ver notificación de corte programado | Como usuario, deseo recibir aviso de cortes para planificar actividades | Dado evento cuando ocurre entonces notifica | EP03 |
-| US43 | Consultar disponibilidad de agua | Como usuario, deseo saber si hay agua disponible antes de usarla | Dado consulta cuando realiza entonces muestra estado | EP02 |
-| US44 | Visualizar resumen general | Como administrador, deseo ver un resumen del sistema para evaluación rápida | Dado datos cuando accede entonces muestra resumen | EP02 |
-| US45 | Revisar información actualizada | Como usuario, deseo ver datos actualizados para tomar decisiones confiables | Dado datos cuando consulta entonces muestra información reciente | EP02 |
+| ID | Título | Descripción | Épica |
+|----|--------|------------|----------|
+| US01 | Ver nivel de agua | Como administrador, deseo visualizar el nivel de agua en tiempo real para tomar decisiones | EP02 |
+| US02 | Ver estado de cisterna | Como administrador, deseo conocer el estado de la cisterna para evitar desabastecimiento | EP02 |
+| US03 | Ver días estimados | Como administrador, deseo conocer los días de agua disponibles para anticipar recargas | EP02 |
+| US04 | Visualizar dashboard | Como administrador, deseo ver indicadores clave para gestionar el suministro de agua | EP02 |
+| US05 | Recibir alerta crítica | Como administrador, deseo recibir alertas cuando el nivel sea crítico para actuar a tiempo | EP03 |
+| US06 | Ver alertas | Como administrador, deseo visualizar alertas para gestionar riesgos | EP03 |
+| US07 | Recibir notificaciones | Como usuario, deseo recibir notificaciones para estar informado sobre el estado del agua | EP03 |
+| US08 | Ver notificaciones | Como usuario, deseo revisar notificaciones para conocer eventos recientes | EP03 |
+| US09 | Registrar recarga | Como administrador, deseo registrar recargas para mantener actualizado el nivel de agua | EP04 |
+| US10 | Ver historial de recargas | Como administrador, deseo visualizar recargas para llevar control del abastecimiento | EP04 |
+| US11 | Editar recarga | Como administrador, deseo modificar recargas para corregir errores | EP04 |
+| US12 | Eliminar recarga | Como administrador, deseo eliminar recargas para mantener información correcta | EP04 |
+| US13 | Ver historial de consumo | Como administrador, deseo visualizar el consumo de agua para análisis | EP05 |
+| US14 | Analizar consumo | Como administrador, deseo analizar consumo para mejorar la gestión | EP05 |
+| US15 | Ver consumo mensual | Como administrador, deseo visualizar consumo mensual para evaluar gasto | EP05 |
+| US16 | Ver consumo diario | Como administrador, deseo visualizar consumo diario para control | EP05 |
+| US17 | Filtrar historial de consumo | Como administrador, deseo filtrar consumo para análisis específico | EP05 |
+| US18 | Ver tendencias de consumo | Como administrador, deseo visualizar tendencias para planificación | EP05 |
+| US19 | Comparar consumo entre periodos | Como administrador, deseo comparar consumo para tomar decisiones | EP05 |
+| US20 | Generar reportes | Como administrador, deseo generar reportes para informar a la junta | EP06 |
+| US21 | Descargar reportes | Como administrador, deseo descargar reportes para compartirlos | EP06 |
+| US22 | Ver reportes históricos | Como administrador, deseo revisar reportes anteriores | EP06 |
+| US23 | Compartir reportes | Como administrador, deseo compartir reportes para transparencia | EP06 |
+| US24 | Filtrar reportes | Como administrador, deseo filtrar reportes para consultas | EP06 |
+| US25 | Registrar gasto de recarga | Como administrador, deseo registrar el costo de recargas para control financiero | EP06 |
+| US26 | Consultar gasto mensual | Como administrador, deseo ver gasto mensual para evaluar presupuesto | EP06 |
+| US27 | Ver gastos de agua | Como propietario, deseo visualizar los gastos para entender el uso del dinero | EP08 |
+| US28 | Ver estado de cisterna (propietario) | Como propietario, deseo conocer el estado del agua para planificar su uso | EP08 |
+| US29 | Ver consumo histórico (propietario) | Como propietario, deseo visualizar consumo para entender el uso del recurso | EP08 |
+| US30 | Ver alertas (propietario) | Como propietario, deseo ver alertas para anticiparse a problemas | EP08 |
+| US31 | Ver reportes (propietario) | Como propietario, deseo revisar reportes para transparencia | EP08 |
+| US32 | Configurar umbrales de alerta | Como administrador, deseo definir límites para alertas | EP07 |
+| US33 | Configurar datos del edificio | Como administrador, deseo registrar datos del edificio | EP07 |
+| US34 | Iniciar sesión | Como usuario, deseo iniciar sesión para acceder al sistema | EP01 |
+| US35 | Registrar administrador | Como administrador, deseo registrarme para gestionar el sistema | EP01 |
+| US36 | Cerrar sesión | Como usuario, deseo cerrar sesión para proteger su cuenta | EP01 |
+| US37 | Recuperar contraseña | Como usuario, deseo recuperar acceso al sistema | EP01 |
+| US38 | Visualizar información clara | Como usuario, deseo entender la información del sistema | EP02 |
+| US39 | Acceder desde dispositivo móvil | Como usuario, deseo usar el sistema desde su celular | EP02 |
+| US40 | Recibir alerta de consumo alto | Como administrador, deseo detectar consumo alto para actuar | EP03 |
+| US41 | Recibir alerta de consumo inusual | Como administrador, deseo detectar anomalías en el consumo | EP03 |
+| US42 | Ver notificación de corte programado | Como usuario, deseo recibir avisos de cortes programados | EP03 |
+| US43 | Consultar disponibilidad de agua | Como usuario, deseo saber si hay agua disponible | EP02 |
+| US44 | Visualizar resumen general | Como administrador, deseo ver un resumen del sistema | EP02 |
+| US45 | Revisar información actualizada | Como usuario, deseo ver datos actualizados | EP02 |
+| US46 | Navegar por secciones del landing | Como visitante, deseo navegar por la página para conocer la solución | EP01 |
+| US47 | Visualizar propuesta de valor | Como visitante, deseo entender qué hace el sistema | EP01 |
+| US48 | Identificar problemas del sistema | Como visitante, deseo conocer qué problemas resuelve | EP01 |
+| US49 | Comprender funcionamiento | Como visitante, deseo entender cómo funciona el sistema | EP01 |
+| US50 | Visualizar beneficios | Como visitante, deseo conocer los beneficios del sistema | EP01 |
+| US51 | Consultar planes | Como visitante, deseo conocer los planes disponibles | EP01 |
+| US52 | Enviar contacto | Como visitante, deseo enviar mis datos para recibir información | EP01 |
+| US53 | Acceder a contacto desde botones | Como visitante, deseo acceder rápidamente al formulario de contacto | EP01 |
 
 ### HU01 - Ver nivel de agua
 
@@ -2903,150 +2902,84 @@ Entonces el sistema muestra un mensaje informativo
 Product Backlog para el sistema TankIQ orientado a la gestión inteligente del suministro de agua en edificios.
 
 <table>
-    <thead>
-        <tr>
-            <th># Orden</th>
-            <th>User Story ID</th>
-            <th>Título</th>
-            <th>Descripción</th>
-            <th>Story Points (1/2/3/5/8)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>US01</td>
-            <td>Iniciar sesión</td>
-            <td>Como usuario, quiero iniciar sesión para acceder a la plataforma.</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>US02</td>
-            <td>Registrar administrador</td>
-            <td>Como administrador, quiero registrarme para gestionar el sistema.</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>US04</td>
-            <td>Ver nivel de agua</td>
-            <td>Como administrador, quiero visualizar el nivel de agua en tiempo real para tomar decisiones.</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>US05</td>
-            <td>Ver días estimados</td>
-            <td>Como administrador, quiero ver los días estimados de agua para anticipar recargas.</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>US03</td>
-            <td>Visualizar dashboard</td>
-            <td>Como administrador, quiero ver el dashboard para conocer el estado de la cisterna.</td>
-            <td>8</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>US06</td>
-            <td>Recibir alerta crítica</td>
-            <td>Como administrador, quiero recibir alertas para evitar desabastecimiento.</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>US07</td>
-            <td>Visualizar alertas</td>
-            <td>Como administrador, quiero visualizar alertas para gestionar riesgos.</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>US18</td>
-            <td>Recibir notificaciones</td>
-            <td>Como usuario, quiero recibir notificaciones para estar informado de eventos importantes.</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>US19</td>
-            <td>Visualizar notificaciones</td>
-            <td>Como usuario, quiero ver las notificaciones para revisar eventos.</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>US08</td>
-            <td>Registrar recarga</td>
-            <td>Como administrador, quiero registrar recargas de agua para actualizar el nivel de la cisterna.</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>11</td>
-            <td>US09</td>
-            <td>Ver historial</td>
-            <td>Como administrador, quiero ver el historial de consumo y recargas para análisis.</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>US10</td>
-            <td>Analizar consumo</td>
-            <td>Como administrador, quiero analizar el consumo mediante gráficos para tomar decisiones.</td>
-            <td>8</td>
-        </tr>
-        <tr>
-            <td>13</td>
-            <td>US11</td>
-            <td>Generar reportes</td>
-            <td>Como administrador, quiero generar reportes para la junta de propietarios.</td>
-            <td>8</td>
-        </tr>
-        <tr>
-            <td>14</td>
-            <td>US12</td>
-            <td>Descargar reportes</td>
-            <td>Como administrador, quiero descargar reportes para compartirlos.</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>15</td>
-            <td>US13</td>
-            <td>Configurar alertas</td>
-            <td>Como administrador, quiero configurar los umbrales de alerta para personalizar el sistema.</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>US14</td>
-            <td>Gestionar datos del edificio</td>
-            <td>Como administrador, quiero gestionar los datos del edificio para mantener información actualizada.</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>17</td>
-            <td>US15</td>
-            <td>Ver estado de cisterna</td>
-            <td>Como propietario, quiero visualizar el estado de la cisterna para conocer disponibilidad de agua.</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>18</td>
-            <td>US16</td>
-            <td>Ver consumo histórico</td>
-            <td>Como propietario, quiero visualizar el consumo histórico para entender el uso del recurso.</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>19</td>
-            <td>US17</td>
-            <td>Ver gastos de agua</td>
-            <td>Como propietario, quiero visualizar los gastos para entender los costos de mantenimiento.</td>
-            <td>3</td>
-        </tr>
-    </tbody>
+<thead>
+<tr>
+<th># Orden</th>
+<th>User Story ID</th>
+<th>Título</th>
+<th>Descripción</th>
+<th>Story Points (1/2/3/5/8)</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr><td>1</td><td>US46</td><td>Navegar por secciones del landing</td><td>Como visitante, quiero navegar por la página para conocer la solución.</td><td>3</td></tr>
+<tr><td>2</td><td>US47</td><td>Visualizar propuesta de valor</td><td>Como visitante, quiero entender qué hace el sistema.</td><td>3</td></tr>
+<tr><td>3</td><td>US48</td><td>Identificar problemas del sistema</td><td>Como visitante, quiero conocer qué problemas resuelve.</td><td>3</td></tr>
+<tr><td>4</td><td>US49</td><td>Comprender funcionamiento</td><td>Como visitante, quiero entender cómo funciona el sistema.</td><td>3</td></tr>
+<tr><td>5</td><td>US50</td><td>Visualizar beneficios</td><td>Como visitante, quiero conocer los beneficios del sistema.</td><td>3</td></tr>
+<tr><td>6</td><td>US52</td><td>Enviar contacto</td><td>Como visitante, quiero enviar mis datos para recibir información.</td><td>5</td></tr>
+<tr><td>7</td><td>US53</td><td>Acceder a contacto desde botones</td><td>Como visitante, quiero acceder rápidamente al formulario de contacto.</td><td>2</td></tr>
+<tr><td>8</td><td>US51</td><td>Consultar planes</td><td>Como visitante, quiero conocer los planes disponibles.</td><td>3</td></tr>
+
+<tr><td>9</td><td>US01</td><td>Ver nivel de agua</td><td>Como administrador, quiero visualizar el nivel de agua para tomar decisiones.</td><td>5</td></tr>
+<tr><td>10</td><td>US02</td><td>Ver estado de cisterna</td><td>Como administrador, quiero conocer el estado de la cisterna.</td><td>3</td></tr>
+<tr><td>11</td><td>US03</td><td>Ver días estimados</td><td>Como administrador, quiero conocer los días de agua disponibles.</td><td>5</td></tr>
+<tr><td>12</td><td>US04</td><td>Visualizar dashboard</td><td>Como administrador, quiero ver indicadores del sistema.</td><td>8</td></tr>
+
+<tr><td>13</td><td>US05</td><td>Recibir alerta crítica</td><td>Como administrador, quiero recibir alertas para evitar desabastecimiento.</td><td>5</td></tr>
+<tr><td>14</td><td>US06</td><td>Ver alertas</td><td>Como administrador, quiero visualizar alertas.</td><td>3</td></tr>
+<tr><td>15</td><td>US07</td><td>Recibir notificaciones</td><td>Como usuario, quiero recibir notificaciones.</td><td>5</td></tr>
+<tr><td>16</td><td>US08</td><td>Ver notificaciones</td><td>Como usuario, quiero visualizar notificaciones.</td><td>3</td></tr>
+
+<tr><td>17</td><td>US09</td><td>Registrar recarga</td><td>Como administrador, quiero registrar recargas.</td><td>5</td></tr>
+<tr><td>18</td><td>US10</td><td>Ver historial de recargas</td><td>Como administrador, quiero visualizar recargas.</td><td>3</td></tr>
+<tr><td>19</td><td>US11</td><td>Editar recarga</td><td>Como administrador, quiero modificar recargas.</td><td>3</td></tr>
+<tr><td>20</td><td>US12</td><td>Eliminar recarga</td><td>Como administrador, quiero eliminar recargas.</td><td>2</td></tr>
+
+<tr><td>21</td><td>US13</td><td>Ver historial de consumo</td><td>Como administrador, quiero visualizar consumo.</td><td>5</td></tr>
+<tr><td>22</td><td>US14</td><td>Analizar consumo</td><td>Como administrador, quiero analizar consumo.</td><td>8</td></tr>
+<tr><td>23</td><td>US15</td><td>Ver consumo mensual</td><td>Como administrador, quiero visualizar consumo mensual.</td><td>3</td></tr>
+<tr><td>24</td><td>US16</td><td>Ver consumo diario</td><td>Como administrador, quiero visualizar consumo diario.</td><td>3</td></tr>
+<tr><td>25</td><td>US17</td><td>Filtrar historial de consumo</td><td>Como administrador, quiero filtrar consumo.</td><td>3</td></tr>
+<tr><td>26</td><td>US18</td><td>Ver tendencias de consumo</td><td>Como administrador, quiero ver tendencias.</td><td>5</td></tr>
+<tr><td>27</td><td>US19</td><td>Comparar consumo</td><td>Como administrador, quiero comparar consumo.</td><td>5</td></tr>
+
+<tr><td>28</td><td>US20</td><td>Generar reportes</td><td>Como administrador, quiero generar reportes.</td><td>8</td></tr>
+<tr><td>29</td><td>US21</td><td>Descargar reportes</td><td>Como administrador, quiero descargar reportes.</td><td>3</td></tr>
+<tr><td>30</td><td>US22</td><td>Ver reportes históricos</td><td>Como administrador, quiero revisar reportes.</td><td>3</td></tr>
+<tr><td>31</td><td>US23</td><td>Compartir reportes</td><td>Como administrador, quiero compartir reportes.</td><td>3</td></tr>
+<tr><td>32</td><td>US24</td><td>Filtrar reportes</td><td>Como administrador, quiero filtrar reportes.</td><td>3</td></tr>
+<tr><td>33</td><td>US25</td><td>Registrar gasto de recarga</td><td>Como administrador, quiero registrar gastos.</td><td>5</td></tr>
+<tr><td>34</td><td>US26</td><td>Consultar gasto mensual</td><td>Como administrador, quiero evaluar presupuesto.</td><td>5</td></tr>
+
+<tr><td>35</td><td>US27</td><td>Ver gastos de agua</td><td>Como propietario, quiero visualizar gastos.</td><td>3</td></tr>
+<tr><td>36</td><td>US28</td><td>Ver estado de cisterna</td><td>Como propietario, quiero conocer el estado del agua.</td><td>3</td></tr>
+<tr><td>37</td><td>US29</td><td>Ver consumo histórico</td><td>Como propietario, quiero visualizar consumo.</td><td>3</td></tr>
+<tr><td>38</td><td>US30</td><td>Ver alertas</td><td>Como propietario, quiero ver alertas.</td><td>3</td></tr>
+<tr><td>39</td><td>US31</td><td>Ver reportes</td><td>Como propietario, quiero revisar reportes.</td><td>3</td></tr>
+
+<tr><td>40</td><td>US32</td><td>Configurar umbrales</td><td>Como administrador, quiero configurar alertas.</td><td>5</td></tr>
+<tr><td>41</td><td>US33</td><td>Configurar datos del edificio</td><td>Como administrador, quiero registrar datos.</td><td>3</td></tr>
+
+<tr><td>42</td><td>US34</td><td>Iniciar sesión</td><td>Como usuario, quiero acceder al sistema.</td><td>3</td></tr>
+<tr><td>43</td><td>US35</td><td>Registrar administrador</td><td>Como administrador, quiero registrarme.</td><td>5</td></tr>
+<tr><td>44</td><td>US36</td><td>Cerrar sesión</td><td>Como usuario, quiero cerrar sesión.</td><td>2</td></tr>
+<tr><td>45</td><td>US37</td><td>Recuperar contraseña</td><td>Como usuario, quiero recuperar acceso.</td><td>3</td></tr>
+
+<tr><td>46</td><td>US38</td><td>Visualizar información clara</td><td>Como usuario, quiero entender la información.</td><td>2</td></tr>
+<tr><td>47</td><td>US39</td><td>Acceder desde móvil</td><td>Como usuario, quiero usar el sistema desde el celular.</td><td>3</td></tr>
+
+<tr><td>48</td><td>US40</td><td>Alerta consumo alto</td><td>Como administrador, quiero detectar consumo alto.</td><td>5</td></tr>
+<tr><td>49</td><td>US41</td><td>Alerta consumo inusual</td><td>Como administrador, quiero detectar anomalías.</td><td>5</td></tr>
+<tr><td>50</td><td>US42</td><td>Notificación de corte</td><td>Como usuario, quiero recibir avisos de cortes.</td><td>3</td></tr>
+
+<tr><td>51</td><td>US43</td><td>Consultar disponibilidad</td><td>Como usuario, quiero saber si hay agua disponible.</td><td>3</td></tr>
+<tr><td>52</td><td>US44</td><td>Resumen general</td><td>Como administrador, quiero ver un resumen.</td><td>3</td></tr>
+<tr><td>53</td><td>US45</td><td>Información actualizada</td><td>Como usuario, quiero ver datos actualizados.</td><td>3</td></tr>
+
+</tbody>
 </table>
     
 # Capítulo IV: Product Design
