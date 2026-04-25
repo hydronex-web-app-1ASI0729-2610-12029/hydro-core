@@ -45,7 +45,7 @@
 
 **URL del Repositorio**: [https://github.com/hydronex-web-app-1ASI0729-2610-12029/hydro-core](https://github.com/hydronex-web-app-1ASI0729-2610-12029/hydro-core)
 
-<div align = "left">
+
 
 # ABET – EAC - Student Outcome 5
 
@@ -356,13 +356,176 @@ preferencia del usuario en localStorage.
 ![about.png](assets/about.png)
 ![contact&footer.png](assets/contact%26footer.png)
 ### 5.2.1.6. Services Documentation Evidence for Sprint Review.
-    
-### 5.2.1.7. Software Deployment Evidence for Sprint Review.
-    
-### 5.2.1.8. Team Collaboration Insights during Sprint.
+
+El repositorio del Landing Page contiene una documentación exhaustiva que detalla la estructura del proyecto, las tecnologías empleadas, los requisitos de instalación y las directrices para el despliegue. En el archivo README.md del repositorio, se puede acceder a esta documentación.
+![github.png](assets/github.png)
+
+#### 5.2.1.7. Software Deployment Evidence for Sprint Review.
+
+En esta sección se presentan las evidencias del proceso de despliegue de la Landing Page
+desarrollado durante el Sprint 1. El despliegue se realizó utilizando **GitHub Pages**, una
+plataforma de hosting gratuita y confiable para sitios web estáticos, que permite la
+publicación automática desde el repositorio de GitHub.
+
+**Información del Despliegue**
+
+| Aspecto | Detalle |
+|---|---|
+| Plataforma de Despliegue | GitHub Pages |
+| Repositorio | [Landing-Page](https://github.com/hydronex-web-app-1ASI0729-2610-12029/Landing-Page) |
+| URL del Landing Page | [https://hydronex-web-app-1ASI0729-2610-12029.github.io/Landing-Page/](https://hydronex-web-app-1ASI0729-2610-12029.github.io/Landing-Page/) |
+| Rama de Despliegue | main |
+| Fecha de Despliegue | 25/04/2026 |
+| Estado Actual | Desplegado y Funcional |
+| Tipo de Sitio | Sitio Web Estático (HTML, CSS, JavaScript) |
+| HTTPS | Habilitado (Certificado SSL automático) |
+
+**Proceso de Despliegue Detallado**
+
+**Paso 1: Preparación del Repositorio**
+- Se configuró el repositorio `Landing-Page` en GitHub con la estructura completa de archivos.
+- Se organizaron los archivos HTML, CSS, JavaScript e imágenes en carpetas apropiadas.
+- Se aseguró que todos los archivos estuvieran consolidados en la rama `main`.
+
+**Paso 2: Configuración de GitHub Pages**
+- Se accedió a la configuración del repositorio en GitHub.
+- Se habilitó GitHub Pages en la sección **Settings → Pages**.
+- Se seleccionó la rama `main` como fuente del sitio.
+- Se configuró la carpeta raíz (`/root`) como directorio de publicación.
+
+*(Insertar captura: configuración de GitHub Pages)*
+
+**Paso 3: Generación de la URL**
+- GitHub Pages generó automáticamente la URL pública del sitio.
+- La URL sigue el formato: `https://[organizacion].github.io/[repositorio]/`
+
+**Paso 4: Verificación del Despliegue**
+- Se verificó que el sitio estuviera accesible en la URL proporcionada.
+- Se comprobó que el certificado SSL estuviera activo (HTTPS).
+- Se validó que todos los recursos se cargaran correctamente.
+
+*(Insertar captura: confirmación de despliegue exitoso)*
+
+**Paso 5: Validación de Funcionalidad**
+
+Se realizaron pruebas para verificar que todas las funcionalidades del Landing Page
+funcionaran correctamente:
+
+- **Navegación entre secciones:** Todos los enlaces del menú funcionan con scroll suave.
+- **Diseño responsive:** El sitio se adapta correctamente a mobile, tablet y desktop.
+- **Sistema de idiomas:** El toggle EN/ES funciona correctamente y persiste en localStorage.
+- **Formulario de contacto:** La validación de campos y los toast notifications operan sin errores.
+- **Carga de assets:** Todas las imágenes y recursos se cargan sin errores.
+- **Compatibilidad:** Se probó en Chrome, Firefox, Safari y Edge.
+
+*(Insertar captura: Landing Page desplegada en producción)*
+
+#### 5.2.1.8. Team Collaboration Insights during Sprint.
+
+Durante el Sprint 1, las actividades de implementación del Landing Page de TankIQ se
+desarrollaron de forma colaborativa mediante **GitHub**, aplicando el flujo de trabajo
+basado en ramas por feature, commits con la convención Conventional Commits y Pull
+Requests con revisión mínima de un compañero antes del merge a `main`. Este proceso
+garantizó trazabilidad, calidad de código y un historial claro de las contribuciones de
+cada integrante.
+
+Cada miembro del equipo asumió la responsabilidad de una o más secciones de la Landing
+Page según la distribución establecida en la Matriz LACX, asegurando una participación
+activa y balanceada. Las coordinaciones técnicas se realizaron mediante reuniones virtuales
+por Google Meet y comunicación por WhatsApp.
+
+A continuación se presentan las evidencias de colaboración del equipo durante el Sprint 1:
+
+*(Insertar captura: Network Graph del repositorio Landing-Page en GitHub)*
+
+*(Insertar captura: Contributors — commits por integrante)*
+
+*(Insertar captura: historial de Pull Requests mergeados)*
 
 ## Conclusiones
 
+1. TankIQ responde a una problemática real y frecuente en Lima Metropolitana: la falta de
+   visibilidad sobre el nivel de agua en cisternas de edificios residenciales. A través del
+   proceso de Needfinding, entrevistas y análisis de segmentos, se validó que tanto
+   administradores de edificios como propietarios e inquilinos enfrentan consecuencias
+   directas por la ausencia de información en tiempo real, lo que justifica el desarrollo de
+   una solución tecnológica basada en IoT y monitoreo remoto.
+
+2. La aplicación de Domain-Driven Design permitió al equipo estructurar la arquitectura
+   de TankIQ en seis Bounded Contexts claramente delimitados, facilitando la separación de
+   responsabilidades, el trabajo paralelo entre integrantes y la escalabilidad del sistema.
+   Este enfoque, complementado con el C4 Model para la documentación arquitectónica,
+   garantiza que la solución sea mantenible y extensible en los siguientes sprints del ciclo
+   de vida del proyecto.
+
+3. El proceso de diseño UX/UI, sustentado en User Personas, User Journey Maps, Empathy
+   Maps e Impact Mapping, permitió tomar decisiones de diseño centradas en el usuario y
+   no en suposiciones del equipo. El resultado fue una Landing Page que comunica
+   claramente la propuesta de valor de TankIQ a ambos segmentos objetivo, con un diseño
+   responsive, un sistema de internacionalización EN/ES y call-to-action diferenciados,
+   evidenciando la coherencia entre el proceso de investigación y el producto implementado.
+
+4. La adopción de prácticas de ingeniería de software colaborativa — Git Flow, Conventional
+   Commits, Semantic Versioning y revisión de código mediante Pull Requests — permitió al
+   equipo HydroTeam mantener un historial trazable, organizado y coherente a lo largo del
+   Sprint 1. Estas prácticas sientan las bases para escalar el desarrollo hacia los siguientes
+   sprints, donde se incorporará el backend en Spring Boot, la Web Application en Angular
+   y la integración con servicios externos.
 ## Bibliografía
 
+
+Conventional Commits. (2024). *Conventional Commits Specification v1.0.0*.
+https://www.conventionalcommits.org/
+
+Driessen, V. (2010). *A successful Git branching model*.
+https://nvie.com/posts/a-successful-git-branching-model/
+
+Evans, E. (2003). *Domain-Driven Design: Tackling Complexity in the Heart of Software*.
+Addison-Wesley Professional.
+
+Google. (2024). *Google HTML/CSS Style Guide*.
+https://google.github.io/styleguide/htmlcssguide.html
+
+Google. (2024). *Google Java Style Guide*.
+https://google.github.io/styleguide/javaguide.html
+
+Instituto Nacional de Estadística e Informática [INEI]. (2023). *Condiciones de vida en
+el Perú: Acceso a servicios básicos*. https://www.inei.gob.pe/
+
+---
+
 ## Anexos
+
+### Anexo 1: Repositorios del Proyecto
+
+Los repositorios del proyecto TankIQ se encuentran organizados bajo la organización
+GitHub de HydroTeam. En ellos se evidencia el proceso de desarrollo colaborativo
+aplicando Git Flow, Conventional Commits y Semantic Versioning a lo largo del ciclo
+de vida del proyecto.
+
+- **Informe del Proyecto:** https://github.com/hydronex-web-app-1ASI0729-2610-12029/hydro-core
+- **Landing Page:** https://github.com/hydronex-web-app-1ASI0729-2610-12029/Landing-Page
+
+---
+
+### Anexo 2: Segmentación de Usuarios
+
+Se identificaron los siguientes segmentos de usuarios principales para el sistema TankIQ:
+
+- **Administradores de edificios:** responsables de la gestión del suministro de agua,
+  el monitoreo de la cisterna, el registro de recargas y la rendición de cuentas ante la
+  junta de propietarios.
+- **Propietarios e inquilinos:** usuarios que requieren acceso a información clara y
+  transparente sobre el nivel de agua disponible y el gasto mensual en recargas.
+
+Esta diferenciación permitió establecer flujos de usuario específicos para cada segmento,
+orientando las decisiones de diseño de la Landing Page, los wireframes y la arquitectura
+de información de la Web Application.
+
+---
+
+### Anexo 3: Artefactos de UX/UI
+
+- **Figma** — Wireframes, mockups y prototipo interactivo
+- **UXPressia** — User Personas, Empathy Maps y User Journey Maps
+- **LucidChart** — Diagramas de clases, EventStorming y flujos de usuario
