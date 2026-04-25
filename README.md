@@ -197,14 +197,9 @@ configuración del repositorio de la Landing Page desde GitHub. Posteriormente, 
 estáticos (`index.html`, `styles.css`, `script.js`) y habilitó HTTPS por defecto mediante
 sus certificados propios.
 
-*(Insertar captura: configuración de GitHub Pages en el repositorio)*
-
-*(Insertar captura: confirmación de despliegue exitoso con la URL pública)*
 
 El entorno de producción de la Landing Page de TankIQ está accesible públicamente en la
-siguiente URL:
-
-**`https://hydronex-web-app-1ASI0729-2610-12029.github.io/`** *(reemplazar con la URL real)*
+siguiente URL: https://hydronex-web-app-1asi0729-2610-12029.github.io/Landing-Page/
 
 ## 5.2. Landing Page, Services & Applications Implementation.
 
@@ -251,12 +246,115 @@ la distribución de responsabilidades del equipo durante el Sprint 1.
 | Orosco Ttamiña, Juan Carlos | juancarlosorosco59 | C | C | C | C | L | C |
 | Razuri Alvarez, Matias Francesco | u202410772         | C | C | L | C | C | L |
 
-### 5.2.1.3. Sprint Backlog n.
-    
-### 5.2.1.4. Development Evidence for Sprint Review.
-    
-### 5.2.1.5. Execution Evidence for Sprint Review.
-    
+#### 5.2.1.2. Aspect Leaders and Collaborators.
+
+En este apartado se describen los aspectos funcionales más relevantes trabajados durante el
+Sprint 1 en el desarrollo de la Landing Page de TankIQ. Cada uno de ellos representa un
+bloque significativo dentro del alcance funcional de la solución, abarcando la estructura de
+navegación, las secciones de contenido, el sistema de contacto y la responsividad del diseño.
+
+Para cada aspecto se asignó un responsable principal, denominado **Líder (L)**, encargado de
+la dirección técnica y la implementación principal. De igual manera, se identificaron
+**Colaboradores (C)**, miembros del equipo que participaron activamente en el desarrollo,
+validación o soporte de cada aspecto.
+
+La **Matriz LACX** (Leadership and Collaboration Matrix) ofrece una representación clara y
+organizada de la distribución de responsabilidades, favoreciendo la trazabilidad y visibilidad
+del trabajo colaborativo desarrollado a lo largo del Sprint.
+
+| Team Member | GitHub Username | Navbar & Hero | Problema & Cómo funciona | Beneficios & Ahorro | Planes & Integrantes | Contacto & Footer | Responsividad |
+|---|---|---|---|---|---|---|---|
+| Espinar Martínez, Gabriel Ferran | zzZero14   | C | C | C | L | C | C |
+| Guevara Serrano, Diego Ismael |  digetto    | L | C | C | C | C | C |
+| Montalvan Palomino, Bruno Rodolfo | br1rodolfo  | C | L | C | C | C | C |
+| Orosco Ttamiña, Juan Carlos | juancarlosorosco59| C | C | C | C | L | C |
+| Razuri Alvarez, Matias Francesco | u202410772   | C | C | L | C | C | L |
+
+#### 5.2.1.3. Sprint Backlog 1.
+
+El Sprint Backlog 1 se orienta a implementar la Landing Page completa de TankIQ, garantizando
+que comunique la propuesta de valor de forma clara y diferenciada para los segmentos de
+administradores de edificios y propietarios/inquilinos. El objetivo es que la primera versión
+publicada sea responsive, visualmente alineada con el Design System definido en el Capítulo IV
+y funcional en todos los navegadores modernos.
+
+![img.png](assets/img.png)
+
+| **Sprint 1** | | | | | | | |
+|---|---|---|---|---|---|---|---|
+| **User Story** | | **Work-Item / Task** | | | | | |
+| **User Story ID** | **Título** | **Task ID** | **Task Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
+| US46 | Navegar por secciones del landing | T01 | Implementar navbar con navegación por anclas | Desarrollar la barra de navegación fija con enlaces a todas las secciones de la Landing Page y menú hamburguesa para mobile. | 3 | Guevara Serrano, Diego | Done |
+| US47 | Visualizar propuesta de valor | T02 | Implementar sección Hero con CTAs | Diseñar e implementar el hero con titular principal, descripción, botones diferenciados por segmento y dashboard preview animado. | 4 | Guevara Serrano, Diego | Done |
+| US48 | Identificar problemas del sistema | T03 | Implementar sección Problema | Desarrollar la sección con tres tarjetas que presentan los problemas principales del suministro de agua irregular en Lima. | 3 | Montalvan Palomino, Bruno | Done |
+| US49 | Comprender funcionamiento | T04 | Implementar sección Cómo funciona | Crear la sección con tres pasos numerados (sensor → plataforma → alertas) con íconos y conectores visuales. | 3 | Montalvan Palomino, Bruno | Done |
+| US50 | Visualizar beneficios | T05 | Implementar sección Beneficios y Ahorro | Desarrollar la sección con dos columnas diferenciadas por segmento y el bloque de métricas de ahorro estimado. | 4 | Razuri Alvarez, Matias | Done |
+| US51 | Consultar planes | T06 | Implementar sección Planes | Diseñar las tarjetas de plan Básico y Premium con características, precios y botones de contratación. | 3 | Espinar Martínez, Gabriel | Done |
+| US52 | Enviar contacto | T07 | Implementar formulario de contacto | Desarrollar el formulario con validación de campos, integración de toast notifications y soporte bilingüe. | 5 | Orosco Ttamiña, Juan Carlos | Done |
+| US53 | Acceder a contacto desde botones | T08 | Implementar CTAs con scroll suave | Conectar todos los botones de la Landing Page al formulario de contacto mediante scroll suave con JavaScript. | 2 | Orosco Ttamiña, Juan Carlos | Done |
+
+#### 5.2.1.4. Development Evidence for Sprint Review.
+
+A continuación se presenta el registro de commits realizados en el repositorio de la Landing
+Page de TankIQ durante el Sprint 1. Cada entrada incluye el identificador del commit, su
+mensaje descriptivo y la fecha de consolidación, reflejando la evolución del proyecto desde
+la estructura base hasta la versión publicada. Los commits siguen la convención Conventional
+Commits y evidencian cómo la Landing Page fue construida sección por sección mediante un
+flujo de trabajo basado en ramas por feature, Pull Requests y revisión entre compañeros.
+
+| Repository | Branch | Commit Id | Commit Message | Committed on (Date) |
+|---|---|---|---|---|
+| hydronex-web-app.../Landing-Page | feature/navbar | f10e69c | feat: add navbar with logo, navigation links and language toggle | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/hero | c4faaf8 | feat: add hero section with dual CTA buttons for admin and resident | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/navbar | 5807bc3 | feat: add primary, secondary and size button styles | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/navbar | fdd7b62 | feat: add section headers and highlight styles | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/navbar | cf2c61c | feat: add footer layout, newsletter and social links styles | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/navbar | efffc37 | feat: implement bilingual language system with localStorage persistence | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/navbar | b8f70be | feat: add mobile hamburger menu toggle functionality | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/problema | 0e9e646 | feat: add problema section in index.html | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/problema | d2898de | feat: add problema css section to landing page | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/como-funciona | 2fd502b | feat: add Como Funciona section in index.html | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/como-funciona | 2a8d052 | feat: add como funciona css section to landing page | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/beneficios | 8591d3f | feat: update benefits section in landing page | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/beneficios | ac015b6 | feat: add beneficios section in styles.css | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/ahorro | 5c708db | feat: add "ahorro" section to landing page | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/ahorro | 7e0e8c9 | feat: add ahorro css section to landing page | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/navbar | f67cdc5 | feat: add NAVBAR section in styles.css | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/navbar | 9d1d091 | feat: add HERO section in styles.css | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/beneficios | bc2b4b7 | feat: add animaciones fade-in al hacer scroll section to script.js | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/beneficios | 35fbbb2 | feat: add efecto 3D en tarjetas section to script.js | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | feature/navbar | 53f921a | feat: add scroll suave, efecto navbar al hacer scroll, inicialización in script.js | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | develop | 88dad8a | Merge pull request #1 from feature/equipo | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | develop | 42cadec | Merge pull request #2 from feature/contacto | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | develop | c1eb79a | Merge pull request #3 from feature/planes | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | develop | 5c4102d | Merge pull request #4 from feature/footer | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | develop | 62bd1df | Merge pull request #5 from feature/problema | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | develop | a6ec12f | Merge pull request #6 from feature/como-funciona | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | develop | e415003 | Merge pull request #7 from feature/ahorro | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | develop | f1e3595 | Merge pull request #8 from feature/beneficios | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | develop | 6305494 | Merge pull request #9 from feature/hero | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | develop | 2502c74 | Merge pull request #10 from feature/navbar | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | main | fea1002 | fix: add missing sections | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | main | 062f041 | fix: logo path | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | main | dfdf8e2 | fix: repeated section | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | main | f1c4264 | docs: add new logo | Apr 25, 2026 |
+| hydronex-web-app.../Landing-Page | main | 2a1e28f | update | Apr 25, 2026 |.
+
+#### 5.2.1.5. Execution Evidence for Sprint Review.
+
+Durante el Sprint 1, el equipo HydroTeam implementó la Landing Page completa de TankIQ.
+El desarrollo priorizó la experiencia visual, la responsividad Mobile First y la coherencia
+con el Design System definido en el Capítulo IV. Se implementó además un sistema de
+internacionalización (i18n) que permite alternar entre inglés y español, persistiendo la
+preferencia del usuario en localStorage.
+
+![navhero.png](assets/navhero.png)
+
+![problems.png](assets/problems.png)
+![problems2.png](assets/problems2.png)
+![planes.png](assets/planes.png)
+![about.png](assets/about.png)
+![contact&footer.png](assets/contact%26footer.png)
 ### 5.2.1.6. Services Documentation Evidence for Sprint Review.
     
 ### 5.2.1.7. Software Deployment Evidence for Sprint Review.
