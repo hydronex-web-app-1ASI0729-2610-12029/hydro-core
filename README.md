@@ -110,21 +110,147 @@ En esta sección se describen todas las herramientas utilizadas por el equipo Hy
 | **UXPressia** | Utilizada para elaborar User Personas, User Journey Maps y Empathy Maps durante el proceso de Needfinding del proyecto. | Product UX/UI Design | https://uxpressia.com/ | Plataforma orientada a la elaboración de journey maps y perfiles de usuario que permite representar y analizar visualmente la experiencia dentro del sistema. |
 | **Trello** | Herramienta de gestión ágil utilizada para organizar el Product Backlog y el Sprint Backlog del equipo, con columnas por estado de avance de las tareas. | Project Management | https://trello.com/ | Herramienta de tableros Kanban que facilita la organización visual de tareas, el seguimiento del progreso y la colaboración del equipo en sprints ágiles. |
 
-    
+
 ### 5.1.2. Source Code Management.
-    
+
+El proyecto TankIQ se desarrolla bajo un enfoque profesional que prioriza las buenas prácticas
+de control de versiones, la colaboración estructurada en equipo y la trazabilidad del código
+fuente a lo largo de cada sprint. La gestión del código se realiza mediante **GitHub**, dentro
+de la organización
+[hydronex-web-app-1ASI0729-2610-12029](https://github.com/hydronex-web-app-1ASI0729-2610-12029),
+donde se alojan los repositorios correspondientes a cada artefacto del sistema: el backend
+desarrollado en Spring Boot, la Web Application en Angular y la Landing Page estática.
+
+Para la gestión de ramas, el equipo adoptó **Git Flow** como modelo de ramificación. La rama
+**`main`** contiene únicamente el código estable desplegado en producción y solo recibe merges
+al cierre de cada sprint tras revisión grupal. La rama **`develop`** funciona como rama de
+integración continua, donde todos los integrantes consolidan sus avances mediante Pull Requests
+antes de pasar a producción. Las ramas **`feature/<nombre>`** se crean desde `develop` para el
+desarrollo de cada funcionalidad de forma aislada y se integran mediante Pull Request con revisión
+mínima de un compañero, como `feature/tank-monitoring`, `feature/alert-system` o
+`feature/jwt-auth`. Las ramas **`fix/<nombre>`** se utilizan para la corrección de errores,
+como `fix/estimated-days-formula`, y las ramas **`release/<versión>`** se crean al cierre de
+cada sprint para preparar la entrega antes del merge a `main`.
+
+Para la redacción de los mensajes de commit, el equipo siguió la convención
+**Conventional Commits**, lo que permitió mantener un historial claro y semánticamente
+significativo. Los prefijos utilizados fueron: `feat:` para nuevas funcionalidades, `fix:`
+para corrección de errores, `chore:` para tareas de mantenimiento, `docs:` para documentación,
+`refactor:` para reestructuración de código y `test:` para adición de pruebas. Ejemplos de
+commits del proyecto incluyen: `feat: add cistern water level monitoring endpoint`,
+`feat: implement JWT authentication for admin users` y
+`fix: correct estimated days calculation formula`.
+![repo.png](assets/repo.png)
+
 ### 5.1.3. Source Code Style Guide & Conventions.
-    
+
+El uso de un estilo de código unificado es clave para asegurar la consistencia, legibilidad y
+colaboración efectiva durante el desarrollo de TankIQ. Para la entrega del Sprint 1, el trabajo
+se centró en la implementación de la Landing Page estática, por lo que las convenciones
+establecidas en esta sección corresponden a las tecnologías utilizadas: HTML, CSS y JavaScript.
+
+**HTML**
+
+La estructura del HTML sigue las convenciones del Google HTML/CSS Style Guide. Se utiliza
+sangría de 2 espacios, todos los atributos se escriben en minúsculas y entre comillas dobles,
+y todos los elementos de imagen incluyen el atributo `alt` para garantizar accesibilidad. Los
+identificadores y clases se nombran en inglés y de forma descriptiva, reflejando el propósito
+del elemento. Se utilizan atributos personalizados `data-lang` para gestionar el sistema de
+internacionalización y `data-placeholder-es` para los inputs con soporte bilingüe.
+
+**CSS**
+
+Las clases CSS se nombran siguiendo la convención kebab-case (`.hero-section`, `.plan-card`,
+`.navbar-fixed`, `.problema-card`), en concordancia con las recomendaciones del Google
+HTML/CSS Style Guide. El diseño sigue un enfoque **Mobile First**, definiendo primero los
+estilos base para dispositivos móviles y luego aplicando media queries para pantallas más
+grandes. La paleta de colores, tipografía y espaciado respetan el Design System definido en
+el Capítulo IV: color principal celeste `#29ABE2`, gris oscuro `#2D2D2D`, tipografía Inter
+y espaciado en múltiplos de 8px. Las animaciones de entrada se gestionan mediante las clases
+`.fade-in` y `.visible`, controladas por JavaScript al detectar visibilidad en el viewport.
+
+**JavaScript**
+
+El código JavaScript sigue las convenciones del Google JavaScript Style Guide y se organiza
+en módulos funcionales claramente delimitados mediante comentarios de sección. Las funciones
+se nombran en camelCase con nombres descriptivos que reflejan su responsabilidad:
+`initLanguageSystem()`, `initMobileMenu()`, `initScrollAnimations()`, `initContactForm()`.
+Se utiliza `const` y `let` en lugar de `var`, y cada función tiene una única responsabilidad
+definida. El sistema de idiomas gestiona inglés y español mediante la clase `lang-es` sobre
+el `body`, persistiendo la preferencia del usuario en `localStorage`. Para optimizar el
+rendimiento, los eventos de scroll utilizan una función `throttle()` que limita la frecuencia
+de ejecución. El código se escribe en inglés para todos los identificadores y comentarios
+técnicos, a excepción de los textos visibles al usuario que forman parte del sistema bilingüe.
+
 ### 5.1.4. Software Deployment Configuration.
-    
+
+Para el despliegue de la Landing Page de TankIQ, el equipo HydroTeam utilizó **GitHub Pages**
+como plataforma de publicación, aprovechando su integración directa con el repositorio de
+GitHub. Esta decisión permite que cada actualización consolidada en la rama `main` se refleje
+de forma automática en el entorno público, sin necesidad de configuración adicional de
+infraestructura.
+
+El proceso de configuración seguido fue el siguiente: en primer lugar, se accedió a la
+configuración del repositorio de la Landing Page desde GitHub. Posteriormente, en la sección
+**Pages**, se seleccionó la rama `main` como fuente de despliegue y se indicó la carpeta raíz
+(`/root`) como directorio de publicación. GitHub Pages procesó automáticamente los archivos
+estáticos (`index.html`, `styles.css`, `script.js`) y habilitó HTTPS por defecto mediante
+sus certificados propios.
+
+*(Insertar captura: configuración de GitHub Pages en el repositorio)*
+
+*(Insertar captura: confirmación de despliegue exitoso con la URL pública)*
+
+El entorno de producción de la Landing Page de TankIQ está accesible públicamente en la
+siguiente URL:
+
+**`https://hydronex-web-app-1ASI0729-2610-12029.github.io/`** *(reemplazar con la URL real)*
+
 ## 5.2. Landing Page, Services & Applications Implementation.
-    
-## 5.2.1. Sprint n
-    
-### 5.2.1.1. Sprint Planning n.
-    
-### 5.2.1.2. Aspect Leaders and Collaborators.
-    
+
+### 5.2.1. Sprint 1
+
+Durante el Sprint 1, el equipo HydroTeam centró sus esfuerzos en establecer la presencia
+inicial del producto TankIQ mediante la implementación de la Landing Page. El trabajo incluyó
+la estructuración de las secciones principales, el diseño visual alineado con el Design System
+definido en el Capítulo IV, la responsividad Mobile First y la integración de los
+call-to-action diferenciados por segmento objetivo. A continuación se detallan la planificación
+del Sprint, el backlog trabajado, las evidencias de desarrollo y los aspectos de colaboración
+del equipo.
+
+#### 5.2.1.1. Sprint Planning 1.
+
+| **Sprint #** | Sprint 1 |
+|---|---|
+| **Sprint Planning Background** | |
+| **Fecha** | 23/04/2026 |
+| **Hora** | 20:00 pm (GMT-5) |
+| **Ubicación** | Reunión virtual por Google Meet |
+| **Preparado por** | HydroTeam |
+| **Participantes (reunión de planificación)** | - Espinar Martínez, Gabriel Ferran <br> - Guevara Serrano, Diego Ismael <br> - Montalvan Palomino, Bruno Rodolfo <br> - Orosco Ttamiña, Juan Carlos <br> - Razuri Alvarez, Matias Francesco |
+| **Sprint Goal & User Stories** | Nuestro enfoque está en entregar la Landing Page de TankIQ con diseño completo, responsivo y alineado con la identidad visual del producto. Creemos que esto establecerá la presencia pública del producto y comunicará la propuesta de valor a ambos segmentos objetivo. Esto se confirmará cuando los visitantes puedan navegar todas las secciones, identificar los beneficios por segmento y acceder al formulario de contacto desde cualquier dispositivo. |
+| **Velocidad del Sprint 1** | 25 |
+| **Suma de Story Points** | 25 |
+
+#### 5.2.1.2. Aspect Leaders and Collaborators.
+
+En este apartado se describen los aspectos funcionales trabajados durante el Sprint 1 del
+proyecto TankIQ. Cada aspecto representa una sección clave de la Landing Page, desde la
+estructura de navegación y el hero hasta el footer y la responsividad. Para cada aspecto se
+designó un **Líder (L)**, responsable de la dirección técnica y la implementación principal,
+y **Colaboradores (C)**, encargados de apoyar en el desarrollo, revisión e integración.
+
+La **Matriz LACX** (Leadership and Collaboration Matrix) permite visualizar de manera clara
+la distribución de responsabilidades del equipo durante el Sprint 1.
+
+| Team Member | GitHub Username    | Navbar & Hero | Problema & Cómo funciona | Beneficios & Ahorro | Planes & Integrantes | Contacto & Footer | Responsividad |
+|---|--------------------|---|---|---|---|---|---|
+| Espinar Martínez, Gabriel Ferran | zzZero14           | C | C | C | L | C | C |
+| Guevara Serrano, Diego Ismael | digetto            | L | C | C | C | C | C |
+| Montalvan Palomino, Bruno Rodolfo | br1rodolfo         | C | L | C | C | C | C |
+| Orosco Ttamiña, Juan Carlos | juancarlosorosco59 | C | C | C | C | L | C |
+| Razuri Alvarez, Matias Francesco | u202410772         | C | C | L | C | C | L |
+
 ### 5.2.1.3. Sprint Backlog n.
     
 ### 5.2.1.4. Development Evidence for Sprint Review.
