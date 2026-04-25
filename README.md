@@ -55,7 +55,7 @@
       24/04/2026
     </td>
     <td style="text-align: center;">
-      Completar...
+      Espinar Martínez, Gabriel Ferran
     </td>
     <td style="text-align: justify;">
      Completar...
@@ -70,7 +70,7 @@
       24/04/2026
     </td>
     <td style="text-align: center;">
-      Completar...
+      Guevara Serrano, Diego Ismael
     </td>
     <td style="text-align: justify;">
      Completar...
@@ -85,7 +85,7 @@
       24/04/2026
     </td>
     <td style="text-align: center;">
-      Completar...
+      Montalvan Palomino, Bruno Rodolfo
     </td>
     <td style="text-align: justify;">
       Completar...
@@ -99,7 +99,7 @@
     24/04/2026
   </td>
   <td style="text-align: center;">
-    Completar...
+    Razuri Alvarez, Matias Francesco
   </td>
   <td style="text-align: justify;">
     Completar...
