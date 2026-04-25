@@ -10,8 +10,9 @@
 ### Docente: Hugo Allan Mori Paiva
 ### Informe de Trabajo Final
 
-###  G2
-###  Hydronex
+###  HydroTeam
+###  TankIQ
+
 
 
 <div align = "center">
@@ -21,7 +22,7 @@
 |U202310436 |Espinar Martínez Gabriel Ferran|
 |U202410772 |Razuri Alvarez Matias Francesco| 
 |U202411282 |Montalvan Palomino Bruno Rodolfo| 
-|U202414840 |Oroscco Ttamiña Juan Carlos| 
+|U202414840 |Orosco Ttamiña Juan Carlos| 
 |U202318951 |Guevara Serrano Diego Ismael| 
 
 </div>
@@ -182,34 +183,527 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 ## 1.3. Segmentos objetivo.
     
 # Capítulo II: Requirements Elicitation & Analysis
-    
+
 ## 2.1. Competidores.
-    
+
+A continuación, se presentan las principales soluciones existentes en el mercado que guardan relación con la problemática que TankIQ busca resolver. Si bien no existe en el mercado peruano una plataforma orientada exactamente al mismo segmento, se han identificado competidores indirectos que abordan parcialmente el problema del monitoreo de agua o la gestión de edificios residenciales.
+
+**Hidrosid:**
+Es una empresa peruana que comercializa equipos de automatización para cisternas y tanques elevados, incluyendo sensores de nivel y tableros de control eléctrico. Sus soluciones están orientadas principalmente a instalaciones industriales y edificios comerciales de gran escala. Si bien resuelve el problema del monitoreo de nivel de agua, lo hace mediante hardware especializado que requiere instalación por técnicos calificados, sin ofrecer una plataforma web de visualización de datos, historial de consumo ni reportes para juntas de propietarios. Su costo y complejidad lo hacen inaccesible para el segmento de edificios residenciales pequeños y medianos.
+
+**Siemens Building Technologies:**
+Es una división de Siemens especializada en sistemas de automatización y gestión de edificios (BMS - Building Management Systems). Ofrece soluciones integrales para el monitoreo de agua, energía, climatización y seguridad en edificios. Sus plataformas permiten visualizar en tiempo real el consumo de recursos y generar reportes detallados. Sin embargo, están diseñadas para grandes edificios corporativos, hoteles y centros comerciales, con costos de implementación que superan ampliamente el presupuesto de un edificio residencial de Lima. No existe una versión accesible ni adaptada al contexto socioeconómico de los edificios de los conos o zonas intermedias de Lima.
+
+**AquaCloud (internacional):**
+Es una plataforma SaaS de monitoreo remoto de tanques y depósitos de agua orientada a empresas de distribución de agua y municipios. Permite a los operadores visualizar en tiempo real el nivel de múltiples tanques, recibir alertas y optimizar rutas de reabastecimiento. Si bien su tecnología es similar a la que TankIQ propone, su modelo de negocio está orientado a operadores industriales y municipios, no a administradores de edificios residenciales. No está disponible en el mercado peruano ni cuenta con interfaz en español adaptada al contexto local.
+
+
 ### 2.1.1. Análisis competitivo.
-    
+
+<table>
+<tr>
+    <th colspan="6" valign="top">Competitive Analysis Landscape</th>
+</tr>
+<tr>
+    <td colspan="1" rowspan="2" valign="top">¿Por qué llevar a cabo este análisis?</td>
+    <td colspan="5" valign="top">¿Cómo identificar a nuestros principales competidores?</td>
+</tr>
+<tr>
+    <td colspan="5" valign="top">Con este análisis usando el FODA, es decir, las fortalezas, oportunidades, debilidades y amenazas de nuestros competidores, se evalúa su participación en el mercado y qué estrategias se pueden desarrollar para que TankIQ surja como referente en la gestión inteligente de cisternas residenciales en Lima. Para identificar a los principales competidores, se estudió el mercado de soluciones de monitoreo de agua y gestión de edificios, tanto a nivel nacional como internacional, concluyendo que los principales competidores indirectos son:</td>
+</tr>
+<tr>
+    <td colspan="2" valign="top">Nombre y logo</td>
+    <td colspan="1" valign="top">TankIQ</td>
+    <td colspan="1" valign="top">Hidrosid</td>
+    <td colspan="1" valign="top">Siemens Building Technologies</td>
+    <td colspan="1" valign="top">AquaCloud</td>
+</tr>
+<tr>
+    <td colspan="1" rowspan="2" valign="top">PERFIL</td>
+    <td colspan="1" valign="top">Overview</td>
+    <td colspan="1" valign="top">Plataforma web con sensor IoT ultrasónico que monitorea en tiempo real el nivel de cisternas en edificios residenciales de Lima, proyecta días de agua disponibles y genera reportes de gasto para juntas de propietarios.</td>
+    <td colspan="1" valign="top">Empresa peruana que comercializa equipos eléctricos y sensores de nivel para cisternas y tanques. Orientada a instalaciones industriales y comerciales de gran escala, sin plataforma web de visualización de datos.</td>
+    <td colspan="1" valign="top">División de Siemens que ofrece sistemas integrales de gestión de edificios (BMS), incluyendo monitoreo de agua, energía y climatización. Orientada a grandes edificios corporativos y centros comerciales.</td>
+    <td colspan="1" valign="top">Plataforma SaaS internacional de monitoreo remoto de tanques de agua orientada a empresas distribuidoras de agua y municipios. No disponible en el mercado peruano.</td>
+</tr>
+<tr>
+    <td colspan="1" valign="top">Ventaja competitiva ¿Qué valor ofrece a los clientes?</td>
+    <td colspan="1" valign="top">Es la única solución accesible, en español y diseñada específicamente para edificios residenciales pequeños y medianos de Lima. Combina monitoreo IoT en tiempo real con proyección de consumo y transparencia financiera hacia la junta de propietarios, a un costo mensual accesible por suscripción.</td>
+    <td colspan="1" valign="top">Solución hardware local con respaldo técnico en Perú. Resuelve el problema del control automático de llenado de cisterna, pero sin visibilidad remota ni reportes de consumo o gasto.</td>
+    <td colspan="1" valign="top">Solución integral y robusta para edificios de gran escala. Permite monitorear múltiples recursos simultáneamente con alta precisión y confiabilidad.</td>
+    <td colspan="1" valign="top">Plataforma escalable para el monitoreo de múltiples tanques en simultáneo. Útil para operadores con grandes redes de distribución de agua.</td>
+</tr>
+<tr>
+    <td colspan="1" rowspan="2" valign="top">Perfil de marketing</td>
+    <td colspan="1" valign="top">Mercado objetivo</td>
+    <td colspan="1" valign="top">Administradores de edificios residenciales de 6 a 40 departamentos en distritos de Lima con suministro irregular de SEDAPAL. Propietarios e inquilinos de dichos edificios.</td>
+    <td colspan="1" valign="top">Empresas constructoras, industrias y edificios comerciales que requieren automatización de cisternas y tanques a gran escala.</td>
+    <td colspan="1" valign="top">Grandes edificios corporativos, hoteles, hospitales y centros comerciales que requieren gestión integral de recursos.</td>
+    <td colspan="1" valign="top">Empresas municipales de agua, distribuidoras y operadores industriales con redes de tanques distribuidos geográficamente.</td>
+</tr>
+<tr>
+    <td colspan="1" valign="top">Estrategias de marketing</td>
+    <td colspan="1" valign="top">Difusión en grupos de WhatsApp de juntas de propietarios, recomendación entre administradores de edificios y publicidad en redes sociales orientada a distritos con mayor déficit hídrico en Lima.</td>
+    <td colspan="1" valign="top">Venta directa a través de distribuidores técnicos y contratistas de instalaciones eléctricas.</td>
+    <td colspan="1" valign="top">Fuerza de ventas B2B, licitaciones corporativas y alianzas con empresas constructoras de edificios comerciales.</td>
+    <td colspan="1" valign="top">Marketing digital B2B orientado a municipios y empresas de utilities, con demostraciones técnicas y pilotos gratuitos.</td>
+</tr>
+<tr>
+    <td colspan="1" valign="top">Perfil del producto</td>
+    <td colspan="1" valign="top">Productos & Servicios</td>
+    <td colspan="1" valign="top">Sensor IoT ultrasónico instalado en la cisterna + plataforma web con dashboard en tiempo real, alertas automáticas, proyección de consumo y reportes de gasto para la junta de propietarios.</td>
+    <td colspan="1" valign="top">Tableros de control eléctrico, sensores de nivel flotantes y equipos de automatización para llenado automático de cisternas y tanques.</td>
+    <td colspan="1" valign="top">Sistemas BMS integrales que incluyen monitoreo de agua, energía, climatización, accesos y seguridad para edificios de gran escala.</td>
+    <td colspan="1" valign="top">Plataforma SaaS de monitoreo remoto de tanques con alertas, reportes y optimización de rutas de reabastecimiento para operadores industriales.</td>
+</tr>
+<tr>
+    <td colspan="1" valign="top"></td>
+    <td colspan="1" valign="top">Precios y Costos</td>
+    <td colspan="1" valign="top">Costos: desarrollo de software y hardware del sensor. Precios: suscripción mensual accesible por edificio (plan básico y plan premium).</td>
+    <td colspan="1" valign="top">Costos: fabricación e instalación de hardware especializado. Precios: venta de equipos con costos de instalación técnica adicionales.</td>
+    <td colspan="1" valign="top">Costos: desarrollo, implementación y mantenimiento de sistemas BMS. Precios: proyectos a medida con inversión inicial elevada.</td>
+    <td colspan="1" valign="top">Costos: infraestructura cloud y desarrollo de plataforma SaaS. Precios: suscripción B2B con tarifas según número de tanques monitoreados.</td>
+</tr>
+<tr>
+    <td colspan="1" valign="top"></td>
+    <td colspan="1" valign="top">Canales de distribución (Web y/o Móvil)</td>
+    <td colspan="1" valign="top">Web</td>
+    <td colspan="1" valign="top">Presencial / Distribuidores técnicos</td>
+    <td colspan="1" valign="top">Web y presencial</td>
+    <td colspan="1" valign="top">Web</td>
+</tr>
+<tr>
+    <td colspan="1" rowspan="4" valign="top">Análisis FODA</td>
+    <td colspan="1" valign="top">Fortalezas</td>
+    <td colspan="1" valign="top">
+        Única solución diseñada para el contexto residencial de Lima.<br>
+        Precio accesible mediante suscripción mensual.<br>
+        Interfaz simple sin necesidad de formación técnica.<br>
+        Módulo de transparencia financiera para juntas de propietarios.
+    </td>
+    <td colspan="1" valign="top">
+        Presencia local en el mercado peruano.<br>
+        Experiencia técnica en instalaciones de cisternas.<br>
+        Solución hardware probada y confiable.
+    </td>
+    <td colspan="1" valign="top">
+        Marca reconocida a nivel mundial.<br>
+        Solución integral que cubre múltiples recursos del edificio.<br>
+        Alta confiabilidad y soporte técnico especializado.
+    </td>
+    <td colspan="1" valign="top">
+        Plataforma escalable para múltiples tanques.<br>
+        Tecnología cloud robusta.<br>
+        Experiencia en el sector utilities a nivel internacional.
+    </td>
+</tr>
+<tr>
+    <td colspan="1" valign="top">Oportunidades</td>
+    <td colspan="1" valign="top">
+        Gran mercado desatendido en Lima (miles de edificios sin monitoreo digital).<br>
+        Creciente déficit hídrico que aumenta la urgencia del problema.<br>
+        Posibilidad de expandirse a otras ciudades del Perú con déficit hídrico.
+    </td>
+    <td colspan="1" valign="top">
+        Posibilidad de digitalizar su oferta añadiendo conectividad IoT a sus equipos.<br>
+        Creciente demanda de automatización en el sector construcción.
+    </td>
+    <td colspan="1" valign="top">
+        Crecimiento del mercado de edificios inteligentes en Latinoamérica.<br>
+        Posibilidad de desarrollar versiones más accesibles para el segmento residencial.
+    </td>
+    <td colspan="1" valign="top">
+        Expansión a mercados emergentes con problemas de gestión hídrica.<br>
+        Alianzas con municipios y empresas de agua en Latinoamérica.
+    </td>
+</tr>
+<tr>
+    <td colspan="1" valign="top">Debilidades</td>
+    <td colspan="1" valign="top">
+        Startup sin historial ni reputación en el mercado.<br>
+        Dependencia de la correcta instalación del sensor por parte del administrador.<br>
+        Recursos limitados para escalar rápidamente.
+    </td>
+    <td colspan="1" valign="top">
+        Sin plataforma digital de visualización remota de datos.<br>
+        No ofrece historial de consumo ni reportes de gasto.<br>
+        Costo de instalación elevado para edificios residenciales pequeños.
+    </td>
+    <td colspan="1" valign="top">
+        Costo de implementación muy elevado, inaccesible para el segmento residencial.<br>
+        Requiere técnicos especializados para instalación y mantenimiento.<br>
+        Solución sobredimensionada para edificios de menos de 40 departamentos.
+    </td>
+    <td colspan="1" valign="top">
+        No disponible en el mercado peruano.<br>
+        Sin versión en español adaptada al contexto local.<br>
+        Modelo orientado a grandes operadores, no a administradores residenciales.
+    </td>
+</tr>
+<tr>
+    <td colspan="1" valign="top">Amenazas</td>
+    <td colspan="1" valign="top">
+        Riesgo de que competidores existentes desarrollen una versión accesible para el segmento residencial.<br>
+        Resistencia al cambio tecnológico por parte de administradores tradicionales.<br>
+        Riesgo de ciberataques o fallas en la conectividad del sensor.
+    </td>
+    <td colspan="1" valign="top">
+        Aparición de startups IoT que digitalicen el monitoreo de cisternas a bajo costo.<br>
+        Cambios regulatorios en el sector de automatización eléctrica.
+    </td>
+    <td colspan="1" valign="top">
+        Competencia de startups más ágiles y económicas en el segmento residencial.<br>
+        Cambios en las prioridades de inversión de grandes corporaciones.
+    </td>
+    <td colspan="1" valign="top">
+        Regulaciones de privacidad de datos que afecten el modelo SaaS.<br>
+        Competencia de soluciones locales más económicas en mercados emergentes.
+    </td>
+</tr>
+</table>
+
+
 ### 2.1.2. Estrategias y tácticas frente a competidores.
-    
+
+- Nos enfocaremos en el nicho específico de edificios residenciales de Lima con suministro irregular de agua, un segmento completamente desatendido por los competidores actuales, lo que nos permite ofrecer una solución a medida sin enfrentar competencia directa en el corto plazo.
+- Mantendremos un precio de suscripción mensual accesible que esté claramente por debajo del costo de una recarga innecesaria de camión cisterna, haciendo que el valor económico del producto sea evidente e inmediato para el administrador.
+- Ofreceremos una experiencia de instalación y uso sin necesidad de conocimientos técnicos, diferenciándonos de soluciones como Hidrosid o Siemens que requieren técnicos especializados y procesos de instalación complejos.
+- Desarrollaremos el módulo de transparencia financiera para juntas de propietarios como diferenciador exclusivo, ya que ningún competidor actual ofrece esta funcionalidad orientada al contexto de los edificios residenciales peruanos.
+- Implementaremos una estrategia de crecimiento basada en la recomendación entre administradores de edificios y la difusión en grupos de WhatsApp de juntas vecinales, aprovechando las redes de comunicación que este segmento ya utiliza activamente.
+
+
 ## 2.2. Entrevistas.
-    
+
 ### 2.2.1. Diseño de entrevistas.
+
+**Preguntas para administradores de edificios residenciales**
+
+- ¿Cuál es su nombre, edad y ocupación principal?
+- ¿Qué aplicaciones o marcas usa para organizar su trabajo o vida personal?
+- ¿A través de qué canales prefiere comunicarse con los vecinos (Email, grupos de WhatsApp, avisos físicos)?
+- ¿Qué dispositivos usa más en su día a día (iPhone, Android, Laptop)?
+- ¿Hace cuánto tiempo administra este edificio? ¿Es usted vecino del mismo edificio o fue contratado externamente?
+- ¿Cuántos departamentos tiene el edificio que administra?
+- ¿Con qué frecuencia SEDAPAL corta o reduce el suministro de agua en su zona?
+- ¿Cómo sabe actualmente cuánta agua queda en la cisterna? ¿Qué método utiliza para medirlo?
+- ¿Con qué frecuencia solicita el servicio de camión cisterna al mes? ¿Cuánto paga aproximadamente por cada recarga?
+- ¿Ha tenido episodios en los que el edificio se quedó sin agua antes de que usted pudiera llamar al camión cisterna? ¿Qué pasó?
+- ¿Ha llamado alguna vez al camión cisterna y al llegar había agua suficiente todavía? ¿Cómo se sintió al respecto?
+- ¿Cómo registra actualmente los gastos en agua del edificio? ¿Lleva algún tipo de historial o registro?
+- ¿Ha tenido conflictos con los propietarios o inquilinos por temas relacionados al suministro de agua? ¿Cómo los resolvió?
+- ¿La junta de propietarios le pide rendir cuentas sobre el gasto en agua? ¿Cómo lo hace actualmente?
+- ¿Estaría dispuesto a instalar un sensor en la cisterna si eso le permitiera saber en todo momento cuánta agua queda y recibir alertas automáticas?
+- ¿Pagaría una suscripción mensual por un servicio así? ¿Cuánto consideraría un precio justo?
+
+---
+
+**Preguntas para propietarios e inquilinos de edificios residenciales**
+
+- ¿Cuál es su nombre, edad y ocupación principal?
+- ¿En qué distrito vive? ¿Hace cuánto tiempo reside en ese edificio?
+- ¿Cuáles son sus marcas favoritas de tecnología o servicios que usa a diario?
+- ¿Qué redes sociales o canales digitales usa más para interactuar con su comunidad o servicios?
+- ¿Con qué frecuencia su edificio se queda sin agua?
+- ¿Cómo se entera de que no habrá agua en el edificio? ¿Le avisan con anticipación?
+- ¿Qué hace cuando el edificio se queda sin agua? ¿Cómo le afecta en su día a día?
+- ¿Sabe cuánto paga el edificio mensualmente por las recargas de camión cisterna?
+- ¿El administrador de su edificio le informa sobre los gastos en agua en las juntas de propietarios?
+- ¿Confía en que el administrador gestiona bien el presupuesto destinado al agua? ¿Por qué?
+- ¿Ha tenido conflictos con el administrador o con otros vecinos por temas relacionados al suministro de agua?
+- ¿Le gustaría tener acceso a una aplicación donde pueda ver en tiempo real cuánta agua queda en la cisterna de su edificio y cuánto se gasta mensualmente en recargas?
+- ¿Qué tan importante es para usted tener transparencia sobre los gastos comunes de su edificio?
+
     
 ### 2.2.2. Registro de entrevistas.
+
+##### Segmento objetivo #1 Administradores de edificio residencial
+
+#### Entrevista 1:
+
+![Interview-Henry-Salcedo.png](./assets/Interview-Henry-Salcedo.png)
+
+- **Nombres y apellidos:** Henry Paul Salinas Vásquez  
+- **Edad:** 43  
+- **Distrito:** Comas 
+
+
+- **Inicio:** 0:00  
+- **Duración:** 7:19  
+- **URL:** 
+- **Resumen:** Henry Paul Salinas Vásquez, de 43 años, se desempeña como administrador de un edificio residencial de aproximadamente 24 departamentos, donde fue contratado para gestionar las operaciones y servicios del inmueble. Actualmente utiliza herramientas como Excel, correo electrónico y WhatsApp para organizar información, comunicarse con los vecinos y llevar el control de gastos, incluyendo el consumo de agua. La supervisión del nivel de agua en la cisterna se realiza mediante revisión física, lo que impide contar con información en tiempo real. Esto genera una gestión reactiva, especialmente durante los fines de semana, cuando suelen presentarse cortes o baja presión, obligándolo a solicitar camiones cisterna de manera urgente. Esta situación ha ocasionado episodios de desabastecimiento y conflictos con algunos vecinos, además de dificultar la toma de decisiones al no contar con datos precisos. Para rendir cuentas, realiza un cálculo mensual del consumo de agua, aunque reconoce que el proceso podría ser más eficiente. Henry considera que una solución que permita monitorear el nivel de agua en tiempo real y enviar alertas automáticas le ayudaría a ahorrar tiempo y mejorar la gestión, y estaría dispuesto a pagar entre 20 y 30 soles mensuales por una herramienta de este tipo.
+
+#### Entrevista 2:
+
+![Captura.png](./assets/Captura.PNG)
+
+- **Nombres y apellidos:** Giancarlo Aparicio
+- **Edad:** 24
+- **Distrito:** Comas
+- **Inicio:** 0:00  
+- **Duración:** 9:23  
+- **URL:** [Entrevista](https://www.youtube.com/watch?v=X00zt8gJRis)
+- **Resumen:** Giancarlos Jesús Aparicio, un ingeniero eléctrico de 23 años que administra un edificio de 15 departamentos en Comas, describe una gestión crítica del agua marcada por la falta de medición individual, ya que el edificio solo cuenta con un medidor general de Sedapal. Esta carencia lo obliga a realizar repartos de costos poco equitativos basados únicamente en el número de personas, lo que genera conflictos constantes con residentes que, a pesar de estar fuera de casa todo el día, terminan pagando lo mismo que familias con mayor consumo. Además, relata que la falta de monitoreo técnico provocó que el tanque de reserva se agotara en solo dos horas durante los cortes de suministro en verano, evidenciando una vulnerabilidad operativa que lo lleva a validar con entusiasmo la implementación de un sistema de sensores con alertas automáticas. Giancarlos considera que una suscripción mensual no mayor a 100 soles sería un precio justo y aceptable para la junta de propietarios, ya que permitiría transparentar los gastos, economizar y, sobre todo, eliminar las tensiones vecinales derivadas de una distribución de costos subjetiva.
+
+
+---
+
+##### Segmento objetivo #2 Propietarios e inquilinos de edificios residenciales
+
+#### Entrevista 1:
+
+![Entrevista_Inquilino_2.png](./assets/Entrevista_Inquilino_2.png)
+
+- **Nombres y apellidos:** Matías Mamani  
+- **Edad:** 23  
+- **Distrito:** San Juan de Lurigancho 
+
+
+- **Inicio:** 0:00  
+- **Duración:** 9:51  
+- **URL:** https://youtu.be/s_uc-kXXUTQ
+- **Resumen:** Matías Mamani, de 23 años, trabaja en un call center con horarios extendidos, lo que hace que pase poco tiempo en su hogar y valore especialmente la comodidad y el buen funcionamiento de los servicios básicos. Reside desde hace casi 4 años en un edificio en San Juan de Lurigancho, donde ha experimentado constantes problemas relacionados con el suministro de agua. El edificio presenta cortes de agua con una frecuencia aproximada de 3 a 4 veces al mes, muchas veces sin previo aviso, lo que genera desorganización en su rutina diaria, afectando actividades esenciales como aseo personal y puntualidad laboral. La comunicación sobre estos cortes se realiza principalmente a través de WhatsApp, aunque de forma tardía o insuficiente. Además, Matías señala una falta de transparencia por parte del administrador respecto a los gastos asociados al consumo de agua y recargas de camiones cisterna, lo que ha generado desconfianza generalizada entre los vecinos. Esta situación ha derivado en constantes reclamos y conflictos con la administración, sin soluciones concretas. Actualmente, no cuenta con información clara ni en tiempo real sobre el nivel de agua disponible ni sobre los gastos del edificio, lo que dificulta la planificación y la toma de decisiones. Ante este contexto, considera que una aplicación que permita monitorear el nivel de agua en la cisterna y visualizar los gastos mensuales sería de gran utilidad, ya que ayudaría a mejorar la organización entre vecinos y reducir la incertidumbre. Asimismo, resalta que la transparencia en los gastos comunes es un aspecto esencial para evitar conflictos y fomentar una convivencia más armoniosa dentro del edificio.
+
+
+
+#### Entrevista 2:
+
+![entrevista2.png](./assets/entrevista2.png) 
+
+- **Nombres y apellidos:** Tagwa Moharam
+- **Edad:** 20  
+- **Distrito:** Magdalena del Mar
+
+
+- **Inicio:** 0:00  
+- **Duración:** 3:18 
+- **URL:** [entrevista](https://upcedupe-my.sharepoint.com/personal/u202310436_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202310436%5Fupc%5Fedu%5Fpe%2FDocuments%2Fapp%20web%2FVideo%20Project%203%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ebaf336ea%2Df84e%2D4cdf%2Dbaeb%2Da4dbbec7026a)
+- **Resumen:** Tagwa, una estudiante de la UPC de 20 años que reside en Magdalena del Mar desde hace cuatro años, vive en un entorno donde los cortes de agua son poco comunes, ocurriendo aproximadamente solo dos veces al año y siendo comunicados con antelación vía WhatsApp. A pesar de esta previsibilidad, la falta de suministro afecta significativamente su rutina, especialmente en la preparación de alimentos y la higiene personal, lo que se suma a un desconocimiento sobre los costos específicos de las recargas de cisternas. Aunque no ha tenido conflictos con la administración, mantiene una actitud de cautela sobre la gestión del presupuesto y valora profundamente la honestidad en los gastos comunes, por lo que considera que una aplicación de monitoreo en tiempo real sería una solución innovadora y necesaria para garantizar la transparencia, optimizar el consumo y fortalecer la confianza entre los propietarios de su edificio.
+
+
+
+#### Entrevista 3:
+
+![entrevista3.png](./assets/entrevista3.png) 
+
+- **Nombres y apellidos:** Manolo Tapia
+- **Edad:** 23  
+- **Distrito:** San Juan de Lurigancho
+
+
+- **Inicio:** 0:00  
+- **Duración:** 7:22 
+- **URL:** [entrevista](https://youtu.be/dVSnzXYoaSE)
+- **Resumen:** Manolo, es un joven de 23 años que trabaja en Plaza Vea y vive en San Juan de Lurigancho desde hace aproximadamente un año, enfrenta frecuentes cortes de agua en su edificio, los cuales ocurren entre dos y tres veces al mes y suelen ser comunicados tarde, generalmente cuando el problema ya ocurrió. Esta situación afecta su rutina diaria, dificultando actividades básicas como bañarse o cocinar, especialmente después del trabajo. Además, no cuenta con información clara sobre los gastos de recargas de agua, lo que genera desconfianza hacia la administración y conflictos entre vecinos. Por ello, considera muy importante la transparencia en los gastos comunes y ve con buenos ojos una aplicación que le permita conocer en tiempo real el nivel de agua y los costos asociados, para anticiparse a problemas y tener mayor claridad sobre el uso del dinero.
     
 ### 2.2.3. Análisis de entrevistas.
+
+<h3>Segmento 1: Administradores de edificios</h3>
+
+<ul>
+  <li>
+    <strong>Rol principal:</strong><br>
+    100% gestiona el edificio, coordina el abastecimiento de agua y controla gastos.
+  </li>
+
+  <li>
+    <strong>Contexto:</strong><br>
+    Edificios de 6 a 40 departamentos en zonas con suministro irregular de agua.
+  </li>
+
+  <li>
+    <strong>Herramientas actuales:</strong>
+    <ul>
+      <li>100% usa métodos manuales</li>
+      <li>66% usa cuadernos o Excel</li>
+      <li>100% usa WhatsApp</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Problemas comunes:</strong>
+    <ul>
+      <li>100%: no saben con exactitud cuánta agua queda en la cisterna</li>
+      <li>66%: dificultad para llevar control de consumo y gastos</li>
+      <li>66%: falta de información en tiempo real</li>
+      <li>33%: compras innecesarias de agua</li>
+      <li>33%: riesgo de quedarse sin agua por mala estimación</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Frecuencia de revisión:</strong><br>
+    33% semanal · 33% reactiva · 33% sin frecuencia fija
+  </li>
+
+  <li>
+    <strong>Datos deseados automáticamente:</strong><br>
+    100% quiere ver nivel de agua, consumo, días restantes e historial.
+  </li>
+
+  <li>
+    <strong>Transparencia:</strong>
+    <ul>
+      <li>100% debe rendir cuentas</li>
+      <li>66% considera que su método actual no es claro</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Adopción de app:</strong><br>
+    100% dispuesto si es simple, económica y fácil de usar.
+  </li>
+
+  <li>
+    <strong>Presupuesto estimado:</strong><br>
+    S/ 20 – S/ 100 mensual por edificio
+  </li>
+</ul>
+
+
+<h3>Segmento 2: Residentes</h3>
+
+<ul>
+  <li>
+    <strong>Perfil:</strong><br>
+    Residentes de edificios con problemas frecuentes de abastecimiento de agua.
+  </li>
+
+  <li>
+    <strong>Acceso a información:</strong>
+    <ul>
+      <li>100% depende del administrador</li>
+      <li>100% usa WhatsApp para comunicarse</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Problemas comunes:</strong>
+    <ul>
+      <li>100%: falta de aviso previo cuando no hay agua</li>
+      <li>66%: no saben cuánta agua queda realmente</li>
+      <li>66%: desconocimiento de los gastos en agua</li>
+      <li>33%: desconfianza hacia la administración</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Impacto:</strong><br>
+    Afecta actividades diarias como bañarse, cocinar y limpiar.
+  </li>
+
+  <li>
+    <strong>Transparencia:</strong>
+    <ul>
+      <li>100% considera importante conocer los gastos</li>
+      <li>66% no confía totalmente en la gestión</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Preferencias de la app:</strong><br>
+    Interfaz simple, clara y fácil de entender.
+  </li>
+
+  <li>
+    <strong>Alertas:</strong><br>
+    100% considera útil recibir notificaciones en tiempo real.
+  </li>
+
+  <li>
+    <strong>Interés en app:</strong><br>
+    100% quiere ver nivel de agua, gastos y recibir avisos.
+  </li>
+</ul>
     
 ## 2.3. Needfinding.
     
 ### 2.3.1. User Personas.
+
+Un user persona es una representación de un tipo de usuario con características y necesidades similares. Sirve para entender mejor qué problemas tiene y cómo interactúa con un producto o servicio. Se basa en información real de entrevistas, pero se resume de forma sencilla para apoyar el diseño.
+
+A continuación, se presentan las User Personas de nuestro proyecto:
+
+#####  Segmento 1: Administrador de edificio
+
+![User Persona - Administrador](./assets/User-administrador_image.jpg)
+
+#####  Segmento 2: Residente
+
+![User Persona - Residente](./assets/User-residente_image.jpg)
+
     
 ### 2.3.2. User Task Matrix.
 
+A continuación se presenta el User Task Matrix, elaborado a partir del análisis de las entrevistas realizadas a los dos segmentos clave del proyecto TankIQ. Este artefacto permite identificar las actividades principales que realiza cada tipo de usuario, la frecuencia con que las ejecutan y la importancia que les otorgan. Los resultados sirven para priorizar las funcionalidades de la solución, asegurando que responda a las necesidades reales de ambos perfiles.
+
+| N° | Tarea (Task) | Administrador de Edificio | | Propietario / Inquilino | |
+| :---: | :--- | :---: | :---: | :---: | :---: |
+| | | **Frequency** | **Importance** | **Frequency** | **Importance** |
+| 1 | Verificar el nivel de agua disponible en la cisterna | Daily | High | Monthly | Medium |
+| 2 | Revisar el historial de consumo de agua del edificio | Weekly | High | Monthly | Medium |
+| 3 | Coordinar o solicitar recargas de camión cisterna | Sometimes | High | Never | Low |
+| 4 | Registrar y controlar los gastos relacionados al agua | Monthly | High | Never | Low |
+| 5 | Rendir cuentas ante la junta de propietarios sobre el gasto en agua | Monthly | High | Never | Low |
+| 6 | Recibir alertas o notificaciones sobre nivel crítico de agua | Always | High | Always | High |
+| 7 | Consultar la proyección de días de agua disponibles | Weekly | High | Sometimes | Medium |
+| 8 | Comunicar a los vecinos sobre cortes o problemas de agua | Sometimes | High | Never | Low |
+| 9 | Consultar el gasto mensual en agua del edificio | Monthly | High | Monthly | High |
+| 10 | Planificar rutinas considerando la disponibilidad de agua | Daily | High | Daily | High |
 ### 2.3.3. User Journey Mapping.
 
+User Journey Mapping Segmento 1: Alberto Flores (Administrador de edificio residencial)
+
+
+| | **Etapa 1:** Detecta posible falta de agua | **Etapa 2:** Baja a revisar la cisterna | **Etapa 3:** Llama al camión cisterna | **Etapa 4:** Gestiona quejas de vecinos | **Etapa 5:** Rinde cuentas a la junta |
+|---|---|---|---|---|---|
+| **Acciones** | Recibe mensajes en WhatsApp o una queja directa sobre baja presión de agua | Baja al sótano y golpea la pared de la cisterna para estimar el nivel por el sonido | Llama al proveedor de camión cisterna y espera horas para confirmar disponibilidad | Responde mensajes en WhatsApp, pide paciencia e informa cuándo llegará el camión | Busca anotaciones en cuaderno o Excel y calcula el gasto manualmente para la reunión |
+| **Sentimientos** | Preocupado | Inseguro | Bajo presión | Agobiado | Inseguro |
+| **Dolores** | No hay sistema de alerta. Se entera cuando ya es demasiado tarde. | La revisión manual es imprecisa. No puede cuantificar el nivel real. | Sin historial de consumo, no sabe si el camión es realmente necesario en ese momento. | No tiene datos concretos para responder con información objetiva a los vecinos. | Los registros manuales son incompletos y generan desconfianza en la junta. |
+| **Oportunidades** | Enviar alertas automáticas cuando el nivel baje del umbral definido | Mostrar el nivel exacto en tiempo real desde el dashboard sin bajar a la cisterna | Proyectar los días de agua disponibles para anticipar la recarga con tiempo | Dar acceso a los vecinos a una vista del nivel actual para reducir quejas | Generar reportes automáticos de consumo y gasto mensual listos para la junta |
+
+
+User Journey Mapping Segmento 2: Maritza Castro (Residente de departamento)
+
+| | **Etapa 1:** Inicia su día cotidiano | **Etapa 2:** Descubre que no hay agua | **Etapa 3:** Busca información del problema | **Etapa 4:** Improvisa y gestiona el día | **Etapa 5:** Reclama y cuestiona los gastos |
+|---|---|---|---|---|---|
+| **Acciones** | Se levanta e intenta usar el grifo para bañarse o preparar el desayuno | Abre el grifo y no hay presión. Revisa el grupo de WhatsApp sin encontrar aviso previo | Escribe al grupo preguntando qué pasó. Espera respuesta del administrador | Usa agua embotellada. Sale antes de lo habitual. Pide a alguien que le avise cuando vuelva el agua | Pregunta en la junta cuánto se gasta en recargas y cuestiona la gestión del presupuesto |
+| **Sentimientos** | Tranquila | Frustrada | Ansiosa | Resignada | Desconfiada |
+| **Dolores** | No tiene forma de saber si habrá agua antes de que el problema ocurra. | El grupo de WhatsApp avisa tarde o no avisa. No hay comunicación proactiva. | Depende completamente del administrador. No tiene acceso directo a ningún dato. | No puede planificar su rutina. Solo reacciona cuando el problema ya ocurrió. | No hay registros claros de gastos. Los conflictos en la junta no se resuelven con datos. |
+| **Oportunidades** | Mostrar el nivel de la cisterna en tiempo real accesible para todos los residentes | Enviar notificaciones anticipadas cuando el nivel baje a un nivel de advertencia | Ofrecer una vista de solo lectura del estado del edificio sin depender del administrador | Proyectar cuándo se normalizará el suministro para que el residente pueda organizarse | Publicar el historial de gastos en agua para que la junta pueda auditarlo con datos reales |
+
 ### 2.3.4. Empathy Mapping.
+
+Empathy Map Segmento 1: Alberto Flores (Administrador de edificio residencial)
+
+<div align="center"><img src="./assets/emadministrador.png" alt="Empathy Map Administrador de Edificio" width="800"/></div>
+
+Empathy Map Segmento 2: Maritza Castro (Residente de departamento)
+
+<div align="center"><img src="./assets/empresidente.png" alt="Empathy Map Residente" width="800"/></div>
+
     
 ## 2.4. Big Picture EventStorming.
+
+<div align="center"><img src="./assets/bigpictureeventstorming.png" alt="Big Picture Event Storming" width="900"/></div>
     
 ## 2.5. Ubiquitous Language.
+
+El **Lenguaje Ubicuo** se refiere a un vocabulario común y compartido que emplean tanto los miembros del equipo de desarrollo como los stakeholders y usuarios finales. Su propósito es garantizar una comunicación clara y coherente sobre los conceptos, términos y procesos del dominio de gestión hídrica en el que se desarrolla **TankIQ**.
+
+### Glosario de Términos
+
+| **Término (Inglés / Español)** | **Definición** |
+|--------------------------------|----------------|
+| **Cistern Monitoring (Monitoreo de Cisterna)** | Supervisión continua de los depósitos de agua (subterráneos o elevados) mediante sensores de nivel. |
+| **Water Level Threshold (Umbral de Nivel)** | Valores críticos configurados (mínimo/máximo) que disparan acciones o notificaciones en el sistema. |
+| **Real-time Telemetry (Telemetría en Tiempo Real)** | Transmisión constante de datos desde el hardware IoT hacia la plataforma sobre el estado del recurso. |
+| **Consumption Analytics (Analítica de Consumo)** | Procesamiento de datos históricos para identificar patrones de uso y detectar posibles fugas o anomalías. |
+| **Sensor Calibration (Calibración de Sensor)** | Ajuste técnico de los dispositivos (ultrasónicos/presión) para asegurar una lectura precisa según la geometría del tanque. |
+| **Critical Level Alert (Alerta de Nivel Crítico)** | Notificación automática enviada cuando el volumen de agua está por debajo de la reserva operativa de seguridad. |
+| **Flow Rate Measurement (Medición de Caudal)** | Cálculo de la velocidad con la que el agua entra o sale del sistema para determinar la eficiencia de llenado. |
+| **IoT Node Status (Estado de Nodo IoT)** | Indicador de salud del hardware (conectividad, batería, señal) encargado de la lectura en campo. |
+| **Automated Supply Log (Registro de Suministro)** | Historial digital que documenta cuándo y cuánto agua ha ingresado al sistema (ej. descarga de camiones cisterna). |
+| **Predictive Maintenance (Mantenimiento Predictivo)** | Estimación de fallos en sensores o bombas basada en el comportamiento inusual de los datos recopilados. |
     
 # Capítulo III: Requirements Specification
   
