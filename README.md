@@ -12,23 +12,12 @@
 
 ###  HydroTeam
 ###  TankIQ
-<<<<<<< HEAD
-
-=======
->>>>>>> feature/chapter-1
-
 
 <div align = "center">
    
 |**Code**|**Member**|
 |---------------------|--------------------|
 |U202310436 |Espinar Martínez Gabriel Ferran|
-<<<<<<< HEAD
-|U202410772 |Razuri Alvarez Matias Francesco| 
-|U202411282 |Montalvan Palomino Bruno Rodolfo| 
-|U202414840 |Orosco Ttamiña Juan Carlos| 
-=======
->>>>>>> feature/chapter-1
 |U202318951 |Guevara Serrano Diego Ismael| 
 |U202411282 |Montalvan Palomino Bruno Rodolfo| 
 |U202414840 |Orosco Ttamiña Juan Carlos| 
