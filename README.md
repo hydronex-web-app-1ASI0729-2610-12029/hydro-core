@@ -104,7 +104,7 @@ del proyecto TankIQ:
   Utilizado para las reuniones virtuales de planificación de sprints y coordinación
   general del equipo.
 
-- **Jira**: [LINK Jira](https://www.atlassian.com/es/software/jira)  
+- **Jira**: [LINK Jira](https://hydroteam12.atlassian.net/jira/software/projects/SCRUM/boards/1)  
   Usamos Jira para seguir y evaluar el progreso y flujo de las actividades del proyecto
   entre todos los miembros durante todo el proceso del trabajo.
 
