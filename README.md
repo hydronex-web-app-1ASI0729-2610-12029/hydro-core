@@ -21,7 +21,7 @@
 |U202310436 |Espinar Martínez Gabriel Ferran|
 |U202318951 |Guevara Serrano Diego Ismael| 
 |U202411282 |Montalvan Palomino Bruno Rodolfo| 
-|U202414840 |Oroscco Ttamiña Juan Carlos| 
+|U202414840 |Orosco Ttamiña Juan Carlos| 
 |U202410772 |Razuri Alvarez Matias Francesco| 
 
 
@@ -239,12 +239,12 @@ Nos encargamos de brindar una solución tecnológica accesible para la gestión 
     </tr>
     <tr align="center">
         <td rowspan="3">
-            <img src="foto_integrante4.png" alt="Integrante 4" style="margin-bottom: 5px;" width="800"/>
+            <img src="./assets/team-member-profiles/juan.jpeg" alt="Integrante 4" style="margin-bottom: 5px;" width="800"/>
         </td>
         <td align="left">
             <b>Nombre y Apellido:</b>
             <br>
-            [Apellido, Nombre]
+            Orosco, Juan
         </td>
     </tr>
     <tr>
@@ -258,7 +258,7 @@ Nos encargamos de brindar una solución tecnológica accesible para la gestión 
         <td align="left">
         <b>Acerca de:</b>
         <br>
-        [Descripción personal del integrante]
+        Soy Juan Orosco, tengo 21 años y soy estudiante de Ingeniería de Software, interesado en la creación de aplicaciones y el desarrollo de soluciones tecnológicas. Me motiva enfrentar nuevos retos técnicos que me permitan seguir aprendiendo.
         </td>
     </tr>
     <tr align="center">
