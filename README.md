@@ -452,12 +452,12 @@ Nos encargamos de brindar una solución tecnológica accesible para la gestión 
     </tr>
     <tr align="center">
         <td rowspan="3">
-            <img src="foto_integrante3.png" alt="Integrante 3" style="margin-bottom: 5px;" width="800"/>
+            <img src="assets/team-member-profiles/Integrante_Gabriel.png" alt="Integrante 3" style="margin-bottom: 5px;" width="800"/>
         </td>
         <td align="left">
             <b>Nombre y Apellido:</b>
             <br>
-            [Apellido, Nombre]
+            Espinar, Gabriel
         </td>
     </tr>
     <tr>
@@ -471,7 +471,7 @@ Nos encargamos de brindar una solución tecnológica accesible para la gestión 
         <td align="left">
         <b>Acerca de:</b>
         <br>
-        [Descripción personal del integrante]
+        Soy estudiante de la carrera de Ingeniería de Software, Me considero una persona trabajadora. Me interesa aprender constantemente en especial en áreas relacionadas a la tecnología y cuento con conocimientos en HTML, CSS, Javascript y SQL, lo cual puede servir en el desarrollo del proyecto.
         </td>
     </tr>
     <tr align="center">
