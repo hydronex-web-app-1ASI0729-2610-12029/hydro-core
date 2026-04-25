@@ -161,7 +161,7 @@
       <br>
         Completar...
       <br><br>
-        ------------------------------------
+        Lideré la estructuración del informe del proyecto, facilitando que todos los miembros del equipo tuvieran claridad sobre el alcance y formato del documento. También lideré el desarrollo del Landing Page UI Design, estableciendo las bases visuales y estratégicas del proyecto.
       <br><br>
       <b>
         Guevara Serrano Diego Ismael
@@ -235,7 +235,7 @@
         AV1
       </i></b>
       <br>
-        Completar...
+        Mantuvimos una comunicación constante, lo que sumado al uso de GitHub, nos permitió avanzar de forma simultánea y eficiente. Nos enfocamos en cumplir las metas establecidas mediante una distribución clara de tareas.
       <br><br>
         ------------------------------------
       <br><br>
