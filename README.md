@@ -220,8 +220,6 @@ En esta sección se presentan los requisitos funcionales del sistema TankIQ defi
 
 #### Epics
 
-#### Epics
-
 | Epic ID | Título | Descripción |
 |--------|--------|------------|
 | EP01 | Autenticación y gestión de usuarios | Permite a los usuarios registrarse, iniciar sesión, cerrar sesión y acceder al sistema según su rol (administrador o propietario) |
