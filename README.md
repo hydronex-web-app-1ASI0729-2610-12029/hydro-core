@@ -651,9 +651,21 @@ A continuación se presenta el User Task Matrix, elaborado a partir del análisi
 | 10 | Planificar rutinas considerando la disponibilidad de agua | Daily | High | Daily | High |
 ### 2.3.3. User Journey Mapping.
 
+
 ### 2.3.4. Empathy Mapping.
+
+Empathy Map Segmento 1: Alberto Flores (Administrador de edificio residencial)
+
+<div align="center"><img src="./assets/emadministrador.png" alt="Empathy Map Administrador de Edificio" width="800"/></div>
+
+Empathy Map Segmento 2: Maritza Castro (Residente de departamento)
+
+<div align="center"><img src="./assets/empresidente.png" alt="Empathy Map Residente" width="800"/></div>
+
     
 ## 2.4. Big Picture EventStorming.
+
+<div align="center"><img src="./assets/bigpictureeventstorming.png" alt="Big Picture Event Storming" width="900"/></div>
     
 ## 2.5. Ubiquitous Language.
 
