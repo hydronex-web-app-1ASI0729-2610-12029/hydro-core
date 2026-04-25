@@ -778,19 +778,29 @@ La Web Application se organiza en cinco módulos lazy-loaded: Auth Module (Login
     
 ## 4.7. Software Object-Oriented Design.
 
-El diseño orientado a objetos de TankIQ se deriva directamente de los Bounded Contexts identificados en el proceso de DDD. Los diagramas de clases presentados a continuación describen las entidades, interfaces, enumeraciones y relaciones de cada contexto del dominio, con el nivel de detalle necesario para guiar la implementación en Spring Boot.
+El diseño orientado a objetos de TankIQ se deriva directamente de los Bounded Contexts identificados en el proceso de DDD. El diagrama de clase presentado a continuación describen las entidades, interfaces, enumeraciones y relaciones de cada contexto del dominio, con el nivel de detalle necesario para guiar la implementación en Spring Boot.
 
 ### 4.7.1. Class Diagrams.
 
-El Class Diagram de TankIQ está organizado por Bounded Context e incluye clases, interfaces, enumeraciones, atributos y métodos con scope (+, -, #), y relaciones con nombre, dirección y multiplicidad. El IAM Context modela User con herencia hacia Administrator y Resident, todos implementando IAuthenticable. El Building Monitoring Context relaciona Building, Cistern (implementa ITankMonitor), Sensor y WaterLevelReading. El Water Management Context gestiona Refill y WaterConsumption. El Alerting Context define Alert y EmailNotification (implementa INotifiable). El Subscription Context agrupa Plan, Subscription y Report.
+El Class Diagram de TankIQ está organizado por Bounded Context e incluye clases, interfaces, enumeraciones, atributos con scope y tipo, métodos con parámetros y tipo de retorno, y relaciones con nombre, dirección y multiplicidad. Los contextos modelados son: User Management, Building Monitoring, Water Management, Alerting y Subscription.
 
 <div align="center">
   <img src="assets/class-diagrams/tankiq-class-diagram.png" alt="Class Diagram — TankIQ" width="800"/>
 </div>
+
     
 ## 4.8. Database Design.
+
+El diseño de base de datos de TankIQ Cada Bounded Context identificado en el proceso de Domain-Driven Design se traduce en un conjunto de tablas relacionadas. Las claves primarias son de tipo UUID para garantizar unicidad global entre servicios. Las claves foráneas refuerzan la integridad referencial entre tablas. Los campos numéricos críticos como niveles de cisterna y costos en soles usan tipo DECIMAL para precisión. Se aplican restricciones NOT NULL en todos los campos obligatorios del negocio.
+
     
 ### 4.8.1. Database Diagrams.
+
+El diagrama muestra las 11 tablas del sistema agrupadas por Bounded Context. El IAM Context contiene la tabla users con discriminación de rol como ADMINISTRATOR o RESIDENT y la tabla junction building_users para la relación muchos a muchos entre edificios y residentes. El Building Monitoring Context encadena buildings - cisterns - sensors - water_level_readings, reflejando la jerarquía física del hardware IoT. El Water Management Context agrupa refills y water_consumption, ambas con FK a buildings. El Alerting Context contiene alerts con FK tanto a cisterns como a users. El Subscription Context agrupa plans, subscriptions y reports, donde subscriptions conecta un edificio con un plan contratado.
+
+<div align="center">
+  <img src="assets/database/tankiq-database-diagram.png" alt="Database Diagram — TankIQ" width="800"/>
+</div>
     
 # Capítulo V: Product Implementation, Validation & Deployment
     
