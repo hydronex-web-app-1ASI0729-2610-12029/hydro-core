@@ -231,7 +231,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 TankIQ es una plataforma orientada a la gestión inteligente del suministro de agua en edificios residenciales. La identidad visual debe transmitir confianza, modernidad y simplicidad, valores esenciales para un producto dirigido a administradores de edificios y propietarios que no necesariamente tienen formación técnica. El nombre TankIQ combina la idea de "tanque" (cisterna) con "IQ" (inteligencia), reflejando la propuesta de valor central: llevar inteligencia a un proceso que hoy se gestiona de forma manual e intuitiva.
 
 <div align="center">
-    <img src="assets/TankIQ.jpegg" alt="Celeste Principal #29ABE2" width="600"/>
+    <img src="assets/TankIQ.jpeg" alt="Logo" width="600"/>
 </div>
 
 **Colores**
