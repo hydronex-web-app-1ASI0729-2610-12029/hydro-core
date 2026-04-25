@@ -791,7 +791,7 @@ El Class Diagram de TankIQ está organizado por Bounded Context e incluye clases
     
 ## 4.8. Database Design.
 
-El diseño de base de datos de TankIQ Cada Bounded Context identificado en el proceso de Domain-Driven Design se traduce en un conjunto de tablas relacionadas. Las claves primarias son de tipo UUID para garantizar unicidad global entre servicios. Las claves foráneas refuerzan la integridad referencial entre tablas. Los campos numéricos críticos como niveles de cisterna y costos en soles usan tipo DECIMAL para precisión. Se aplican restricciones NOT NULL en todos los campos obligatorios del negocio.
+En el diseño de base de datos de TankIQ tenemos cada Bounded Context identificado en el proceso de Domain-Driven Design  y se traducen en un conjunto de tablas relacionadas. Las claves primarias son de tipo UUID para garantizar unicidad global entre servicios. Las claves foráneas refuerzan la integridad referencial entre tablas. Los campos numéricos críticos como niveles de cisterna y costos en soles usan tipo DECIMAL para precisión. Se aplican restricciones NOT NULL en todos los campos obligatorios del negocio.
 
     
 ### 4.8.1. Database Diagrams.
