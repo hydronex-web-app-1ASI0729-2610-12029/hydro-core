@@ -3,7 +3,7 @@
 ![Logo Banner](assets/Banner-UPC.png)
 
 ### Universidad Peruana de Ciencias Aplicadas
-### Inegeneria de Software
+### Ingeniería de Software
 ### 2026-1
 
 ### NRC: 12029
@@ -156,7 +156,6 @@
         AV1
       </i></b>
       <br>
-        Completar...
       <br><br>
         Lideré la estructuración del informe del proyecto, facilitando que todos los miembros del equipo tuvieran claridad sobre el alcance y formato del documento. También lideré el desarrollo del Landing Page UI Design, estableciendo las bases visuales y estratégicas del proyecto.
       <br><br>
@@ -168,7 +167,7 @@
         AV1
       </i></b>
       <br>
-        Completar...
+        Participé en la implementación de la Landing Page del sistema, desarrollando sus principales secciones y asegurando la correcta estructura del contenido. Asimismo, colaboré con el equipo en la toma de decisiones relacionadas al diseño y funcionalidad del producto.
       <br><br>
         ------------------------------------
       <br><br>
@@ -180,7 +179,7 @@
         AV1
       </i></b>
       <br>
-        Completar...
+        Participe en las sesiones de trabajo del equipo exponiendo y sustentando las decisiones de arquitectura de software adoptadas para TankIQ. Explice al resto del equipo la lógica detrás de los diagramas C4, detallando el rol de cada contenedor y componente dentro de la solución, y cómo estos se relacionan entre sí. También comunique oralmente el diseño del modelo de clases y del diagrama de base de datos, asegurando que todos los integrantes entendieran la estructura del sistema antes de iniciar la implementación.
       <br><br>
         ------------------------------------
       <br><br>
@@ -204,7 +203,7 @@
         AV1
       </i></b>
       <br>
-        Completar...
+        Participe activamente en las reuniones del equipo, presentando y explicando las decisiones de diseño tomadas para el Landing Page y la Web Application de TankIQ. Lidere la discusión sobre la estructura de las nueve pantallas de la aplicación web, comunicando al resto del equipo los criterios de jerarquía visual, organización de la información y el sistema de navegación adoptado.
       <br><br>
     </td>
     <td style="text-align: justify; vertical-align: top;">
@@ -244,7 +243,7 @@
         AV1
       </i></b>
       <br>
-        Completar...
+        Colaboré activamente con el equipo mediante la coordinación constante y el uso de herramientas digitales, participando en la organización de tareas y en la implementación de funcionalidades. Esto permitió avanzar de manera ordenada y cumplir con los objetivos establecidos.
       <br><br>
         ------------------------------------
       <br><br>
@@ -256,7 +255,7 @@
         AV1
       </i></b>
       <br>
-        Completar...
+        En este periodo, el equipo mantuvo una comunicación constante a través de WhatsApp y Discord para coordinar las tareas del Capítulo IV. En particular,  junto con Matias realize llamadas por Discord para alinear los diseños de la interfaz con la arquitectura de software definida, asegurando que las pantallas reflejaran correctamente los bounded contexts y componentes identificados. Además, participó en la organización de las tareas del equipo, ayudando a definir qué secciones debía asumir cada integrante y verificando que los avances fueran coherentes entre sí antes de consolidarlos en el repositorio.
       <br><br>
         ------------------------------------
       <br><br>
@@ -280,7 +279,7 @@
         AV1
       </i></b>
       <br>
-        Completar...
+        Para esta entrega, junto al equipo mantuve una comunicación constante a través de WhatsApp y Discord para coordinar las tareas del Capítulo IV. En particular, con  Bruno para alinear los diseños de la interfaz con la arquitectura de software definida, asegurando que las pantallas reflejaran correctamente los bounded contexts y componentes identificados.
       <br><br>
     </td>
     <td style="text-align: justify; vertical-align: top;">
