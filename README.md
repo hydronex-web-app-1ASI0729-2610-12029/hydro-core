@@ -3969,6 +3969,10 @@ Product Backlog para el sistema TankIQ orientado a la gestión inteligente del s
 
 TankIQ es una plataforma orientada a la gestión inteligente del suministro de agua en edificios residenciales. La identidad visual debe transmitir confianza, modernidad y simplicidad, valores esenciales para un producto dirigido a administradores de edificios y propietarios que no necesariamente tienen formación técnica. El nombre TankIQ combina la idea de "tanque" (cisterna) con "IQ" (inteligencia), reflejando la propuesta de valor central: llevar inteligencia a un proceso que hoy se gestiona de forma manual e intuitiva.
 
+<div align="center">
+    <img src="assets/TankIQ.jpeg" alt="Logo" width="600"/>
+</div>
+
 **Colores**
 
 La paleta de colores de TankIQ está construida sobre la combinación de gris oscuro y celeste, transmitiendo profesionalismo, modernidad y una asociación directa con el agua como recurso central del producto. Adicionalmente se definen colores de estado que comunican de forma intuitiva el nivel de riesgo del suministro de agua, elemento central de la experiencia de usuario.
@@ -4020,29 +4024,14 @@ Se utiliza para indicar estado normal u óptimo del nivel de la cisterna, confir
 
 **Tipografía**
 
-TankIQ utiliza **Inter** como tipografía principal para todos los productos digitales. Inter es una fuente sans-serif moderna diseñada específicamente para interfaces digitales, con excelente legibilidad en pantallas de distintos tamaños y en contextos de uso con poca luz, característica relevante dado que muchos administradores de edificios consultarán la plataforma desde sus teléfonos en condiciones variadas.
-
-A continuación se muestra la escala tipográfica aplicada en TankIQ:
-
-<div align="center">
-    <img src="assets/typography/typographyescala.png" alt="Escala tipográfica Inter" width="600"/>
-</div>
+Utilizamos **Inter** como tipografía principal para todos los productos digitales. Inter es una fuente sans serif moderna diseñada específicamente para interfaces digitales, con excelente legibilidad en pantallas de distintos tamaños y en contextos de uso con poca luz, característica relevante dado que muchos administradores de edificios consultarán la plataforma desde sus teléfonos en condiciones variadas.
 
 Los títulos principales (H1) se presentan en Inter Bold a 32px, los títulos secundarios (H2) en Inter SemiBold a 24px y los títulos terciarios (H3) en Inter SemiBold a 20px. El cuerpo de texto utiliza Inter Regular a 14px, mientras que las etiquetas y textos de apoyo utilizan Inter Regular a 12px. Los botones utilizan Inter Medium a 14px para mantener legibilidad y diferenciación respecto al texto corrido.
-
-A continuación se muestra la aplicación de los distintos pesos tipográficos:
-
-<div align="center">
-    <img src="assets/typography/typographypeso.png" alt="Pesos tipográficos Inter" width="600"/>
-</div>
- 
-
 
 **Espaciado**
 
 El sistema de espaciado de TankIQ está basado en múltiplos de 8px, siguiendo las convenciones de Material Design. Esto garantiza consistencia visual y facilita la implementación por parte del equipo de desarrollo. Los valores definidos van desde 4px para separaciones mínimas entre elementos muy cercanos, hasta 48px para la separación entre secciones principales del Landing Page. El espaciado estándar de padding interno en tarjetas y secciones es de 16px.
  
-
 **Tono de comunicación**
 
 TankIQ adopta un tono **cercano y simple**, orientado a usuarios que no necesariamente tienen formación técnica. El lenguaje se dirige directamente al usuario de forma empática, usando términos del día a día del administrador de edificios en lugar de jerga tecnológica. Aunque el tono es cercano, se mantiene un registro profesional que transmite confianza y seriedad.
@@ -4054,26 +4043,16 @@ Por ejemplo, cuando la cisterna llega a un nivel crítico, TankIQ no muestra "ER
 
 ### 4.1.2. Web Style Guidelines
 
-En esta sección se definen los estándares visuales y de interacción para las interfaces web responsivas de TankIQ, aplicables tanto al Landing Page como a la Web Application.
-
-
 **Componentes de UI**
 
-TankIQ utiliza **Angular Material** como biblioteca de componentes de interfaz, adaptando su tema visual a la paleta de colores y tipografía definidas. Los botones primarios tienen fondo celeste (`#29ABE2`), texto blanco y border-radius de 8px. Los botones secundarios tienen borde celeste y fondo transparente. Las tarjetas utilizan fondo blanco con sombra suave y border-radius de 12px. Los campos de formulario siguen el estilo outlined de Angular Material con color de foco celeste. La iconografía proviene de la biblioteca **Material Icons** de Google en tamaño estándar de 24px.
+TankIQ utiliza **Angular Material** como biblioteca de componentes de interfaz, adaptando su tema visual a la paleta de colores y tipografía definidas. Los botones primarios tienen fondo celeste (`#29ABE2`), texto blanco y border radius de 8px. Los botones secundarios tienen borde celeste y fondo transparente. Las tarjetas utilizan fondo blanco con sombra suave y border radius de 12px. Los campos de formulario siguen el estilo outlined de Angular Material con color de foco celeste. La iconografía proviene de la biblioteca **Material Icons** de Google en tamaño estándar de 24px.
 
-A continuación se muestra la guía de componentes definida para TankIQ:
 
-<div align="center">
-    <img src="assets/web-style/components-guide.png" alt="Guía de componentes TankIQ" width="600"/>
-</div>
 
 **Indicadores de estado de cisterna**
 
 Dado que el estado de la cisterna es el elemento central de la experiencia de usuario, se define un sistema de indicadores visuales específico basado en el nivel de agua. Cuando el nivel se encuentra entre 60% y 100% se muestra en verde (`#43A047`) indicando nivel óptimo. Entre 30% y 59% se muestra en celeste (`#29ABE2`) indicando nivel normal. Entre 15% y 29% se muestra en naranja (`#FB8C00`) indicando nivel bajo. Por debajo del 15% se muestra en rojo (`#E53935`) indicando nivel crítico y disparando una alerta automática al administrador.
 
-<div align="center">
-    <img src="assets/web-style/status-indicators.png" alt="Indicadores de estado de cisterna" width="600"/>
-</div>
 
 **Layout y grilla**
 
@@ -4086,7 +4065,7 @@ Se utiliza el sistema de grilla de 12 columnas de Angular Material. El contenido
 
 La arquitectura de información de TankIQ organiza el contenido en función de los dos segmentos objetivo y sus necesidades específicas, diferenciando claramente entre la experiencia del administrador del edificio y la del propietario o inquilino.
 
-Para el **Landing Page**, el contenido se organiza de forma **secuencial**, guiando al visitante a través de un recorrido lógico que va desde la identificación del problema hasta la llamada a la acción. La secuencia es: presentación del problema (el dolor del desabastecimiento), propuesta de solución (TankIQ y el sensor IoT), beneficios concretos por segmento, demostración del producto y finalmente los planes de suscripción con los call-to-action diferenciados por segmento.
+Para el **Landing Page**, el contenido se organiza de forma **secuencial**, guiando al visitante a través de un recorrido lógico que va desde la identificación del problema hasta la llamada a la acción. La secuencia es: presentación del problema (el dolor del desabastecimiento), propuesta de solución (TankIQ y el sensor IoT), beneficios concretos por segmento, demostración del producto y finalmente los planes de suscripción con los call to action diferenciados por segmento.
 
 Para la **Web Application**, el contenido se organiza de forma **jerárquica**, con el dashboard principal como punto de entrada que concentra la información más crítica (nivel actual de la cisterna, proyección de días disponibles y alertas activas), desde el cual el usuario puede navegar hacia secciones de mayor detalle como el historial de consumo, el registro de recargas y los reportes para la junta de propietarios. Esta jerarquía responde directamente a la frecuencia de uso: el administrador consulta el nivel de la cisterna varias veces por semana, pero accede al historial de gastos principalmente al preparar la rendición de cuentas mensual.
 
@@ -4107,11 +4086,9 @@ En el **Landing Page**, las secciones se etiquetan por beneficio y no por funcio
 
 ### 4.2.3. SEO Tags and Meta Tags
 
-A continuación se definen los SEO Tags y Meta Tags para las principales páginas de TankIQ:
-
 **Landing Page**
 
-- **Title:** : TankIQ — Monitoreo inteligente de cisternas para edificios en Lima
+- **Title:** : TankIQ: Tu monitoreo inteligente de cisternas para edificios en Lima
 - **Meta Description:** TankIQ te avisa cuándo tu cisterna está por agotarse. Sensor IoT + plataforma web para administradores de edificios en Lima. Evita el desabastecimiento y reduce gastos innecesarios.
 - **Meta Keywords:**: monitoreo cisterna, sensor cisterna Lima, gestión agua edificios, alerta cisterna, administrador edificio Lima, SEDAPAL suministro irregular
 - **Meta Author:**: HydroTeam
@@ -4119,19 +4096,19 @@ A continuación se definen los SEO Tags y Meta Tags para las principales página
 - **Open Graph Title:**: TankIQ: Nunca más te quedes sin agua
 - **Open Graph Description:**: Plataforma IoT para monitorear el nivel de tu cisterna en tiempo real. Para administradores de edificios en Lima.
 
-**Web Application — Dashboard**
+**Web Application: Dashboard**
 
-- **Title:**: Dashboard - TankIQ
-- **Meta Description:**: Monitorea el nivel de tu cisterna en tiempo real, recibe alertas automáticas y gestiona el historial de consumo de tu edificio
-- **Meta Robots:** `noindex, nofollow
-- **Meta Author:** `HydroTeam
+- **Title:**: Dashboard: TankIQ
+- **Meta Description:** Monitorea el nivel de tu cisterna en tiempo real, recibe alertas automáticas y gestiona el historial de consumo de tu edificio
+- **Meta Robots:** noindex, nofollow
+- **Meta Author:** HydroTeam
 
-**Web Application — Reportes**
+**Web Application: Reportes**
 
-- **Title:**: Reportes de consumo - TankIQ
-- **Meta Description:**: Accede al historial de gastos en agua de tu edificio y genera reportes para tu junta de propietarios.`
-- **Meta Robots:**: noindex, nofollow
-- **Meta Author:**: HydroTeam
+- **Title:** Reportes de consumo 
+- **Meta Description:** Accede al historial de gastos en agua de tu edificio y genera reportes para tu junta de propietarios.
+- **Meta Robots:** noindex, nofollow
+- **Meta Author:** HydroTeam
 
 
 
@@ -4151,7 +4128,7 @@ Los resultados de búsqueda se presentan en orden cronológico inverso por defec
 
 El sistema de navegación de TankIQ está diseñado para minimizar la cantidad de pasos necesarios para que el administrador llegue a la información más crítica, reconociendo que muchas consultas se realizan de forma rápida desde el teléfono móvil.
 
-En el **Landing Page**, la navegación es lineal con un **navbar fijo** en la parte superior que contiene anclas a las secciones principales de la página. En mobile, el navbar colapsa en un menú hamburguesa. Los call-to-action de cada segmento en el Landing Page redirigen directamente a la vista correspondiente en la Web Application: el CTA del administrador lleva al formulario de registro de edificio, y el CTA del propietario lleva a la vista de acceso con código de edificio.
+En el **Landing Page**, la navegación es lineal con un **navbar fijo** en la parte superior que contiene anclas a las secciones principales de la página. En mobile, el navbar colapsa en un menú hamburguesa. Los call to action de cada segmento en el Landing Page redirigen directamente a la vista correspondiente en la Web Application: el CTA del administrador lleva al formulario de registro de edificio, y el CTA del propietario lleva a la vista de acceso con código de edificio.
 
 En la **Web Application**, la navegación principal se implementa mediante un **sidebar** en desktop y una **bottom navigation bar** en mobile, ambos con las cuatro secciones principales: Inicio, Historial, Reportes y Configuración. Esta decisión responde al patrón de uso móvil donde el pulgar alcanza fácilmente la barra inferior. Se utiliza **navegación por breadcrumbs** en las vistas de detalle para que el usuario siempre sepa en qué parte de la jerarquía se encuentra y pueda regresar sin usar el botón atrás del navegador.
 
@@ -4159,7 +4136,9 @@ En la **Web Application**, la navegación principal se implementa mediante un **
 
 El diseño de nuestros wireframes sigue la organización secuencial definida en la sección 4.2.1 y el enfoque Mobile First establecido en 4.1.2.  Las secciones de nuestra Landing Page en orden son: navbar fijo con logotipo y CTA de sesión, Hero con titular principal y dos CTAs diferenciados por segmento (administrador y propietario), sección de problemas en tres columnas, sección "¿Cómo funciona?" con tres pasos numerados, beneficios diferenciados por segmento en dos columnas, sección de ahorro estimado con datos reales del mercado limeño, planes de suscripción y footer.
 
-**Sección Hero:** Encabezado principal con navbar fijo, titular de beneficio central, dos call-to-action diferenciados por segmento y vista previa del dashboard de TankIQ.
+**Desktop:**
+
+**Sección Hero:** Encabezado principal con navbar fijo, titular de beneficio central, dos call to action diferenciados por segmento y vista previa del dashboard de TankIQ.
 <div align="center"><img src="assets/wireframes/landingpagenavbar.png" alt="Wireframe Landing Page Navbar" width="700"/></div>
 <div align="center"><img src="assets/wireframes/landingpagehero.png" alt="Wireframe Landing Page Hero" width="700"/></div>
 
@@ -4171,11 +4150,11 @@ El diseño de nuestros wireframes sigue la organización secuencial definida en 
 
 <div align="center"><img src="assets/wireframes/landingpagefunciona.png" alt="Wireframe Landing Page Cómo funciona" width="700"/></div>
 
-**Sección Beneficios por segmento:** Dos columnas diferenciadas, una para administradores de edificios y otra para propietarios e inquilinos, cada una con su respectivo call-to-action.
+**Sección Beneficios por segmento:** Dos columnas diferenciadas, una para administradores de edificios y otra para propietarios e inquilinos, cada una con su respectivo call to action.
 
 <div align="center"><img src="assets/wireframes/landingpagebeneficios.png" alt="Wireframe Landing Page Beneficios" width="700"/></div>
 
-**Sección ¿Cuánto puedes ahorrar?:** Bloque con tres métricas clave basadas en datos reales del mercado limeño y un call-to-action de conversión central.
+**Sección ¿Cuánto puedes ahorrar?:** Bloque con tres métricas clave basadas en datos reales del mercado limeño y un call to action de conversión central.
 
 <div align="center"><img src="assets/wireframes/landingpageahorro.png" alt="Wireframe Landing Page Ahorro" width="700"/></div>
 
@@ -4187,13 +4166,43 @@ El diseño de nuestros wireframes sigue la organización secuencial definida en 
 
 <div align="center"><img src="assets/wireframes/landingpagefooter.png" alt="Wireframe Landing Page Footer " width="700"/></div>
 
+**Mobile:**
+
+**Sección Hero:** 
+<div align="center"><img src="assets/wireframes/landingmobilepagehero.png" alt="Wireframe Landing Page Mobile Hero" width="700"/></div>
+
+**Sección Problema:** 
+
+<div align="center"><img src="assets/wireframes/landingmobilepageproblema.png" alt="Wireframe Landing Page Mobile Problema" width="700"/></div>
+
+**Sección ¿Cómo funciona?:** 
+
+<div align="center"><img src="assets/wireframes/landingmobilepagefunciona.png" alt="Wireframe Landing Page Mobile Cómo funciona" width="700"/></div>
+
+**Sección Beneficios por segmento:** 
+
+<div align="center"><img src="assets/wireframes/landingmobilepagebeneficios.png" alt="Wireframe Landing Page Mobile Beneficios" width="700"/></div>
+
+**Sección ¿Cuánto puedes ahorrar?:** 
+
+<div align="center"><img src="assets/wireframes/landingmobilepageahorro.png" alt="Wireframe Landing Page Mobile Ahorro" width="700"/></div>
+
+**Sección Planes:** 
+
+<div align="center"><img src="assets/wireframes/landingmobilepageplanes.png" alt="Wireframe Landing Page Mobile Planes" width="700"/></div>
+
+**Footer:** 
+
+<div align="center"><img src="assets/wireframes/landingmobilepagefooter.png" alt="Wireframe Landing Page Mobile Footer " width="700"/></div>
+
 
 ### 4.3.2. Landing Page Mock-up
 
 En esta sección se presenta el diseño de alta fidelidad del Landing Page de TankIQ con el Design System completo aplicado: paleta de colores institucional con celeste principal `#29ABE2`, tipografía Inter en sus variantes de peso, espaciado en múltiplos de 8px y componentes de Angular Material con el tema personalizado de HydroTeam. La experiencia visual es consistente con la Web Application, de modo que el usuario que llegue a la aplicación desde el Landing Page reconozca de inmediato la misma identidad visual.
 
-**Sección Hero:** Titular principal en Inter Bold 700, subtítulo en Gris Medio `#5A5A5A`, botón primario celeste para administradores y botón secundario con borde celeste para propietarios. Fondo con degradado hacia `#e8f6fc` y preview funcional del dashboard.
+**Desktop:**
 
+**Sección Hero:** Titular principal en Inter Bold 700, subtítulo en Gris Medio `#5A5A5A`, botón primario celeste para administradores y botón secundario con borde celeste para propietarios. Fondo con degradado hacia `#e8f6fc` y preview funcional del dashboard.
 
 <div align="center"><img src="assets/mockups/landingmkhero.png" alt="Mock-up Landing Page Hero" width="700"/></div>
 
@@ -4220,6 +4229,36 @@ En esta sección se presenta el diseño de alta fidelidad del Landing Page de Ta
 **Footer:** Fondo Gris Oscuro `#2D2D2D`, texto en `rgba(255,255,255,.5)`, logo con variante blanca, íconos de redes sociales con borde sutil y enlaces en hover celeste.
 
 <div align="center"><img src="assets/mockups/landingmkfooter.png" alt="Mock-up Landing Page Footer" width="700"/></div>
+
+**Mobile:**
+
+**Sección Hero:** 
+
+<div align="center"><img src="assets/mockups/landingmkmobilehero.png" alt="Mock-up Mobile Landing Page Hero" width="700"/></div>
+
+**Sección Problema:** 
+
+<div align="center"><img src="assets/mockups/landingmkmobileproblema.png" alt="Mock-up Mobile Landing Page Problema" width="700"/></div>
+
+**Sección ¿Cómo funciona?:** 
+
+<div align="center"><img src="assets/mockups/landingmkmobilefunciona.png" alt="Mock-up Mobile Landing Page Cómo funciona" width="700"/></div>
+
+**Sección Beneficios por segmento:** 
+
+<div align="center"><img src="assets/mockups/landingmkmobilebeneficios.png" alt="Mock-up Mobile Landing Page Beneficios" width="700"/></div>
+
+**Sección ¿Cuánto puedes ahorrar?:** 
+
+<div align="center"><img src="assets/mockups/landingmkmobileahorro.png" alt="Mock-up Mobile Landing Page Ahorro" width="700"/></div>
+
+**Sección Planes:** 
+
+<div align="center"><img src="assets/mockups/landingmkmobileplanes.png" alt="Mock-up Mobile Landing Page Planes" width="700"/></div>
+
+**Footer:** 
+
+<div align="center"><img src="assets/mockups/landingmkmobilefooter.png" alt="Mock-up Mobile Landing Page Footer" width="700"/></div>
 
 
 ## 4.4. Web Applications UX/UI Design
@@ -4329,7 +4368,7 @@ Los Wireflow Diagrams muestran la secuencia de pantallas que recorre el usuario 
 
 ### 4.4.3. Web Applications Mock-ups
 
-Los mock-ups aplican el Design System completo de TankIQ sobre la estructura definida en los wireframes. El sidebar usa el Gris Oscuro `#2D2D2D` con ítem activo resaltado en celeste `#29ABE2` y borde derecho de 3px. Las tarjetas de estado llevan borde izquierdo de color según el indicador de estado. Los botones primarios tienen fondo celeste con border-radius de 8px. Los indicadores circulares SVG cambian de color según el nivel: verde `#43A047` (óptimo), celeste `#29ABE2` (normal), naranja `#FB8C00` (bajo), rojo `#E53935` (crítico).
+Los mock-ups aplican el Design System completo de TankIQ sobre la estructura definida en los wireframes. El sidebar usa el Gris Oscuro `#2D2D2D` con ítem activo resaltado en celeste `#29ABE2` y borde derecho de 3px. Las tarjetas de estado llevan borde izquierdo de color según el indicador de estado. Los botones primarios tienen fondo celeste con border radius de 8px. Los indicadores circulares SVG cambian de color según el nivel: verde `#43A047` (óptimo), celeste `#29ABE2` (normal), naranja `#FB8C00` (bajo), rojo `#E53935` (crítico).
 
 
 **Pantalla 01: Inicio de sesión**
@@ -4429,6 +4468,8 @@ Los Wireflow Diagrams muestran la secuencia de pantallas que recorre el usuario 
 
     
 ## 4.5. Web Applications Prototyping.
+
+<div align="center"><img src="assets/prototype/waproto.png" alt="Prototipo Web Application TankIQ" width="700"/></div>
    
 ## 4.6. Domain-Driven Software Architecture.
 
@@ -4436,7 +4477,7 @@ Para modelar la arquitectura de TankIQ se aplicó Domain-Driven Design, partiend
 
 ### 4.6.1. Design-Level EventStorming.
 
-El equipo realizó una sesión de Design-Level Event Storming de aproximadamente 90 minutos para refinar el modelo de dominio. Se identificaron Domain Events (naranja), Commands (azul), Aggregates (amarillo), Policies (lila), Read Models (verde) y External Systems (rosa). Los flujos modelados fueron: monitoreo de cisterna, gestión de recargas, activación de suscripción y generación de reportes. A partir de esta sesión se identificaron seis Bounded Contexts: Monitoring Context (núcleo, aggregate raíz Tank), Refill Management Context, Reporting Context, Subscription & Billing Context, Identity & Access Management Context y Notification Context.
+El equipo realizó una sesión de Design-Level Event Storming de 90 minutos para refinar el modelo de dominio de TankIQ. Se identificaron Domain Events, Commands, Aggregates, Policies, Read Models, External Systems y Actors. Se modelaron seis flujos: monitoreo de cisterna con proyección de días, gestión de recargas con cálculo de costo mensual, generación de reportes con exportación PDF, envío de alertas vía SendGrid, activación de suscripción y vinculación de sensor, y registro y autenticación de usuarios. Como resultado, se definieron seis Bounded Contexts: Monitoring Context Tank, Refill Management Context Refill, Reporting Context Report, Notification Context SendGrid/SMTP, Subscription & Billing Context Subscription e Identity & Access Management Context User.
 
 <div align="center">
   <img src="assets/architecture/design-level-event-storming.png" alt="Design-Level Event Storming — TankIQ" width="700"/>
@@ -4467,7 +4508,7 @@ Los Component Diagrams corresponden al nivel 3 del C4 Model y descomponen los do
 El API se organiza en seis componentes por Bounded Context: IAM Component (AuthController, UserService, JwtTokenProvider), Monitoring Component (TankController, TankService, AlertThresholdEvaluator), Refill Management Component** (RefillController, RefillService), Reporting Component (ReportController, ReportService), Subscription Component (SubscriptionController, SubscriptionService) y Notification Component (NotificationService, EmailGateway). Todos persisten datos en MySQL vía JPA/Hibernate.
 
 <div align="center">
-  <img src="assets/architecture/c4-component-diagram-backend.png" alt="C4 Model — Component Diagram RESTful API TankIQ" width="700"/>
+  <img src="assets/architecture/c4-component-backend.png" alt="C4 Model — Component Diagram RESTful API TankIQ" width="700"/>
 </div>
 
 **Componentes de la Web Application (Angular)**
@@ -4475,24 +4516,167 @@ El API se organiza en seis componentes por Bounded Context: IAM Component (AuthC
 La Web Application se organiza en cinco módulos lazy-loaded: Auth Module (LoginComponent, AuthService, AuthGuard), Dashboard Module (TankStatusCardComponent, DaysProjectionComponent, AlertBannerComponent), Refill Module** (RefillListComponent, RefillFormComponent), Reports Module** (ReportGeneratorComponent) y Settings Module (AlertThresholdComponent). El Shared Module provee componentes transversales: NavbarComponent, SidebarComponent, interceptor HTTP para JWT y servicio i18n.
 
 <div align="center">
-  <img src="assets/architecture/c4-component-diagram-frontend.png" alt="C4 Model — Component Diagram Web Application TankIQ" width="700"/>
+  <img src="assets/architecture/c4-component-frontend.png" alt="C4 Model — Component Diagram Web Application TankIQ" width="700"/>
 </div>
     
 ## 4.7. Software Object-Oriented Design.
 
-El diseño orientado a objetos de TankIQ se deriva directamente de los Bounded Contexts identificados en el proceso de DDD. Los diagramas de clases presentados a continuación describen las entidades, interfaces, enumeraciones y relaciones de cada contexto del dominio, con el nivel de detalle necesario para guiar la implementación en Spring Boot.
+El diseño orientado a objetos de TankIQ se deriva directamente de los Bounded Contexts identificados en el proceso de DDD. El diagrama de clase presentado a continuación describen las entidades, interfaces, enumeraciones y relaciones de cada contexto del dominio, con el nivel de detalle necesario para guiar la implementación en Spring Boot.
 
 ### 4.7.1. Class Diagrams.
 
-El Class Diagram de TankIQ está organizado por Bounded Context e incluye clases, interfaces, enumeraciones, atributos y métodos con scope (+, -, #), y relaciones con nombre, dirección y multiplicidad. El IAM Context modela User con herencia hacia Administrator y Resident, todos implementando IAuthenticable. El Building Monitoring Context relaciona Building, Cistern (implementa ITankMonitor), Sensor y WaterLevelReading. El Water Management Context gestiona Refill y WaterConsumption. El Alerting Context define Alert y EmailNotification (implementa INotifiable). El Subscription Context agrupa Plan, Subscription y Report.
+El Class Diagram de TankIQ está organizado por Bounded Context e incluye clases, interfaces, enumeraciones, atributos con scope y tipo, métodos con parámetros y tipo de retorno, y relaciones con nombre, dirección y multiplicidad. Los contextos modelados son: User Management, Building Monitoring, Water Management, Alerting y Subscription.
 
 <div align="center">
   <img src="assets/class-diagrams/tankiq-class-diagram.png" alt="Class Diagram — TankIQ" width="800"/>
 </div>
+
+#### Diccionario de Clases
+
+<table>
+<thead>
+  <tr>
+    <th>N</th><th>Entidad</th><th>Atributo</th><th>Definición</th>
+    <th>Tipo de Dato</th><th>Rango</th><th>Unidad</th>
+    <th>Valores Restringidos</th>
+  </tr>
+</thead>
+<tbody>
+
+  <tr><td rowspan="5">1</td><td rowspan="5">User</td>
+    <td>userId</td><td>Identificador único del usuario en el sistema</td>
+    <td>UserId (UUID)</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>name</td><td>Nombre completo del usuario</td>
+    <td>String</td><td>—</td><td>—</td><td>Sin caracteres especiales</td></tr>
+  <tr><td>email</td><td>Correo electrónico usado para autenticación</td>
+    <td>String</td><td>—</td><td>—</td><td>Formato válido, único en el sistema</td></tr>
+  <tr><td>password</td><td>Contraseña de acceso a la cuenta</td>
+    <td>String</td><td>—</td><td>—</td><td>Mínimo 8 caracteres</td></tr>
+  <tr><td>role</td><td>Rol del usuario dentro de la plataforma</td>
+    <td>UserRole</td><td>—</td><td>—</td><td>ADMINISTRATOR, RESIDENT</td></tr>
+
+  <tr><td rowspan="1">2</td><td rowspan="1">Administrator</td>
+    <td>phoneNumber</td><td>Número de teléfono de contacto del administrador</td>
+    <td>String</td><td>—</td><td>—</td><td>Formato numérico, no nulo</td></tr>
+
+  <tr><td rowspan="1">3</td><td rowspan="1">Resident</td>
+    <td>apartmentNumber</td><td>Número de departamento del residente en el edificio</td>
+    <td>String</td><td>—</td><td>—</td><td>Alfanumérico, no nulo</td></tr>
+
+  <tr><td rowspan="4">4</td><td rowspan="4">Building</td>
+    <td>buildingId</td><td>Identificador único del edificio</td>
+    <td>BuildingId (UUID)</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>name</td><td>Nombre o alias del edificio residencial</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo</td></tr>
+  <tr><td>address</td><td>Dirección física completa del edificio</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo</td></tr>
+  <tr><td>district</td><td>Distrito de Lima donde se ubica el edificio</td>
+    <td>String</td><td>—</td><td>—</td><td>Distritos válidos de Lima</td></tr>
+
+  <tr><td rowspan="4">5</td><td rowspan="4">Cistern</td>
+    <td>id</td><td>Identificador único de la cisterna</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>capacityLiters</td><td>Capacidad máxima de almacenamiento de la cisterna</td>
+    <td>Double</td><td>500 – 50000</td><td>Litros</td><td>Valores negativos no permitidos</td></tr>
+  <tr><td>currentLevel</td><td>Nivel actual de agua en la cisterna expresado en porcentaje</td>
+    <td>Double</td><td>0 – 100</td><td>%</td><td>Fuera del rango 0–100</td></tr>
+  <tr><td>alertThreshold</td><td>Umbral mínimo configurado por el administrador para disparar alertas</td>
+    <td>Double</td><td>0 – 100</td><td>%</td><td>Fuera del rango 0–100</td></tr>
+
+  <tr><td rowspan="3">6</td><td rowspan="3">Sensor</td>
+    <td>sensorId</td><td>Identificador único del sensor ultrasónico IoT</td>
+    <td>SensorId (UUID)</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>type</td><td>Tipo de sensor instalado en la cisterna</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo</td></tr>
+  <tr><td>status</td><td>Estado de conexión actual del sensor</td>
+    <td>SensorStatus</td><td>—</td><td>—</td><td>ONLINE, OFFLINE</td></tr>
+
+  <tr><td rowspan="3">7</td><td rowspan="3">WaterLevelReading</td>
+    <td>id</td><td>Identificador único de la lectura registrada</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>levelPercent</td><td>Porcentaje de nivel de agua medido por el sensor</td>
+    <td>Double</td><td>0 – 100</td><td>%</td><td>Fuera del rango 0–100</td></tr>
+  <tr><td>recordedAt</td><td>Fecha y hora exacta en que se registró la lectura</td>
+    <td>DateTime</td><td>—</td><td>—</td><td>No puede ser fecha futura</td></tr>
+
+  <tr><td rowspan="4">8</td><td rowspan="4">Refill</td>
+    <td>id</td><td>Identificador único del registro de recarga</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>date</td><td>Fecha y hora en que se realizó la recarga de agua</td>
+    <td>DateTime</td><td>—</td><td>—</td><td>No puede ser fecha futura</td></tr>
+  <tr><td>liters</td><td>Volumen de agua cargado en la cisterna</td>
+    <td>Double</td><td>100 – 50000</td><td>Litros</td><td>Valores negativos no permitidos</td></tr>
+  <tr><td>costSoles</td><td>Costo pagado por la recarga en soles peruanos</td>
+    <td>Double</td><td>80 – 500</td><td>S/.</td><td>Valores negativos no permitidos</td></tr>
+
+  <tr><td rowspan="2">9</td><td rowspan="2">WaterConsumption</td>
+    <td>id</td><td>Identificador único del registro de consumo</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>averageDailyUse</td><td>Promedio de litros consumidos por día en el período calculado</td>
+    <td>Double</td><td>0 – 10000</td><td>Litros/día</td><td>Valores negativos no permitidos</td></tr>
+
+  <tr><td rowspan="5">10</td><td rowspan="5">Alert</td>
+    <td>id</td><td>Identificador único de la alerta generada</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>type</td><td>Nivel de criticidad de la alerta según el umbral alcanzado</td>
+    <td>AlertType</td><td>—</td><td>—</td><td>LOW, CRITICAL</td></tr>
+  <tr><td>message</td><td>Mensaje descriptivo de la alerta enviado al usuario</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo</td></tr>
+  <tr><td>timestamp</td><td>Fecha y hora en que se generó la alerta</td>
+    <td>DateTime</td><td>—</td><td>—</td><td>No puede ser fecha futura</td></tr>
+  <tr><td>isResolved</td><td>Indica si la alerta fue atendida y resuelta por el administrador</td>
+    <td>boolean</td><td>—</td><td>—</td><td>true / false</td></tr>
+
+  <tr><td rowspan="4">11</td><td rowspan="4">Plan</td>
+    <td>id</td><td>Identificador único del plan de suscripción</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+<tr><td>name</td><td>Nombre comercial del plan</td>
+    <td>String</td><td>—</td><td>—</td><td>BASIC, PREMIUM</td></tr>
+<tr><td>priceSoles</td><td>Precio mensual del plan expresado en soles peruanos</td>
+    <td>Double</td><td>0 – 999</td><td>S/.</td><td>Valores negativos no permitidos</td></tr>
+<tr><td>features</td><td>Descripción de las funcionalidades incluidas en el plan</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo</td></tr>
+
+  <tr><td rowspan="4">12</td><td rowspan="4">Subscription</td>
+    <td>id</td><td>Identificador único de la suscripción</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>startDate</td><td>Fecha de inicio de la suscripción activa</td>
+    <td>Date</td><td>—</td><td>—</td><td>No nulo</td></tr>
+  <tr><td>endDate</td><td>Fecha de vencimiento de la suscripción</td>
+    <td>Date</td><td>—</td><td>—</td><td>Debe ser posterior a startDate</td></tr>
+  <tr><td>status</td><td>Estado actual de la suscripción del edificio</td>
+    <td>SubscriptionStatus</td><td>—</td><td>—</td><td>ACTIVE, INACTIVE, CANCELLED</td></tr>
+
+  <tr><td rowspan="5">13</td><td rowspan="5">Report</td>
+    <td>id</td><td>Identificador único del reporte generado</td>
+    <td>String</td><td>—</td><td>—</td><td>No nulo, único</td></tr>
+  <tr><td>generatedAt</td><td>Fecha y hora en que se generó el reporte</td>
+    <td>DateTime</td><td>—</td><td>—</td><td>No puede ser fecha futura</td></tr>
+  <tr><td>periodMonth</td><td>Mes del período cubierto por el reporte</td>
+    <td>Integer</td><td>1 – 12</td><td>—</td><td>Fuera del rango 1–12</td></tr>
+  <tr><td>periodYear</td><td>Año del período cubierto por el reporte</td>
+    <td>Integer</td><td>2024 – 2099</td><td>—</td><td>Años anteriores al inicio del sistema</td></tr>
+  <tr><td>totalCostSoles</td><td>Suma total del costo de recargas en el período del reporte</td>
+    <td>Double</td><td>0 – 99999</td><td>S/.</td><td>Valores negativos no permitidos</td></tr>
+
+</tbody>
+</table>
+
     
 ## 4.8. Database Design.
+
+En el diseño de base de datos de TankIQ, cada Bounded Context identificado en el proceso de Domain-Driven Design se traduce en un conjunto de tablas relacionadas. Las claves primarias son de tipo UUID para garantizar unicidad global entre servicios. Las claves foráneas refuerzan la integridad referencial entre tablas. Los campos numéricos críticos, como niveles de cisterna, consumo de agua y costos en soles, utilizan el tipo DECIMAL para asegurar precisión. Se aplican restricciones NOT NULL en todos los atributos obligatorios del negocio, mientras que algunos campos opcionales permiten valores NULL según las reglas del dominio.
+
     
 ### 4.8.1. Database Diagrams.
+
+El diagrama muestra las tablas del sistema agrupadas por Bounded Context junto con sus relaciones estructurales. El IAM Context contiene la tabla users con discriminación de rol ADMIN o RESIDENT, y la tabla intermedia building_users que implementa la relación muchos a muchos entre usuarios y edificios mediante las relaciones users a buildings de tipo uno a muchos y su descomposición a través de building_users. El Building Monitoring Context incluye las tablas buildings, cisterns, sensors y water_level_readings, representando la jerarquía física del sistema IoT. Un edificio se relaciona de forma uno a uno con una cisterna, la cual a su vez se relaciona uno a uno con un sensor, y este genera múltiples lecturas de nivel de agua mediante una relación uno a muchos. El Water Management Context agrupa las tablas refills y water_consumption, ambas relacionadas con buildings mediante relaciones uno a muchos, permitiendo registrar recargas de agua y métricas de consumo por periodos. El Alerting Context contiene la tabla alerts, la cual se relaciona con cisterns y users mediante relaciones uno a muchos, permitiendo gestionar eventos como niveles bajos o críticos de agua y su notificación a los usuarios. El Subscription Context incluye las tablas plans, subscriptions y reports. La tabla subscriptions se relaciona con buildings mediante una relación uno a uno y con plans mediante una relación uno a muchos, mientras que reports se relaciona con buildings mediante una relación uno a muchos, permitiendo almacenar reportes generados sobre consumo y costos.
+
+<div align="center">
+  <img src="assets/database/tankiq-database-diagram.png" alt="Database Diagram — TankIQ" width="800"/>
+</div>
+
+En el diagrama de base de datos, las llaves amarillas representan las claves primarias, las cuales identifican de forma única cada registro dentro de su respectiva tabla. Las llaves rojas representan las claves foráneas, que establecen las relaciones entre tablas y garantizan la integridad referencial del sistema.
     
 # Capítulo V: Product Implementation, Validation & Deployment
     
