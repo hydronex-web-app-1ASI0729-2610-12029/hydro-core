@@ -34,8 +34,6 @@
 
 # **Registro de Versiones del Informe**
 
-# **Report Version Log**
-
 <table style="width: 100%; border-collapse: collapse;">
   <!-- ROW 0 -->
   <tr>
@@ -57,7 +55,7 @@
       Espinar Martínez, Gabriel Ferran
     </td>
     <td style="text-align: justify;">
-     Completar...
+      Se realizó la estructuración inicial del documento del proyecto TankIQ, incluyendo la definición de la problemática, la propuesta de valor y la descripción de la startup. Asimismo, se estableció la organización general del informe y las secciones a desarrollar.
     </td>
   </tr>
   <!-- ROW 2 -->
@@ -72,7 +70,7 @@
       Guevara Serrano, Diego Ismael
     </td>
     <td style="text-align: justify;">
-     Completar...
+      Se desarrolló el análisis de usuarios mediante la elaboración de entrevistas y la identificación de necesidades, pains y gains. Además, se contribuyó en la definición de los User Personas representativos de los segmentos objetivo.
     </td>
   </tr>
   <!-- ROW 3 -->
@@ -87,7 +85,7 @@
       Montalvan Palomino, Bruno Rodolfo
     </td>
     <td style="text-align: justify;">
-      Completar...
+      Se elaboraron los artefactos de análisis como User Journey Maps, Empathy Maps y User Task Matrix, permitiendo comprender el comportamiento de los usuarios y sus interacciones en el contexto del problema identificado.
     </td>
  <!-- ROW 4 -->
 <tr>
@@ -101,7 +99,7 @@
     Razuri Alvarez, Matias Francesco
   </td>
   <td style="text-align: justify;">
-    Completar...
+    Se definieron las épicas y las historias de usuario del sistema, incluyendo sus criterios de aceptación bajo la estructura Gherkin. También se participó en la identificación de funcionalidades clave alineadas a los objetivos del negocio.
   </td>
 </tr>
   <!-- ROW 5 -->
@@ -4676,7 +4674,7 @@ El diagrama muestra las tablas del sistema agrupadas por Bounded Context junto c
 
 En el diagrama de base de datos, las llaves amarillas representan las claves primarias, las cuales identifican de forma única cada registro dentro de su respectiva tabla. Las llaves rojas representan las claves foráneas, que establecen las relaciones entre tablas y garantizan la integridad referencial del sistema.
     
-=======
+
 
 # Capítulo V: Product Implementation, Validation & Deployment
 
