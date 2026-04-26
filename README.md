@@ -3868,6 +3868,17 @@ Entonces el sistema muestra un mensaje informativo
 </table>
    
 ## 3.2. Impact Mapping.
+
+En esta sección se presenta el Impact Mapping del sistema, donde se muestra cómo los objetivos del negocio se relacionan con los usuarios, los cambios que se buscan en su comportamiento y las funcionalidades del sistema. Esto permite entender de manera clara cómo cada parte del producto aporta valor y responde a las necesidades identificadas.
+
+Impact Mapping – Administrador
+
+<img src="./assets/impact-mapping/Administrador.jpg" alt="Impact Mapping Supervisor" style="width:100%;">
+
+
+Impact Mapping – Residente
+
+<img src="./assets/impact-mapping/Residente.jpg" alt="Impact Mapping Operator" style="width:100%;">
     
 ## 3.3. Product Backlog.
 
