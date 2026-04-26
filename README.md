@@ -398,12 +398,12 @@ Nos encargamos de brindar una solución tecnológica accesible para la gestión 
 <table align="center" border="1" width="70%" style="text-align:center;">
     <tr align="center">
         <td rowspan="3">
-            <img src="foto_integrante1.png" alt="Integrante 1" style="margin-bottom: 5px;" width="800"/>
+            <img src="assets/team-member-profiles/Diego.png" alt="Integrante 1" style="margin-bottom: 5px;" width="800"/>
         </td>
         <td align="left">
             <b>Nombre y Apellido:</b>
             <br>
-            [Apellido, Nombre]
+            Guevara, Diego
         </td>
     </tr>
     <tr>
@@ -417,17 +417,17 @@ Nos encargamos de brindar una solución tecnológica accesible para la gestión 
         <td align="left">
         <b>Acerca de:</b>
         <br>
-        [Descripción personal del integrante]
+        Soy estudiante de Ingeniería de Software y me considero una persona responsable y enfocada en mejorar constantemente mis habilidades. Me interesa el desarrollo frontend y la construcción de sistemas funcionales. Tengo conocimientos en Java y bases de datos MySQL, lo cual puede aportar en la lógica y estructura del proyecto.
         </td>
     </tr>
     <tr align="center">
         <td rowspan="3">
-            <img src="foto_integrante2.png" alt="Integrante 2" style="margin-bottom: 5px;" width="800"/>
+            <img src="assets/team-member-profiles/Bruno.png" alt="Integrante 2" style="margin-bottom: 5px;" width="800"/>
         </td>
         <td align="left">
             <b>Nombre y Apellido:</b>
             <br>
-            [Apellido, Nombre]
+            Montalván, Bruno
         </td>
     </tr>
     <tr>
@@ -441,7 +441,7 @@ Nos encargamos de brindar una solución tecnológica accesible para la gestión 
         <td align="left">
         <b>Acerca de:</b>
         <br>
-        [Descripción personal del integrante]
+        Soy estudiante de Ingeniería de Software y me caracterizo por ser una persona responsable y constante en lo que hago. Me interesa seguir aprendiendo sobre desarrollo web y mejorar mis habilidades técnicas. Tengo conocimientos en HTML, CSS, JavaScript y SQL, los cuales puedo aplicar en el desarrollo del proyecto.
         </td>
     </tr>
     <tr align="center">
@@ -3394,7 +3394,7 @@ Entonces el sistema muestra los datos disponibles y un mensaje informativo
 <tr>
 <td><b>Descripción:</b></td>
 <td colspan="3">
-Como usuario, quiero visualizar información actualizada para tomar decisiones confiables
+Como residente, quiero consultar la disponibilidad de agua en tiempo real para saber si habrá suministro.
 </td>
 </tr>
 
@@ -3495,7 +3495,7 @@ Entonces puede visualizar las diferentes secciones
 <tr>
 <td><b>Descripción:</b></td>
 <td colspan="3">
-Como visitante, quiero entender rápidamente qué hace TankIQ para evaluar su utilidad
+Como residente, quiero ver información actualizada de la cisterna para conocer el estado del suministro de agua.
 </td>
 </tr>
 
@@ -3913,8 +3913,8 @@ Product Backlog para el sistema TankIQ orientado a la gestión inteligente del s
 
 <tr><td>13</td><td>US05</td><td>Recibir alerta crítica</td><td>Como administrador, quiero recibir alertas para evitar desabastecimiento.</td><td>5</td></tr>
 <tr><td>14</td><td>US06</td><td>Ver alertas</td><td>Como administrador, quiero visualizar alertas.</td><td>3</td></tr>
-<tr><td>15</td><td>US07</td><td>Recibir notificaciones</td><td>Como usuario, quiero recibir notificaciones.</td><td>5</td></tr>
-<tr><td>16</td><td>US08</td><td>Ver notificaciones</td><td>Como usuario, quiero visualizar notificaciones.</td><td>3</td></tr>
+<tr><td>15</td><td>US07</td><td>Recibir notificaciones</td><td>Como residente, quiero recibir notificaciones sobre cortes o niveles críticos de agua para anticiparme.</td><td>5</td></tr>
+<tr><td>16</td><td>US08</td><td>Ver notificaciones</td><td>Como residente, quiero ver el historial de notificaciones para revisar alertas anteriores.</td><td>3</td></tr>
 
 <tr><td>17</td><td>US09</td><td>Registrar recarga</td><td>Como administrador, quiero registrar recargas.</td><td>5</td></tr>
 <tr><td>18</td><td>US10</td><td>Ver historial de recargas</td><td>Como administrador, quiero visualizar recargas.</td><td>3</td></tr>
@@ -3958,9 +3958,9 @@ Product Backlog para el sistema TankIQ orientado a la gestión inteligente del s
 <tr><td>49</td><td>US41</td><td>Alerta consumo inusual</td><td>Como administrador, quiero detectar anomalías.</td><td>5</td></tr>
 <tr><td>50</td><td>US42</td><td>Notificación de corte</td><td>Como usuario, quiero recibir avisos de cortes.</td><td>3</td></tr>
 
-<tr><td>51</td><td>US43</td><td>Consultar disponibilidad</td><td>Como usuario, quiero saber si hay agua disponible.</td><td>3</td></tr>
+<tr><td>51</td><td>US43</td><td>Consultar disponibilidad</td><td>Como residente, quiero consultar la disponibilidad de agua en tiempo real para saber si habrá suministro.</td><td>3</td></tr>
 <tr><td>52</td><td>US44</td><td>Resumen general</td><td>Como administrador, quiero ver un resumen.</td><td>3</td></tr>
-<tr><td>53</td><td>US45</td><td>Información actualizada</td><td>Como usuario, quiero ver datos actualizados.</td><td>3</td></tr>
+<tr><td>53</td><td>US45</td><td>Información actualizada</td><td>Como residente, quiero ver información actualizada de la cisterna para conocer el estado del suministro de agua.</td><td>3</td></tr>
 
 </tbody>
 </table>
