@@ -5033,7 +5033,8 @@ publicación automática desde el repositorio de GitHub.
 - Se seleccionó la rama `main` como fuente del sitio.
 - Se configuró la carpeta raíz (`/root`) como directorio de publicación.
 
-*(Insertar captura: configuración de GitHub Pages)*
+Configuración de GitHub Pages
+<img src="./assets/landing-page/github-pages.png" alt="Historial de insights" width="800" style="margin-bottom: 5px;">
 
 **Paso 3: Generación de la URL**
 - GitHub Pages generó automáticamente la URL pública del sitio.
@@ -5044,7 +5045,8 @@ publicación automática desde el repositorio de GitHub.
 - Se comprobó que el certificado SSL estuviera activo (HTTPS).
 - Se validó que todos los recursos se cargaran correctamente.
 
-*(Insertar captura: confirmación de despliegue exitoso)*
+Confirmación de despliegue exitoso
+<img src="./assets/landing-page/landing-page-deployment.png" alt="Deployment" width="800" style="margin-bottom: 5px;">
 
 **Paso 5: Validación de Funcionalidad**
 
@@ -5076,11 +5078,19 @@ por Google Meet y comunicación por WhatsApp.
 
 A continuación se presentan las evidencias de colaboración del equipo durante el Sprint 1:
 
-*(Insertar captura: Network Graph del repositorio Landing-Page en GitHub)*
+Network Graph del repositorio Landing-Page en GitHub
 
-*(Insertar captura: Contributors — commits por integrante)*
+<img src="./assets/git-hub/insights.png" alt="General insights" width="800" style="margin-bottom: 5px;">
 
-*(Insertar captura: historial de Pull Requests mergeados)*
+Contributors — commits por integrante
+
+<img src="./assets/git-hub/contributors.png" alt="Historial de commits por in" width="800" style="margin-bottom: 5px;">
+      
+
+Historial de Pull Requests mergeados
+
+<img src="./assets/git-hub/insights-pulse.png" alt="Historial de insights" width="800" style="margin-bottom: 5px;">
+      
 
 ## Conclusiones
 
