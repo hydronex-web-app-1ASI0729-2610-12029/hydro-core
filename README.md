@@ -3873,12 +3873,12 @@ En esta sección se presenta el Impact Mapping del sistema, donde se muestra có
 
 Impact Mapping – Administrador
 
-<img src="./assets/impact-mapping/Administrador.jpg" alt="Impact Mapping Supervisor" style="width:100%;">
+<img src="./assets/impact-mapping/Administrador.jpg" alt="Impact Mapping Administrador" style="width:100%;">
 
 
 Impact Mapping – Residente
 
-<img src="./assets/impact-mapping/Residente.jpg" alt="Impact Mapping Operator" style="width:100%;">
+<img src="./assets/impact-mapping/Residente.jpg" alt="Impact Mapping Residente" style="width:100%;">
     
 ## 3.3. Product Backlog.
 
