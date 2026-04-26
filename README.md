@@ -4677,7 +4677,7 @@ El diagrama muestra las tablas del sistema agrupadas por Bounded Context junto c
 En el diagrama de base de datos, las llaves amarillas representan las claves primarias, las cuales identifican de forma única cada registro dentro de su respectiva tabla. Las llaves rojas representan las claves foráneas, que establecen las relaciones entre tablas y garantizan la integridad referencial del sistema.
     
 =======
->>>>>>> feature/chapter-5
+
 # Capítulo V: Product Implementation, Validation & Deployment
 
 ## 5.1. Software Configuration Management.
