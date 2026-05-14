@@ -5387,25 +5387,60 @@ equipo para implementar la arquitectura Angular, organizar el proyecto mediante 
 y desarrollar los diferentes módulos frontend definidos para esta primera versión de la Web
 Application.
 
+# HydroTeam Frontend - Commit History Evidence
+
 | Repository | Branch | Commit Id | Commit Message | Committed on (Date) |
 |---|---|---|---|---|
-| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-landing | 2fc91ab | feat: migrate landing page to angular standalone components | May 08, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-landing | 91db61f | feat: improve navbar styles and language switcher | May 08, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-iam | a73ce2d | feat: add iam module structure and auth routes | May 09, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-iam | b81df44 | feat: implement login and register views | May 09, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-dashboard-overview | c92ab8e | feat: implement dashboard overview layout and metrics cards | May 10, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-dashboard-overview | d13ff7a | feat: add sidebar navigation and under construction views | May 10, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-water-monitoring | 81ca4fd | feat: create water monitoring module structure | May 11, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-water-monitoring | 6dc19ef | feat: add monitoring routes and placeholder views | May 11, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-alerts-notifications | 9ab82dc | feat: create alerts and notifications module | May 12, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-alerts-notifications | 5fd18aa | feat: add alerts cards and notification placeholders | May 12, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | develop | 8ddf61b | merge: integrate dashboard overview feature branch | May 13, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | develop | a91fd2c | merge: integrate landing angular feature branch | May 13, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | develop | e71cb6f | merge: integrate iam feature branch | May 13, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | develop | 62bc81a | merge: integrate alerts feature branch | May 13, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | develop | 1adf2c8 | merge: integrate monitoring feature branch | May 13, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | main | 91dc6f2 | fix: update responsive layouts and typography sizes | May 14, 2026 |
-| hydronex-web-app.../HydroTeam-Frontend | main | 5ab2ce1 | fix: improve dashboard spacing and navigation styles | May 14, 2026 |
+| HydroTeam-Frontend | develop | f3f7102 | update | May 14, 2026 |
+| HydroTeam-Frontend | develop | 32b1b83 | Update | May 14, 2026 |
+| HydroTeam-Frontend | develop | 4b5ec38 | Fix import path for AlertsApiEndpoint | May 14, 2026 |
+| HydroTeam-Frontend | develop | c40abdd | Delete | May 14, 2026 |
+| HydroTeam-Frontend | develop | 14d48bf | feat: add model and entity | May 14, 2026 |
+| HydroTeam-Frontend | develop | 981e216 | fix: remove unnecessary closing braces in alerts.store.ts | May 14, 2026 |
+| HydroTeam-Frontend | develop | 4b52499 | fix: refactor monitoring component to use signals | May 14, 2026 |
+| HydroTeam-Frontend | develop | d33b86b | fix: html section | May 14, 2026 |
+| HydroTeam-Frontend | develop | 13d0cca | fix: refactor CSS for monitoring page layout and styles | May 14, 2026 |
+| HydroTeam-Frontend | develop | 03393bf | Merge pull request #2 from hydronex-web-app-1ASI0729-2610-12029/feature/tb1-alerts-notifications | May 14, 2026 |
+| HydroTeam-Frontend | develop | 21ba2c1 | Merge pull request #1 from hydronex-web-app-1ASI0729-2610-12029/feature/tb1-water-monitoring | May 14, 2026 |
+| HydroTeam-Frontend | develop | d6b94ac | Merge branch 'feature/tb1-dashboard-overview' into develop | May 14, 2026 |
+| HydroTeam-Frontend | develop | 5d09c3e | Merge branch 'feature/tb1-iam' into develop | May 14, 2026 |
+| HydroTeam-Frontend | develop | 202936a | Fix IAM routing and CommonModule imports | May 14, 2026 |
+| HydroTeam-Frontend | develop | e224ed3 | feat: fix style | May 14, 2026 |
+| HydroTeam-Frontend | develop | cc5097a | feat: add water monitoring modules | May 14, 2026 |
+| HydroTeam-Frontend | develop | d777343 | feat(landing): improve public landing page | May 14, 2026 |
+| HydroTeam-Frontend | develop | 8652f14 | fix(iam): remove auth guard from app routes | May 14, 2026 |
+| HydroTeam-Frontend | develop | b024a91 | feat(iam): protect dashboard routes with auth guard | May 14, 2026 |
+| HydroTeam-Frontend | develop | 50702de | feat(iam): add sign-up route | May 14, 2026 |
+| HydroTeam-Frontend | develop | f33c39f | feat(iam): update login component | May 14, 2026 |
+| HydroTeam-Frontend | develop | af5e51d | feat(iam): update login template | May 14, 2026 |
+| HydroTeam-Frontend | develop | 342e579 | feat(iam): update login styles | May 14, 2026 |
+| HydroTeam-Frontend | develop | e4aab9a | feat(iam): add sign-up view | May 14, 2026 |
+| HydroTeam-Frontend | develop | 82ebb82 | docs(iam): update authentication store | May 14, 2026 |
+| HydroTeam-Frontend | develop | fb830d1 | docs(iam): update login component | May 14, 2026 |
+| HydroTeam-Frontend | develop | 0f2f990 | feat(iam): add authentication store | May 14, 2026 |
+| HydroTeam-Frontend | develop | 383a1d5 | feat(iam): add auth guard | May 14, 2026 |
+| HydroTeam-Frontend | develop | 4e6a7e2 | feat(iam): add infrastructure layer | May 14, 2026 |
+| HydroTeam-Frontend | develop | 4a9e67a | feat(iam): add user entity | May 14, 2026 |
+| HydroTeam-Frontend | develop | a3b3f19 | feat(iam): add i18n keys for login, sign-up and validation in Spanish | May 14, 2026 |
+| HydroTeam-Frontend | develop | 2dfcdf3 | feat(iam): add i18n keys for login, sign-up and validation in English | May 14, 2026 |
+| HydroTeam-Frontend | develop | 34504c2 | feat: add matt-icon | May 14, 2026 |
+| HydroTeam-Frontend | develop | 9631ba7 | feat: add component | May 14, 2026 |
+| HydroTeam-Frontend | develop | 81d5173 | feat: add component | May 14, 2026 |
+| HydroTeam-Frontend | develop | c49c987 | feat: add component | May 14, 2026 |
+| HydroTeam-Frontend | develop | 4703329 | feat: add infrastructure | May 14, 2026 |
+| HydroTeam-Frontend | develop | 864a764 | feat: add entities | May 14, 2026 |
+| HydroTeam-Frontend | develop | e9fca61 | feat: create alerts-response.ts and define Alert DTOs and API response interfaces | May 13, 2026 |
+| HydroTeam-Frontend | develop | cc9a028 | feat: create alerts-api.ts with CRUD operations | May 13, 2026 |
+| HydroTeam-Frontend | develop | 380f1a3 | feat: create alerts-api-endpoints.ts | May 13, 2026 |
+| HydroTeam-Frontend | develop | f8f1220 | feat: create alert-assembler.ts for data mapping between layers | May 13, 2026 |
+| HydroTeam-Frontend | develop | b59bba7 | feat: create alert.entity.ts and define Alert domain entity and types | May 13, 2026 |
+| HydroTeam-Frontend | develop | 5750144 | feat: create alerts.store.ts | May 13, 2026 |
+| HydroTeam-Frontend | develop | 84f9895 | feat: add MatIcon to alerts css | May 13, 2026 |
+| HydroTeam-Frontend | develop | b767c65 | feat: implement layout and control flow for alerts view | May 13, 2026 |
+| HydroTeam-Frontend | develop | e4512bd | feat: add background color to alert card icons | May 13, 2026 |
+| HydroTeam-Frontend | develop | 7944895 | merge: resolve README conflict | May 13, 2026 |
+| HydroTeam-Frontend | develop | 1c7c294 | feat: initialize frontend base project | May 13, 2026 |
+| HydroTeam-Frontend | develop | ccc907a | Initial commit | Apr 11, 2026 |
 
 #### 5.2.2.5. Execution Evidence for Sprint Review.
 
@@ -5420,27 +5455,23 @@ el Landing Page trabajado durante el Sprint 1.
 
 Landing Page integrado en Angular
 
-<img src="./assets/chapter-5/sprint-2/landing-angular.png" alt="Landing Angular" width="800" style="margin-bottom: 5px;">
+<img src="./assets/tb1/landing-tb1.png" alt="Landing Angular" width="800" style="margin-bottom: 5px;">
 
 Dashboard Overview implementado en Angular
 
-<img src="./assets/chapter-5/sprint-2/dashboard-overview.png" alt="Dashboard Overview" width="800" style="margin-bottom: 5px;">
-
-Sidebar y navegación interna de la aplicación
-
-<img src="./assets/chapter-5/sprint-2/sidebar-navigation.png" alt="Sidebar Navigation" width="800" style="margin-bottom: 5px;">
+<img src="./assets/tb1/dashboard-tb1.png" alt="Dashboard Overview" width="800" style="margin-bottom: 5px;">
 
 Módulo Alerts & Notifications
 
-<img src="./assets/chapter-5/sprint-2/alerts-module.png" alt="Alerts Module" width="800" style="margin-bottom: 5px;">
+<img src="./assets/tb1/alerts-tb1.png" alt="Alerts Module" width="800" style="margin-bottom: 5px;">
 
 Módulo Water Monitoring
 
-<img src="./assets/chapter-5/sprint-2/water-monitoring.png" alt="Water Monitoring" width="800" style="margin-bottom: 5px;">
+<img src="./assets/tb1/water-monitoring-tb1.png" alt="Water Monitoring" width="800" style="margin-bottom: 5px;">
 
 Módulo IAM y vistas de autenticación
 
-<img src="./assets/chapter-5/sprint-2/iam-module.png" alt="IAM Module" width="800" style="margin-bottom: 5px;">
+<img src="./assets/tb1/iam-tb1.png" alt="IAM Module" width="800" style="margin-bottom: 5px;">
 
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review.
 
@@ -5493,15 +5524,12 @@ resolver observaciones y unificar criterios técnicos durante el desarrollo.
 
 Network Graph del repositorio HydroTeam-Frontend
 
-<img src="./assets/chapter-5/sprint-2/network-graph.png" alt="Network Graph" width="800" style="margin-bottom: 5px;">
+<img src="./assets/git-hub/insights-tb1.png" alt="Network Graph" width="800" style="margin-bottom: 5px;">
 
 Contributors — commits realizados por integrante
 
-<img src="./assets/chapter-5/sprint-2/contributors.png" alt="Contributors" width="800" style="margin-bottom: 5px;">
+<img src="./assets/git-hub/contributors-tb1.png" alt="Contributors" width="800" style="margin-bottom: 5px;">
 
-Historial de Pull Requests mergeados
-
-<img src="./assets/chapter-5/sprint-2/pull-requests.png" alt="Pull Requests" width="800" style="margin-bottom: 5px;">
 
 ## Conclusiones
 
