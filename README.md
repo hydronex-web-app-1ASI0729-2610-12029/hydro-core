@@ -5331,6 +5331,25 @@ previamente.
 | **Velocidad del Sprint 2** | 30 |
 | **Suma de Story Points** | 30 |      
 
+#### 5.2.2.2. Aspect Leaders and Collaborators.
+
+Durante el Sprint 2, el equipo trabajó utilizando una estrategia basada en ramas feature para
+desarrollar de manera paralela los diferentes módulos frontend de la Web Application. Cada
+integrante asumió la responsabilidad principal de un bounded context específico, permitiendo
+mantener una mejor organización del proyecto y facilitar la integración de funcionalidades
+hacia las ramas develop y main.
+
+La siguiente Matriz LACX muestra la distribución de responsabilidades del equipo durante el
+Sprint 2.
+
+| Team Member | GitHub Username | Landing Angular | IAM Module | Dashboard Overview | Water Monitoring | Alerts & Notifications |
+|---|---|---|---|---|---|---|
+| Espinar Martínez, Gabriel Ferran | zzZero14 | C | C | C | L | C |
+| Guevara Serrano, Diego Ismael | digetto | L | C | C | C | C |
+| Montalvan Palomino, Bruno Rodolfo | br1rodolfo | C | L | C | C | C |
+| Orosco Ttamiña, Juan Carlos | juancarlosorosco59 | C | C | L | C | C |
+| Razuri Alvarez, Matias Francesco | u202410772 | C | C | C | C | L |
+
 ## Conclusiones
 
 1. TankIQ responde a una problemática real y frecuente en Lima Metropolitana: la falta de
