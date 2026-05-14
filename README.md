@@ -5612,6 +5612,15 @@ de vida del proyecto.
 
 - **Informe del Proyecto:** https://github.com/hydronex-web-app-1ASI0729-2610-12029/hydro-core
 - **Landing Page:** https://github.com/hydronex-web-app-1ASI0729-2610-12029/Landing-Page
+- **Frontend Web Application:** https://github.com/hydronex-web-app-1ASI0729-2610-12029/HydroTeam-Frontend
+- **Landing Page Wireframe:** https://www.figma.com/design/zIKkpQCDQCCpsutdlDkcEP/Wireframe-de-la-Landing-Page?node-id=3-5&t=N4edWbvrc8EivPXJ-1
+- **Landing Page Wireframe Mobile:** https://www.figma.com/design/JGpsqJiZuzKuPwkUBxKHBI/Wireframe-de-la-Landing-Page-en-Mobile?node-id=1-9&t=OmqUaP80nrQMMI2G-1
+- **Landing Page Mock Up:** https://www.figma.com/design/6rjBIMRTpRLoDnuCEjHuGv/Mock-UP-de-la-Landing-Page?node-id=0-1&t=UMLP9K59U1LBPrTr-1
+- **Landing Page Mock Up Mobile:** https://www.figma.com/design/JS56juAKWYo49QhGoqBpzU/Mock-UP-de-la-Landing-Page-en-Mobile?node-id=0-1&t=SQKrJ6o1OGWeU4MG-1
+- **Web Applications Wireframes:** https://www.figma.com/design/R0vhVVq6Pi4cjcQqofaj97/Wireframe-de-la-Web-Application?node-id=0-1&t=yqtYfPOamvsKCeSO-1
+- **Web Applications Wireflow Diagrams Wireframes:** https://lucid.app/lucidspark/a6b580b7-e7ec-4537-b1ec-ed9714e141a4/edit?viewport_loc=-3894%2C-1056%2C12000%2C5694%2C0_0&invitationId=inv_d7e7134a-9ab1-4d96-9e51-c5510ec8c6e9
+- **Web Applications Mock-ups:** https://www.figma.com/design/8E48rSmy7JK0TDPBwZajBw/Mock-UP-de-la-Web-Application?node-id=0-1&t=sm1kWRDizHW7wWPB-1
+- **Web Applications Wireflow Diagrams Mock ups:** https://lucid.app/lucidspark/c608803b-0c2b-4bbb-bbf6-f6a9e38aa5a5/edit?viewport_loc=-6696%2C-2052%2C14921%2C7080%2C0_0&invitationId=inv_c10fd18a-61aa-426c-a1f7-ddc4d4816ee0
 
 ---
 
