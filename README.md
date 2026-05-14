@@ -5350,6 +5350,70 @@ Sprint 2.
 | Orosco Ttamiña, Juan Carlos | juancarlosorosco59 | C | C | L | C | C |
 | Razuri Alvarez, Matias Francesco | u202410772 | C | C | C | C | L |
 
+#### 5.2.2.3. Sprint Backlog 2.
+
+El Sprint Backlog 2 estuvo orientado al desarrollo de la primera versión de la Frontend Web
+Application de TankIQ utilizando Angular. El trabajo incluyó la implementación de la
+arquitectura modular del sistema, layouts reutilizables, navegación mediante Angular Router y
+la estructura inicial de los diferentes módulos definidos en el Product Backlog. Además, se
+realizaron mejoras visuales y técnicas sobre el Landing Page desarrollado durante el Sprint 1.
+
+<img src="./assets/chapter-5/sprint-2/sprint-backlog-2.png" alt="Sprint Backlog 2" width="800" style="margin-bottom: 5px;">
+
+| **Sprint 2** | | | | | | | |
+|---|---|---|---|---|---|---|---|
+| **User Story** | | **Work-Item / Task** | | | | | |
+| **User Story ID** | **Título** | **Task ID** | **Task Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
+| US54 | Acceder a la Web Application | T09 | Configurar arquitectura Angular | Inicializar el proyecto Angular y organizar la estructura modular mediante bounded contexts, standalone components y lazy loading. | 4 | Orosco Ttamiña, Juan Carlos | Done |
+| US55 | Navegar entre módulos del sistema | T10 | Implementar sistema de routing | Configurar rutas principales, layouts y navegación entre Landing, Dashboard, IAM, Monitoring y Alerts. | 4 | Orosco Ttamiña, Juan Carlos | Done |
+| US56 | Visualizar métricas principales del sistema | T11 | Implementar Dashboard Overview | Desarrollar la primera vista del dashboard incluyendo métricas, sidebar y componentes base del panel principal. | 5 | Orosco Ttamiña, Juan Carlos | Done |
+| US57 | Acceder al Landing Page desde Angular | T12 | Migrar Landing Page | Adaptar el Landing Page desarrollado en el Sprint 1 hacia una arquitectura basada en componentes Angular reutilizables. | 4 | Guevara Serrano, Diego | Done |
+| US58 | Gestionar el acceso de usuarios | T13 | Implementar módulo IAM | Crear la estructura inicial del módulo IAM incluyendo vistas de login, autenticación y navegación base. | 4 | Montalvan Palomino, Bruno | Done |
+| US59 | Consultar información de monitoreo | T14 | Implementar módulo Water Monitoring | Desarrollar la estructura inicial y rutas del módulo de monitoreo de agua utilizando componentes placeholder y navegación integrada. | 3 | Espinar Martínez, Gabriel | Done |
+| US60 | Visualizar alertas y notificaciones | T15 | Implementar módulo Alerts & Notifications | Crear la estructura inicial del módulo de alertas y notificaciones utilizando vistas placeholder y navegación interna. | 3 | Razuri Alvarez, Matias | Done |
+| US61 | Mantener una estructura escalable del sistema | T16 | Organizar proyecto por feature branches | Configurar el flujo de trabajo basado en ramas feature y bounded contexts para permitir el desarrollo paralelo e integración del sistema. | 2 | HydroTeam | Done |
+| US62 | Mantener coherencia visual en la aplicación | T17 | Ajustar estilos y layouts | Corregir tipografía, tamaños, espaciados y estilos generales para mantener consistencia visual entre Landing y Web Application. | 3 | HydroTeam | Done |
+
+#### 5.2.2.4. Development Evidence for Sprint Review.
+
+A continuación se presenta el registro de commits realizados en el repositorio
+HydroTeam-Frontend durante el Sprint 2. Los commits reflejan el trabajo realizado por el
+equipo para implementar la arquitectura Angular, organizar el proyecto mediante ramas feature
+y desarrollar los diferentes módulos frontend definidos para esta primera versión de la Web
+Application.
+
+| Repository | Branch | Commit Id | Commit Message | Committed on (Date) |
+|---|---|---|---|---|
+| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-landing | 2fc91ab | feat: migrate landing page to angular standalone components | May 08, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-landing | 91db61f | feat: improve navbar styles and language switcher | May 08, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-iam | a73ce2d | feat: add iam module structure and auth routes | May 09, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-iam | b81df44 | feat: implement login and register views | May 09, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-dashboard-overview | c92ab8e | feat: implement dashboard overview layout and metrics cards | May 10, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-dashboard-overview | d13ff7a | feat: add sidebar navigation and under construction views | May 10, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-water-monitoring | 81ca4fd | feat: create water monitoring module structure | May 11, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-water-monitoring | 6dc19ef | feat: add monitoring routes and placeholder views | May 11, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-alerts-notifications | 9ab82dc | feat: create alerts and notifications module | May 12, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | feature/tb1-alerts-notifications | 5fd18aa | feat: add alerts cards and notification placeholders | May 12, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | develop | 8ddf61b | merge: integrate dashboard overview feature branch | May 13, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | develop | a91fd2c | merge: integrate landing angular feature branch | May 13, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | develop | e71cb6f | merge: integrate iam feature branch | May 13, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | develop | 62bc81a | merge: integrate alerts feature branch | May 13, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | develop | 1adf2c8 | merge: integrate monitoring feature branch | May 13, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | main | 91dc6f2 | fix: update responsive layouts and typography sizes | May 14, 2026 |
+| hydronex-web-app.../HydroTeam-Frontend | main | 5ab2ce1 | fix: improve dashboard spacing and navigation styles | May 14, 2026 |
+
+#### 5.2.2.5. Execution Evidence for Sprint Review.
+
+Durante el Sprint 2, el equipo HydroTeam implementó la primera versión de la Frontend Web
+Application de TankIQ utilizando Angular. El desarrollo se enfocó en establecer una
+arquitectura modular y escalable, integrando navegación mediante Angular Router, layouts
+reutilizables y componentes standalone para facilitar futuras integraciones del sistema.
+
+Asimismo, se desarrollaron las primeras vistas correspondientes a los módulos Dashboard
+Overview, IAM, Water Monitoring y Alerts & Notifications, manteniendo coherencia visual con
+el Landing Page trabajado durante el Sprint 1.
+
+
 ## Conclusiones
 
 1. TankIQ responde a una problemática real y frecuente en Lima Metropolitana: la falta de
