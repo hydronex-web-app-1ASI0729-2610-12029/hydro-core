@@ -5319,17 +5319,22 @@ previamente.
 
 #### 5.2.2.1. Sprint Planning 2.
 
+#### 5.2.2.1. Sprint Planning 2.
+
 | **Sprint #** | Sprint 2 |
 |---|---|
 | **Sprint Planning Background** | |
-| **Fecha** | 06/05/2026 |
-| **Hora** | 20:00 pm (GMT-5) |
-| **Ubicación** | Reunión virtual por Google Meet |
-| **Preparado por** | HydroTeam |
-| **Participantes (reunión de planificación)** | - Espinar Martínez, Gabriel Ferran <br> - Guevara Serrano, Diego Ismael <br> - Montalvan Palomino, Bruno Rodolfo <br> - Orosco Ttamiña, Juan Carlos <br> - Razuri Alvarez, Matias Francesco |
-| **Sprint Goal & User Stories** | Nuestro enfoque está en desarrollar la primera versión funcional de la Web Application de TankIQ utilizando Angular y una arquitectura modular basada en bounded contexts. Creemos que esto permitirá establecer una estructura escalable para los diferentes módulos del sistema y facilitar el trabajo paralelo del equipo. Esto se confirmará cuando los usuarios puedan navegar entre las principales vistas del sistema, acceder al dashboard y visualizar la integración inicial de los módulos frontend desde una interfaz responsive y organizada. |
-| **Velocidad del Sprint 2** | 30 |
-| **Suma de Story Points** | 30 |      
+| **Date** | 2026-05-06 |
+| **Time** | 08:00 PM |
+| **Location** | Reunión virtual mediante Google Meet |
+| **Prepared By** | HydroTeam |
+| **Attendees (to planning meeting)** | Espinar Martínez, Gabriel Ferran / Guevara Serrano, Diego Ismael / Montalvan Palomino, Bruno Rodolfo / Orosco Ttamiña, Juan Carlos / Razuri Alvarez, Matias Francesco |
+| **Sprint 1 – Review Summary** | Durante el Sprint 1 se completó el desarrollo inicial del Landing Page y los principales artefactos UX/UI del proyecto. Asimismo, durante la revisión se identificaron observaciones relacionadas con enlaces faltantes, visibilidad de algunas imágenes del informe y pequeños ajustes visuales de la interfaz. |
+| **Sprint 1 – Retrospective Summary** | Durante la retrospectiva del Sprint 1, el equipo identificó la necesidad de mejorar la organización del trabajo colaborativo y la estructura del frontend para facilitar el desarrollo de nuevas funcionalidades. Además, se concluyó que era necesario utilizar una arquitectura más escalable y una mejor estrategia de manejo de ramas para reducir conflictos durante la integración del proyecto. |
+| **Sprint Goal & User Stories** | |
+| **Sprint 2 Goal** | Nuestro enfoque está en desarrollar la primera versión funcional de la Web Application de TankIQ utilizando Angular y una arquitectura modular organizada por bounded contexts. Creemos que esto permitirá integrar los primeros módulos frontend del sistema y facilitar el trabajo paralelo del equipo. Esto se confirmará cuando los usuarios puedan navegar entre las principales vistas de la aplicación y visualizar la integración inicial del dashboard y módulos base del sistema. |
+| **Sprint 2 Velocity** | 40 |
+| **Sum of Story Points** | 40 |
 
 #### 5.2.2.2. Aspect Leaders and Collaborators.
 
