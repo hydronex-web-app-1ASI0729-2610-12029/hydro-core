@@ -5305,7 +5305,31 @@ Contributors — commits por integrante
 Historial de Pull Requests mergeados
 
 <img src="./assets/git-hub/insights-pulse.png" alt="Historial de insights" width="800" style="margin-bottom: 5px;">
-      
+
+### 5.2.2. Sprint 2
+
+Durante el Sprint 2, el equipo HydroTeam centró sus esfuerzos en el desarrollo de la primera
+versión de la Web Application de TankIQ utilizando Angular como framework principal. En esta
+etapa se trabajó en la configuración de la arquitectura base del proyecto, la implementación
+de navegación mediante rutas, la organización modular utilizando bounded contexts y el
+desarrollo de las primeras vistas funcionales del sistema. Asimismo, se realizaron mejoras
+sobre los artefactos desarrollados durante el Sprint 1, corrigiendo aspectos visuales,
+tipográficos y estructurales para mantener coherencia con el Design System definido
+previamente.
+
+#### 5.2.2.1. Sprint Planning 2.
+
+| **Sprint #** | Sprint 2 |
+|---|---|
+| **Sprint Planning Background** | |
+| **Fecha** | 06/05/2026 |
+| **Hora** | 20:00 pm (GMT-5) |
+| **Ubicación** | Reunión virtual por Google Meet |
+| **Preparado por** | HydroTeam |
+| **Participantes (reunión de planificación)** | - Espinar Martínez, Gabriel Ferran <br> - Guevara Serrano, Diego Ismael <br> - Montalvan Palomino, Bruno Rodolfo <br> - Orosco Ttamiña, Juan Carlos <br> - Razuri Alvarez, Matias Francesco |
+| **Sprint Goal & User Stories** | Nuestro enfoque está en desarrollar la primera versión funcional de la Web Application de TankIQ utilizando Angular y una arquitectura modular basada en bounded contexts. Creemos que esto permitirá establecer una estructura escalable para los diferentes módulos del sistema y facilitar el trabajo paralelo del equipo. Esto se confirmará cuando los usuarios puedan navegar entre las principales vistas del sistema, acceder al dashboard y visualizar la integración inicial de los módulos frontend desde una interfaz responsive y organizada. |
+| **Velocidad del Sprint 2** | 30 |
+| **Suma de Story Points** | 30 |      
 
 ## Conclusiones
 
