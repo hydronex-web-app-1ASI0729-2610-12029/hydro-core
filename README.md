@@ -117,6 +117,81 @@
       Se completó la etapa de especificación de requisitos. En esta fase se definieron historias de usuario para representar las principales funcionalidades según las necesidades de los usuarios. También se hizo un impact mapping para relacionar los objetivos del negocio con los usuarios y las funcionalidades del sistema. Finalmente, se organizó y priorizó el Product Backlog, estimándolo con la escala de Fibonacci para apoyar el desarrollo.
     </td>
   </tr>
+    <!-- ROW 1 - TB1 -->
+  <tr>
+    <td style="text-align: center;">
+      2.0.0
+    </td>
+    <td style="text-align: center;">
+      13/05/2026
+    </td>
+    <td style="text-align: center;">
+      Espinar Martínez, Gabriel Ferran
+    </td>
+    <td style="text-align: justify;">
+      Se trabajó en la estructura inicial del módulo Water Monitoring, definiendo las rutas y componentes necesarios para representar la información relacionada con el monitoreo de agua. Además, se preparó la integración visual con el dashboard siguiendo el diseño y la arquitectura general del proyecto.
+    </td>
+  </tr>
+  <!-- ROW 2 -->
+  <tr>
+    <td style="text-align: center;">
+      2.0.1
+    </td>
+    <td style="text-align: center;">
+      12/05/2026
+    </td>
+    <td style="text-align: center;">
+      Guevara Serrano, Diego Ismael
+    </td>
+    <td style="text-align: justify;">
+      Se avanzó con el desarrollo del Landing Page del sistema, implementando las principales secciones informativas y la estructura visual inicial de la aplicación. Además, se trabajó en la navegación pública, el soporte de idiomas y la adaptación del diseño tomando como referencia los mockups y lineamientos definidos para el proyecto.
+    </td>
+  </tr>
+  <!-- ROW 3 -->
+  <tr>
+    <td style="text-align: center;">
+      2.0.2
+    </td>
+    <td style="text-align: center;">
+      13/05/2026
+    </td>
+    <td style="text-align: center;">
+      Montalvan Palomino, Bruno Rodolfo
+    </td>
+    <td style="text-align: justify;">
+      Se desarrolló la estructura inicial del módulo IAM, organizando las rutas y componentes relacionados con el acceso y autenticación de usuarios. Asimismo, se preparó la base necesaria para futuras funcionalidades de login y control de acceso dentro de la aplicación frontend.
+    </td>
+ <!-- ROW 4 -->
+<tr>
+  <td style="text-align: center;">
+    2.0.3
+  </td>
+  <td style="text-align: center;">
+    12/05/2026
+  </td>
+  <td style="text-align: center;">
+    Razuri Alvarez, Matias Francesco
+  </td>
+  <td style="text-align: justify;">
+    Se desarrolló la base frontend del módulo Alerts & Notifications, organizando las vistas y rutas relacionadas con las alertas del sistema. Asimismo, se preparó la estructura necesaria para futuras funcionalidades de notificaciones y visualización de eventos dentro de la aplicación.
+  </td>
+</tr>
+  <!-- ROW 5 -->
+  <tr>
+    <td style="text-align: center;">
+      2.0.4
+    </td>
+    <td style="text-align: center;">
+      13/05/2026
+    </td>
+    <td style="text-align: center;">
+      Orosco Ttamiña, Juan Carlos
+    </td>
+    <td style="text-align: justify;">
+      Se implementó la primera versión visual del Dashboard Overview, incorporando la estructura principal del panel y las vistas base del sistema. También se desarrolló la navegación interna, los componentes iniciales y las pantallas “Under Construction” para mantener la integración entre módulos durante el desarrollo frontend.
+    </td>
+  </tr>
+  
 </table>
 
 
