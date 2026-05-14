@@ -5527,6 +5527,24 @@ Historial de Pull Requests mergeados
    Sprint 1. Estas prácticas sientan las bases para escalar el desarrollo hacia los siguientes
    sprints, donde se incorporará el backend en Spring Boot, la Web Application en Angular
    y la integración con servicios externos.
+
+5. Durante el Sprint 2, el equipo logró construir la primera versión de la Web Application
+   de TankIQ utilizando Angular, permitiendo pasar de una Landing Page informativa a una
+   aplicación con navegación, módulos y estructura más cercana al producto final.
+
+6. La organización del proyecto mediante bounded contexts y ramas feature facilitó que cada
+   integrante pudiera trabajar en un módulo distinto sin afectar el avance general del
+   sistema, ayudando a mantener una mejor estructura y orden en el desarrollo frontend.
+
+7. La implementación de módulos como Dashboard Overview, IAM, Water Monitoring y Alerts &
+   Notifications permitió integrar las primeras vistas funcionales de la aplicación y dejar
+   preparada la base para futuras funcionalidades e integraciones backend.
+
+8. Las mejoras realizadas en diseño, tipografía, layouts y navegación ayudaron a mantener
+   una experiencia más consistente entre el Landing Page y la Web Application, logrando una
+   interfaz más organizada, responsive y alineada con los mockups definidos por el equipo.
+
+
 ## Bibliografía
 
 
