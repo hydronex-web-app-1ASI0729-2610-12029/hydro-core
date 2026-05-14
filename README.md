@@ -5413,6 +5413,90 @@ Asimismo, se desarrollaron las primeras vistas correspondientes a los módulos D
 Overview, IAM, Water Monitoring y Alerts & Notifications, manteniendo coherencia visual con
 el Landing Page trabajado durante el Sprint 1.
 
+Landing Page integrado en Angular
+
+<img src="./assets/chapter-5/sprint-2/landing-angular.png" alt="Landing Angular" width="800" style="margin-bottom: 5px;">
+
+Dashboard Overview implementado en Angular
+
+<img src="./assets/chapter-5/sprint-2/dashboard-overview.png" alt="Dashboard Overview" width="800" style="margin-bottom: 5px;">
+
+Sidebar y navegación interna de la aplicación
+
+<img src="./assets/chapter-5/sprint-2/sidebar-navigation.png" alt="Sidebar Navigation" width="800" style="margin-bottom: 5px;">
+
+Módulo Alerts & Notifications
+
+<img src="./assets/chapter-5/sprint-2/alerts-module.png" alt="Alerts Module" width="800" style="margin-bottom: 5px;">
+
+Módulo Water Monitoring
+
+<img src="./assets/chapter-5/sprint-2/water-monitoring.png" alt="Water Monitoring" width="800" style="margin-bottom: 5px;">
+
+Módulo IAM y vistas de autenticación
+
+<img src="./assets/chapter-5/sprint-2/iam-module.png" alt="IAM Module" width="800" style="margin-bottom: 5px;">
+
+#### 5.2.2.6. Services Documentation Evidence for Sprint Review.
+
+El repositorio HydroTeam-Frontend contiene documentación relacionada con la instalación del
+proyecto, ejecución de la aplicación y estructura modular implementada durante el Sprint 2.
+Asimismo, el archivo README.md incluye instrucciones para configurar Angular, ejecutar builds
+y trabajar colaborativamente utilizando ramas feature y flujo GitHub Flow.
+
+Repositorio y documentación del proyecto frontend
+
+<img src="./assets/chapter-5/sprint-2/github-readme.png" alt="README Frontend" width="800" style="margin-bottom: 5px;">
+
+#### 5.2.2.7. Software Deployment Evidence for Sprint Review.
+
+En esta sección se presentan las evidencias relacionadas con el despliegue de la primera
+versión de la Frontend Web Application de TankIQ. La aplicación fue publicada utilizando
+Firebase Hosting, permitiendo desplegar una Single Page Application desarrollada con Angular
+y habilitando soporte para rutas internas y navegación SPA.
+
+| Aspecto | Detalle |
+|---|---|
+| Plataforma de Despliegue | Firebase Hosting |
+| Repositorio | [HydroTeam-Frontend](https://github.com/hydronex-web-app-1ASI0729-2610-12029/HydroTeam-Frontend) |
+| URL de la Web Application | [https://tankiq-frontend.web.app](https://tankiq-frontend.web.app) |
+| Rama de Despliegue | main |
+| Fecha de Despliegue | 16/05/2026 |
+| Estado Actual | Desplegado y Funcional |
+| Tipo de Aplicación | Single Page Application (Angular) |
+| HTTPS | Habilitado |
+
+Configuración de Firebase Hosting
+
+<img src="./assets/chapter-5/sprint-2/firebase-config.png" alt="Firebase Hosting" width="800" style="margin-bottom: 5px;">
+
+Confirmación de despliegue exitoso
+
+<img src="./assets/chapter-5/sprint-2/deployment-success.png" alt="Deployment Success" width="800" style="margin-bottom: 5px;">
+
+#### 5.2.2.8. Team Collaboration Insights during Sprint.
+
+Durante el Sprint 2, el equipo HydroTeam trabajó utilizando GitHub y una estrategia basada
+en ramas feature para desarrollar de manera paralela los diferentes módulos frontend de la
+aplicación. Cada integrante trabajó sobre un bounded context específico, permitiendo una
+mejor organización del proyecto y facilitando la integración de funcionalidades mediante Pull
+Requests hacia las ramas `develop` y `main`.
+
+Además, el equipo realizó coordinaciones constantes relacionadas con arquitectura Angular,
+routing, layouts y diseño visual de la aplicación, manteniendo una comunicación continua para
+resolver observaciones y unificar criterios técnicos durante el desarrollo.
+
+Network Graph del repositorio HydroTeam-Frontend
+
+<img src="./assets/chapter-5/sprint-2/network-graph.png" alt="Network Graph" width="800" style="margin-bottom: 5px;">
+
+Contributors — commits realizados por integrante
+
+<img src="./assets/chapter-5/sprint-2/contributors.png" alt="Contributors" width="800" style="margin-bottom: 5px;">
+
+Historial de Pull Requests mergeados
+
+<img src="./assets/chapter-5/sprint-2/pull-requests.png" alt="Pull Requests" width="800" style="margin-bottom: 5px;">
 
 ## Conclusiones
 
