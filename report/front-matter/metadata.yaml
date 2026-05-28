@@ -1,0 +1,86 @@
+---
+toc: true
+toc-depth: 3
+number-sections: true
+include-before: |
+  <div style="text-align:center; page-break-after: always;">
+    <img src="./report/assets/Banner-UPC.png" style="width: 100%;"/>
+    <br/><br/>
+    <p><strong>Universidad Peruana de Ciencias Aplicadas</strong></p>
+    <p>Carrera: Ingeniería de Software</p>
+    <p>Periodo: 2026-1</p>
+    <p>Curso: Desarrollo de Aplicaciones Open Source</p>
+    <p>NRC: 12029</p>
+    <p>Docente: Hugo Allan Mori Paiva</p>
+    <p>Informe de Trabajo Final</p>
+    <p>Startup: HydroTeam</p>
+    <p>Producto: TankIQ</p>
+    <br/>
+    <p><strong>Miembros de grupo:</strong></p>
+    <table align="center" style="border: none; border-collapse: collapse;">
+      <tr><td style="padding: 3px; text-align: left;"><strong>U202310436</strong></td><td style="padding: 3px; text-align: left;">Espinar Martínez, Gabriel Ferran</td></tr>
+      <tr><td style="padding: 3px; text-align: left;"><strong>U202318951</strong></td><td style="padding: 3px; text-align: left;">Guevara Serrano, Diego Ismael</td></tr>
+      <tr><td style="padding: 3px; text-align: left;"><strong>U202411282</strong></td><td style="padding: 3px; text-align: left;">Montalvan Palomino, Bruno Rodolfo</td></tr>
+      <tr><td style="padding: 3px; text-align: left;"><strong>U202414840</strong></td><td style="padding: 3px; text-align: left;">Orosco Ttamiña, Juan Carlos</td></tr>
+      <tr><td style="padding: 3px; text-align: left;"><strong>U202410772</strong></td><td style="padding: 3px; text-align: left;">Razuri Alvarez, Matias Francesco</td></tr>
+    </table>
+    <br/>
+    <p>abril de 2026</p>
+  </div>
+
+  <div style="page-break-before: always;"></div>
+
+  <h2>Registro de Versiones del Informe</h2>
+
+  <table border="1" style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th style="padding: 8px; text-align: center;">Versión</th>
+        <th style="padding: 8px; text-align: center;">Fecha</th>
+        <th style="padding: 8px; text-align: center;">Autor</th>
+        <th style="padding: 8px; text-align: center;">Descripción de modificación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 8px; text-align: center; vertical-align: top;"><strong>1.0.0</strong></td>
+        <td style="padding: 8px; text-align: center; vertical-align: top;">24/04/2026</td>
+        <td style="padding: 8px; text-align: left; vertical-align: top;">Espinar Martínez, Gabriel Ferran</td>
+        <td style="padding: 8px; text-align: justify; vertical-align: top;">Se realizó la estructuración inicial del documento del proyecto TankIQ, incluyendo la definición de la problemática, la propuesta de valor y la descripción de la startup. Asimismo, se estableció la organización general del informe y las secciones a desarrollar.</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; text-align: center; vertical-align: top;"><strong>1.0.1</strong></td>
+        <td style="padding: 8px; text-align: center; vertical-align: top;">24/04/2026</td>
+        <td style="padding: 8px; text-align: left; vertical-align: top;">Guevara Serrano, Diego Ismael</td>
+        <td style="padding: 8px; text-align: justify; vertical-align: top;">Se desarrolló el análisis de usuarios mediante la elaboración de entrevistas y la identificación de necesidades, pains y gains. Además, se contribuyó en la definición de los User Personas representativos de los segmentos objetivo.</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; text-align: center; vertical-align: top;"><strong>1.0.2</strong></td>
+        <td style="padding: 8px; text-align: center; vertical-align: top;">24/04/2026</td>
+        <td style="padding: 8px; text-align: left; vertical-align: top;">Montalvan Palomino, Bruno Rodolfo</td>
+        <td style="padding: 8px; text-align: justify; vertical-align: top;">Se elaboraron los artefactos de análisis como User Journey Maps, Empathy Maps y User Task Matrix, permitiendo comprender el comportamiento de los usuarios y sus interacciones en el contexto del problema identificado.</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; text-align: center; vertical-align: top;"><strong>1.0.3</strong></td>
+        <td style="padding: 8px; text-align: center; vertical-align: top;">24/04/2026</td>
+        <td style="padding: 8px; text-align: left; vertical-align: top;">Razuri Alvarez, Matias Francesco</td>
+        <td style="padding: 8px; text-align: justify; vertical-align: top;">Se definieron las épicas y las historias de usuario del sistema, incluyendo sus criterios de aceptación bajo la estructura Gherkin. También se participó en la identificación de funcionalidades clave alineadas a los objetivos del negocio.</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; text-align: center; vertical-align: top;"><strong>1.0.4</strong></td>
+        <td style="padding: 8px; text-align: center; vertical-align: top;">24/04/2026</td>
+        <td style="padding: 8px; text-align: left; vertical-align: top;">Orosco Ttamiña, Juan Carlos</td>
+        <td style="padding: 8px; text-align: justify; vertical-align: top;">Se completó la etapa de especificación de requisitos. En esta fase se definieron historias de usuario para representar las principales funcionalidades según las necesidades de los usuarios. También se hizo un impact mapping para relacionar los objetivos del negocio con los usuarios y las funcionalidades del sistema. Finalmente, se organizó y priorizó el Product Backlog, estimándolo con la escala de Fibonacci para apoyar el desarrollo.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="page-break-before: always;"></div>
+
+  <h2>Project Report Collaboration Insights</h2>
+  <p><strong>URL del Repositorio:</strong> <a href="https://github.com/hydronex-web-app-1ASI0729-2610-12029/hydro-core">https://github.com/hydronex-web-app-1ASI0729-2610-12029/hydro-core</a></p>
+  
+  <br/>
+
+  <h1 style="page-break-before: always;">Tabla de contenido</h1>
+---
