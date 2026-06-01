@@ -32,53 +32,222 @@ include-before: |
 
   <h2>Registro de Versiones del Informe</h2>
 
-  <table border="1" style="width: 100%; border-collapse: collapse;">
-    <thead>
-      <tr>
-        <th style="padding: 8px; text-align: center;">Versión</th>
-        <th style="padding: 8px; text-align: center;">Fecha</th>
-        <th style="padding: 8px; text-align: center;">Autor</th>
-        <th style="padding: 8px; text-align: center;">Descripción de modificación</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding: 8px; text-align: center; vertical-align: top;"><strong>1.0.0</strong></td>
-        <td style="padding: 8px; text-align: center; vertical-align: top;">24/04/2026</td>
-        <td style="padding: 8px; text-align: left; vertical-align: top;">Espinar Martínez, Gabriel Ferran</td>
-        <td style="padding: 8px; text-align: justify; vertical-align: top;">Se realizó la estructuración inicial del documento del proyecto TankIQ, incluyendo la definición de la problemática, la propuesta de valor y la descripción de la startup. Asimismo, se estableció la organización general del informe y las secciones a desarrollar.</td>
-      </tr>
-      <tr>
-        <td style="padding: 8px; text-align: center; vertical-align: top;"><strong>1.0.1</strong></td>
-        <td style="padding: 8px; text-align: center; vertical-align: top;">24/04/2026</td>
-        <td style="padding: 8px; text-align: left; vertical-align: top;">Guevara Serrano, Diego Ismael</td>
-        <td style="padding: 8px; text-align: justify; vertical-align: top;">Se desarrolló el análisis de usuarios mediante la elaboración de entrevistas y la identificación de necesidades, pains y gains. Además, se contribuyó en la definición de los User Personas representativos de los segmentos objetivo.</td>
-      </tr>
-      <tr>
-        <td style="padding: 8px; text-align: center; vertical-align: top;"><strong>1.0.2</strong></td>
-        <td style="padding: 8px; text-align: center; vertical-align: top;">24/04/2026</td>
-        <td style="padding: 8px; text-align: left; vertical-align: top;">Montalvan Palomino, Bruno Rodolfo</td>
-        <td style="padding: 8px; text-align: justify; vertical-align: top;">Se elaboraron los artefactos de análisis como User Journey Maps, Empathy Maps y User Task Matrix, permitiendo comprender el comportamiento de los usuarios y sus interacciones en el contexto del problema identificado.</td>
-      </tr>
-      <tr>
-        <td style="padding: 8px; text-align: center; vertical-align: top;"><strong>1.0.3</strong></td>
-        <td style="padding: 8px; text-align: center; vertical-align: top;">24/04/2026</td>
-        <td style="padding: 8px; text-align: left; vertical-align: top;">Razuri Alvarez, Matias Francesco</td>
-        <td style="padding: 8px; text-align: justify; vertical-align: top;">Se definieron las épicas y las historias de usuario del sistema, incluyendo sus criterios de aceptación bajo la estructura Gherkin. También se participó en la identificación de funcionalidades clave alineadas a los objetivos del negocio.</td>
-      </tr>
-      <tr>
-        <td style="padding: 8px; text-align: center; vertical-align: top;"><strong>1.0.4</strong></td>
-        <td style="padding: 8px; text-align: center; vertical-align: top;">24/04/2026</td>
-        <td style="padding: 8px; text-align: left; vertical-align: top;">Orosco Ttamiña, Juan Carlos</td>
-        <td style="padding: 8px; text-align: justify; vertical-align: top;">Se completó la etapa de especificación de requisitos. En esta fase se definieron historias de usuario para representar las principales funcionalidades según las necesidades de los usuarios. También se hizo un impact mapping para relacionar los objetivos del negocio con los usuarios y las funcionalidades del sistema. Finalmente, se organizó y priorizó el Product Backlog, estimándolo con la escala de Fibonacci para apoyar el desarrollo.</td>
-      </tr>
-    </tbody>
+  <table style="width: 100%; border-collapse: collapse;">
+  
+  <tr>
+    <th style="text-align: center;">Versión</th>
+    <th style="text-align: center;">Fecha</th>
+    <th style="text-align: center;">Autor</th>
+    <th style="text-align: center;">Descripción de modificación</th>
+  </tr>
+
+  <tr>
+    <td style="text-align: center;">
+      1.0.0
+    </td>
+    <td style="text-align: center;">
+      24/04/2026
+    </td>
+    <td style="text-align: center;">
+      Espinar Martínez, Gabriel Ferran
+    </td>
+    <td style="text-align: justify;">
+      Se realizó la estructuración inicial del documento del proyecto TankIQ, incluyendo la definición de la problemática, la propuesta de valor y la descripción de la startup. Asimismo, se estableció la organización general del informe y las secciones a desarrollar.
+    </td>
+  </tr>
+  
+  <tr>
+    <td style="text-align: center;">
+      1.0.1
+    </td>
+    <td style="text-align: center;">
+      24/04/2026
+    </td>
+    <td style="text-align: center;">
+      Guevara Serrano, Diego Ismael
+    </td>
+    <td style="text-align: justify;">
+      Se desarrolló el análisis de usuarios mediante la elaboración de entrevistas y la identificación de necesidades, pains y gains. Además, se contribuyó en la definición de los User Personas representativos de los segmentos objetivo.
+    </td>
+  </tr>
+  
+  <tr>
+    <td style="text-align: center;">
+      1.0.2
+    </td>
+    <td style="text-align: center;">
+      24/04/2026
+    </td>
+    <td style="text-align: center;">
+      Montalvan Palomino, Bruno Rodolfo
+    </td>
+    <td style="text-align: justify;">
+      Se elaboraron los artefactos de análisis como User Journey Maps, Empathy Maps y User Task Matrix, permitiendo comprender el comportamiento de los usuarios y sus interacciones en el contexto del problema identificado.
+    </td>
+  </tr>
+  
+  <tr>
+    <td style="text-align: center;">
+      1.0.3
+    </td>
+    <td style="text-align: center;">
+      24/04/2026
+    </td>
+    <td style="text-align: center;">
+      Razuri Alvarez, Matias Francesco
+    </td>
+    <td style="text-align: justify;">
+      Se definieron las épicas y las historias de usuario del sistema, incluyendo sus criterios de aceptación bajo la estructura Gherkin. También se participó en la identificación de funcionalidades clave alineadas a los objetivos del negocio.
+    </td>
+  </tr>
+  
+  <tr>
+    <td style="text-align: center;">
+      1.0.4
+    </td>
+    <td style="text-align: center;">
+      24/04/2026
+    </td>
+    <td style="text-align: center;">
+      Orosco Ttamiña, Juan Carlos
+    </td>
+    <td style="text-align: justify;">
+      Se completó la etapa de especificación de requisitos. En esta fase se definieron historias de usuario para representar las principales funcionalidades según las necesidades de los usuarios. También se hizo un impact mapping para relacionar los objetivos del negocio con los usuarios y las funcionalidades del sistema. Finalmente, se organizó y priorizó el Product Backlog, estimándolo con la escala de Fibonacci para apoyar el desarrollo.
+    </td>
+  </tr>
+  
+  <tr>
+    <td style="text-align: center;">
+      2.0.0
+    </td>
+    <td style="text-align: center;">
+      13/05/2026
+    </td>
+    <td style="text-align: center;">
+      Espinar Martínez, Gabriel Ferran
+    </td>
+    <td style="text-align: justify;">
+      Se trabajó en la estructura inicial del módulo Water Monitoring, definiendo las rutas y componentes necesarios para representar la información relacionada con el monitoreo de agua. Además, se preparó la integración visual con el dashboard siguiendo el diseño y la arquitectura general del proyecto.
+    </td>
+  </tr>
+  
+  <tr>
+    <td style="text-align: center;">
+      2.0.1
+    </td>
+    <td style="text-align: center;">
+      12/05/2026
+    </td>
+    <td style="text-align: center;">
+      Guevara Serrano, Diego Ismael
+    </td>
+    <td style="text-align: justify;">
+      Se avanzó con el desarrollo del Landing Page del sistema, implementando las principales secciones informativas y la estructura visual inicial de la aplicación. Además, se trabajó en la navegación pública, el soporte de idiomas y la adaptación del diseño tomando como referencia los mockups y lineamientos definidos para el proyecto.
+    </td>
+  </tr>
+  
+  <tr>
+    <td style="text-align: center;">
+      2.0.2
+    </td>
+    <td style="text-align: center;">
+      13/05/2026
+    </td>
+    <td style="text-align: center;">
+      Montalvan Palomino, Bruno Rodolfo
+    </td>
+    <td style="text-align: justify;">
+      Se desarrolló la estructura inicial del módulo IAM, organizando las rutas y componentes relacionados con el acceso y autenticación de usuarios. Asimismo, se preparó la base necesaria para futuras funcionalidades de login y control de acceso dentro de la aplicación frontend.
+    </td>
+  </tr>
+  
+  <tr>
+    <td style="text-align: center;">
+      2.0.3
+    </td>
+    <td style="text-align: center;">
+      12/05/2026
+    </td>
+    <td style="text-align: center;">
+      Razuri Alvarez, Matias Francesco
+    </td>
+    <td style="text-align: justify;">
+      Se desarrolló la base frontend del módulo Alerts & Notifications, organizando las vistas y rutas relacionadas con las alertas del sistema. Asimismo, se preparó la estructura necesaria para futuras funcionalidades de notificaciones y visualización de eventos dentro de la aplicación.
+    </td>
+  </tr>
+  
+  <tr>
+    <td style="text-align: center;">
+      2.0.4
+    </td>
+    <td style="text-align: center;">
+      13/05/2026
+    </td>
+    <td style="text-align: center;">
+      Orosco Ttamiña, Juan Carlos
+    </td>
+    <td style="text-align: justify;">
+      Se implementó la primera versión visual del Dashboard Overview, incorporando la estructura principal del panel y las vistas base del sistema. También se desarrolló la navegación interna, los componentes iniciales y las pantallas “Under Construction” para mantener la integración entre módulos durante el desarrollo frontend.
+    </td>
+  </tr>
+  
   </table>
+
 
   <div style="page-break-before: always;"></div>
 
   <h2>Project Report Collaboration Insights</h2>
-  <p><strong>URL del Repositorio:</strong> <a href="https://github.com/hydronex-web-app-1ASI0729-2610-12029/hydro-core">https://github.com/hydronex-web-app-1ASI0729-2610-12029/hydro-core</a></p>
+  
+  <p>
+    A continuación, se detallará el proceso de elaboración del informe para cada entrega, adjuntando capturas
+    de pantalla que mostrarán las colaboraciones y commits en GitHub, respecto a los entregables.
+  </p>
+  
+  <h3>Entrega av1</h3>
+  
+  En esta primera entrega, se desarrolló los capítulos I, II, III, IV y V en su primer sprint, enfocado al landing page.
+  
+  Para la creación del informe, los miembros del equipo realizaron las siguientes acciones:
+  
+  - Cada miembro hizo uso de MarkDown y HTML para mejorar el diseño del informe.
+  - Se hizo uso de GitFlow para la estructura de ramas en el uso del software Git.
+  - Se hizo uso de los Conventional Commits y Arquitectura del reporte, obtenidos en la guía para de repostirio del Aula Virtual.
+  - Llevamos a cabo reuniones periódicas para la coordinación y cooperación en el avance de los puntos del informe.
+  
+  URL del respositorio de Landing Page: 
+  
+  <a href="https://github.com/hydronex-web-app-1ASI0729-2610-12029/Landing-Page">
+    Repositorio LandingPage
+  </a>
+  
+  Deployment de Lading Page: 
+  
+  <a href="https://hydronex-web-app-1asi0729-2610-12029.github.io/Landing-Page/">
+    Deployment LandingPage
+  </a>
+  
+  Report Contributors Insights
+  
+  <img src="./report/assets/git-hub/contributors.png" style="width: 600px"/>
+  
+  <img src="./report/assets/git-hub/insights.png" style="width: 600px"/>
+  
+  <h3>Entrega tb1</h3>
+  
+  Para el presente avance, el Sprint 2 concluyó con un progreso significativo en la elaboración de la documentación técnica 
+  y en el desarrollo de los módulos del Front End. Sin embargo, cabe mencionar que, aunque la puesta en producción de la aplicación 
+  web estaba planificada para este periodo, durante la fase de pruebas locales se presentaron imprevistos relacionados con la integración 
+  de la Fake API. Por ello, se tomo la decisión de postergar el deployment para el sprint 3.
+  
+  URL del repositorio de Front End: 
+  
+  <a href="https://github.com/hydronex-web-app-1ASI0729-2610-12029/HydroTeam-Frontend">
+  Repositorio FrontEnd
+  </a>
+  
+  <img src="./report/assets/git-hub/contributors-tb1.png" style="width: 600px"/>
+  
+  <img src="./report/assets/git-hub/insights-tb1.png" style="width: 600px"/>
   
   <br/>
 
