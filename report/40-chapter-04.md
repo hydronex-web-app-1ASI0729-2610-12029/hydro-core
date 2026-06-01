@@ -564,492 +564,1001 @@ El diseño orientado a objetos de TankIQ se deriva directamente de los Bounded C
 
 ### 4.7.1. Class Diagrams.
 
-El Class Diagram de TankIQ está organizado por Bounded Context e incluye clases, interfaces, enumeraciones, atributos con scope y tipo, métodos con parámetros y tipo de retorno, y relaciones con nombre, dirección y multiplicidad. Los contextos modelados son: User Management, Building Monitoring, Water Management, Alerting y Subscription.
+El Class Diagram de TankIQ está organizado por Bounded Context e incluye clases, interfaces, enumeraciones, atributos con scope y tipo, métodos con parámetros y tipo de retorno, y relaciones con nombre, dirección y multiplicidad. 
 
-<div align="center">
-  <img src="assets/class-diagrams/tankiq-class-diagram.png" alt="Class Diagram — TankIQ" style="width: 700px;"/>
-</div>
+```plantuml
+@startuml
+
+scale 1/4
+
+title Diagrama de Clases por Bounded Contexts
+
+skinparam monochrome false
+skinparam shadowing true
+skinparam linetype ortho
+skinparam class {
+    BackgroundColor<<AggregateRoot>> #EBF5FB
+    BackgroundColor<<Entity>> #FFFFFF
+    BackgroundColor<<ValueObject>> #F9EBEA
+    BackgroundColor<<Repository>> #E8F8F5
+    BorderColor #2C3E50
+}
+
+' ==========================================================
+' 1. IDENTITY & ACCESS MANAGEMENT CONTEXT
+' ==========================================================
+package "Identity & Access Management Context" {
+    class User <<AggregateRoot>> {
+        + id: UUID
+        + name: String
+        + email: String
+        + passwordHash: String
+        + phoneNumber: String
+        + createdAt: DateTime
+    }
+
+    class UserBuilding <<Entity>> {
+        + userId: UUID
+        + buildingId: UUID
+        + role: UserRole
+        + apartmentNumber: String
+    }
+
+    enum UserRole {
+        ADMIN
+        RESIDENT
+    }
+
+    interface IUserRepository <<Repository>> {
+        + findById(id: UUID): User
+        + findByEmail(email: String): User
+        + save(user: User): void
+    }
+    
+    User "1" --{ UserBuilding
+    UserBuilding ..> UserRole
+    ' Conexión de Dependencia del Repositorio al Agregado
+    IUserRepository ..> User : "manages"
+}
+
+' ==========================================================
+' 2. MONITORING CONTEXT
+' ==========================================================
+package "Monitoring Context" {
+    class Building <<AggregateRoot>> {
+        + id: UUID
+        + name: String
+        + address: String
+        + district: String
+    }
+
+    class Cistern <<Entity>> {
+        + id: UUID
+        + capacityLiters: Double
+        + currentLevelPercent: Double
+        + buildingId: UUID
+    }
+
+    class Sensor <<Entity>> {
+        + id: UUID
+        + hardwareId: String
+        + type: SensorType
+        + status: SensorStatus
+        + cisternId: UUID
+    }
+
+    class WaterLevelReading <<Entity>> {
+        + id: UUID
+        + levelPercent: Double
+        + volumeLiters: Double
+        + recordedAt: DateTime
+        + sensorId: UUID
+    }
+
+    enum SensorType {
+        ULTRASONIC
+        PRESSURE
+    }
+
+    enum SensorStatus {
+        ACTIVE
+        MAINTENANCE
+        OFFLINE
+    }
+
+    interface IBuildingRepository <<Repository>> {
+        + findById(id: UUID): Building
+        + save(building: Building): void
+    }
+
+    Building "1" --{ Cistern
+    Cistern "1" --{ Sensor
+    Sensor "1" --{ WaterLevelReading
+    Sensor ..> SensorType
+    Sensor ..> SensorStatus
+    
+    ' Conexión de Dependencia del Repositorio al Agregado
+    IBuildingRepository ..> Building : "manages"
+}
+
+' ==========================================================
+' 3. REFILL MANAGEMENT CONTEXT
+' ==========================================================
+package "Refill Management Context" {
+    class Refill <<AggregateRoot>> {
+        + id: UUID
+        + refillDate: DateTime
+        + liters: Double
+        + costSoles: Double
+        + supplierName: String
+        + invoiceNumber: String
+        + buildingId: UUID
+        + registeredByUserId: UUID
+    }
+
+    interface IRefillRepository <<Repository>> {
+        + findByBuildingId(buildingId: UUID): List<Refill>
+        + save(refill: Refill): void
+    }
+
+    ' Conexión de Dependencia del Repositorio al Agregado
+    IRefillRepository ..> Refill : "manages"
+}
+
+' ==========================================================
+' 4. NOTIFICATION CONTEXT
+' ==========================================================
+package "Notification Context" {
+    class Alert <<AggregateRoot>> {
+        + id: UUID
+        + type: AlertType
+        + message: String
+        + status: AlertStatus
+        + cisternId: UUID
+    }
+
+    enum AlertType {
+        CRITICAL_LOW
+        SENSOR_OFFLINE
+        HIGH_USAGE
+    }
+
+    enum AlertStatus {
+        PENDING
+        IN_PROGRESS
+        RESOLVED
+    }
+
+    interface IAlertRepository <<Repository>> {
+        + findActiveByCisternId(cisternId: UUID): List<Alert>
+        + save(alert: Alert): void
+    }
+
+    Alert ..> AlertType
+    Alert ..> AlertStatus
+    ' Conexión de Dependencia del Repositorio al Agregado
+    IAlertRepository ..> Alert : "manages"
+}
+
+' ==========================================================
+' 5. REPORTING CONTEXT
+' ==========================================================
+package "Reporting Context" {
+    class WaterConsumption <<Entity>> {
+        + id: UUID
+        + period: Period
+        + avgDailyLiters: Double
+        + totalPeriodLiters: Double
+        + buildingId: UUID
+    }
+
+    class Report <<AggregateRoot>> {
+        + id: UUID
+        + periodMonth: Integer
+        + periodYear: Integer
+        + totalCostSoles: Double
+        + totalWaterLiters: Double
+        + buildingId: UUID
+        + generatedByUserId: UUID
+    }
+
+    class Period <<ValueObject>> {
+        + start: Date
+        + end: Date
+    }
+
+    interface IReportRepository <<Repository>> {
+        + findByBuildingId(buildingId: UUID): List<Report>
+        + save(report: Report): void
+    }
+
+    WaterConsumption *--> Period
+    ' Conexión de Dependencia del Repositorio al Agregado
+    IReportRepository ..> Report : "manages"
+}
+
+' ==========================================================
+' 6. SUBSCRIPTION & BILLING CONTEXT
+' ==========================================================
+package "Subscription & Billing Context" {
+    class Plan <<AggregateRoot>> {
+        + id: UUID
+        + name: PlanName
+        + priceSoles: Double
+        + maxSensors: Integer
+    }
+
+    class Subscription <<Entity>> {
+        + id: UUID
+        + startDate: Date
+        + endDate: Date
+        + status: SubscriptionStatus
+        + buildingId: UUID
+        + planId: UUID
+    }
+
+    enum PlanName {
+        BASIC
+        PREMIUM
+    }
+
+    enum SubscriptionStatus {
+        ACTIVE
+        EXPIRED
+        CANCELLED
+    }
+
+    interface IPlanRepository <<Repository>> {
+        + findByName(name: PlanName): Plan
+    }
+
+    Plan "1" --{ Subscription
+    Plan ..> PlanName
+    Subscription ..> SubscriptionStatus
+    ' Conexión de Dependencia del Repositorio al Agregado
+    IPlanRepository ..> Plan : "manages"
+}
+
+' --- RELACIONES INTER-CONTEXTOS (ENTIDADES) ---
+User "1" --{ UserBuilding
+Building "1" --{ UserBuilding
+Building "1" --{ Refill
+User "1" --{ Refill
+Cistern "1" --{ Alert
+Building "1" --{ WaterConsumption
+Building "1" --{ Report
+User "1" --{ Report
+Building "1" --{ Subscription
+
+@enduml
+```
 
 #### Diccionario de Clases
 
-<table style="width: 100%; border-collapse: collapse; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; color: #333333; background-color: #ffffff; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; margin: 20px 0;">
+<table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 13px; color: #333333; margin: 20px 0; border: 1px solid #dddddd;">
   <thead>
-    <tr style="background-color: #2c3e50; color: #ffffff; text-align: left;">
-      <th style="padding: 12px 16px; font-weight: 600; width: 40px; text-align: center; border-bottom: 3px solid #1a252f;">N°</th>
-      <th style="padding: 12px 16px; font-weight: 600; border-bottom: 3px solid #1a252f; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px;">Entidad</th>
-      <th style="padding: 12px 16px; font-weight: 600; border-bottom: 3px solid #1a252f; color: #3498db;">Atributo</th>
-      <th style="padding: 12px 16px; font-weight: 600; border-bottom: 3px solid #1a252f;">Definición</th>
-      <th style="padding: 12px 16px; font-weight: 600; border-bottom: 3px solid #1a252f;">Tipo de Dato</th>
-      <th style="padding: 12px 16px; font-weight: 600; border-bottom: 3px solid #1a252f; text-align: center;">Rango</th>
-      <th style="padding: 12px 16px; font-weight: 600; border-bottom: 3px solid #1a252f; text-align: center;">Unidad</th>
-      <th style="padding: 12px 16px; font-weight: 600; border-bottom: 3px solid #1a252f;">Valores Restringidos / Reglas</th>
+    <tr style="background-color: #f2f2f2; text-align: left; border-bottom: 2px solid #dddddd;">
+      <th style="padding: 10px; border: 1px solid #dddddd; text-align: center; width: 5%;">N°</th>
+      <th style="padding: 10px; border: 1px solid #dddddd; width: 12%;">Clase / Entidad</th>
+      <th style="padding: 10px; border: 1px solid #dddddd; width: 15%;">Atributo</th>
+      <th style="padding: 10px; border: 1px solid #dddddd; width: 25%;">Definición</th>
+      <th style="padding: 10px; border: 1px solid #dddddd; width: 12%;">Tipo de Dato</th>
+      <th style="padding: 10px; border: 1px solid #dddddd; text-align: center; width: 8%;">Rango</th>
+      <th style="padding: 10px; border: 1px solid #dddddd; text-align: center; width: 8%;">Unidad</th>
+      <th style="padding: 10px; border: 1px solid #dddddd; width: 15%;">Valores Restringidos / Reglas</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom: 1px solid #eef2f5; background-color: #f8fafc;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d; font-weight: bold;">1</td>
-      <td style="padding: 12px 16px; font-weight: 600; color: #2c3e50;">User</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold; color: #e74c3c;">userId</td>
-      <td style="padding: 12px 16px;">Identificador único del usuario en el sistema</td>
-      <td style="padding: 12px 16px;"><code style="background: #e8f4fd; color: #2980b9; padding: 2px 6px; border-radius: 4px; font-size: 11px;">UserId (UUID)</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; color: #27ae60; font-weight: 500;">No nulo, único</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">1</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-weight: bold;">User</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">id</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Identificador único del usuario en la plataforma.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UUID</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo, único.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">1</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">User</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">name</td>
-      <td style="padding: 12px 16px;">Nombre completo del usuario</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">Sin caracteres especiales</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">1</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">User</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">name</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Nombre y apellido completo del usuario.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">String</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo, sin caracteres especiales.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">1</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">User</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">email</td>
-      <td style="padding: 12px 16px;">Correo electrónico usado para autenticación</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">Formato válido, único en el sistema</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">1</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">User</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">email</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Correo electrónico para credenciales y autenticación.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">String</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Formato email válido, único.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">1</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">User</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">password</td>
-      <td style="padding: 12px 16px;">Contraseña de acceso a la cuenta</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">Mínimo 8 caracteres</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">1</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">User</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">passwordHash</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Contraseña de acceso encriptada (BCrypt).</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">String</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Texto encriptado, no nulo.</td>
     </tr>
-    <tr style="border-bottom: 2px solid #dcdde1;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">1</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">User</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">role</td>
-      <td style="padding: 12px 16px;">Rol del usuario dentro de la plataforma</td>
-      <td style="padding: 12px 16px;"><code style="background: #fff2e6; color: #d35400; padding: 2px 6px; border-radius: 4px; font-size: 11px;">UserRole (Enum)</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; font-size: 11px; color: #7f8c8d;"><span style="background:#ffeaa7; color:#d35400; padding:2px 4px; border-radius:3px;">ADMINISTRATOR</span>, <span style="background:#ffeaa7; color:#d35400; padding:2px 4px; border-radius:3px;">RESIDENT</span></td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">1</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">User</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">phoneNumber</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Número telefónico móvil para contacto o alertas SMS.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">String</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Solo dígitos (9 caracteres).</td>
     </tr>
-    <tr style="border-bottom: 2px solid #dcdde1; background-color: #f8fafc;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d; font-weight: bold;">2</td>
-      <td style="padding: 12px 16px; font-weight: 600; color: #2c3e50;">Administrator</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">phoneNumber</td>
-      <td style="padding: 12px 16px;">Número de teléfono de contacto del administrador</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">Formato numérico, no nulo</td>
+    <tr style="border-bottom: 1px solid #dddddd; background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">2</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-weight: bold;">UserBuilding</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">userId</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Clave foránea que referencia al usuario asociado.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UUID</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo. Clave compuesta.</td>
     </tr>
-    <tr style="border-bottom: 2px solid #dcdde1; background-color: #f8fafc;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d; font-weight: bold;">3</td>
-      <td style="padding: 12px 16px; font-weight: 600; color: #2c3e50;">Resident</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">apartmentNumber</td>
-      <td style="padding: 12px 16px;">Número de departamento del residente en el edificio</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">Alfanumérico, no nulo</td>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">2</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UserBuilding</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">buildingId</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Clave foránea que referencia al inmueble residencial.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UUID</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo. Clave compuesta.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5; background-color: #f8fafc;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d; font-weight: bold;">4</td>
-      <td style="padding: 12px 16px; font-weight: 600; color: #2c3e50;">Building</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold; color: #e74c3c;">buildingId</td>
-      <td style="padding: 12px 16px;">Identificador único del edificio</td>
-      <td style="padding: 12px 16px;"><code style="background: #e8f4fd; color: #2980b9; padding: 2px 6px; border-radius: 4px; font-size: 11px;">BuildingId (UUID)</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; color: #27ae60; font-weight: 500;">No nulo, único</td>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">2</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UserBuilding</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">role</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Rol asignado al usuario exclusivamente para este edificio.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Enum</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">ADMIN, RESIDENT</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">4</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Building</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">name</td>
-      <td style="padding: 12px 16px;">Nombre o alias del edificio residencial</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">No nulo</td>
+    <tr style="border-bottom: 1px solid #dddddd; background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">2</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UserBuilding</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">apartmentNumber</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Número o código de departamento asignado.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">String</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Alfanumérico. Mandatorio si el rol es RESIDENT.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">4</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Building</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">address</td>
-      <td style="padding: 12px 16px;">Dirección física completa del edificio</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">No nulo</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">3</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-weight: bold;">Building</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">id</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Identificador único del inmueble residencial.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UUID</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo, único.</td>
     </tr>
-    <tr style="border-bottom: 2px solid #dcdde1;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">4</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Building</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">district</td>
-      <td style="padding: 12px 16px;">Distrito de Lima donde se ubica el edificio</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">Distritos válidos de Lima</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">3</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Building</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">name</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Nombre o alias identificativo del condominio.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">String</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5; background-color: #f8fafc;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d; font-weight: bold;">5</td>
-      <td style="padding: 12px 16px; font-weight: 600; color: #2c3e50;">Cistern</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold; color: #e74c3c;">id</td>
-      <td style="padding: 12px 16px;">Identificador único de la cisterna</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; color: #27ae60; font-weight: 500;">No nulo, único</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">3</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Building</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">address</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Dirección física completa del edificio.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">String</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">5</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Cistern</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">capacityLiters</td>
-      <td style="padding: 12px 16px;">Capacidad máxima de almacenamiento de la cisterna</td>
-      <td style="padding: 12px 16px;"><code style="background: #f5f6fa; color: #2f3640; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Double</code></td>
-      <td style="padding: 12px 16px; text-align: center; font-weight: 600; color: #2c3e50;">500 – 50000</td>
-      <td style="padding: 12px 16px; text-align: center; font-style: italic; color: #7f8c8d;">Litros</td>
-      <td style="padding: 12px 16px; color: #c0392b;">Valores negativos no permitidos</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">3</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Building</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">district</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Distrito donde se ubica el edificio.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">String</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Debe corresponder a un distrito válido de Lima.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">5</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Cistern</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">currentLevel</td>
-      <td style="padding: 12px 16px;">Nivel actual de agua en la cisterna expresado en porcentaje</td>
-      <td style="padding: 12px 16px;"><code style="background: #f5f6fa; color: #2f3640; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Double</code></td>
-      <td style="padding: 12px 16px; text-align: center; font-weight: 600; color: #2c3e50;">0 – 100</td>
-      <td style="padding: 12px 16px; text-align: center; font-style: italic; color: #7f8c8d;">%</td>
-      <td style="padding: 12px 16px; color: #c0392b;">Fuera del rango 0–100</td>
+    <tr style="border-bottom: 1px solid #dddddd; background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">4</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-weight: bold;">Cistern</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">id</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Identificador único de la cisterna física.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UUID</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo, único.</td>
     </tr>
-    <tr style="border-bottom: 2px solid #dcdde1;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">5</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Cistern</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">alertThreshold</td>
-      <td style="padding: 12px 16px;">Umbral mínimo configurado por el administrador para disparar alertas</td>
-      <td style="padding: 12px 16px;"><code style="background: #f5f6fa; color: #2f3640; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Double</code></td>
-      <td style="padding: 12px 16px; text-align: center; font-weight: 600; color: #2c3e50;">0 – 100</td>
-      <td style="padding: 12px 16px; text-align: center; font-style: italic; color: #7f8c8d;">%</td>
-      <td style="padding: 12px 16px; color: #c0392b;">Fuera del rango 0–100</td>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">4</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Cistern</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">capacityLiters</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Capacidad máxima total de almacenamiento de agua.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Double</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">500 - 100000</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">Litros</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Estrictamente positivo, mayor a cero.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5; background-color: #f8fafc;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d; font-weight: bold;">6</td>
-      <td style="padding: 12px 16px; font-weight: 600; color: #2c3e50;">Sensor</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold; color: #e74c3c;">sensorId</td>
-      <td style="padding: 12px 16px;">Identificador único del sensor ultrasónico IoT</td>
-      <td style="padding: 12px 16px;"><code style="background: #e8f4fd; color: #2980b9; padding: 2px 6px; border-radius: 4px; font-size: 11px;">SensorId (UUID)</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; color: #27ae60; font-weight: 500;">No nulo, único</td>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">4</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Cistern</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">currentLevelPercent</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Nivel de llenado actual expresado en porcentaje.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Double</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">0.0 - 100.0</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">%</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No puede salir del rango 0-100.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">6</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Sensor</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">type</td>
-      <td style="padding: 12px 16px;">Tipo de sensor instalado en la cisterna</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">No nulo</td>
+    <tr style="border-bottom: 1px solid #dddddd; background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">4</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Cistern</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">alertThresholdPercent</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Límite mínimo para disparar alertas de desabastecimiento.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Double</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">10.0 - 40.0</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">%</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Valor por defecto establecido en 20.0%.</td>
     </tr>
-    <tr style="border-bottom: 2px solid #dcdde1;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">6</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Sensor</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">status</td>
-      <td style="padding: 12px 16px;">Estado de conexión actual del sensor</td>
-      <td style="padding: 12px 16px;"><code style="background: #fff2e6; color: #d35400; padding: 2px 6px; border-radius: 4px; font-size: 11px;">SensorStatus (Enum)</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; font-size: 11px;"><span style="background:#d4edda; color:#155724; padding:2px 4px; border-radius:3px;">ONLINE</span>, <span style="background:#f8d7da; color:#721c24; padding:2px 4px; border-radius:3px;">OFFLINE</span></td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">5</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-weight: bold;">Sensor</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">id</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Identificador lógico único del sensor en el sistema.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UUID</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo, único.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5; background-color: #f8fafc;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d; font-weight: bold;">7</td>
-      <td style="padding: 12px 16px; font-weight: 600; color: #2c3e50;">WaterLevelReading</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold; color: #e74c3c;">id</td>
-      <td style="padding: 12px 16px;">Identificador único de la lectura registrada</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; color: #27ae60; font-weight: 500;">No nulo, único</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">5</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Sensor</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">hardwareId</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Identificador físico de fábrica del dispositivo IoT (MAC o Serial).</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">String</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Único a nivel global en hardware. No nulo.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">7</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">WaterLevelReading</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">levelPercent</td>
-      <td style="padding: 12px 16px;">Porcentaje de nivel de agua medido por el sensor</td>
-      <td style="padding: 12px 16px;"><code style="background: #f5f6fa; color: #2f3640; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Double</code></td>
-      <td style="padding: 12px 16px; text-align: center; font-weight: 600; color: #2c3e50;">0 – 100</td>
-      <td style="padding: 12px 16px; text-align: center; font-style: italic; color: #7f8c8d;">%</td>
-      <td style="padding: 12px 16px; color: #c0392b;">Fuera del rango 0–100</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">5</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Sensor</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">type</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Tecnología física empleada para la medición.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Enum</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">ULTRASONIC, PRESSURE</td>
     </tr>
-    <tr style="border-bottom: 2px solid #dcdde1;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">7</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">WaterLevelReading</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">recordedAt</td>
-      <td style="padding: 12px 16px;">Fecha y hora exacta en que se registró la lectura</td>
-      <td style="padding: 12px 16px;"><code style="background: #e3f2fd; color: #0d47a1; padding: 2px 6px; border-radius: 4px; font-size: 11px;">DateTime</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">No puede ser fecha futura</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">5</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Sensor</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">status</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Estado operativo actual del dispositivo.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Enum</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">ACTIVE, MAINTENANCE, OFFLINE</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5; background-color: #f8fafc;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d; font-weight: bold;">8</td>
-      <td style="padding: 12px 16px; font-weight: 600; color: #2c3e50;">Refill</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold; color: #e74c3c;">id</td>
-      <td style="padding: 12px 16px;">Identificador único del registro de recarga</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; color: #27ae60; font-weight: 500;">No nulo, único</td>
+    <tr style="border-bottom: 1px solid #dddddd; background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">6</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-weight: bold;">WaterLevelReading</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">id</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Identificador único de la telemetría registrada.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UUID</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo, único.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">8</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Refill</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">date</td>
-      <td style="padding: 12px 16px;">Fecha y hora en que se realizó la recarga de agua</td>
-      <td style="padding: 12px 16px;"><code style="background: #e3f2fd; color: #0d47a1; padding: 2px 6px; border-radius: 4px; font-size: 11px;">DateTime</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">No puede ser fecha futura</td>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">6</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">WaterLevelReading</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">levelPercent</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Porcentaje de nivel de agua medido por el sensor.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Double</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">0.0 - 100.0</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">%</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Captura continua de datos.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">8</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Refill</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">liters</td>
-      <td style="padding: 12px 16px;">Volumen de agua cargado en la cisterna</td>
-      <td style="padding: 12px 16px;"><code style="background: #f5f6fa; color: #2f3640; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Double</code></td>
-      <td style="padding: 12px 16px; text-align: center; font-weight: 600; color: #2c3e50;">100 – 50000</td>
-      <td style="padding: 12px 16px; text-align: center; font-style: italic; color: #7f8c8d;">Litros</td>
-      <td style="padding: 12px 16px; color: #c0392b;">Valores negativos no permitidos</td>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">6</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">WaterLevelReading</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">volumeLiters</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Volumen de agua calculado en litros netos.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Double</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">0.0 - 100000.0</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">Litros</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Calculado automáticamente (porcentaje * capacidad).</td>
     </tr>
-    <tr style="border-bottom: 2px solid #dcdde1;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">8</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Refill</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">costSoles</td>
-      <td style="padding: 12px 16px;">Costo pagado por la recarga en soles peruanos</td>
-      <td style="padding: 12px 16px;"><code style="background: #f5f6fa; color: #2f3640; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Double</code></td>
-      <td style="padding: 12px 16px; text-align: center; font-weight: 600; color: #2c3e50;">80 – 500</td>
-      <td style="padding: 12px 16px; text-align: center; font-style: italic; color: #7f8c8d;">S/.</td>
-      <td style="padding: 12px 16px; color: #c0392b;">Valores negativos no permitidos</td>
+    <tr style="border-bottom: 1px solid #dddddd; background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">6</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">WaterLevelReading</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">recordedAt</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Fecha y hora exacta del registro de la lectura.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">DateTime</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No puede ser fecha futura.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5; background-color: #f8fafc;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d; font-weight: bold;">9</td>
-      <td style="padding: 12px 16px; font-weight: 600; color: #2c3e50;">WaterConsumption</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold; color: #e74c3c;">id</td>
-      <td style="padding: 12px 16px;">Identificador único del registro de consumo</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; color: #27ae60; font-weight: 500;">No nulo, único</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">7</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-weight: bold;">Refill</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">id</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Identificador único del registro de recarga.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UUID</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo, único.</td>
     </tr>
-    <tr style="border-bottom: 2px solid #dcdde1;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">9</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">WaterConsumption</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">averageDailyUse</td>
-      <td style="padding: 12px 16px;">Promedio de litros consumidos por día en el período calculado</td>
-      <td style="padding: 12px 16px;"><code style="background: #f5f6fa; color: #2f3640; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Double</code></td>
-      <td style="padding: 12px 16px; text-align: center; font-weight: 600; color: #2c3e50;">0 – 10000</td>
-      <td style="padding: 12px 16px; text-align: center; font-style: italic; color: #7f8c8d;">Litros/día</td>
-      <td style="padding: 12px 16px; color: #c0392b;">Valores negativos no permitidos</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">7</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Refill</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">refillDate</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Fecha y hora en que se realizó la recarga de agua.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">DateTime</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No puede ser fecha futura.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5; background-color: #f8fafc;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d; font-weight: bold;">10</td>
-      <td style="padding: 12px 16px; font-weight: 600; color: #2c3e50;">Alert</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold; color: #e74c3c;">id</td>
-      <td style="padding: 12px 16px;">Identificador único de la alerta generada</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; color: #27ae60; font-weight: 500;">No nulo, único</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">7</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Refill</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">liters</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Volumen de agua cargado en la cisterna.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Double</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">1000 - 50000</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">Litros</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Debe ser un valor positivo razonable.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">10</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Alert</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">type</td>
-      <td style="padding: 12px 16px;">Nivel de criticidad de la alerta según el umbral alcanzado</td>
-      <td style="padding: 12px 16px;"><code style="background: #fff2e6; color: #d35400; padding: 2px 6px; border-radius: 4px; font-size: 11px;">AlertType (Enum)</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; font-size: 11px;"><span style="background:#ffeaa7; color:#d35400; padding:2px 4px; border-radius:3px;">LOW</span>, <span style="background:#ff7675; color:#d63031; padding:2px 4px; border-radius:3px; font-weight:bold;">CRITICAL</span></td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">7</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Refill</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">costSoles</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Costo pagado por la recarga en soles peruanos.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Double</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">50.00 - 2000.00</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">S/. (Soles)</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Mayor o igual a cero.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">10</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Alert</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">message</td>
-      <td style="padding: 12px 16px;">Mensaje descriptivo de la alerta enviado al usuario</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">No nulo</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">7</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Refill</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">supplierName</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Nombre de la empresa distribuidora del camión de agua.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">String</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">10</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Alert</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">timestamp</td>
-      <td style="padding: 12px 16px;">Fecha y hora en que se generó la alerta</td>
-      <td style="padding: 12px 16px;"><code style="background: #e3f2fd; color: #0d47a1; padding: 2px 6px; border-radius: 4px; font-size: 11px;">DateTime</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">No puede ser fecha futura</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">7</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Refill</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">invoiceNumber</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Código alfanumérico correlativo del comprobante de pago físico.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">String</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Obligatorio para auditorías internas.</td>
     </tr>
-    <tr style="border-bottom: 2px solid #dcdde1;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">10</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Alert</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">isResolved</td>
-      <td style="padding: 12px 16px;">Indica si la alerta fue atendida y resuelta por el administrador</td>
-      <td style="padding: 12px 16px;"><code style="background: #f5f6fa; color: #2f3640; padding: 2px 6px; border-radius: 4px; font-size: 11px;">boolean</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; font-family: monospace;">true / false</td>
+    <tr style="border-bottom: 1px solid #dddddd; background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">8</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-weight: bold;">Alert</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">id</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Identificador único de la alerta generada.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UUID</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo, único.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5; background-color: #f8fafc;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d; font-weight: bold;">11</td>
-      <td style="padding: 12px 16px; font-weight: 600; color: #2c3e50;">Plan</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold; color: #e74c3c;">id</td>
-      <td style="padding: 12px 16px;">Identificador único del plan de suscripción</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; color: #27ae60; font-weight: 500;">No nulo, único</td>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">8</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Alert</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">type</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Tipo o criticidad del incidente detectado en la cisterna.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Enum</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">CRITICAL_LOW, SENSOR_OFFLINE, HIGH_USAGE</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">11</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Plan</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">name</td>
-      <td style="padding: 12px 16px;">Nombre comercial del plan</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; font-size: 11px; color: #7f8c8d;"><span style="background:#f1f2f6; color:#2f3640; padding:2px 4px; border-radius:3px;">BASIC</span>, <span style="background:#dfe4ea; color:#2f3640; padding:2px 4px; border-radius:3px; font-weight:bold;">PREMIUM</span></td>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">8</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Alert</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">message</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Mensaje descriptivo enviado al usuario.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">String</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">11</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Plan</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">priceSoles</td>
-      <td style="padding: 12px 16px;">Precio mensual del plan expresado en soles peruanos</td>
-      <td style="padding: 12px 16px;"><code style="background: #f5f6fa; color: #2f3640; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Double</code></td>
-      <td style="padding: 12px 16px; text-align: center; font-weight: 600; color: #2c3e50;">0 – 999</td>
-      <td style="padding: 12px 16px; text-align: center; font-style: italic; color: #7f8c8d;">S/.</td>
-      <td style="padding: 12px 16px; color: #c0392b;">Valores negativos no permitidos</td>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">8</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Alert</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">status</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Estado de atención de la alerta por el administrador.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Enum</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">PENDING, IN_PROGRESS, RESOLVED</td>
     </tr>
-    <tr style="border-bottom: 2px solid #dcdde1;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">11</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Plan</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">features</td>
-      <td style="padding: 12px 16px;">Descripción de las funcionalidades incluidas en el plan</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">No nulo</td>
+    <tr style="border-bottom: 1px solid #dddddd; background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">8</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Alert</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">triggeredAt</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Fecha y hora en que se generó automáticamente la alerta.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">DateTime</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5; background-color: #f8fafc;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d; font-weight: bold;">12</td>
-      <td style="padding: 12px 16px; font-weight: 600; color: #2c3e50;">Subscription</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold; color: #e74c3c;">id</td>
-      <td style="padding: 12px 16px;">Identificador único de la suscripción</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; color: #27ae60; font-weight: 500;">No nulo, único</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">9</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-weight: bold;">WaterConsumption</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">id</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Identificador único del registro estadístico de consumo.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UUID</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo, único.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">12</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Subscription</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">startDate</td>
-      <td style="padding: 12px 16px;">Fecha de inicio de la suscripción activa</td>
-      <td style="padding: 12px 16px;"><code style="background: #e3f2fd; color: #0d47a1; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Date</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">No nulo</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">9</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">WaterConsumption</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">avgDailyLiters</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Promedio de litros consumidos por día calculados en el período.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Double</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">0 - 50000</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">Litros/Día</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Post-calculado. No negativo.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">12</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Subscription</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">endDate</td>
-      <td style="padding: 12px 16px;">Fecha de vencimiento de la suscripción</td>
-      <td style="padding: 12px 16px;"><code style="background: #e3f2fd; color: #0d47a1; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Date</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; color: #d35400;">Debe ser posterior a startDate</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">9</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">WaterConsumption</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">totalPeriodLiters</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Suma total de litros consumidos en el intervalo de tiempo.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Double</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">0 - 1500000</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">Litros</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Post-calculado. No negativo.</td>
     </tr>
-    <tr style="border-bottom: 2px solid #dcdde1;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">12</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Subscription</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">status</td>
-      <td style="padding: 12px 16px;">Estado actual de la suscripción del edificio</td>
-      <td style="padding: 12px 16px;"><code style="background: #fff2e6; color: #d35400; padding: 2px 6px; border-radius: 4px; font-size: 11px;">SubscriptionStatus (Enum)</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; font-size: 11px;"><span style="background:#d4edda; color:#155724; padding:2px 4px; border-radius:3px;">ACTIVE</span>, <span style="background:#fff3cd; color:#856404; padding:2px 4px; border-radius:3px;">INACTIVE</span>, <span style="background:#f8d7da; color:#721c24; padding:2px 4px; border-radius:3px;">CANCELLED</span></td>
+    <tr style="border-bottom: 1px solid #dddddd; background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">10</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-weight: bold;">Report</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">id</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Identificador único del reporte de rendición de cuentas.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UUID</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo, único.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5; background-color: #f8fafc;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d; font-weight: bold;">13</td>
-      <td style="padding: 12px 16px; font-weight: 600; color: #2c3e50;">Report</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold; color: #e74c3c;">id</td>
-      <td style="padding: 12px 16px;">Identificador único del reporte generado</td>
-      <td style="padding: 12px 16px;"><code style="background: #f1f2f6; color: #57606f; padding: 2px 6px; border-radius: 4px; font-size: 11px;">String</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; color: #27ae60; font-weight: 500;">No nulo, único</td>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">10</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Report</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">periodMonth</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Mes calendario al que corresponde el reporte mensual.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Integer</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">1 - 12</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">Meses</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Restringido del 1 al 12 (Ene-Dic).</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">13</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Report</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">generatedAt</td>
-      <td style="padding: 12px 16px;">Fecha y hora en que se generó el reporte</td>
-      <td style="padding: 12px 16px;"><code style="background: #e3f2fd; color: #0d47a1; padding: 2px 6px; border-radius: 4px; font-size: 11px;">DateTime</code></td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px;">No puede ser fecha futura</td>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">10</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Report</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">totalCostSoles</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Gasto económico total acumulado en soles en dicho mes.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Double</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">S/. (Soles)</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Sumatoria total de los costes de Refills del mes.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">13</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Report</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">periodMonth</td>
-      <td style="padding: 12px 16px;">Mes del período cubierto por el reporte</td>
-      <td style="padding: 12px 16px;"><code style="background: #f5f6fa; color: #2f3640; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Integer</code></td>
-      <td style="padding: 12px 16px; text-align: center; font-weight: 600; color: #2c3e50;">1 – 12</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; color: #c0392b;">Fuera del rango 1–12</td>
+    <tr style="border-bottom: 1px solid #dddddd; background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">10</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Report</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">generatedAt</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Fecha y hora del cierre y emisión del documento.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">DateTime</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Autogenerado al emitirse el reporte.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">13</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Report</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">periodYear</td>
-      <td style="padding: 12px 16px;">Año del período cubierto por el reporte</td>
-      <td style="padding: 12px 16px;"><code style="background: #f5f6fa; color: #2f3640; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Integer</code></td>
-      <td style="padding: 12px 16px; text-align: center; font-weight: 600; color: #2c3e50;">2024 – 2099</td>
-      <td style="padding: 12px 16px; text-align: center; color: #bdc3c7;">n/a</td>
-      <td style="padding: 12px 16px; color: #c0392b;">Años anteriores al inicio del sistema</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">11</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-weight: bold;">Plan</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">id</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Identificador maestro de la plantilla comercial ofertada.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UUID</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo, único.</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eef2f5;">
-      <td style="padding: 12px 16px; text-align: center; color: #7f8c8d;">13</td>
-      <td style="padding: 12px 16px; color: #7f8c8d;">Report</td>
-      <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; font-weight: bold;">totalCostSoles</td>
-      <td style="padding: 12px 16px;">Suma total del costo de recargas en el período del reporte</td>
-      <td style="padding: 12px 16px;"><code style="background: #f5f6fa; color: #2f3640; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Double</code></td>
-      <td style="padding: 12px 16px; text-align: center; font-weight: 600; color: #2c3e50;">0 – 99999</td>
-      <td style="padding: 12px 16px; text-align: center; font-style: italic; color: #7f8c8d;">S/.</td>
-      <td style="padding: 12px 16px; color: #c0392b;">Valores negativos no permitidos</td>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">11</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Plan</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">name</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Nombre del tipo de plan comercial.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Enum</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">BASIC, PREMIUM.</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #dddddd;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">11</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Plan</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">maxSensors</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Límite máximo de hardware IoT admitido en el plan.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Integer</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">1 - 10</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">Sensores</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Plan BASIC restringe a 1. PREMIUM admite más.</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #dddddd; background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">12</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-weight: bold;">Subscription</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">id</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Identificador único del contrato de suscripción del edificio.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">UUID</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo, único.</td>
+    </tr>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">12</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Subscription</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">status</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Estado del ciclo de facturación y acceso al servicio.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Enum</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">ACTIVE, EXPIRED, CANCELLED.</td>
+    </tr>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">12</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Subscription</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">startDate</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Fecha de inicio de vigencia de la suscripción.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Date</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">No nulo.</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #dddddd; background-color: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">12</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Subscription</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; font-family: monospace;">endDate</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Fecha de vencimiento programada de los servicios.</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Date</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd; text-align: center;">n/a</td>
+      <td style="padding: 10px; border: 1px solid #dddddd;">Debe ser estrictamente posterior a 'startDate'.</td>
     </tr>
   </tbody>
 </table>
 
 ## 4.8. Database Design.
 
-En el diseño de base de datos de TankIQ, cada Bounded Context identificado en el proceso de Domain-Driven Design se traduce en un conjunto de tablas relacionadas. Las claves primarias son de tipo UUID para garantizar unicidad global entre servicios. Las claves foráneas refuerzan la integridad referencial entre tablas. Los campos numéricos críticos, como niveles de cisterna, consumo de agua y costos en soles, utilizan el tipo DECIMAL para asegurar precisión. Se aplican restricciones NOT NULL en todos los atributos obligatorios del negocio, mientras que algunos campos opcionales permiten valores NULL según las reglas del dominio.
-
+Para asegurar una arquitectura de software limpia y escalable que responda con precisión
+a las necesidades de nuestro negocio, se optó por diseñar el diseño de nuestra base de datos
+empaquetandola y tomando de guía nuestros Bounded Context, desarrollados en el Domain-Driven Design (DDD).
 
 ### 4.8.1. Database Diagrams.
 
-El diagrama muestra las tablas del sistema agrupadas por Bounded Context junto con sus relaciones estructurales. El IAM Context contiene la tabla users con discriminación de rol ADMIN o RESIDENT, y la tabla intermedia building_users que implementa la relación muchos a muchos entre usuarios y edificios mediante las relaciones users a buildings de tipo uno a muchos y su descomposición a través de building_users. El Building Monitoring Context incluye las tablas buildings, cisterns, sensors y water_level_readings, representando la jerarquía física del sistema IoT. Un edificio se relaciona de forma uno a uno con una cisterna, la cual a su vez se relaciona uno a uno con un sensor, y este genera múltiples lecturas de nivel de agua mediante una relación uno a muchos. El Water Management Context agrupa las tablas refills y water_consumption, ambas relacionadas con buildings mediante relaciones uno a muchos, permitiendo registrar recargas de agua y métricas de consumo por periodos. El Alerting Context contiene la tabla alerts, la cual se relaciona con cisterns y users mediante relaciones uno a muchos, permitiendo gestionar eventos como niveles bajos o críticos de agua y su notificación a los usuarios. El Subscription Context incluye las tablas plans, subscriptions y reports. La tabla subscriptions se relaciona con buildings mediante una relación uno a uno y con plans mediante una relación uno a muchos, mientras que reports se relaciona con buildings mediante una relación uno a muchos, permitiendo almacenar reportes generados sobre consumo y costos.
+```plantuml
+@startuml
 
-<div align="center">
-  <img src="assets/database/tankiq-database-diagram.png" alt="Database Diagram — TankIQ" style="width: 700px;"/>
-</div>
+scale 1/3
 
-En el diagrama de base de datos, las llaves amarillas representan las claves primarias, las cuales identifican de forma única cada registro dentro de su respectiva tabla. Las llaves rojas representan las claves foráneas, que establecen las relaciones entre tablas y garantizan la integridad referencial del sistema.
+title Diagrama Entidad-Relación por Bounded Contexts
+
+' --- CONFIGURACIÓN DE ESTILOS VISUALES (DDD TEMÁTICO) ---
+skinparam monochrome false
+skinparam shadowing true
+skinparam linetype ortho
+
+skinparam package {
+    BackgroundColor<<IdentityAccess>> #EBF5FB
+    BackgroundColor<<Monitoring>> #E8F8F5
+    BackgroundColor<<RefillMgmt>> #FEF9E7
+    BackgroundColor<<Notification>> #FADBD8
+    BackgroundColor<<Reporting>> #EAEDED
+    BackgroundColor<<BillingSub>> #F5EEF8
+}
+
+' ==========================================================
+' 1. IDENTITY & ACCESS MANAGEMENT BOUNDED CONTEXT
+' ==========================================================
+package "Identity & Access Management" <<IdentityAccess>> {
+    entity "users" as users {
+        * id : UUID <<PK>>
+        ---
+        - name : VARCHAR
+        - email : VARCHAR <<UNIQUE>>
+        - password_hash : VARCHAR
+        - phone_number : VARCHAR
+        - created_at : TIMESTAMP
+    }
+
+    entity "user_buildings" as user_buildings {
+        * user_id : UUID <<FK>>
+        * building_id : UUID <<FK>>
+        ---
+        - role : VARCHAR ' (ADMIN, RESIDENT)
+        - apartment_number : VARCHAR 
+        - associated_at : TIMESTAMP
+    }
+}
+
+' ==========================================================
+' 2. MONITORING BOUNDED CONTEXT
+' ==========================================================
+package "Monitoring Context" <<Monitoring>> {
+    entity "buildings" as buildings {
+        * id : UUID <<PK>>
+        ---
+        - name : VARCHAR
+        - address : VARCHAR
+        - district : VARCHAR
+        - created_at : TIMESTAMP
+    }
+
+    entity "cisterns" as cisterns {
+        * id : UUID <<PK>>
+        ---
+        - capacity_liters : DECIMAL
+        - current_level_percent : DECIMAL
+        - alert_threshold_percent : DECIMAL
+        - building_id : UUID <<FK>>
+    }
+
+    entity "sensors" as sensors {
+        * id : UUID <<PK>>
+        ---
+        - hardware_id : VARCHAR <<UNIQUE>>
+        - type : VARCHAR ' (ULTRASONIC, PRESSURE)
+        - status : VARCHAR ' (ACTIVE, MAINTENANCE, OFFLINE)
+        - last_sync_at : TIMESTAMP
+        - cistern_id : UUID <<FK>>
+    }
+
+    entity "water_level_readings" as water_level_readings {
+        * id : UUID <<PK>>
+        ---
+        - level_percent : DECIMAL
+        - volume_liters : DECIMAL
+        - recorded_at : TIMESTAMP
+        - sensor_id : UUID <<FK>>
+    }
+}
+
+' ==========================================================
+' 3. REFILL MANAGEMENT BOUNDED CONTEXT
+' ==========================================================
+package "Refill Management Context" <<RefillMgmt>> {
+    entity "refills" as refills {
+        * id : UUID <<PK>>
+        ---
+        - refill_date : TIMESTAMP
+        - liters : DECIMAL
+        - cost_soles : DECIMAL
+        - supplier_name : VARCHAR
+        - invoice_number : VARCHAR 
+        - building_id : UUID <<FK>>
+        - registered_by_user_id : UUID <<FK>>
+    }
+}
+
+' ==========================================================
+' 4. NOTIFICATION BOUNDED CONTEXT
+' ==========================================================
+package "Notification Context" <<Notification>> {
+    entity "alerts" as alerts {
+        * id : UUID <<PK>>
+        ---
+        - type : VARCHAR ' (CRITICAL_LOW, SENSOR_OFFLINE, HIGH_USAGE)
+        - message : TEXT
+        - status : VARCHAR ' (PENDING, IN_PROGRESS, RESOLVED)
+        - triggered_at : TIMESTAMP
+        - resolved_at : TIMESTAMP
+        - cistern_id : UUID <<FK>>
+    }
+}
+
+' ==========================================================
+' 5. REPORTING BOUNDED CONTEXT
+' ==========================================================
+package "Reporting Context" <<Reporting>> {
+    entity "water_consumptions" as water_consumptions {
+        * id : UUID <<PK>>
+        ---
+        - period_start : DATE
+        - period_end : DATE
+        - avg_daily_liters : DECIMAL
+        - total_period_liters : DECIMAL
+        - building_id : UUID <<FK>>
+    }
+
+    entity "reports" as reports {
+        * id : UUID <<PK>>
+        ---
+        - period_month : INT
+        - period_year : INT
+        - total_cost_soles : DECIMAL
+        - total_water_liters : DECIMAL
+        - generated_at : TIMESTAMP
+        - building_id : UUID <<FK>> 
+        - generated_by_user_id : UUID <<FK>>
+    }
+}
+
+' ==========================================================
+' 6. SUBSCRIPTION & BILLING BOUNDED CONTEXT
+' ==========================================================
+package "Subscription & Billing Context" <<BillingSub>> {
+    entity "plans" as plans {
+        * id : UUID <<PK>>
+        ---
+        - name : VARCHAR ' (BASIC, PREMIUM)
+        - price_soles : DECIMAL
+        - features : TEXT
+        - max_sensors : INT
+    }
+
+    entity "subscriptions" as subscriptions {
+        * id : UUID <<PK>>
+        ---
+        - start_date : DATE
+        - end_date : DATE
+        - status : VARCHAR ' (ACTIVE, EXPIRED, CANCELLED)
+        - building_id : UUID <<FK>>
+        - plan_id : UUID <<FK>>
+    }
+}
+
+' --- DEFINICIÓN DE RELACIONES ENTRE CONTEXTOS ---
+
+' Identity & Access a Core/Monitoring
+users ||--{ user_buildings
+buildings --{ user_buildings
+
+' Relaciones Internas de Monitoring (Infraestructura IoT)
+buildings --{ cisterns
+cisterns --{ sensors
+sensors --{ water_level_readings
+
+' Monitoring hacia Contexto de Notificaciones (Eventos de alerta en cisternas)
+cisterns --{ alerts
+
+' Monitoring hacia Contexto de Gestión de Recargas (Logística de camión cisterna)
+buildings --{ refills
+
+' Monitoring hacia Contexto de Reportes e Historial (Analítica agregada)
+buildings --{ water_consumptions
+buildings --{ reports
+
+' Auditoría del contexto Identity cruzando hacia Refills y Reports (Validación de Negocio)
+users --{ refills : "registra"
+users --{ reports : "genera"
+
+' Relaciones del contexto de Monetización hacia Infraestructura
+plans --{ subscriptions
+buildings --{ subscriptions
+
+@enduml
+```
