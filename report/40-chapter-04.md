@@ -516,11 +516,23 @@ Para modelar la arquitectura de TankIQ se aplicó Domain-Driven Design, partiend
 
 ### 4.6.1. Design-Level EventStorming.
 
-El equipo realizó una sesión de Design-Level Event Storming de 90 minutos para refinar el modelo de dominio de TankIQ. Se identificaron Domain Events, Commands, Aggregates, Policies, Read Models, External Systems y Actors. Se modelaron seis flujos: monitoreo de cisterna con proyección de días, gestión de recargas con cálculo de costo mensual, generación de reportes con exportación PDF, envío de alertas vía SendGrid, activación de suscripción y vinculación de sensor, y registro y autenticación de usuarios. Como resultado, se definieron seis Bounded Contexts: Monitoring Context Tank, Refill Management Context Refill, Reporting Context Report, Notification Context SendGrid/SMTP, Subscription & Billing Context Subscription e Identity & Access Management Context User.
+El equipo realizó una sesión de Design-Level Event Storming de 90 minutos para refinar el modelo de dominio de TankIQ. 
+Se identificaron Domain Events, Commands, Aggregates, Policies, Read Models, External Systems y Actors. Se modelaron 
+seis flujos: monitoreo, gestión de recargas, generación de reportes, alertas, suscripción, sensor, y Identity & Access Management.
 
-<div align="center">
-  <img src="assets/architecture/design-level-event-storming.png" alt="Design-Level Event Storming — TankIQ" style="width: 700px;"/>
-</div>
+<img src="assets/architecture/design-level-event-storming.png" alt="Event Storming" style="width: 600px;"/>
+
+<img src="assets/architecture/iam-context.png" alt="Event Storming" style="width: 600px;"/>
+
+<img src="assets/architecture/monitoring-context.png" alt="Event Storming" style="width: 600px;"/>
+
+<img src="assets/architecture/notification-context.png" alt="Event Storming" style="width: 600px;"/>
+
+<img src="assets/architecture/refill-context.png" alt="Event Storming" style="width: 600px;"/>
+
+<img src="assets/architecture/report-context.png" alt="Event Storming" style="width: 600px;"/>
+
+<img src="assets/architecture/subscription-billing-context.png" alt="Event Storming" style="width: 600px;"/>
 
 ### 4.6.2. Software Architecture Context Diagram.
 
