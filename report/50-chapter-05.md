@@ -1324,6 +1324,16 @@ de variables de entorno.
 
 ### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
+Para el deployment de nuestro Back End usamos los servicios de render para la web service y railway para nuestra base de datos.
+
+A continuacion, la evidencia del deployment:
+
+<img src="assets/tv2/deploy-evidence-01.jpeg" style="width: 500px;" alt="deploy evidence">
+
+<img src="assets/tv2/deploy-evidence-02.jpeg" style="width: 500px;" alt="deploy evidence">
+
+<img src="assets/tv2/deploy-evidence-03.jpeg" style="width: 500px;" alt="deploy evidence">
+
 ### 5.2.3.8. Team Collaboration Insights during Sprint
 
 - Insight dentro del Front End: implementacion de mejoras.
