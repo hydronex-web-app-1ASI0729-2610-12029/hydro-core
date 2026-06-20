@@ -740,3 +740,659 @@ Network Graph del repositorio HydroTeam-Frontend
 Contributors — commits realizados por integrante
 
 <img src="assets/git-hub/contributors-tb1.png" alt="Contributors" style="margin-bottom: 5px; width: 600px">
+
+### 5.2.3. Sprint 3
+
+Durante el Sprint 3, el equipo HydroTeam enfocó sus esfuerzos en la evolución integral de la plataforma mediante la optimización 
+del Frontend y el diseño arquitectónico del Backend. En el lado del cliente, se implementaron mejoras de rendimiento y refinamiento 
+de la interfaz de usuario. En el backend, se sentaron las bases del sistema adoptando el patrón CQRS (Command Query Responsibility Segregation) 
+y una arquitectura limpia basada en Capas de DDD (Domain-Driven Design) para garantizar la escalabilidad y mantenibilidad del negocio.
+
+### 5.2.3.1. Sprint Planning 3
+
+- Planificación de la Primera Mitad del Sprint 3: Optimización del Frontend
+
+| **Sprint #** | Sprint 3 - Parte 1 |
+|---|---|
+| **Sprint Planning Background** | |
+| **Date** | 2026-05-25 |
+| **Time** | 08:00 PM |
+| **Location** | Reunión virtual mediante Google Meet |
+| **Prepared By** | HydroTeam |
+| **Attendees (to planning meeting)** | Espinar Martínez, Gabriel Ferran / Guevara Serrano, Diego Ismael / Montalvan Palomino, Bruno Rodolfo / Orosco Ttamiña, Juan Carlos / Razuri Alvarez, Matias Francesco / Retuerto Rodriguez, Jorge Manuel|
+| **Sprint 2 – Review Summary** | Durante el Sprint 2 se completó con éxito la primera versión funcional de la Web Application en Angular bajo una estructura modular. En la revisión se sugirieron mejoras puntuales en la fluidez de las transiciones, el manejo de estados locales en el dashboard y el rendimiento general de carga en dispositivos móviles. |
+| **Sprint 2 – Retrospective Summary** | El equipo concluyó que la arquitectura por *bounded contexts* facilitó el trabajo en paralelo, pero identificó cuellos de botella en la reutilización de componentes UI y ciertos estilos CSS globales. Se acordó dedicar la primera fase del Sprint 3 a refactorizar y optimizar el rendimiento del lado del cliente antes de iniciar la lógica pesada del servidor. |
+| **Sprint Goal & User Stories** | |
+| **Sprint 3.1 Goal** | Nuestro enfoque está en optimizar el rendimiento y la experiencia de usuario del frontend de TankIQ, refactorizando componentes críticos y puliendo la interfaz bajo estándares de carga eficiente. Creemos que esto asegurará una base de cliente sólida y escalable para las futuras integraciones de datos. Esto se confirmará cuando el dashboard e interfaces base logren una navegación fluida sin re-renderizados innecesarios y pasen las pruebas de rendimiento visual. |
+| **Sprint 3.1 Velocity** | 24 |
+| **Sum of Story Points** | 24 |
+
+---
+
+- Planificación de la Segunda Mitad del Sprint 3: Fundaciones del Backend (CQRS y DDD)
+
+| **Sprint #** | Sprint 3 - Parte 2 |
+|---|---|
+| **Sprint Planning Background** | |
+| **Date** | 2026-06-06 |
+| **Time** | 08:00 PM |
+| **Location** | Reunión virtual mediante Google Meet |
+| **Prepared By** | HydroTeam |
+| **Attendees (to planning meeting)** | Espinar Martínez, Gabriel Ferran / Guevara Serrano, Diego Ismael / Montalvan Palomino, Bruno Rodolfo / Orosco Ttamiña, Juan Carlos / Razuri Alvarez, Matias Francesco / Retuerto Rodriguez, Jorge Manuel|
+| **Sprint 3.1 – Review Summary** | Se revisó la optimización del Frontend, logrando una interfaz mucho más fluida, modular y con tiempos de respuesta locales mejorados. Las observaciones técnicas apuntaron a dejar listos los servicios de Angular para empezar a consumir los endpoints que proveerá el nuevo backend estructurado. |
+| **Sprint 3.1 – Retrospective Summary** | El equipo evaluó positivamente el orden visual alcanzado en el frontend. Para afrontar la complejidad del procesamiento de datos de TankIQ, se determinó la necesidad estricta de aislar la lógica de negocio del almacenamiento. Por ello, se definió adoptar formalmente el patrón CQRS y la división por capas de Domain-Driven Design (DDD) desde el primer día de desarrollo del backend. |
+| **Sprint Goal & User Stories** | |
+| **Sprint 3.2 Goal** | Nuestro enfoque está en diseñar y construir la arquitectura base del backend de TankIQ aplicando capas de DDD y el patrón CQRS para separar de manera limpia los comandos (escritura) de las consultas (lectura). Creemos que esto garantizará el rendimiento y la alta disponibilidad del sistema al procesar la telemetría de los tanques. Esto se confirmará cuando los primeros endpoints expongan la lógica del dominio de manera correcta y se completen con éxito las pruebas de persistencia base. |
+| **Sprint 3.2 Velocity** | 32 |
+| **Sum of Story Points** | 32 |
+
+### 5.2.3.2. Aspect Leaders and Collaborators
+
+En este apartado se describen los aspectos técnicos y funcionales trabajados durante 
+el Sprint 3 del proyecto TankIQ. El alcance de este ciclo se dividió estratégicamente 
+en dos frentes: la optimización del rendimiento y modularización del **Frontend** (Angular), 
+y el diseño e implementación de la arquitectura base del **Backend** guiada por el dominio (**DDD Layers**) 
+y la segregación de responsabilidades de lectura y escritura (**CQRS**).
+
+Para cada aspecto arquitectónico y funcional se designó un **Líder (L)**, responsable del cada bounded context del negocio,
+el diseño de la solución y la implementación principal, y **Colaboradores (C)**, encargados de apoyar en el desarrollo, 
+pruebas unitarias, refactorización e integración en el repositorio.
+
+La **Matriz LACX** (Leadership and Collaboration Matrix) permite visualizar de manera clara la distribución 
+de responsabilidades del equipo HydroTeam durante el Sprint 3.
+
+- Front End
+
+| Team Member                       | GitHub Username    | Billing Context | IAM Context | Monitoring Management | Notification Management | Reporting Management | Refill Management |
+|-----------------------------------|--------------------|-----------------|-------------|-----------------------|-------------------------|----------------------|-------------------|
+| Espinar Martínez, Gabriel Ferran  | zzZero14           | C               | C           | L                     | C                       | L                    | C                 |
+| Guevara Serrano, Diego Ismael     | digetto            | C               | C           | C                     | C                       | C                    | L                 |
+| Montalvan Palomino, Bruno Rodolfo | br1rodolfo         | C               | L           | C                     | C                       | C                    | C                 |
+| Orosco Ttamiña, Juan Carlos       | juancarlosorosco59 | C               | C           | C                     | C                       | C                    | C                 |
+| Razuri Alvarez, Matias Francesco  | u202410772         | C               | C           | C                     | L                       | C                    | C                 |
+| Retuerto Rodriguez, Jorge Maneul  | Calin1407          | L               | C           | C                     | C                       | C                    | C                 |
+
+- Back End
+
+| Team Member                       | GitHub Username    | Billing Context | IAM Context | Monitoring Management | Notification Management | Reporting Management | Refill Management |
+|-----------------------------------|--------------------|-----------------|-------------|-----------------------|-------------------------|----------------------|-------------------|
+| Espinar Martínez, Gabriel Ferran  | zzZero14           | C               | C           | L                     | C                       | L                    | C                 |
+| Guevara Serrano, Diego Ismael     | digetto            | C               | C           | C                     | C                       | C                    | L                 |
+| Montalvan Palomino, Bruno Rodolfo | br1rodolfo         | C               | L           | C                     | C                       | C                    | C                 |
+| Orosco Ttamiña, Juan Carlos       | juancarlosorosco59 | C               | C           | C                     | C                       | C                    | C                 |
+| Razuri Alvarez, Matias Francesco  | u202410772         | C               | C           | C                     | L                       | C                    | C                 |
+| Retuerto Rodriguez, Jorge Maneul  | Calin1407          | L               | C           | C                     | C                       | C                    | C                 |
+
+### 5.2.3.3. Sprint Backlog 3
+
+El Sprint Backlog 3 se orienta a consolidar la madurez técnica de la plataforma TankIQ mediante la optimización avanzada del Frontend 
+y la construcción de un núcleo de Backend altamente escalable. El trabajo del lado del cliente se enfoca en refactorizar componentes 
+modulares y pulir el rendimiento de la aplicación en Angular, garantizando una navegación fluida y eficiente. En el lado del servidor, 
+el objetivo es establecer los cimientos de la arquitectura de software aplicando Diseño Guiado por el Dominio (DDD Layers) e implementando 
+el patrón CQRS para desacoplar de forma limpia las operaciones de comandos y consultas, asegurando una base robusta, mantenible y preparada 
+para el procesamiento de telemetría en tiempo real.
+
+<table style="width: 100%; border-collapse: collapse; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; color: #333333; background-color: #ffffff; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; margin: 20px 0;">
+  <thead>
+    <tr style="background-color: #1e293b; color: #ffffff;">
+      <th colspan="8" style="padding: 12px 16px; font-size: 14px; font-weight: bold; letter-spacing: 0.5px; border-bottom: 1px solid #334155; text-align: left;">
+        SPRINT 3 - BACKLOG COMPLETO & TASKS
+      </th>
+    </tr>
+    <tr style="background-color: #334155; color: #f8fafc; text-align: left;">
+      <th style="padding: 10px 14px; font-weight: 600; font-size: 11px; text-transform: uppercase; width: 60px; text-align: center;">US ID</th>
+      <th style="padding: 10px 14px; font-weight: 600; font-size: 11px; text-transform: uppercase; width: 160px;">User Story Título</th>
+      <th style="padding: 10px 14px; font-weight: 600; font-size: 11px; text-transform: uppercase; width: 60px; text-align: center; color: #38bdf8;">Task ID</th>
+      <th style="padding: 10px 14px; font-weight: 600; font-size: 11px; text-transform: uppercase; color: #38bdf8; width: 180px;">Task Title</th>
+      <th style="padding: 10px 14px; font-weight: 600; font-size: 11px; text-transform: uppercase;">Description</th>
+      <th style="padding: 10px 14px; font-weight: 600; font-size: 11px; text-transform: uppercase; width: 70px; text-align: center;">Estim.</th>
+      <th style="padding: 10px 14px; font-weight: 600; font-size: 11px; text-transform: uppercase; width: 160px;">Assigned To</th>
+      <th style="padding: 10px 14px; font-weight: 600; font-size: 11px; text-transform: uppercase; width: 75px; text-align: center;">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">HU26</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Consultar gasto mensual</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T01</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Diseño de Widget Monetario</td>
+      <td style="padding: 12px 14px; color: #475569;">HU26-01: Diseñar un panel widget destacado ("Card") en la cabecera del módulo para resaltar de manera visual y clara el monto acumulado del mes monetario con un gráfico rápido de gasto contra presupuesto. [cite: 3]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">4h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Espinar M., Gabriel</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T02</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Integración API Gasto</td>
+      <td style="padding: 12px 14px; color: #475569;">HU26-02: Consumir el servicio dinámico (GET /api/v1/expenses/balance/monthly), mapear el string o número retornado para renderizarlo inmediatamente en el widget de balance financiero principal. [cite: 4]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Espinar M., Gabriel</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">HU25</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Carga de consumos financieros</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T03</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Formulario Carga Financiera</td>
+      <td style="padding: 12px 14px; color: #475569;">HU25-01: Elaborar el sub-formulario para la carga financiera con campos estrictamente validados en formato numérico decimal para el costo y un selector de comprobante. [cite: 6]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">4h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Guevara S., Diego</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T04</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Envío Asíncrono POST</td>
+      <td style="padding: 12px 14px; color: #475569;">HU25-02: Programar el envío asíncronico a través de la API (POST /api/v1/expenses/refills), controlando de manera reactiva la inhabilitación del botón de envío. [cite: 5]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Guevara S., Diego</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">HU24</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Filtrado por periodos</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T05</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Barra de Herramientas UI</td>
+      <td style="padding: 12px 14px; color: #475569;">HU24-01: Diseñar una barra de herramientas superior equipada con selectores desplegables para seleccionar un selector de meses. [cite: 8]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Montalvan P., Bruno</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T06</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Sincronización URL Params</td>
+      <td style="padding: 12px 14px; color: #475569;">HU24-02: Vincular las elecciones del administrador directamente con los parámetros de la URL. [cite: 7]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">2h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Montalvan P., Bruno</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">HU23</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Compartir reportes de consumo</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T07</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Modal de Destinatarios</td>
+      <td style="padding: 12px 14px; color: #475569;">HU23-01: Construir un cuadro de diálogo emergente (Modal) con un selector de lista múltiple de los correos de la junta o propietarios. [cite: 10]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Razuri A., Matias</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T08</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Integración POST Share</td>
+      <td style="padding: 12px 14px; color: #475569;">HU23-02: Desarrollar la integración con el método HTTP POST /api/v1/reports/:id/share. [cite: 9]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Razuri A., Matias</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">HU22</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Historial de documentos</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T09</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Vista de Cuadrícula UI</td>
+      <td style="padding: 12px 14px; color: #475569;">HU22-01: Crear la interfaz del repositorio histórico de documentos utilizando un formato de cuadrícula. [cite: 12]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">4h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Espinar M., Gabriel</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T10</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Carga Esquelética (Skeleton)</td>
+      <td style="padding: 12px 14px; color: #475569;">HU22-02: Programar el consumo del servicio mapping de respuesta integrando una pantalla de carga esquelética. [cite: 11]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Espinar M., Gabriel</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">HU21</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Descargar reportes</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T11</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Botones de Descarga UI</td>
+      <td style="padding: 12px 14px; color: #475569;">HU21-01: Agregar los botones de interacción de descarga en la barra de herramientas de reportes. [cite: 14]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">2h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Guevara S., Diego</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T12</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Lógica de Captura Endpoint</td>
+      <td style="padding: 12px 14px; color: #475569;">HU21-02: Desarrollar la lógica cliente encargada de capturar la respuesta del endpoint. [cite: 13]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Guevara S., Diego</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">HU20</td>
+      <td style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Simulación de reporte visual</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T13</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Hoja Virtual de Reporte</td>
+      <td style="padding: 12px 14px; color: #475569;">HU20-01: Diseñar un panel o contenedor visual estructurado que simule la hoja del reporte en pantalla. [cite: 15]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">4h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Montalvan P., Bruno</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">HU12</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Eliminar registros de recargas</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T14</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Modal de Confirmación Segura</td>
+      <td style="padding: 12px 14px; color: #475569;">HU12-01: Crear una ventana modal de confirmación de seguridad para evitar eliminaciones accidentales. [cite: 17]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Razuri A., Matias</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T15</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Integración HTTP DELETE</td>
+      <td style="padding: 12px 14px; color: #475569;">HU12-02: Implementar el disparo del método HTTP Delete (DELETE /api/v1/refills/:id). [cite: 16]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Razuri A., Matias</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">HU11</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Editar recargas</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T16</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Reutilización de Formulario</td>
+      <td style="padding: 12px 14px; color: #475569;">HU11-01: Implementar un componente modal emergente que reutilice el formulario de registro para editar la recarga. [cite: 19]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Espinar M., Gabriel</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T17</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Cliente HTTP PUT</td>
+      <td style="padding: 12px 14px; color: #475569;">HU11-02: Desarrollar el cliente HTTP para enviar la solicitud de actualización (PUT /api/v1/refills/:id) con los campos modificados. [cite: 18]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Espinar M., Gabriel</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">HU10</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Listar recargas realizadas</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T18</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Tabla Responsiva & Paginación</td>
+      <td style="padding: 12px 14px; color: #475569;">HU10-01: Diseñar una tabla de datos responsiva para listar las recargas realizadas, incluyendo paginación y estado "Sin datos disponibles". [cite: 21]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">4h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Guevara S., Diego</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T19</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Conexión GET Historial</td>
+      <td style="padding: 12px 14px; color: #475569;">HU10-02: Conectar el componente con el endpoint del historial (GET /api/v1/refills). [cite: 20]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Guevara S., Diego</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">HU09</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Registrar nueva recarga</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T20</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Formulario de Captura UI</td>
+      <td style="padding: 12px 14px; color: #475569;">HU09-01: Construir el formulario interactivo para la captura de datos de la recarga. [cite: 23]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Montalvan P., Bruno</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T21</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Consumo POST Refills</td>
+      <td style="padding: 12px 14px; color: #475569;">HU09-02: Desarrollar la función de envío que consuma el endpoint (POST /api/v1/refills). [cite: 22]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Montalvan P., Bruno</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">HU08</td>
+      <td style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Visualizar alertas críticas</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T22</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Visualización de Alertas</td>
+      <td style="padding: 12px 14px; color: #475569;">HU08-01: Visualizar notificación en la sección de alertas del sistema. [cite: 24]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">2h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Razuri A., Matias</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">US40</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Campana de notificaciones</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T23</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Icono de Campana UI</td>
+      <td style="padding: 12px 14px; color: #475569;">US40-01: Implementar un icono de campana en el menú superior con un contador dinámico y un panel lateral desplegable. [cite: 26]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Espinar M., Gabriel</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T24</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Lógica de Lectura Local</td>
+      <td style="padding: 12px 14px; color: #475569;">US40-02: Desarrollar la lógica en el frontend para marcar los avisos como "leídos" localmente al hacer clic sobre ellos. [cite: 25]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">2h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Espinar M., Gabriel</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">HU07</td>
+      <td style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Recepción de notificaciones</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T25</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Inserción en Sección</td>
+      <td style="padding: 12px 14px; color: #475569;">HU07-01: Recepción de notificaciones insertando dinámicamente en la sección correspondiente. [cite: 27]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">2h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Guevara S., Diego</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">US06</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Historial general de alertas</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T26</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Filtros de Búsqueda UI</td>
+      <td style="padding: 12px 14px; color: #475569;">US06-01: Diseñar la vista de historial utilizando una tabla con paginación, filtros de búsqueda por tipo de evento. [cite: 29]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">4h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Montalvan P., Bruno</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T27</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Consumo Endpoint Alerts</td>
+      <td style="padding: 12px 14px; color: #475569;">US06-02: Consumir el endpoint de alerts para la visualización de todas las notificaciones vinculadas al usuario. [cite: 28]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Montalvan P., Bruno</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">US05</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Métricas críticas en tiempo real</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T28</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Estilizado Alerta Alta Prioridad</td>
+      <td style="padding: 12px 14px; color: #475569;">US05-01: Crear un componente de notificación estilizado con colores de alta prioridad (Rojo/Alerta). [cite: 31]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Razuri A., Matias</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T29</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Intercepción de Límites</td>
+      <td style="padding: 12px 14px; color: #475569;">US05-02: Implementar la escucha en el frontend que intercepte si la métrica actual vulnera el límite crítico. [cite: 30]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Razuri A., Matias</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">US45</td>
+      <td style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Última actualización de datos</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T30</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Etiqueta de Timestamp Telemetría</td>
+      <td style="padding: 12px 14px; color: #475569;">US45-01: Añadir una etiqueta visible en la interfaz que indique la fecha y hora de la última actualización de telemetría. [cite: 32]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">2h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Espinar M., Gabriel</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">US03</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Proyección de duración de agua</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T31</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Tarjeta de Días Estimados</td>
+      <td style="padding: 12px 14px; color: #475569;">US03-01: Tarjeta informativa dentro del panel dedicada a mostrar la métrica de "Días estimados" del consumo de agua. [cite: 34]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Guevara S., Diego</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T32</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Consumo Endpoint Proyecciones</td>
+      <td style="padding: 12px 14px; color: #475569;">US03-02: Consumir el endpoint analítico de proyecciones e integrar de manera segura el valor devuelto. [cite: 33]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Guevara S., Diego</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">US02</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Etiquetas de estado por color</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T33</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Diseño Semántico de Colores</td>
+      <td style="padding: 12px 14px; color: #475569;">US02-01: Diseñar etiquetas semánticas con códigos de colores basados en el estado (Verde: Normal, Amarillo: Medio, Rojo: Crítico). [cite: 36]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">2h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Montalvan P., Bruno</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T34</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Lógica Condicional de Estado</td>
+      <td style="padding: 12px 14px; color: #475569;">US02-02: Implementar en el frontend la lógica condicional que evalúe el nivel de agua recibido frente a los umbrales. [cite: 35]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Montalvan P., Bruno</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">US01</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Componente de volumen de agua</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T35</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">UI Volumen & Porcentaje</td>
+      <td style="padding: 12px 14px; color: #475569;">US01-01: Construir un componente visual para representar el volumen y porcentaje de agua actual. [cite: 38]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">4h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Razuri A., Matias</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T36</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">GET Water Level Readings</td>
+      <td style="padding: 12px 14px; color: #475569;">US01-02: Consumir el endpoint de telemetría en tiempo real (GET /api/v1/water_level_readings), controlar el estado de carga. [cite: 37]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">4h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Razuri A., Matias</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">US36</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Cierre de sesión</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T37</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Botón Logout en Home</td>
+      <td style="padding: 12px 14px; color: #475569;">US36-01: Incorporar componente con botón de cierre de sesión dentro del home. [cite: 40]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">2h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Espinar M., Gabriel</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T38</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Limpieza de Cache & Redirección</td>
+      <td style="padding: 12px 14px; color: #475569;">US36-02: Limpieza de datos y redirigir al usuario a la pantalla de login. [cite: 39]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">2h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Espinar M., Gabriel</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">US35</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Registro de usuario nuevo</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T39</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">UI Formulario Registro</td>
+      <td style="padding: 12px 14px; color: #475569;">US35-02: Diseño de componente de registro con credenciales necesarias del usuario y controlar la coincidencia de credenciales existentes. [cite: 41]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">4h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Guevara S., Diego</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #fcfcfc;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T40</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Persistencia de Credenciales</td>
+      <td style="padding: 12px 14px; color: #475569;">US35-01: Desarrollo de código para la persistencia de datos del usuario. [cite: 42]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Guevara S., Diego</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td rowspan="2" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #475569; background-color: #f8fafc; vertical-align: middle;">US34</td>
+      <td rowspan="2" style="padding: 12px 14px; font-weight: 500; color: #1e293b; vertical-align: middle;">Autenticación / Login</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T41</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">UI Formulario Autenticación</td>
+      <td style="padding: 12px 14px; color: #475569;">US34-02: Desarrollo de componentes de formulario login y validación de usuario. [cite: 43]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Montalvan P., Bruno</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T42</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">HttpService Login Connection</td>
+      <td style="padding: 12px 14px; color: #475569;">US34-01: Desarrollo de conexión a endpoint, mediante HttpService. [cite: 44]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">3h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Montalvan P., Bruno</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f0f9ff;">
+      <td rowspan="4" style="padding: 12px 14px; text-align: center; font-weight: bold; color: #0369a1; background-color: #e0f2fe; vertical-align: middle;">TS06</td>
+      <td rowspan="4" style="padding: 12px 14px; font-weight: 600; color: #0369a1; background-color: #e0f2fe; vertical-align: middle;">Arquitectura DDD & CQRS: Billing</td>
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T43</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Aggregate Root Core</td>
+      <td style="padding: 12px 14px; color: #475569;">TS06-01: Implements aggregate root (Capa de Dominio del contexto acotado de facturación). [cite: 45]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">6h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Orosco T., Juan Carlos</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f0f9ff;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T44</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Infrastructure Persistence</td>
+      <td style="padding: 12px 14px; color: #475569;">TS06-02: Implements infrastructure to persistence data in Billing context. [cite: 46]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">6h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Orosco T., Juan Carlos</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f0f9ff;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T45</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Commands & Queries CQRS</td>
+      <td style="padding: 12px 14px; color: #475569;">TS06-03: Implements operation to do commands, queries and trigger events. [cite: 47]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">8h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Orosco T., Juan Carlos</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f0f9ff;">
+      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: bold; color: #0284c7;">T46</td>
+      <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">REST Api Presenters</td>
+      <td style="padding: 12px 14px; color: #475569;">TS06-04: Implement controllers to make HTTP requests (Capa de Presentación Externa). [cite: 48]</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">4h</span></td>
+      <td style="padding: 12px 14px; color: #334155;">Orosco T., Juan Carlos</td>
+      <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
+    </tr>
+  </tbody>
+</table>
+
+### 5.2.3.4. Development Evidence for Sprint Review
+
+- Front End
+
+| Repository | Branch | Commit Id | Commit Message | Commited on (Date) |
+|---|---|---|---|---|
+| Calin1407/hydronex-web-app-1A SI0729-2610-12029/HydroTeam-Frontend | feature/configuration-dbjson | c3db83d | feat(environment):! updated environment variables in the global project. | 04/06 |
+| Calin1407/hydronex-web-app-1A SI0729-2610-12029/HydroTeam-Frontend | feature/configuration-dbjson | 413b729 | feat(db.json):! updated db json with entities from updated database diagram. | 04/06 |
+| Calin1407/hydronex-web-app-1A SI0729-2610-12029/HydroTeam-Frontend | feature/av2-subscription-billing | fb8365e | feat(subscription): added core domain entities and repositories ports. | 08/06 |
+| Calin1407/hydronex-web-app-1A SI0729-2610-12029/HydroTeam-Frontend | feature/av2-subscription-billing | f8c5f9e | feat(subscription): implements response & resource in bounded to representing in api and http contexts. | 08/06 |
+| Calin1407/hydronex-web-app-1A SI0729-2610-12029/HydroTeam-Frontend | feature/av2-subscription-billing | d2e0ff3 | feat(subscription): implements assembler in bounded subscription to transform resource, response and entity. | 08/06 |
+| Calin1407/hydronex-web-app-1A SI0729-2610-12029/HydroTeam-Frontend | feature/av2-subscription-billing | 829fa8a | chore: rename folder of bounded subscription to billing. | 09/06 |
+| Calin1407/hydronex-web-app-1A SI0729-2610-12029/HydroTeam-Frontend | feature/av2-subscription-billing | ae5953a | feat(billing): integrate components with base-api-endpoint and base-api http client. | 09/06 |
+| zzZero14/hydronex-web-app-1A SI0729-2610-12029/HydroTeam-Frontend | feature/av2-subscription-billing | 6e45c57 | feat(billing): implements billing store to management subscriptions and plans. | 10/06 |
+| zzZero14/hydronex-web-app-1A SI0729-2610-12029/HydroTeam-Frontend | feature/av2-monitoring | 803bed2 | feat(water-monitoring): implement real-time monitoring with cistern and consumption data | 9/06 |
+| zzZero14/hydronex-web-app-1A SI0729-2610-12029/HydroTeam-Frontend | feature/av2-monitoring | 406dcad | feat(water-monitoring): add sensor, cistern and consumption entities | 13/06 |
+
+- Back End
+
+| Repository | Branch | Commit Id | Commit Message | Commited on (Date) |
+|---|---|---|---|---|
+| Calin1407/hydronex-web-app-1A SI0729-2610-12029/HydroTeam-Backend | feature/av2-subscription-billing | 5db9bde | feat(billing): define repository interface, commands, queries and aggregate roots for billing. | 20/06 |
+| Calin1407/hydronex-web-app-1A SI0729-2610-12029/HydroTeam-Backend | feature/av2-subscription-billing | e85b130 | feat(billing): implement jpa adapters, assemblers and initial data to database. | 20/06 |
+| Calin1407/hydronex-web-app-1A SI0729-2610-12029/HydroTeam-Backend | feature/av2-subscription-billing | 62a31d2 | feat(billing): implement services and implementations of commands, queries, events and facade to interactive with other boundeds. | 20/06 |
+| Calin1407/hydronex-web-app-1A SI0729-2610-12029/HydroTeam-Backend | feature/av2-subscription-billing | 89be8ff | feat(billing): expose rest endpoints for plans and subscriptions. | 20/06 |
+| zzZero14/hydronex-web-app-1A SI0729-2610-12029/HydroTeam-Backend | feature/av2-monitoring | de5leba | feat(monitoring): implement Building, Sensor and WaterLevelReading full DDD stack | 20/06 |
+
+### 5.2.3.5. Execution Evidence for Sprint Review
+
+Durante el Sprint 3, el equipo HydroTeam implementó las funcionalidades del núcleo del negocio (Core Business) 
+y los módulos avanzados de TankIQ en el Frontend. El desarrollo priorizó la arquitectura limpia mediante la separación 
+de capas (entidades de dominio, puertos de repositorios y ensambladores), garantizando la coherencia con el modelo técnico 
+definido en el diseño de arquitectura.
+
+<img src="assets/tv2/front-01.png" alt="front end" style="width: 500px;">
+
+<img src="assets/tv2/front-02.png" alt="front end" style="width: 500px;">
+
+<img src="assets/tv2/front-03.png" alt="front end" style="width: 500px;">
+
+<img src="assets/tv2/front-04.png" alt="front end" style="width: 500px;">
+
+<img src="assets/tv2/front-05.png" alt="front end" style="width: 500px;">
+
+<img src="assets/tv2/back-01.png" alt="back end" style="width: 600px;">
+
+### 5.2.3.6. Services Documentation Evidence for Sprint Review
+
+El repositorio de la aplicación web (HydroTeam-Frontend) contiene una documentación técnica exhaustiva que detalla 
+la arquitectura modular del proyecto, el consumo de servicios API, la gestión de estados globales y las configuraciones
+de variables de entorno.
+
+### 5.2.3.7. Software Deployment Evidence for Sprint Review
+
+### 5.2.3.8. Team Collaboration Insights during Sprint
+
+- Insight dentro del Front End: implementacion de mejoras.
+
+<img src="assets/tv2/insight-front-01.png" alt="front end" style="width: 500px;">
+
+<img src="assets/tv2/insight-front-02.png" alt="front end" style="width: 500px;">
+
+<img src="assets/tv2/insight-front-03.png" alt="front end" style="width: 500px;">
+
+- Insight dentro del Back End: implementacion de patrones CQRS y Domain Driven Design
+
+Debido a una latencia temporal en los servicios de indexación y sincronización de gráficos de GitHub, las visualizaciones 
+de actividad del repositorio presentan un desfase respecto a los últimos commits e integraciones realizadas por el equipo. 
+Por lo tanto, el reflejo de asistencia y participación actual no coincide con la ejecución real del sprint, la cual se encuentra 
+debidamente respaldada en el historial de contribuciones (commit history) y en los logs de la plataforma.
+
+<img src="assets/tv2/insight-back-01.png" alt="front end" style="width: 500px;">
+
+<img src="assets/tv2/insight-back-02.png" alt="front end" style="width: 500px;">
+
+<img src="assets/tv2/insight-back-03.png" alt="front end" style="width: 500px;">
+
+URL del ultimo deploy del Front End: 
+
+URL del deployment del Back End: https://hydroteam-backend.onrender.com/swagger-ui/index.html 
+
+## 5.3. Validation Interviews.
+
+### 5.3.1. Diseño de Entrevistas.
+
+[SECCIÓN 1: LOGIN Y ACCESO GENERAL]
+1. Cuando eliges el idioma "Español" al iniciar sesión ¿te resulta incómodo o confuso que al ingresar al sistema los menús principales sigan apareciendo en inglés ("Home", "Monitoring", "Settings") o consideras que son interpretables igualmente?
+2. Al escribir tus datos para ingresar a la aplicación ¿la interfaz te avisa con claridad si cometiste un error en el formato de tu correo antes de que intentes presionar el botón de "Sign In"?
+
+[SECCIÓN 2: HOME (DASHBOARD PRINCIPAL)]
+3. Al mirar el panel principal, ¿te confunde notar que los datos generales arriba dicen haber sido actualizados hace 3 minutos, mientras que el recuadro inferior de la cisterna dice haber sido actualizado hace 5 minutos?
+4. Si ya entraste a revisar el panel para ver el estado actual de la cisterna, ¿te distrae o te confunde que el círculo rojo con el número "2" en la esquina superior de la pantalla siga marcando que tienes notificaciones pendientes?
+
+[SECCIÓN 3: MONITORING (MONITOREO DE AGUA Y SENSORES)]
+5. En la pantalla de Monitoreo, ves una tarjeta que dice "SENSOR READINGS: 5". ¿Te queda claro qué significa ese número en el día a día o te genera dudas sobre si el sensor de tu edificio está funcionando correctamente?
+6. Al observar la gráfica de historial de agua , las fechas abajo muestran el día 31/5 varias veces y terminan de forma desordenada en el día 29/5. ¿Te resulta natural e intuitivo comprender el paso del tiempo en ese orden?
+7. Si eres un residente nuevo usando la aplicación , ¿encuentras fácilmente algún botón o sección de ayuda rápida para aprender a interpretar el indicador de "días útiles de agua restantes"?
+
+[SECCIÓN 4: ALERTS (ALERTAS Y NOTIFICACIONES)]
+8. Al revisar la lista de Alertas , encuentras un mensaje que dice "Telemetry sensor SN-PR-005 stopped emitting signal". ¿Entiendes a qué parte física o a qué tanque de tu edificio se refiere este código técnico?
+9. En esta misma sección de Alertas , los mensajes mezclan el español y el inglés ("Water level dropped below critical..."). ¿Te dificulta esto la lectura rápida de una emergencia en el edificio?
+
+[SECCIÓN 5: REPORTS (REPORTES MENSUALES)]
+10. Al buscar tus reportes mensuales, seleccionas el mes de Junio en el filtro, pero las tres tarjetas de arriba dicen "Report April 2026". ¿Te hace dudar esto sobre si estás descargando el documento correcto para la junta de propietarios?
+11. Si necesitas descargar los reportes de agua de los últimos 5 meses en la tabla, ¿te parece tedioso tener que hacer clic en el icono de descarga uno por uno, en lugar de poder seleccionarlos todos juntos?
+
+[SECCIÓN 6: REFILL MANAGEMENT (HISTORIAL DE RECARGAS)]
+12. Si estás gestionando el historial de recargas y presionas por error el icono del tacho de basura en una fila, ¿el sistema te pide confirmar la acción o te permite recuperar el registro para evitar perder los datos de tus gastos?
+13. En la lista de recargas, los nombres de las empresas proveedoras de agua están dentro de un recuadro gris. ¿Te confunde visualmente al no saber si se trata de un botón interactivo para ver más información de la empresa o si es solo texto?
+
+[SECCIÓN 7: SUBSCRIPTIONS (PLANES DE SUSCRIPCIÓN)]
+14. Al revisar los planes de suscripción para mejorar el servicio de tu edificio, ¿te distrae o te incomoda ver la frase en inglés "Count State", consideras que es necesaria esa informacion en esa seccion?
+
+### 5.3.2. Registro de Entrevistas.
+
+- **Nombres y apellidos:** 
+- **Edad:**
+
+- **Inicio:** 0:00
+- **Duración:** 
+- **URL:**
+- **Resumen:** 
+
+### 5.3.3. Evaluaciones según heurísticas.
+
+
