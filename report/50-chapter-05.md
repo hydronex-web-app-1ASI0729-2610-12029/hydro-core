@@ -1357,7 +1357,7 @@ debidamente respaldada en el historial de contribuciones (commit history) y en l
 
 <img src="assets/tv2/insight-back-03.png" alt="front end" style="width: 500px;">
 
-URL del ultimo deploy del Front End: 
+URL del ultimo deploy del Front End: https://tankiq-3c9c2.web.app/
 
 URL del deployment del Back End: https://hydroteam-backend.onrender.com/swagger-ui/index.html 
 
