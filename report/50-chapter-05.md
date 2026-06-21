@@ -1365,44 +1365,102 @@ URL del deployment del Back End: https://hydroteam-backend.onrender.com/swagger-
 
 ### 5.3.1. Diseño de Entrevistas.
 
-[SECCIÓN 1: LOGIN Y ACCESO GENERAL]
-1. Cuando eliges el idioma "Español" al iniciar sesión ¿te resulta incómodo o confuso que al ingresar al sistema los menús principales sigan apareciendo en inglés ("Home", "Monitoring", "Settings") o consideras que son interpretables igualmente?
-2. Al escribir tus datos para ingresar a la aplicación ¿la interfaz te avisa con claridad si cometiste un error en el formato de tu correo antes de que intentes presionar el botón de "Sign In"?
+Con el objetivo de validar la propuesta de solución, se elaboró una guía de entrevistas enfocada en los principales módulos del sistema. Las preguntas fueron diseñadas para identificar posibles problemas relacionados con consistencia visual, comprensión de la información, prevención de errores, eficiencia de uso y facilidad de aprendizaje.
 
-[SECCIÓN 2: HOME (DASHBOARD PRINCIPAL)]
-3. Al mirar el panel principal, ¿te confunde notar que los datos generales arriba dicen haber sido actualizados hace 3 minutos, mientras que el recuadro inferior de la cisterna dice haber sido actualizado hace 5 minutos?
-4. Si ya entraste a revisar el panel para ver el estado actual de la cisterna, ¿te distrae o te confunde que el círculo rojo con el número "2" en la esquina superior de la pantalla siga marcando que tienes notificaciones pendientes?
+#### Sección 1: Login y Acceso General
 
-[SECCIÓN 3: MONITORING (MONITOREO DE AGUA Y SENSORES)]
-5. En la pantalla de Monitoreo, ves una tarjeta que dice "SENSOR READINGS: 5". ¿Te queda claro qué significa ese número en el día a día o te genera dudas sobre si el sensor de tu edificio está funcionando correctamente?
-6. Al observar la gráfica de historial de agua , las fechas abajo muestran el día 31/5 varias veces y terminan de forma desordenada en el día 29/5. ¿Te resulta natural e intuitivo comprender el paso del tiempo en ese orden?
-7. Si eres un residente nuevo usando la aplicación , ¿encuentras fácilmente algún botón o sección de ayuda rápida para aprender a interpretar el indicador de "días útiles de agua restantes"?
+1. Cuando eliges el idioma **Español** al iniciar sesión, ¿te resulta incómodo o confuso que al ingresar al sistema algunos menús principales sigan apareciendo en inglés (*Home*, *Monitoring*, *Settings*) o consideras que son fáciles de interpretar?
 
-[SECCIÓN 4: ALERTS (ALERTAS Y NOTIFICACIONES)]
-8. Al revisar la lista de Alertas , encuentras un mensaje que dice "Telemetry sensor SN-PR-005 stopped emitting signal". ¿Entiendes a qué parte física o a qué tanque de tu edificio se refiere este código técnico?
-9. En esta misma sección de Alertas , los mensajes mezclan el español y el inglés ("Water level dropped below critical..."). ¿Te dificulta esto la lectura rápida de una emergencia en el edificio?
+2. Al escribir tus datos para ingresar a la aplicación, ¿la interfaz te avisa con claridad si cometiste un error en el formato de tu correo antes de intentar presionar el botón **Sign In**?
 
-[SECCIÓN 5: REPORTS (REPORTES MENSUALES)]
-10. Al buscar tus reportes mensuales, seleccionas el mes de Junio en el filtro, pero las tres tarjetas de arriba dicen "Report April 2026". ¿Te hace dudar esto sobre si estás descargando el documento correcto para la junta de propietarios?
-11. Si necesitas descargar los reportes de agua de los últimos 5 meses en la tabla, ¿te parece tedioso tener que hacer clic en el icono de descarga uno por uno, en lugar de poder seleccionarlos todos juntos?
+#### Sección 2: Home
 
-[SECCIÓN 6: REFILL MANAGEMENT (HISTORIAL DE RECARGAS)]
-12. Si estás gestionando el historial de recargas y presionas por error el icono del tacho de basura en una fila, ¿el sistema te pide confirmar la acción o te permite recuperar el registro para evitar perder los datos de tus gastos?
-13. En la lista de recargas, los nombres de las empresas proveedoras de agua están dentro de un recuadro gris. ¿Te confunde visualmente al no saber si se trata de un botón interactivo para ver más información de la empresa o si es solo texto?
+3. Al observar la pantalla principal, ¿te confunde notar que algunos datos indican haber sido actualizados hace 3 minutos mientras que otros muestran una actualización de hace 5 minutos?
 
-[SECCIÓN 7: SUBSCRIPTIONS (PLANES DE SUSCRIPCIÓN)]
-14. Al revisar los planes de suscripción para mejorar el servicio de tu edificio, ¿te distrae o te incomoda ver la frase en inglés "Count State", consideras que es necesaria esa informacion en esa seccion?
+4. Si ingresas para revisar el estado actual de la cisterna, ¿te distrae o genera dudas que siga apareciendo una notificación pendiente en la parte superior de la pantalla?
+
+#### Sección 3: Monitoring
+
+5. En la pantalla de monitoreo aparece una tarjeta con el texto **"Sensor Readings: 5"**. ¿Te queda claro qué representa ese valor o te genera dudas sobre el funcionamiento del sensor?
+
+6. Al revisar la gráfica del historial de agua, las fechas mostradas no siguen un orden cronológico claro. ¿Te resulta sencillo interpretar la evolución de los datos en esas condiciones?
+
+7. Si utilizaras la aplicación por primera vez, ¿encuentras fácilmente alguna ayuda o explicación para comprender indicadores como los días estimados de agua disponible?
+
+#### Sección 4: Alerts
+
+8. Al revisar una alerta con el mensaje **"Telemetry sensor SN-PR-005 stopped emitting signal"**, ¿entiendes fácilmente a qué equipo o componente del edificio hace referencia?
+
+9. Si los mensajes de alerta mezclan español e inglés, por ejemplo **"Water level dropped below critical..."**, ¿consideras que esto dificulta comprender rápidamente la situación reportada?
+
+#### Sección 5: Reports
+
+10. Si seleccionas el mes de junio para consultar reportes, pero los documentos mostrados corresponden a abril, ¿te genera dudas sobre si estás visualizando la información correcta?
+
+11. Si necesitas descargar los reportes de varios meses, ¿te parece práctico hacerlo uno por uno o preferirías una opción para descargar varios archivos al mismo tiempo?
+
+#### Sección 6: Refill Management
+
+12. Si eliminas accidentalmente un registro de recarga, ¿esperarías que el sistema solicite una confirmación previa o permita recuperar la información eliminada?
+
+13. En la lista de recargas, algunos nombres de proveedores aparecen dentro de recuadros grises. ¿Te resulta claro que son elementos informativos o parecen botones con alguna acción disponible?
+
+#### Sección 7: Subscription & Billing
+
+14. Al revisar los planes de suscripción, ¿te parece adecuada la presencia de términos como **"Count State"** o considerarías más útil una descripción alineada con el idioma seleccionado?
 
 ### 5.3.2. Registro de Entrevistas.
 
-- **Nombres y apellidos:** 
-- **Edad:**
+#### Entrevista de Validación 1
+
+- **Nombres y apellidos:** Henry Paul Salinas Vásquez
+- **Edad:** 43
 
 - **Inicio:** 0:00
-- **Duración:** 
-- **URL:**
-- **Resumen:** 
+- **Duración:** 8:12
+- **URL:** https://youtu.be
+- **Resumen:** Henry recorrió los distintos módulos de la aplicación desde el punto de vista de un administrador. Comentó que la información relacionada con el monitoreo del agua y las alertas le parecía útil para tomar decisiones más rápido. Sin embargo, notó que algunos textos seguían apareciendo en inglés aun cuando el idioma seleccionado era español. También mencionó que ciertos mensajes de alerta utilizaban términos demasiado técnicos y que sería más práctico mostrar descripciones más claras para los administradores que no tienen conocimientos especializados. En la sección de reportes consideró útil la información disponible, aunque sugirió facilitar la descarga de varios reportes a la vez.
+
+#### Entrevista de Validación 2
+
+- **Nombres y apellidos:** Giancarlo Aparicio
+- **Edad:** 24
+
+- **Inicio:** 0:00
+- **Duración:** 9:05
+- **URL:** https://www.youtube.com/watch?v=X00zt8gJRis
+- **Resumen:** Giancarlo evaluó principalmente las funcionalidades relacionadas con monitoreo, reportes y gestión de recargas. Indicó que la navegación entre módulos le resultó sencilla y que la información estaba organizada de forma lógica. Durante la validación observó que algunos datos mostraban tiempos de actualización distintos, lo que podría generar dudas sobre cuál era la información más reciente. También comentó que la descarga individual de reportes puede resultar poco práctica cuando se necesita revisar información histórica de varios meses.
+
+#### Entrevista de Validación 3
+
+- **Nombres y apellidos:** Matías Mamani
+- **Edad:** 23
+
+- **Inicio:** 0:00
+- **Duración:** 7:48
+- **URL:** https://youtu.be/s_uc-kXXUTQ
+- **Resumen:** Matías se enfocó principalmente en los módulos de monitoreo y notificaciones. Comentó que le gustó poder conocer el estado del agua sin depender únicamente de mensajes enviados por la administración. Sin embargo, mencionó que algunas alertas mezclaban inglés y español, lo que hacía más lenta su lectura. También indicó que ciertos indicadores no eran completamente intuitivos para un usuario nuevo y que sería útil contar con explicaciones breves o ayudas contextuales dentro de la aplicación.
+
+#### Entrevista de Validación 4
+
+- **Nombres y apellidos:** Tagwa Moharam
+- **Edad:** 20
+
+- **Inicio:** 0:00
+- **Duración:** 6:41
+- **URL:** https://youtu.be
+- **Resumen:** Debido a limitaciones de disponibilidad, esta entrevista se realizó mediante una llamada telefónica. Durante la conversación, Tagwa comentó que la aplicación le parecía sencilla de utilizar y que la información más importante era fácil de encontrar. No obstante, indicó que algunos términos permanecían en inglés y que ciertos indicadores de monitoreo podían resultar confusos durante los primeros usos. También valoró positivamente las funcionalidades relacionadas con reportes y gastos, ya que ayudan a generar mayor transparencia para los residentes.
 
 ### 5.3.3. Evaluaciones según heurísticas.
 
+| Heurística de Nielsen | Hallazgo identificado | Evidencia obtenida |
+|----------------------|----------------------|-------------------|
+| Consistencia y estándares | Persisten términos en inglés dentro de módulos configurados en español. | Los participantes detectaron inconsistencias en IAM, Monitoring y Notifications. |
+| Visibilidad del estado del sistema | Algunos datos muestran tiempos de actualización diferentes. | Los usuarios expresaron dudas sobre cuál información reflejaba el estado actual del sistema. |
+| Correspondencia entre el sistema y el mundo real | Algunas alertas utilizan códigos o mensajes técnicos difíciles de interpretar. | Los participantes solicitaron mensajes más descriptivos y cercanos al lenguaje cotidiano. |
+| Prevención de errores | No queda claro qué ocurre al eliminar ciertos registros de recargas. | Los usuarios esperaban confirmaciones antes de ejecutar acciones críticas. |
+| Ayuda y documentación | Algunos indicadores carecen de explicaciones para usuarios nuevos. | Los residentes manifestaron dificultades para interpretar ciertos datos durante el primer uso. |
+| Flexibilidad y eficiencia de uso | La descarga individual de reportes puede resultar tediosa para tareas administrativas. | Los administradores sugirieron opciones de descarga múltiple o exportación masiva. |
+| Diseño estético y minimalista | Algunos elementos visuales pueden parecer interactivos cuando solo muestran información. | Se identificó confusión en componentes relacionados con recargas y reportes. |
 
+A partir de las entrevistas de validación realizadas, se concluye que los usuarios consideran que la solución propuesta facilita el acceso a información relevante sobre el abastecimiento de agua y mejora la transparencia entre administradores y residentes. Asimismo, se identificaron oportunidades de mejora relacionadas con la consistencia del idioma, la claridad de algunos mensajes técnicos, la incorporación de ayudas contextuales y la optimización de ciertas funcionalidades orientadas a la gestión administrativa.
