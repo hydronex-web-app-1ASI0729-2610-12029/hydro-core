@@ -135,6 +135,61 @@ Nos encargamos de brindar una solución tecnológica accesible para la gestión 
         Soy Matias Razuri, tengo 19 años a la fecha, y soy un estudiante de la carrera de Ing. de Software. Me considero una persona responsable y participativa en lo que respecta a cualquier proyecto de trabajo. Todos mis conocimientos de programacion se basan en C++, CSS, HTML, y Python.
         </td>
     </tr>
+<tr>
+        <td align="left">
+        <b>Acerca de:</b>
+        <br>
+        Soy Juan Orosco, tengo 21 años y soy estudiante de Ingeniería de Software, interesado en la creación de aplicaciones y el desarrollo de soluciones tecnológicas. Me motiva enfrentar nuevos retos técnicos que me permitan seguir aprendiendo.
+        </td>
+    </tr>
+    <tr align="center">
+        <td rowspan="3">
+            <img src="assets/team-member-profiles/foto_integrante5.png" alt="Integrante 5" style="margin-bottom: 5px; width: 200px"/>
+        </td>
+        <td align="left">
+            <b>Nombre y Apellido:</b>
+            <br>
+            Razuri, Matias
+        </td>
+    </tr>
+    <tr>
+        <td align="left">
+        <b>Carrera:</b>
+        <br>
+        Ingeniería de Software
+        </td>
+    </tr>
+    <tr>
+        <td align="left">
+        <b>Acerca de:</b>
+        <br>
+        Soy Matias Razuri, tengo 19 años a la fecha, y soy un estudiante de la carrera de Ing. de Software. Me considero una persona responsable y participativa en lo que respecta a cualquier proyecto de trabajo. Todos mis conocimientos de programacion se basan en C++, CSS, HTML, y Python.
+        </td>
+    </tr>
+    <tr align="center">
+        <td rowspan="3">
+            <img src="assets/team-member-profiles/foto_integrante6.jpeg" alt="Integrante 6" style="margin-bottom: 5px; width: 200px"/>
+        </td>
+        <td align="left">
+            <b>Nombre y Apellido:</b>
+            <br>
+            Retuerto Rodriguez, Jorge Manuel
+        </td>
+    </tr>
+    <tr>
+        <td align="left">
+        <b>Carrera:</b>
+        <br>
+        Ingeniería de Software
+        </td>
+    </tr>
+    <tr>
+        <td align="left">
+        <b>Acerca de:</b>
+        <br>
+        Mi nombre es Jorge Manuel Retuerto Rodríguez, tengo 20 años y estoy cursando el 6to ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Mi conocimiento y habilidades de programación son intermedias en C++, C#, HTML y CSS. Sin embargo, básicas en Python y Java. Me haré responsable de la comunicación del grupo, planificación y desarrollo junto a mi equipo. 
+        </td>
+    </tr>
 </table>
 
 

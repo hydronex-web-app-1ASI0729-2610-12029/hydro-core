@@ -23,6 +23,7 @@ include-before: |
       <tr><td style="padding: 3px; text-align: left;"><strong>U202411282</strong></td><td style="padding: 3px; text-align: left;">Montalvan Palomino, Bruno Rodolfo</td></tr>
       <tr><td style="padding: 3px; text-align: left;"><strong>U202414840</strong></td><td style="padding: 3px; text-align: left;">Orosco Ttamiña, Juan Carlos</td></tr>
       <tr><td style="padding: 3px; text-align: left;"><strong>U202410772</strong></td><td style="padding: 3px; text-align: left;">Razuri Alvarez, Matias Francesco</td></tr>
+      <tr><td style="padding: 3px; text-align: left;"><strong>U202410772</strong></td><td style="padding: 3px; text-align: left;">Retuerto Rodriguez, Jorge Manuel</td></tr>
     </table>
     <br/>
     <p>abril de 2026</p>
@@ -50,6 +51,11 @@ include-before: |
     </td>
     <td style="text-align: center;">
       Espinar Martínez, Gabriel Ferran
+      Guevara Serrano, Diego Ismael
+      Montalvan Palomino, Bruno Rodolfo
+      Orosco Ttamiña, Juan Carlos
+      Razuri Alvarez, Matias Francesco
+      Retuerto Rodriguez, Jorge Manuel
     </td>
     <td style="text-align: justify;">
       Se realizó la estructuración inicial del documento del proyecto TankIQ, incluyendo la definición de la problemática, la propuesta de valor y la descripción de la startup. Asimismo, se estableció la organización general del informe y las secciones a desarrollar.
@@ -64,7 +70,12 @@ include-before: |
       24/04/2026
     </td>
     <td style="text-align: center;">
+      Espinar Martínez, Gabriel Ferran
       Guevara Serrano, Diego Ismael
+      Montalvan Palomino, Bruno Rodolfo
+      Orosco Ttamiña, Juan Carlos
+      Razuri Alvarez, Matias Francesco
+      Retuerto Rodriguez, Jorge Manuel
     </td>
     <td style="text-align: justify;">
       Se desarrolló el análisis de usuarios mediante la elaboración de entrevistas y la identificación de necesidades, pains y gains. Además, se contribuyó en la definición de los User Personas representativos de los segmentos objetivo.
@@ -79,7 +90,12 @@ include-before: |
       24/04/2026
     </td>
     <td style="text-align: center;">
+      Espinar Martínez, Gabriel Ferran
+      Guevara Serrano, Diego Ismael
       Montalvan Palomino, Bruno Rodolfo
+      Orosco Ttamiña, Juan Carlos
+      Razuri Alvarez, Matias Francesco
+      Retuerto Rodriguez, Jorge Manuel
     </td>
     <td style="text-align: justify;">
       Se elaboraron los artefactos de análisis como User Journey Maps, Empathy Maps y User Task Matrix, permitiendo comprender el comportamiento de los usuarios y sus interacciones en el contexto del problema identificado.
@@ -94,7 +110,12 @@ include-before: |
       24/04/2026
     </td>
     <td style="text-align: center;">
+      Espinar Martínez, Gabriel Ferran
+      Guevara Serrano, Diego Ismael
+      Montalvan Palomino, Bruno Rodolfo
+      Orosco Ttamiña, Juan Carlos
       Razuri Alvarez, Matias Francesco
+      Retuerto Rodriguez, Jorge Manuel
     </td>
     <td style="text-align: justify;">
       Se definieron las épicas y las historias de usuario del sistema, incluyendo sus criterios de aceptación bajo la estructura Gherkin. También se participó en la identificación de funcionalidades clave alineadas a los objetivos del negocio.
@@ -109,7 +130,12 @@ include-before: |
       24/04/2026
     </td>
     <td style="text-align: center;">
+      Espinar Martínez, Gabriel Ferran
+      Guevara Serrano, Diego Ismael
+      Montalvan Palomino, Bruno Rodolfo
       Orosco Ttamiña, Juan Carlos
+      Razuri Alvarez, Matias Francesco
+      Retuerto Rodriguez, Jorge Manuel
     </td>
     <td style="text-align: justify;">
       Se completó la etapa de especificación de requisitos. En esta fase se definieron historias de usuario para representar las principales funcionalidades según las necesidades de los usuarios. También se hizo un impact mapping para relacionar los objetivos del negocio con los usuarios y las funcionalidades del sistema. Finalmente, se organizó y priorizó el Product Backlog, estimándolo con la escala de Fibonacci para apoyar el desarrollo.
@@ -125,6 +151,11 @@ include-before: |
     </td>
     <td style="text-align: center;">
       Espinar Martínez, Gabriel Ferran
+      Guevara Serrano, Diego Ismael
+      Montalvan Palomino, Bruno Rodolfo
+      Orosco Ttamiña, Juan Carlos
+      Razuri Alvarez, Matias Francesco
+      Retuerto Rodriguez, Jorge Manuel
     </td>
     <td style="text-align: justify;">
       Se trabajó en la estructura inicial del módulo Water Monitoring, definiendo las rutas y componentes necesarios para representar la información relacionada con el monitoreo de agua. Además, se preparó la integración visual con el dashboard siguiendo el diseño y la arquitectura general del proyecto.
@@ -139,7 +170,12 @@ include-before: |
       12/05/2026
     </td>
     <td style="text-align: center;">
+      Espinar Martínez, Gabriel Ferran
       Guevara Serrano, Diego Ismael
+      Montalvan Palomino, Bruno Rodolfo
+      Orosco Ttamiña, Juan Carlos
+      Razuri Alvarez, Matias Francesco
+      Retuerto Rodriguez, Jorge Manuel
     </td>
     <td style="text-align: justify;">
       Se avanzó con el desarrollo del Landing Page del sistema, implementando las principales secciones informativas y la estructura visual inicial de la aplicación. Además, se trabajó en la navegación pública, el soporte de idiomas y la adaptación del diseño tomando como referencia los mockups y lineamientos definidos para el proyecto.
@@ -154,7 +190,12 @@ include-before: |
       13/05/2026
     </td>
     <td style="text-align: center;">
+      Espinar Martínez, Gabriel Ferran
+      Guevara Serrano, Diego Ismael
       Montalvan Palomino, Bruno Rodolfo
+      Orosco Ttamiña, Juan Carlos
+      Razuri Alvarez, Matias Francesco
+      Retuerto Rodriguez, Jorge Manuel
     </td>
     <td style="text-align: justify;">
       Se desarrolló la estructura inicial del módulo IAM, organizando las rutas y componentes relacionados con el acceso y autenticación de usuarios. Asimismo, se preparó la base necesaria para futuras funcionalidades de login y control de acceso dentro de la aplicación frontend.
@@ -169,7 +210,12 @@ include-before: |
       12/05/2026
     </td>
     <td style="text-align: center;">
+      Espinar Martínez, Gabriel Ferran
+      Guevara Serrano, Diego Ismael
+      Montalvan Palomino, Bruno Rodolfo
+      Orosco Ttamiña, Juan Carlos
       Razuri Alvarez, Matias Francesco
+      Retuerto Rodriguez, Jorge Manuel
     </td>
     <td style="text-align: justify;">
       Se desarrolló la base frontend del módulo Alerts & Notifications, organizando las vistas y rutas relacionadas con las alertas del sistema. Asimismo, se preparó la estructura necesaria para futuras funcionalidades de notificaciones y visualización de eventos dentro de la aplicación.
@@ -184,13 +230,37 @@ include-before: |
       13/05/2026
     </td>
     <td style="text-align: center;">
+      Espinar Martínez, Gabriel Ferran
+      Guevara Serrano, Diego Ismael
+      Montalvan Palomino, Bruno Rodolfo
       Orosco Ttamiña, Juan Carlos
+      Razuri Alvarez, Matias Francesco
+      Retuerto Rodriguez, Jorge Manuel
     </td>
     <td style="text-align: justify;">
       Se implementó la primera versión visual del Dashboard Overview, incorporando la estructura principal del panel y las vistas base del sistema. También se desarrolló la navegación interna, los componentes iniciales y las pantallas “Under Construction” para mantener la integración entre módulos durante el desarrollo frontend.
     </td>
   </tr>
   
+  <tr>
+    <td style="text-align: center;">
+      2.1.0
+    </td>
+    <td style="text-align: center;">
+      20/06/2026
+    </td>
+    <td style="text-align: center;">
+      Espinar Martínez, Gabriel Ferran
+      Guevara Serrano, Diego Ismael
+      Montalvan Palomino, Bruno Rodolfo
+      Orosco Ttamiña, Juan Carlos
+      Razuri Alvarez, Matias Francesco
+      Retuerto Rodriguez, Jorge Manuel
+    </td>
+    <td style="text-align: justify;">
+      Se realizaron mejorar en el diagrama de clase y entidades. Ademas, actualizaciones en nuestro Event Storming para mantener una mejor documentacion. Tambien se desarrollo el back end de la web para la comunicacion siguiendo los protocolos HTTP.
+    </td>
+  </tr>
   </table>
 
 
@@ -250,6 +320,20 @@ include-before: |
   <img src="./report/assets/git-hub/insights-tb1.png" style="width: 600px"/>
   
   <br/>
+  
+  <h3>Entrega av2</h3>
+  
+  Para el presente avance, el Sprint 3 se organizo para mejorar la interfaz del front end, respecto a nuestro core business. Ademas, del desarrollo
+  del back end e implementacion de buenas practicas como CQRS y Domain Driven Design.
+  
+  URL del deployment de Back End, visualizando el swagger:
+    <a href="https://hydroteam-backend.onrender.com/swagger-ui/index.html">
+    Deployment Back End
+  </a>
+  
+  <img src="./report/assets/tv2/insight-back-02.png" alt="front end" style="width: 500px;">
+
+  <img src="./report/assets/tv2/insight-back-03.png" alt="front end" style="width: 500px;">
 
   <h1 style="page-break-before: always;">Tabla de contenido</h1>
 ---
