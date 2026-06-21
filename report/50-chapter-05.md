@@ -1240,7 +1240,7 @@ para el procesamiento de telemetría en tiempo real.
       <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Aggregate Root Core</td>
       <td style="padding: 12px 14px; color: #475569;">TS06-01: Implements aggregate root (Capa de Dominio del contexto acotado de facturación). [cite: 45]</td>
       <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">6h</span></td>
-      <td style="padding: 12px 14px; color: #334155;">Orosco T., Juan Carlos</td>
+      <td style="padding: 12px 14px; color: #334155;">Retuerto Rodriguez, Jorge Manuel</td>
       <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
     </tr>
     <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f0f9ff;">
@@ -1248,7 +1248,7 @@ para el procesamiento de telemetría en tiempo real.
       <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Infrastructure Persistence</td>
       <td style="padding: 12px 14px; color: #475569;">TS06-02: Implements infrastructure to persistence data in Billing context. [cite: 46]</td>
       <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">6h</span></td>
-      <td style="padding: 12px 14px; color: #334155;">Orosco T., Juan Carlos</td>
+      <td style="padding: 12px 14px; color: #334155;">Retuerto Rodriguez, Jorge Manuel</td>
       <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
     </tr>
     <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f0f9ff;">
@@ -1256,7 +1256,7 @@ para el procesamiento de telemetría en tiempo real.
       <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">Commands & Queries CQRS</td>
       <td style="padding: 12px 14px; color: #475569;">TS06-03: Implements operation to do commands, queries and trigger events. [cite: 47]</td>
       <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">8h</span></td>
-      <td style="padding: 12px 14px; color: #334155;">Orosco T., Juan Carlos</td>
+      <td style="padding: 12px 14px; color: #334155;">Retuerto Rodriguez, Jorge Manuel</td>
       <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
     </tr>
     <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f0f9ff;">
@@ -1264,7 +1264,7 @@ para el procesamiento de telemetría en tiempo real.
       <td style="padding: 12px 14px; font-weight: 600; color: #0f172a;">REST Api Presenters</td>
       <td style="padding: 12px 14px; color: #475569;">TS06-04: Implement controllers to make HTTP requests (Capa de Presentación Externa). [cite: 48]</td>
       <td style="padding: 12px 14px; text-align: center;"><span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 12px; font-weight: 600;">4h</span></td>
-      <td style="padding: 12px 14px; color: #334155;">Orosco T., Juan Carlos</td>
+      <td style="padding: 12px 14px; color: #334155;">Retuerto Rodriguez, Jorge Manuel</td>
       <td style="padding: 12px 14px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">DONE</span></td>
     </tr>
   </tbody>
