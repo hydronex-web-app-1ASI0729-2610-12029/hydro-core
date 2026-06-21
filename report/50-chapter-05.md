@@ -1464,3 +1464,14 @@ Con el objetivo de validar la propuesta de solución, se elaboró una guía de e
 | Diseño estético y minimalista | Algunos elementos visuales pueden parecer interactivos cuando solo muestran información. | Se identificó confusión en componentes relacionados con recargas y reportes. |
 
 A partir de las entrevistas de validación realizadas, se concluye que los usuarios consideran que la solución propuesta facilita el acceso a información relevante sobre el abastecimiento de agua y mejora la transparencia entre administradores y residentes. Asimismo, se identificaron oportunidades de mejora relacionadas con la consistencia del idioma, la claridad de algunos mensajes técnicos, la incorporación de ayudas contextuales y la optimización de ciertas funcionalidades orientadas a la gestión administrativa.
+
+
+## 5.4. Video About-the-Product
+
+En esta sección se presenta el video **About-the-Product** correspondiente al desarrollo del proyecto **TankIQ**.
+
+El video muestra la propuesta de valor de la solución, las principales funcionalidades implementadas y los beneficios que ofrece a los usuarios para la gestión y monitoreo de recursos hídricos. Asimismo, se incluyen demostraciones de interacción con la plataforma, destacando los módulos de **Identity and Access Management (IAM)**, **Water Monitoring**, **Refill Management**, **Notifications**, **Reporting** y **Subscription & Billing**.
+
+- **YouTube:** [Ver video en YouTube](https://youtu.be/sqquceM_tlM)
+- **Microsoft Stream:** [Ver video en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202414840_upc_edu_pe/IQDmiJZY94F_SJMXyUTlQ2fOAYgmpgPkqXNgGyKReD5_eg8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=FzewOv)
+
