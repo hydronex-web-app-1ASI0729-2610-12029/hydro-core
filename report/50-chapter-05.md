@@ -1437,9 +1437,9 @@ Con el objetivo de validar la propuesta de solución, se elaboró una guía de e
 - **Edad:** 23
 
 - **Inicio:** 0:00
-- **Duración:** 7:48
-- **URL:** https://youtu.be/s_uc-kXXUTQ
-- **Resumen:** Matías se enfocó principalmente en los módulos de monitoreo y notificaciones. Comentó que le gustó poder conocer el estado del agua sin depender únicamente de mensajes enviados por la administración. Sin embargo, mencionó que algunas alertas mezclaban inglés y español, lo que hacía más lenta su lectura. También indicó que ciertos indicadores no eran completamente intuitivos para un usuario nuevo y que sería útil contar con explicaciones breves o ayudas contextuales dentro de la aplicación.
+- **Duración:** 8:28
+- **URL:** https://youtu.be/OmgLlQkflGQ
+- **Resumen:** Matías opinó la interfaz de la app TANKIQ. Matías logró registrarse e iniciar sesión sin problemas, pero señaló que la mezcla de inglés y español en el dashboard y en el módulo de alertas le resultaba confusa, ya que ni él ni la mayoría de vecinos de su edificio manejan inglés. Consideró claros el monitoreo, el historial de nivel del agua y la sección de refill y suscripciones, aunque sugirió renombrar "días proyectados" para mayor claridad. También detectó un error en reportes, donde eligiendo junio igual mostraba abril, y propuso generar un reporte consolidado en vez de uno por mes. En general calificó la interfaz como amigable, y al confirmar que la suscripción es por edificio y no por persona, la consideró un precio razonable..
 
 #### Entrevista de Validación 4
 
