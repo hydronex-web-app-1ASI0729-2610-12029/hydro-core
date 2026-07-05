@@ -1456,7 +1456,7 @@ Con el objetivo de validar la propuesta de solución, se elaboró una guía de e
 - **Edad:** 23
 
 - **Inicio:** 0:00
-- **Duración:** 6:41
+- **Duración:** 18:55
 - **URL:** [https://youtu.be](https://youtu.be/1ZBPI0POc_A)
 - **Resumen:** Manolo se enfocó principalmente en optimizar la experiencia de usuario dentro de los módulos de monitoreo, alertas y gestión de recargas. Comentó que el diseño gráfico de la interfaz es bastante intuitivo y valoró la claridad del gráfico de líneas, aunque sugirió limpiar la pantalla principal moviendo las notificaciones a un ícono de campanita y añadiendo un calendario para programar los días de rellenado. Sin embargo, indicó que ciertos indicadores técnicos y comerciales resultan confusos para un usuario nuevo, por lo que propuso incluir descripciones contextuales desplegables mediante clics y usar un lenguaje más accesible y libre de "Spanglish". También pidió que se configuraran mejoras funcionales importantes, como el "download" masivo de reportes mensuales, la posibilidad de compartir mediante un "link", la funcionalidad de pago por sensor individual en las suscripciones y la implementación "mandatory" de la funcionalidad de mensajes de confirmación de seguridad antes de guardar, editar o eliminar cualquier registro.
 ### 5.3.3. Evaluaciones según heurísticas.
