@@ -1447,9 +1447,9 @@ Con el objetivo de validar la propuesta de solución, se elaboró una guía de e
 - **Edad:** 20
 
 - **Inicio:** 0:00
-- **Duración:** 6:41
-- **URL:** https://youtu.be
-- **Resumen:** Debido a limitaciones de disponibilidad, esta entrevista se realizó mediante una llamada telefónica. Durante la conversación, Tagwa comentó que la aplicación le parecía sencilla de utilizar y que la información más importante era fácil de encontrar. No obstante, indicó que algunos términos permanecían en inglés y que ciertos indicadores de monitoreo podían resultar confusos durante los primeros usos. También valoró positivamente las funcionalidades relacionadas con reportes y gastos, ya que ayudan a generar mayor transparencia para los residentes.
+- **Duración:** 6:07
+- **URL:** [https://youtu.be](https://youtu.be/ouOLypiM6cs)
+- **Resumen:** Tagwa mostró una experiencia bastante positiva en general: los menús en inglés y el mensaje mixto en las alertas no le generaron confusión, ya que logró entenderlos sin problema; valoró que la validación del correo le avisara el error de inmediato; no le pareció confuso ver distintos tiempos de actualización en el Home, ni sintió que la notificación pendiente la distrajera; en Monitoring, entendió bien la tarjeta de lecturas del sensor, siguió sin problema la gráfica del historial de agua y consideró claro el indicador de días estimados de agua disponible; en Reports, no le preocupó ver reportes de un mes distinto al seleccionado y le pareció práctico descargarlos uno por uno; en Refill Management, le gustaría una confirmación antes de eliminar un registro, aunque el proceso le pareció sencillo, y los recuadros con nombres de proveedores los percibió como claros e informativos; y en Subscription & Billing, consideró que el término en inglés es fácil de entender y que la información del plan se ve clara y bien organizada.
 
 #### Entrevista de Validación 5
 - **Nombres y apellidos:** Manolo Tapia
